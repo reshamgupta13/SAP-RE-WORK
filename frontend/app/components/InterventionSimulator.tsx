@@ -131,7 +131,7 @@ function ScenarioCard({ scenario }: { scenario: Scenario }) {
             <div key={k} className="flex justify-between gap-2">
               <dt>{k}</dt>
               <dd>
-                {String(effect.before_state[k])} → {String(effect.after_state[k])}
+                {String(effect.before_state?.[k])} → {String(effect.after_state?.[k])}
               </dd>
             </div>
           ))}

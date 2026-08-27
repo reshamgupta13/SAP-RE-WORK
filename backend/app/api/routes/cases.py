@@ -125,3 +125,11 @@ def case_control_room(case_id: str) -> dict[str, Any]:
     if not _case_service.get_case(case_id):
         raise HTTPException(status_code=404, detail="Case not found")
     return _case_service.build_control_room_view(case_id)
+
+
+@router.get("/{case_id}/export")
+def export_case(case_id: str) -> dict[str, Any]:
+    try:
+        return _case_service.export_case(case_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc

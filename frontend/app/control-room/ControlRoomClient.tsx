@@ -62,14 +62,29 @@ export function ControlRoomClient({ data }: { data: ControlRoomData }) {
           </dl>
         </section>
 
+        <section className="rounded-xl border-2 border-teal-600 bg-white p-6 shadow-md">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-teal-800">Opportunity viability</h2>
+          <p className="mt-2 text-2xl font-semibold text-slate-900">
+            {(dataAnalystViability?.viability_state as string) ?? "—"}
+          </p>
+          <p className="mt-2 text-sm text-slate-600">
+            Next best intervention: minimum effective learning + proof pathway (see WHAT IF below)
+          </p>
+          {data.interventions && (data.interventions as { minimum_effective_intervention?: { label?: string } }).minimum_effective_intervention && (
+            <p className="mt-1 text-sm font-medium text-teal-700">
+              Minimum bundle: {(data.interventions as { minimum_effective_intervention?: { label?: string } }).minimum_effective_intervention?.label ?? "Learning + Proof"}
+            </p>
+          )}
+        </section>
+
         <div className="grid gap-6 lg:grid-cols-12">
           <aside className="lg:col-span-3 space-y-4">
             <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
               <h3 className="text-xs font-semibold uppercase text-slate-500">Case timeline</h3>
               <ol className="mt-3 space-y-2 text-sm">
                 {(data.timeline ?? []).map((e) => (
-                  <li key={e.index as number} className="rounded bg-slate-50 px-2 py-1">
-                    <span className="text-slate-500">T{e.index}</span> {e.label as string}
+                  <li key={String(e.index)} className="rounded bg-slate-50 px-2 py-1">
+                    <span className="text-slate-500">T{String(e.index)}</span> {String(e.label ?? "")}
                   </li>
                 ))}
               </ol>

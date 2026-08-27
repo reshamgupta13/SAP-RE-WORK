@@ -1,7 +1,5 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-
 export async function fetchControlRoom(caseId?: string) {
   const path = caseId
     ? `${API_BASE}/api/cases/${caseId}/control-room`

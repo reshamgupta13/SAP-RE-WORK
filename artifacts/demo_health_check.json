@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "api_health",
+      "pass": true,
+      "detail": "{'status': 'ok', 'service': 'RE:WORK API', 'demo_mode': True, 'engine_mode': 'CHECKPOINT_05', 'intelligence_layer': 'opportunity viability + market intelligence + employer readiness', 'sap_connection': 'SIMULATED', 'message': 'RE:WORK API \u2014 Checkpoint 2 intelligence layer'}"
+    },
+    {
+      "check": "sap_source_mode",
+      "pass": true,
+      "detail": "SIMULATED"
+    },
+    {
+      "check": "finale_case_execute",
+      "pass": true,
+      "detail": "EXPLANATION_READY"
+    },
+    {
+      "check": "finale_replay_time",
+      "pass": true,
+      "detail": "0.3s"
+    },
+    {
+      "check": "explainability_integrity",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "check": "decision_card",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "control_room_api",
+      "pass": "case-ananya-finale",
+      "detail": "case-ananya-finale"
+    },
+    {
+      "check": "sap_label_present",
+      "pass": true,
+      "detail": "SIMULATED"
+    },
+    {
+      "check": "case_export",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

@@ -292,6 +292,53 @@ class CaseService:
         view["sap_judge_panel"] = self._sap_judge_panel(sap_health)
         return view
 
+    def export_case(self, case_id: str) -> dict[str, Any]:
+        case = self._repo.get_case(case_id)
+        if not case:
+            raise ValueError(f"Case not found: {case_id}")
+        events = self._repo.list_events(case_id)
+        sap_health = self._sap_health.check()
+        return {
+            "case_id": case.id,
+            "case_version": case.case_version,
+            "lifecycle_state": case.lifecycle_state.value,
+            "source_mode": case.source_mode.value,
+            "candidate_id": case.candidate_id,
+            "job_id": case.job_id,
+            "opportunity_id": case.opportunity_id,
+            "candidate": case.snapshot.get("candidate"),
+            "job": case.snapshot.get("job"),
+            "diagnosis": {
+                "summary": case.snapshot.get("diagnosis_summary"),
+                "gaps": case.snapshot.get("capability_gaps"),
+                "requirement_diagnoses": case.snapshot.get("requirement_diagnoses"),
+                "counterfactuals": case.snapshot.get("counterfactuals"),
+            },
+            "pathway": case.snapshot.get("learning_path"),
+            "proof": {
+                "result": case.snapshot.get("proof_result"),
+                "evidence": case.snapshot.get("proof_evidence"),
+            },
+            "reassessment": case.snapshot.get("reassessment_summary"),
+            "market": {
+                "signals": case.snapshot.get("market_signals"),
+                "skill_investments": case.snapshot.get("skill_investments"),
+            },
+            "opportunities": case.snapshot.get("opportunity_viability"),
+            "employer_readiness": case.snapshot.get("employer_readiness"),
+            "interventions": case.intervention_scenarios,
+            "explainability": case.explainability,
+            "decision_card": case.decision_card,
+            "ai_recommendation": case.ai_recommendation,
+            "human_decision": case.human_decision,
+            "human_decision_status": case.human_decision_status.value,
+            "sap_context": case.sap_context,
+            "sap_health": {k: v for k, v in sap_health.items() if "secret" not in k.lower()},
+            "audit_events": [e.model_dump(mode="json") for e in events],
+            "what_changed": self.get_what_changed(case_id),
+            "note": "Export redacts credentials and secrets.",
+        }
+
     def _finalize_execution(
         self,
         case: ReworkCase,

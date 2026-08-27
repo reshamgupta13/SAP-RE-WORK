@@ -31,8 +31,8 @@ export default async function EmployerPage() {
                     <span className="font-medium capitalize">{f.factor as string}</span>
                     <StatusBadge status={f.status as string} />
                   </div>
-                  {f.evidence_ref && (
-                    <p className="mt-2 text-xs text-slate-500">Evidence: {f.evidence_ref as string}</p>
+                  {f.evidence_ref != null && f.evidence_ref !== "" && (
+                    <p className="mt-2 text-xs text-slate-500">Evidence: {String(f.evidence_ref)}</p>
                   )}
                 </li>
               ))}

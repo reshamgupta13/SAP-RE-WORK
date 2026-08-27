@@ -1,0 +1,5032 @@
+{
+  "scenarios": [
+    {
+      "id": "B01",
+      "title": "Strong match",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b01",
+        "display_name": "Bench Candidate b01",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.012459",
+          "updated_at": null,
+          "id": "ev-b01-sql",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "SQL projects",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.9
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.012568",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.85,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b01-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.012735",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.8,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b01-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.012753",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.75,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b01-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.012764",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b01-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.012775",
+          "updated_at": null,
+          "id": "cap-test-candidate-data_analysis",
+          "candidate_id": "test-candidate",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "proficiency": 0.8,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b01-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "STRONG_MATCH",
+          "MATCH_WITH_GAPS",
+          "POTENTIALLY_VIABLE"
+        ],
+        "min_genuine_gaps": 0,
+        "negative_outcome": false
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "title": "True capability gap",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b02",
+        "display_name": "Bench Candidate b02",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013044",
+          "updated_at": null,
+          "id": "ev-b02-excel",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Excel only",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013077",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b02-excel"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013100",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.65,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b02-excel"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "title": "Career returner",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b03",
+        "display_name": "Bench Candidate b03",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013155",
+          "updated_at": null,
+          "id": "ev-b03-mis",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "MIS project",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2023-02-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013167",
+          "updated_at": null,
+          "id": "ev-b03-self",
+          "candidate_id": "test-candidate",
+          "type": "SELF_REPORTED",
+          "title": "Self Power BI",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "SELF_REPORTED",
+          "confidence": 0.35
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013179",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.62,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b03-mis"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013203",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b03-mis"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013212",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.22,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b03-self"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SELF_REPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013219",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.68,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b03-mis"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013225",
+          "updated_at": null,
+          "id": "cap-test-candidate-data_analysis",
+          "candidate_id": "test-candidate",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "proficiency": 0.55,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b03-mis"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "required_genuine_gaps": [
+          "power_bi"
+        ],
+        "expect_proxy": true,
+        "negative_outcome": false
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "title": "Credential proxy candidate",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b04",
+        "display_name": "Bench Candidate b04",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013269",
+          "updated_at": null,
+          "id": "ev-b04-git",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Git portfolio",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.92
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013282",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.8,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b04-git"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013289",
+          "updated_at": null,
+          "id": "cap-test-candidate-data_analysis",
+          "candidate_id": "test-candidate",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "proficiency": 0.78,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b04-git"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013294",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.72,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b04-git"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "expect_proxy": true,
+        "min_genuine_gaps": 0,
+        "negative_outcome": false
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B05",
+      "title": "Experience proxy candidate",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b05",
+        "display_name": "Bench Candidate b05",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013317",
+          "updated_at": null,
+          "id": "ev-b05-sql",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "18mo SQL contract",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-06-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013323",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.78,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b05-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013329",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b05-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013334",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.55,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b05-sql"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "expect_proxy": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B06",
+      "title": "Workplace constraint",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b06",
+        "display_name": "Bench Candidate b06",
+        "location": "Lucknow",
+        "work_modes": [
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013355",
+          "updated_at": null,
+          "id": "ev-b06",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Remote analytics",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013364",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b06"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013370",
+          "updated_at": null,
+          "id": "cap-test-candidate-data_analysis",
+          "candidate_id": "test-candidate",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "proficiency": 0.72,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b06"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "profile": {
+          "id": "bench-b06",
+          "display_name": "Bench Candidate b06",
+          "location": "Lucknow",
+          "work_modes": [
+            "remote"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        },
+        "expect_workplace_constraint": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B07",
+      "title": "Insufficient evidence",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b07",
+        "display_name": "Bench Candidate b07",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013390",
+          "updated_at": null,
+          "id": "ev-b07",
+          "candidate_id": "test-candidate",
+          "type": "SELF_REPORTED",
+          "title": "Self claim",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "SELF_REPORTED",
+          "confidence": 0.3
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013397",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.5,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b07"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SELF_REPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "REQUIRES_HUMAN_REVIEW",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B08",
+      "title": "Transferable capability",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b08",
+        "display_name": "Bench Candidate b08",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013418",
+          "updated_at": null,
+          "id": "ev-b08",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "BPM reporting",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013426",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.82,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b08"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013436",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.58,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b08"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013444",
+          "updated_at": null,
+          "id": "cap-test-candidate-data_analysis",
+          "candidate_id": "test-candidate",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "proficiency": 0.6,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b08"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {},
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B09",
+      "title": "Adjacent capability",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b09",
+        "display_name": "Bench Candidate b09",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013476",
+          "updated_at": null,
+          "id": "ev-b09",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Excel expert",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013485",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.95,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b09"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013492",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b09"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B10",
+      "title": "Stale evidence",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b10",
+        "display_name": "Bench Candidate b10",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013511",
+          "updated_at": null,
+          "id": "ev-b10",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Old SQL work",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2018-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013520",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.75,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b10"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "STALE",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013526",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.3,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b10"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "expect_stale": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B11",
+      "title": "Employer not ready",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b11",
+        "display_name": "Bench Candidate b11",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013557",
+          "updated_at": null,
+          "id": "ev-b11",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013550",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b11"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "employer_not_ready": true,
+        "note": "Employer readiness evaluated at opportunity stage"
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B12",
+      "title": "Two-sided gap",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b12",
+        "display_name": "Bench Candidate b12",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013585",
+          "updated_at": null,
+          "id": "ev-b12",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013574",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.25,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b12"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013580",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.6,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b12"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "required_genuine_gaps": [
+          "power_bi"
+        ],
+        "two_sided": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B13",
+      "title": "Multiple viable opportunities",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b13",
+        "display_name": "Bench Candidate b13",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013607",
+          "updated_at": null,
+          "id": "ev-b13",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.88
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013613",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.8,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b13"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013618",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.78,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b13"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013623",
+          "updated_at": null,
+          "id": "cap-test-candidate-power_bi",
+          "candidate_id": "test-candidate",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "proficiency": 0.72,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b13"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013629",
+          "updated_at": null,
+          "id": "cap-test-candidate-data_analysis",
+          "candidate_id": "test-candidate",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "proficiency": 0.75,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b13"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "min_genuine_gaps": 0
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B14",
+      "title": "No viable opportunities",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b14",
+        "display_name": "Bench Candidate b14",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013663",
+          "updated_at": null,
+          "id": "ev-b14",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013657",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.5,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b14"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "NOT_CURRENTLY_READY",
+          "INSUFFICIENT_EVIDENCE",
+          "REQUIRES_HUMAN_REVIEW"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B15",
+      "title": "Conflicting candidate evidence",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b15",
+        "display_name": "Bench Candidate b15",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013678",
+          "updated_at": null,
+          "id": "ev-b15a",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Strong SQL",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.9
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013684",
+          "updated_at": null,
+          "id": "ev-b15b",
+          "candidate_id": "test-candidate",
+          "type": "SELF_REPORTED",
+          "title": "Weak SQL claim",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "SELF_REPORTED",
+          "confidence": 0.2
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013690",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.65,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b15a",
+            "ev-b15b"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {},
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B16",
+      "title": "Conflicting job requirements",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b16",
+        "display_name": "Bench Candidate b16",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013717",
+          "updated_at": null,
+          "id": "ev-b16",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013708",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b16"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "note": "Job conflict in requirements"
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B17",
+      "title": "Necessary credential",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b17",
+        "display_name": "Bench Candidate b17",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013740",
+          "updated_at": null,
+          "id": "ev-b17",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013734",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.4,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b17"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "NOT_CURRENTLY_READY",
+          "REQUIRES_HUMAN_REVIEW",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B18",
+      "title": "Accessibility compatible role",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b18",
+        "display_name": "Bench Candidate b18",
+        "location": "Bangalore",
+        "work_modes": [
+          "remote",
+          "hybrid"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013762",
+          "updated_at": null,
+          "id": "ev-b18",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013754",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b18"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "profile": {
+          "id": "bench-b18",
+          "display_name": "Bench Candidate b18",
+          "location": "Bangalore",
+          "work_modes": [
+            "remote",
+            "hybrid"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        }
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B19",
+      "title": "Accessibility incompatible role",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b19",
+        "display_name": "Bench Candidate b19",
+        "location": "Bangalore",
+        "work_modes": [
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013783",
+          "updated_at": null,
+          "id": "ev-b19",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Evidence",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013776",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b19"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "profile": {
+          "id": "bench-b19",
+          "display_name": "Bench Candidate b19",
+          "location": "Bangalore",
+          "work_modes": [
+            "remote"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        },
+        "expect_workplace_constraint": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B20",
+      "title": "Displaced worker",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b20",
+        "display_name": "Bench Candidate b20",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013800",
+          "updated_at": null,
+          "id": "ev-b20",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Call center ops",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013794",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.75,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b20"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "REQUIRES_HUMAN_REVIEW"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B21",
+      "title": "Tier-2/3 candidate",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b21",
+        "display_name": "Bench Candidate b21",
+        "location": "Lucknow",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013825",
+          "updated_at": null,
+          "id": "ev-b21",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Regional college degree",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013815",
+          "updated_at": null,
+          "id": "cap-test-candidate-sql",
+          "candidate_id": "test-candidate",
+          "skill_id": "sql",
+          "label": "SQL",
+          "proficiency": 0.68,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b21"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013821",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b21"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "expect_proxy": true,
+        "profile": {
+          "id": "bench-b21",
+          "display_name": "Bench Candidate b21",
+          "location": "Lucknow",
+          "work_modes": [
+            "hybrid",
+            "remote"
+          ],
+          "languages": [
+            "en"
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_persona": false,
+          "created_at": "2026-08-28T00:00:00"
+        }
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    },
+    {
+      "id": "B22",
+      "title": "Reskilling candidate",
+      "candidate_id": "bench-candidate",
+      "job_id": "data-analyst-junior",
+      "profile": {
+        "id": "bench-b22",
+        "display_name": "Bench Candidate b22",
+        "location": "Bangalore",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "languages": [
+          "en"
+        ],
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "is_demo_persona": false,
+        "created_at": "2026-08-28T00:00:00"
+      },
+      "evidence": [
+        {
+          "created_at": "2026-08-27T22:07:17.013856",
+          "updated_at": null,
+          "id": "ev-b22",
+          "candidate_id": "test-candidate",
+          "type": "PROJECT",
+          "title": "Accounting background",
+          "description": "",
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "occurred_on": "2024-01-01",
+          "relevance": 0.5,
+          "content_reference": null,
+          "verification_status": "VERIFIED",
+          "confidence": 0.85
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013844",
+          "updated_at": null,
+          "id": "cap-test-candidate-excel",
+          "candidate_id": "test-candidate",
+          "skill_id": "excel",
+          "label": "Excel",
+          "proficiency": 0.85,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b22"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013849",
+          "updated_at": null,
+          "id": "cap-test-candidate-communication",
+          "candidate_id": "test-candidate",
+          "skill_id": "communication",
+          "label": "Communication",
+          "proficiency": 0.7,
+          "confidence": 0.8,
+          "evidence_refs": [
+            "ev-b22"
+          ],
+          "recency": null,
+          "task_relevance": null,
+          "role_relevance": null,
+          "source": "test",
+          "source_mode": "SYNTHETIC",
+          "inference_status": "EXPLICIT",
+          "verification_status": "SUPPORTED",
+          "recency_status": "RECENT",
+          "raw_confidence": null,
+          "system_confidence": 0.8,
+          "rationale": null
+        }
+      ],
+      "expected": {
+        "allowed_diagnosis": [
+          "INSUFFICIENT_EVIDENCE",
+          "NOT_CURRENTLY_READY",
+          "MATCH_WITH_GAPS"
+        ],
+        "negative_outcome": true
+      },
+      "source_mode": "SYNTHETIC",
+      "job_capabilities": [
+        {
+          "created_at": "2026-08-27T22:07:17.013881",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013900",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013908",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-power_bi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013915",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.5,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013921",
+          "updated_at": null,
+          "id": "jcap-data-analyst-junior-data_analysis",
+          "job_id": "data-analyst-junior",
+          "skill_id": "data_analysis",
+          "label": "Data Analysis",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": null,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "job_tasks": [
+        {
+          "created_at": "2026-08-27T22:07:17.013930",
+          "updated_at": null,
+          "id": "task-sql",
+          "job_id": "data-analyst-junior",
+          "text": "SQL extracts",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013950",
+          "updated_at": null,
+          "id": "task-dash",
+          "job_id": "data-analyst-junior",
+          "text": "Dashboards",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirement_analyses": [
+        {
+          "created_at": "2026-08-27T22:07:17.013969",
+          "updated_at": null,
+          "id": "req-exp",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T22:07:17.013999",
+          "updated_at": null,
+          "id": "req-loc",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore onsite 5 days",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": null,
+          "why_may_be_proxy": null,
+          "linked_task_ids": [],
+          "confidence": 0.5,
+          "source_mode": "SYNTHETIC"
+        }
+      ]
+    }
+  ],
+  "source_mode": "SYNTHETIC"
+}
