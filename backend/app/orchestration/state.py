@@ -19,5 +19,10 @@ class ReworkGraphState(TypedDict, total=False):
     job_capabilities: list[dict[str, Any]]
     role_outcomes: list[dict[str, Any]]
     requirement_analyses: list[dict[str, Any]]
+    capability_assessments: list[dict[str, Any]]
+    capability_gaps: list[dict[str, Any]]
+    requirement_diagnoses: list[dict[str, Any]]
+    counterfactuals: list[dict[str, Any]]
+    diagnosis_summary: dict[str, Any] | None
     audit_events: Annotated[list[dict[str, Any]], add]
     errors: Annotated[list[str], add]

@@ -19,7 +19,7 @@ def test_full_graph_run_populates_state():
     assert state.get("candidate_capabilities")
     assert state.get("job_tasks")
     assert state.get("requirement_analyses")
-    assert len(state.get("audit_events", [])) >= 4
+    assert len(state.get("audit_events", [])) >= 6
 
 
 def test_graph_audit_events_exist():
@@ -29,6 +29,8 @@ def test_graph_audit_events_exist():
     assert "candidate_intelligence" in agents
     assert "load_job" in agents
     assert "job_decomposition" in agents
+    assert "diagnosis" in agents
+    assert "counterfactual_analysis" in agents
 
 
 def test_graph_engine_mode_recorded():
@@ -42,6 +44,14 @@ def test_graph_no_hiring_recommendation_fields():
     )
     assert "recommendation_state" not in response
     assert "decision_card" not in response
+
+
+def test_graph_diagnosis_fields_populated():
+    state = OrchestrationService().execute_demo_run()
+    assert state.get("capability_assessments")
+    assert state.get("requirement_diagnoses")
+    assert state.get("counterfactuals")
+    assert state.get("diagnosis_summary")
 
 
 def test_fallback_without_llm_key():

@@ -1,0 +1,20 @@
+{
+  "scenario": "checkpoint_03_ananya",
+  "candidate_id": "ananya-sharma",
+  "job_id": "data-analyst-junior",
+  "expected_engine_mode": "DEMO_FALLBACK",
+  "expected_matched_skill_ids": ["sql", "excel", "communication"],
+  "expected_genuine_gap_skill_ids": ["power_bi"],
+  "expected_eligibility_proxy_requirement_ids": ["req-da-experience"],
+  "expected_workplace_constraint_requirement_ids": ["req-da-location"],
+  "expected_counterfactual_proxy_requirement_ids": ["req-da-experience"],
+  "expected_overall_states": [
+    "MATCH_WITH_GAPS",
+    "POTENTIALLY_VIABLE",
+    "REQUIRES_HUMAN_REVIEW"
+  ],
+  "career_gap_not_a_skill": true,
+  "no_hiring_recommendation": true,
+  "no_bias_confirmed_classification": true,
+  "human_review_on_proxy": true
+}

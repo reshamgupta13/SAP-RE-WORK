@@ -4,7 +4,7 @@ import uuid
 from typing import Any
 
 from app.domain.enums import EngineMode
-from app.orchestration.graph import build_checkpoint_graph
+from app.orchestration.graph import build_graph
 from app.orchestration.state import ReworkGraphState
 from app.services.run_store import run_store
 
@@ -25,7 +25,7 @@ class OrchestrationService:
             "audit_events": [],
             "errors": [],
         }
-        graph = build_checkpoint_graph()
+        graph = build_graph()
         final_state = graph.invoke(initial)
         if not final_state.get("status"):
             final_state["status"] = "failed" if final_state.get("errors") else "completed"
@@ -57,7 +57,27 @@ class OrchestrationService:
             "job_capabilities": state.get("job_capabilities", []),
             "role_outcomes": state.get("role_outcomes", []),
             "requirement_analyses": state.get("requirement_analyses", []),
+            "capability_assessments": state.get("capability_assessments", []),
+            "capability_gaps": state.get("capability_gaps", []),
+            "requirement_diagnoses": state.get("requirement_diagnoses", []),
+            "counterfactuals": state.get("counterfactuals", []),
+            "diagnosis_summary": state.get("diagnosis_summary"),
             "audit_summary": audit_summary,
             "audit_events": audit_events,
             "errors": state.get("errors", []),
+        }
+
+    def build_diagnosis_response(self, state: ReworkGraphState) -> dict[str, Any]:
+        base = self.build_response(state)
+        return {
+            "run_id": base["run_id"],
+            "status": base["status"],
+            "engine_mode": base["engine_mode"],
+            "diagnosis_summary": base.get("diagnosis_summary"),
+            "capability_assessments": base.get("capability_assessments", []),
+            "capability_gaps": base.get("capability_gaps", []),
+            "requirement_diagnoses": base.get("requirement_diagnoses", []),
+            "counterfactuals": base.get("counterfactuals", []),
+            "audit_summary": base["audit_summary"],
+            "errors": base.get("errors", []),
         }

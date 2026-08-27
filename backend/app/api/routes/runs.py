@@ -35,6 +35,15 @@ class JobDecompositionRequest(BaseModel):
     job_id: str = Field(default="data-analyst-junior")
 
 
+@router.post("/diagnose")
+def run_diagnose(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+    )
+    return _orchestration.build_diagnosis_response(state)
+
+
 @router.post("")
 def create_run(body: DemoRunRequest) -> dict[str, Any]:
     state = _orchestration.execute_demo_run(
