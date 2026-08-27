@@ -10,11 +10,13 @@ from app.adapters.sap import get_sap_provider
 from app.agents.candidate_intelligence import CandidateIntelligenceAgent
 from app.agents.job_decomposition import JobDecompositionAgent
 from app.domain.candidate import CandidateEvidence, CandidateProfile
-from app.domain.enums import AuditStatus, EngineMode, RunMode
+from app.domain.enums import AuditStatus, EngineMode, InterventionType, RunMode
 from app.domain.job import JobProfile
 from app.domain.sap import SAPContext
 from app.services.audit import AuditTimer, new_audit_event
 from app.services.fixture_service import FixtureService
+from app.services.explainability_service import ExplainabilityService
+from app.services.intervention_simulator import InterventionSimulator
 from app.services.orchestration_service import OrchestrationService
 
 router = APIRouter()
@@ -33,6 +35,66 @@ class CandidateIntelligenceRequest(BaseModel):
 
 class JobDecompositionRequest(BaseModel):
     job_id: str = Field(default="data-analyst-junior")
+
+
+class InterventionSimulationRequest(BaseModel):
+    candidate_id: str = "ananya-sharma"
+    opportunity_id: str = "opp-data-analyst"
+    run_id: str | None = None
+    intervention_types: list[str] = Field(default_factory=list)
+
+
+@router.post("/intervention-simulation")
+def run_intervention_simulation(body: InterventionSimulationRequest) -> dict[str, Any]:
+    if body.run_id:
+        state = _orchestration.get_run(body.run_id)
+        if not state:
+            raise HTTPException(status_code=404, detail="Run not found")
+    else:
+        state = _orchestration.execute_demo_run(
+            candidate_id=body.candidate_id,
+            run_mode=RunMode.CONTROL_ROOM_DEMO,
+        )
+
+    simulator = InterventionSimulator()
+    if body.intervention_types:
+        types = [InterventionType(t) for t in body.intervention_types]
+        return simulator.simulate_custom(
+            body.candidate_id,
+            body.opportunity_id,
+            types,
+            state,
+        )
+
+    from app.domain.candidate import CandidateCapability, CandidateEvidence
+
+    caps = [
+        CandidateCapability.model_validate(c)
+        for c in state.get("updated_candidate_capabilities", state.get("candidate_capabilities", []))
+    ]
+    evidence = [CandidateEvidence.model_validate(e) for e in state.get("candidate_evidence", [])]
+    result = simulator.run(
+        candidate_id=body.candidate_id,
+        opportunity_id=body.opportunity_id,
+        candidate_capabilities=caps,
+        candidate_evidence=evidence,
+        requirement_diagnoses=state.get("requirement_diagnoses", []),
+        learning_path=state.get("learning_path"),
+        proof_result=state.get("proof_result"),
+        employer_readiness=state.get("employer_readiness", []),
+        run_id=state.get("run_id"),
+    )
+    return result
+
+
+@router.get("/{run_id}/explainability")
+def get_explainability(run_id: str) -> dict[str, Any]:
+    state = _orchestration.get_run(run_id)
+    if not state:
+        raise HTTPException(status_code=404, detail="Run not found")
+    if state.get("explainability"):
+        return state["explainability"]
+    return ExplainabilityService().build_reports(state)
 
 
 @router.post("/diagnose")

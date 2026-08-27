@@ -1,0 +1,17 @@
+{
+  "scenario": "checkpoint_06_ananya",
+  "candidate_id": "ananya-sharma",
+  "job_id": "data-analyst-junior",
+  "run_mode": "CONTROL_ROOM_DEMO",
+  "expected_engine_mode": "DEMO_FALLBACK",
+  "expected_sap_simulated": true,
+  "expected_intervention_simulation": true,
+  "expected_explainability": true,
+  "expected_minimum_effective_intervention": true,
+  "expected_simulated_projection_label": "SIMULATED PROJECTION",
+  "expected_pipeline_stages_min": 10,
+  "expected_data_analyst_baseline_viability": "VIABLE_WITH_TARGETED_PATHWAY",
+  "expected_human_review_actions": ["APPROVE", "MODIFY", "REJECT", "REQUEST_MORE_EVIDENCE"],
+  "no_hiring_recommendation": true,
+  "no_live_sap_claim": true
+}

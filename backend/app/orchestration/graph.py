@@ -21,6 +21,8 @@ from app.services.diagnosis_service import DiagnosisService
 from app.services.fixture_service import FixtureService
 from app.services.pathway_engine import PathwayEngine
 from app.services.proof_of_skill_engine import ProofOfSkillEngine
+from app.services.explainability_service import ExplainabilityService
+from app.services.intervention_simulator import InterventionSimulator
 from app.services.opportunity_analysis_service import OpportunityAnalysisService
 
 
@@ -36,6 +38,8 @@ def build_graph() -> Any:
     proof_engine = ProofOfSkillEngine()
     capability_update_service = CapabilityUpdateService()
     opportunity_analysis_service = OpportunityAnalysisService()
+    intervention_simulator = InterventionSimulator()
+    explainability_service = ExplainabilityService()
 
     def load_candidate(state: ReworkGraphState) -> dict[str, Any]:
         timer = AuditTimer()
@@ -355,7 +359,11 @@ def build_graph() -> Any:
         if state.get("errors"):
             return {}
         run_mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
-        if run_mode not in {RunMode.EVALUATE_PROOF.value, RunMode.FULL_DEMO_REPLAY.value}:
+        if run_mode not in {
+            RunMode.EVALUATE_PROOF.value,
+            RunMode.FULL_DEMO_REPLAY.value,
+            RunMode.CONTROL_ROOM_DEMO.value,
+        }:
             return {}
 
         timer = AuditTimer()
@@ -375,7 +383,7 @@ def build_graph() -> Any:
             from app.domain.pathway import ProofOfSkillAssessment
 
             assessment = ProofOfSkillAssessment.model_validate(assessment_data)
-            is_demo = run_mode == RunMode.FULL_DEMO_REPLAY.value
+            is_demo = run_mode in {RunMode.FULL_DEMO_REPLAY.value, RunMode.CONTROL_ROOM_DEMO.value}
 
             if is_demo and candidate_id == "ananya-sharma" and skill_id == "power_bi":
                 demo = fixture_service.get_proof_demo_fixture()
@@ -588,7 +596,7 @@ def build_graph() -> Any:
 
     def route_after_reassessment(state: ReworkGraphState) -> str:
         mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
-        if mode == RunMode.FULL_DEMO_REPLAY.value:
+        if mode == RunMode.FULL_DEMO_REPLAY.value or mode == RunMode.CONTROL_ROOM_DEMO.value:
             return "market_intelligence"
         return "end"
 
@@ -717,11 +725,106 @@ def build_graph() -> Any:
         )
         return {"status": "completed", "audit_events": [_audit_dict(event)]}
 
+    def intervention_simulation(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "ananya-sharma")
+        try:
+            caps = [
+                CandidateCapability.model_validate(c)
+                for c in state.get(
+                    "updated_candidate_capabilities",
+                    state.get("candidate_capabilities", []),
+                )
+            ]
+            evidence = [
+                CandidateEvidence.model_validate(e) for e in state.get("candidate_evidence", [])
+            ]
+            result = intervention_simulator.run(
+                candidate_id=candidate_id,
+                opportunity_id="opp-data-analyst",
+                candidate_capabilities=caps,
+                candidate_evidence=evidence,
+                requirement_diagnoses=state.get("requirement_diagnoses", []),
+                learning_path=state.get("learning_path"),
+                proof_result=state.get("proof_result"),
+                employer_readiness=state.get("employer_readiness", []),
+                run_id=run_id,
+                use_baseline_for_demo=True,
+            )
+            event = new_audit_event(
+                agent="intervention_simulation",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=f"Simulated {len(result.get('scenarios', []))} intervention scenarios.",
+                confidence=0.72,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "intervention_simulation": result,
+                "interventions": result.get("interventions", []),
+                "scenarios": result.get("scenarios", []),
+                "minimum_effective_intervention": result.get("minimum_effective_intervention"),
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            event = new_audit_event(
+                agent="intervention_simulation",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def explainability_node(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        try:
+            merged = dict(state)
+            explainability = ExplainabilityService().build_reports(merged)
+            event = new_audit_event(
+                agent="explainability",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale="Structured explainability reports generated.",
+                confidence=0.8,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "status": "completed",
+                "explainability": explainability,
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            event = new_audit_event(
+                agent="explainability",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def route_after_opportunity_comparison(state: ReworkGraphState) -> str:
+        mode = state.get("run_mode", RunMode.ANALYZE_ONLY.value)
+        if mode == RunMode.CONTROL_ROOM_DEMO.value:
+            return "intervention_simulation"
+        return "end"
+
     def route_after_pathway(state: ReworkGraphState) -> str:
         mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
         if mode == RunMode.GENERATE_PATHWAY.value:
             return "end"
-        if mode in {RunMode.EVALUATE_PROOF.value, RunMode.FULL_DEMO_REPLAY.value}:
+        if mode in {RunMode.EVALUATE_PROOF.value, RunMode.FULL_DEMO_REPLAY.value, RunMode.CONTROL_ROOM_DEMO.value}:
             return "proof_of_skill"
         return "end"
 
@@ -740,6 +843,8 @@ def build_graph() -> Any:
     graph.add_node("opportunity_viability", opportunity_viability_node)
     graph.add_node("employer_readiness", employer_readiness_node)
     graph.add_node("opportunity_comparison", opportunity_comparison_node)
+    graph.add_node("intervention_simulation", intervention_simulation)
+    graph.add_node("explainability", explainability_node)
 
     graph.set_entry_point("load_candidate")
     graph.add_edge("load_candidate", "candidate_intelligence")
@@ -767,7 +872,13 @@ def build_graph() -> Any:
     graph.add_edge("market_intelligence", "opportunity_viability")
     graph.add_edge("opportunity_viability", "employer_readiness")
     graph.add_edge("employer_readiness", "opportunity_comparison")
-    graph.add_edge("opportunity_comparison", END)
+    graph.add_conditional_edges(
+        "opportunity_comparison",
+        route_after_opportunity_comparison,
+        {"end": END, "intervention_simulation": "intervention_simulation"},
+    )
+    graph.add_edge("intervention_simulation", "explainability")
+    graph.add_edge("explainability", END)
 
     return graph.compile()
 

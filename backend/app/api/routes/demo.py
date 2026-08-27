@@ -1,11 +1,15 @@
 """Demo fixture endpoints."""
 
+from typing import Any
+
 from fastapi import APIRouter, HTTPException
 
+from app.services.control_room_service import ControlRoomService
 from app.services.fixture_service import FixtureService
 
 router = APIRouter()
 _fixture_service = FixtureService()
+_control_room = ControlRoomService()
 
 
 @router.get("/candidates")
@@ -71,3 +75,13 @@ def list_demo_market_signals() -> dict:
         "note": "Synthetic demo signals — not live labor market statistics.",
         "signals": [s.model_dump(mode="json") for s in signals],
     }
+
+
+@router.get("/control-room")
+def get_control_room() -> dict[str, Any]:
+    return _control_room.build_control_room()
+
+
+@router.get("/scenarios")
+def get_scenarios() -> dict[str, Any]:
+    return _control_room.get_scenarios()

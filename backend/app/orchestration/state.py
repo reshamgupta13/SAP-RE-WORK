@@ -40,5 +40,10 @@ class ReworkGraphState(TypedDict, total=False):
     employer_readiness: list[dict[str, Any]]
     opportunity_comparison: dict[str, Any] | None
     opportunity_counterfactuals: list[dict[str, Any]]
+    interventions: list[dict[str, Any]]
+    scenarios: list[dict[str, Any]]
+    intervention_simulation: dict[str, Any] | None
+    minimum_effective_intervention: dict[str, Any] | None
+    explainability: dict[str, Any] | None
     audit_events: Annotated[list[dict[str, Any]], add]
     errors: Annotated[list[str], add]

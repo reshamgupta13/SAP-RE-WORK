@@ -50,7 +50,12 @@ class HumanReview(IdentifiedModel):
     reviewer_id: str
     reviewer_role: str = "hr"
     override: dict[str, Any] = Field(default_factory=dict)
+    modified_interventions: list[str] = Field(default_factory=list)
+    modified_pathway: str | None = None
     comments: str | None = None
+    review_source: str = "REWORK_UI"
+    source_mode: SourceMode = SourceMode.USER_PROVIDED
+    ai_recommendation_snapshot: dict[str, Any] = Field(default_factory=dict)
 
 
 class Outcome(IdentifiedModel):

@@ -1,0 +1,34 @@
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
+export async function fetchControlRoom() {
+  const res = await fetch(`${API_BASE}/api/demo/control-room`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load control room");
+  return res.json();
+}
+
+export async function fetchScenarios() {
+  const res = await fetch(`${API_BASE}/api/demo/scenarios`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load scenarios");
+  return res.json();
+}
+
+export async function submitReview(payload: {
+  run_id: string;
+  decision_card_id: string;
+  action: string;
+  reviewer_id?: string;
+  reason?: string;
+  modified_interventions?: string[];
+  modified_pathway?: string;
+  comments?: string;
+}) {
+  const res = await fetch(`${API_BASE}/api/reviews`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error("Review submission failed");
+  return res.json();
+}
+
+export const API_URL = API_BASE;
