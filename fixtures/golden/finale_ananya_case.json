@@ -1,0 +1,31 @@
+{
+  "case_id": "case-ananya-finale",
+  "candidate_id": "ananya-sharma",
+  "job_id": "data-analyst-junior",
+  "opportunity_id": "opp-data-analyst",
+  "source_mode": "SYNTHETIC",
+  "candidate": {
+    "id": "ananya-sharma",
+    "name": "Ananya Sharma",
+    "source_mode": "SYNTHETIC"
+  },
+  "job": {
+    "id": "data-analyst-junior",
+    "title": "Junior Data Analyst",
+    "source_mode": "SYNTHETIC"
+  },
+  "expected_genuine_gap": "power_bi",
+  "expected_proxy_theme": "continuous_experience",
+  "expected_pathway_skill": "power_bi",
+  "expected_proof_demo": true,
+  "expected_sap_source_mode": "SIMULATED",
+  "expected_market_source_mode": "SYNTHETIC",
+  "expected_intervention_label": "SIMULATED PROJECTION",
+  "expected_lifecycle_finale": "EXPLANATION_READY",
+  "invariants": {
+    "career_gap_not_capability": true,
+    "no_discrimination_verdict": true,
+    "intervention_does_not_mutate_case": true,
+    "human_decision_not_ai_generated": true
+  }
+}

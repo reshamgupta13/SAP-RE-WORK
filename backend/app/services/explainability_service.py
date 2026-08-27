@@ -23,13 +23,15 @@ class ExplainabilityService:
         return {
             "reports": [r.model_dump(mode="json") for r in reports],
             "reviewable_recommendation": recommendation.model_dump(mode="json"),
-            "evidence_chains": self._build_evidence_chains(state, opportunity_id),
+            "evidence_chains": [
+                n.model_dump(mode="json") for n in self._build_evidence_chains(state, opportunity_id)
+            ],
         }
 
     def build_reviewable_recommendation(self, state: dict[str, Any]) -> ReviewableRecommendation:
         run_id = state.get("run_id", "unknown")
         candidate_id = state.get("candidate_id", "ananya-sharma")
-        viability = self._primary_viability(state)
+        viability = self._primary_viability(state) or {}
         comparison = state.get("opportunity_comparison") or {}
         rec_step = comparison.get("recommended_next_step_opportunity_id")
         opp_title = self._opportunity_title(state, rec_step or viability.get("opportunity_id"))
@@ -137,15 +139,24 @@ class ExplainabilityService:
         confidence = viability.get("confidence", 0.65) if viability else 0.55
         label = to_confidence_label(confidence)
 
+        if viability:
+            why = (
+                f"Viability state {viability.get('viability_state')} based on capability fit "
+                f"{viability.get('dimensions', {}).get('capability_fit')} and employer readiness "
+                f"{viability.get('dimensions', {}).get('employer_readiness')}."
+            )
+        else:
+            diagnosis = state.get("diagnosis_summary") or {}
+            why = (
+                f"Diagnosis state {diagnosis.get('overall_diagnosis_state')} — "
+                f"opportunity viability not yet evaluated."
+            )
+
         return ExplainabilityReport(
             id=f"explain-opp-{opportunity_id}",
             run_id=state.get("run_id"),
             what=f"Why this opportunity: {title}",
-            why=(
-                f"Viability state {viability.get('viability_state')} based on capability fit "
-                f"{viability.get('dimensions', {}).get('capability_fit')} and employer readiness "
-                f"{viability.get('dimensions', {}).get('employer_readiness')}."
-            ),
+            why=why,
             evidence_refs=viability.get("evidence_refs", []) if viability else [],
             evidence_chain=self._build_evidence_chains(state, opportunity_id),
             confidence=confidence,

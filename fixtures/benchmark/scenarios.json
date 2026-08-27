@@ -1,0 +1,27 @@
+{
+  "benchmark_version": "cp7",
+  "scenarios": [
+    {"id": "S01", "type": "career_break", "fixture": "ananya-sharma", "status": "ACTIVE"},
+    {"id": "S02", "type": "career_break", "expected": "capability_gap_blocking", "status": "METADATA_ONLY"},
+    {"id": "S03", "type": "displaced_worker", "status": "METADATA_ONLY"},
+    {"id": "S04", "type": "displaced_worker", "status": "METADATA_ONLY"},
+    {"id": "S05", "type": "rural_candidate", "status": "METADATA_ONLY"},
+    {"id": "S06", "type": "tier2_tier3", "status": "METADATA_ONLY"},
+    {"id": "S07", "type": "accessibility", "status": "METADATA_ONLY"},
+    {"id": "S08", "type": "accessibility", "status": "METADATA_ONLY"},
+    {"id": "S09", "type": "credential_proxy", "status": "METADATA_ONLY"},
+    {"id": "S10", "type": "credential_proxy", "status": "METADATA_ONLY"},
+    {"id": "S11", "type": "experience_proxy", "status": "METADATA_ONLY"},
+    {"id": "S12", "type": "experience_proxy", "status": "METADATA_ONLY"},
+    {"id": "S13", "type": "genuine_skill_gap", "status": "METADATA_ONLY"},
+    {"id": "S14", "type": "mixed", "status": "METADATA_ONLY"},
+    {"id": "S15", "type": "highly_qualified", "status": "METADATA_ONLY"},
+    {"id": "S16", "type": "underqualified", "status": "METADATA_ONLY"},
+    {"id": "S17", "type": "adjacent", "status": "METADATA_ONLY"},
+    {"id": "S18", "type": "internal_mobility", "status": "METADATA_ONLY"},
+    {"id": "S19", "type": "reskilling", "status": "METADATA_ONLY"},
+    {"id": "S20", "type": "location", "status": "METADATA_ONLY"},
+    {"id": "S21", "type": "language", "status": "METADATA_ONLY"},
+    {"id": "S22", "type": "over_inference", "status": "METADATA_ONLY"}
+  ]
+}

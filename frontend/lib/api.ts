@@ -1,7 +1,12 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
-export async function fetchControlRoom() {
-  const res = await fetch(`${API_BASE}/api/demo/control-room`, { cache: "no-store" });
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+
+export async function fetchControlRoom(caseId?: string) {
+  const path = caseId
+    ? `${API_BASE}/api/cases/${caseId}/control-room`
+    : `${API_BASE}/api/demo/control-room`;
+  const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load control room");
   return res.json();
 }

@@ -51,8 +51,7 @@ def test_learning_and_opportunities_simulated():
 
 def test_live_provider_not_connected():
     live = LiveSAPProvider()
-    try:
-        live.get_context()
-        assert False, "Live SAP should not be callable without credentials"
-    except NotImplementedError as exc:
-        assert "not connected" in str(exc).lower()
+    ctx = live.get_context()
+    assert ctx.source_mode == SourceMode.LIVE
+    assert ctx.integration_status == IntegrationStatus.UNAVAILABLE
+    assert ctx.message

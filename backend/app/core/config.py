@@ -15,6 +15,12 @@ class Settings(BaseSettings):
     app_name: str = "RE:WORK API"
     debug: bool = False
     demo_mode: bool = True
+    persistence_mode: str = "memory"  # memory | postgres
+    sap_mode: str = "SIMULATED"  # SIMULATED | LIVE
+    sap_api_url: str | None = None
+    sap_client_id: str | None = None
+    sap_client_secret: str | None = None
+    sap_company_id: str | None = None
     database_url: str = "postgresql+psycopg://rework:rework@localhost:5432/rework"
     fixtures_dir: str = "../fixtures"
     llm_provider: str = "gemini"

@@ -4,12 +4,14 @@ from typing import Any
 
 from fastapi import APIRouter, HTTPException
 
+from app.services.case_service import CaseService
 from app.services.control_room_service import ControlRoomService
 from app.services.fixture_service import FixtureService
 
 router = APIRouter()
 _fixture_service = FixtureService()
 _control_room = ControlRoomService()
+_case_service = CaseService()
 
 
 @router.get("/candidates")
@@ -79,7 +81,7 @@ def list_demo_market_signals() -> dict:
 
 @router.get("/control-room")
 def get_control_room() -> dict[str, Any]:
-    return _control_room.build_control_room()
+    return _case_service.build_control_room_view()
 
 
 @router.get("/scenarios")

@@ -32,10 +32,9 @@ class ControlRoomService:
         self._human_review = HumanReviewService()
 
     def build_control_room(self) -> dict[str, Any]:
-        state = self._orchestration.execute_demo_run(
-            run_mode=RunMode.CONTROL_ROOM_DEMO,
-        )
-        return self._assemble(state)
+        from app.services.case_service import CaseService
+
+        return CaseService().build_control_room_view()
 
     def assemble_from_state(self, state: dict[str, Any]) -> dict[str, Any]:
         return self._assemble(state)

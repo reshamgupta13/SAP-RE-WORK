@@ -1,0 +1,5239 @@
+{
+  "case_id": "case-ananya-finale",
+  "case_version": 2,
+  "lifecycle_state": "EXPLANATION_READY",
+  "run_id": "run-71ec92dfdde6",
+  "invariant_failures": [],
+  "state": {
+    "run_id": "run-71ec92dfdde6",
+    "status": "completed",
+    "engine_mode": "DEMO_FALLBACK",
+    "run_mode": "CONTROL_ROOM_DEMO",
+    "candidate_id": "ananya-sharma",
+    "job_id": "data-analyst-junior",
+    "candidate": {
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null,
+      "id": "ananya-sharma",
+      "display_name": "Ananya Sharma",
+      "age": 28,
+      "location": "Lucknow, Uttar Pradesh",
+      "work_modes": [
+        "hybrid",
+        "remote"
+      ],
+      "languages": [
+        "en",
+        "hi"
+      ],
+      "career_aspiration": "Return to analytics / data analyst roles with flexible work arrangement",
+      "sap_user_id": null,
+      "source": "REWORK",
+      "source_mode": "SYNTHETIC",
+      "is_demo_persona": true,
+      "notes": "Flagship demo persona \u2014 3-year caregiving break. Synthetic demo data."
+    },
+    "job": {
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null,
+      "id": "data-analyst-junior",
+      "title": "Junior Data Analyst",
+      "raw_text": "Junior Data Analyst \u2014 analyze datasets, produce business reports, create dashboards, communicate insights. Requirements: SQL, Excel, data analysis, reporting, Power BI, communication. 3 years continuous recent professional experience. Bangalore office 5 days/week. Premier engineering institute preferred.",
+      "family": "analytics",
+      "level": "junior",
+      "location": "Bangalore",
+      "work_modes": [
+        "onsite"
+      ],
+      "sap_requisition_id": null,
+      "sap_job_role_code": null,
+      "outcomes": [
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "out-da-insights",
+          "job_id": "data-analyst-junior",
+          "text": "Deliver weekly operational insights for business leadership",
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "tasks": [
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "task-da-sql",
+          "job_id": "data-analyst-junior",
+          "text": "Write SQL to extract and join operational datasets",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "sql",
+            "data_analysis"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "task-da-dashboard",
+          "job_id": "data-analyst-junior",
+          "text": "Build recurring dashboards and visual reports",
+          "on_site_likelihood": "low",
+          "importance": "core",
+          "capability_ids": [
+            "power_bi",
+            "reporting"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "task-da-communicate",
+          "job_id": "data-analyst-junior",
+          "text": "Present findings to stakeholders",
+          "on_site_likelihood": "medium",
+          "importance": "core",
+          "capability_ids": [
+            "communication"
+          ],
+          "source_requirement_ids": [],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "requirements": [
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "req-da-experience",
+          "job_id": "data-analyst-junior",
+          "text": "3 years continuous recent professional experience",
+          "requirement_class": "EXPERIENCE_REQUIREMENT",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": "May proxy for practice volume and reliability.",
+          "why_may_be_proxy": "Continuous tenure is not the same as task capability; career breaks do not erase skills.",
+          "linked_task_ids": [],
+          "confidence": 0.7,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "req-da-location",
+          "job_id": "data-analyst-junior",
+          "text": "Bangalore office 5 days/week",
+          "requirement_class": "WORKPLACE_CONDITION",
+          "review_tag": "POTENTIAL_PROXY",
+          "strength": "required",
+          "why_relevant": "May reflect collaboration or equipment needs.",
+          "why_may_be_proxy": "Core analytics tasks may be performable hybrid if access is provided.",
+          "linked_task_ids": [
+            "task-da-sql",
+            "task-da-dashboard"
+          ],
+          "confidence": 0.65,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "req-da-institute",
+          "job_id": "data-analyst-junior",
+          "text": "Premier engineering institute preferred",
+          "requirement_class": "CREDENTIAL_REQUIREMENT",
+          "review_tag": "POTENTIAL_EXCLUSIONARY_FACTOR",
+          "strength": "preferred",
+          "why_relevant": "Screening convenience.",
+          "why_may_be_proxy": "Institution brand is not a task capability.",
+          "linked_task_ids": [],
+          "confidence": 0.8,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "capabilities": [
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "jcap-da-sql",
+          "job_id": "data-analyst-junior",
+          "skill_id": "sql",
+          "label": "SQL",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": "work sample or demonstrated project",
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "jcap-da-excel",
+          "job_id": "data-analyst-junior",
+          "skill_id": "excel",
+          "label": "Excel",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": "work sample",
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "jcap-da-powerbi",
+          "job_id": "data-analyst-junior",
+          "skill_id": "power_bi",
+          "label": "Power BI",
+          "min_proficiency": 0.6,
+          "importance": "core",
+          "evidence_expectation": "dashboard sample",
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "jcap-da-communication",
+          "job_id": "data-analyst-junior",
+          "skill_id": "communication",
+          "label": "Communication",
+          "min_proficiency": 0.55,
+          "importance": "core",
+          "evidence_expectation": "stakeholder case writeup",
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "source": "REWORK",
+      "source_mode": "SYNTHETIC",
+      "is_demo_fixture": true
+    },
+    "sap_context": {
+      "source": "SAP",
+      "source_mode": "SIMULATED",
+      "system_name": "SuccessFactors-compatible demo environment",
+      "integration_status": "AVAILABLE",
+      "last_sync": "2026-08-27T21:56:31.022645Z",
+      "retrieved_entities": [
+        "WorkforceContext",
+        "SkillsContext",
+        "RoleContext",
+        "LearningCatalog",
+        "OpportunityCatalog"
+      ],
+      "capabilities": [
+        {
+          "name": "Workforce context",
+          "status": "AVAILABLE",
+          "source_mode": "SIMULATED",
+          "last_sync": "2026-08-27T21:56:31.022659Z",
+          "entity_count": null
+        },
+        {
+          "name": "Skills context",
+          "status": "AVAILABLE",
+          "source_mode": "SIMULATED",
+          "last_sync": "2026-08-27T21:56:31.022703Z",
+          "entity_count": null
+        },
+        {
+          "name": "Role context",
+          "status": "AVAILABLE",
+          "source_mode": "SIMULATED",
+          "last_sync": "2026-08-27T21:56:31.022710Z",
+          "entity_count": null
+        },
+        {
+          "name": "Learning catalog",
+          "status": "AVAILABLE",
+          "source_mode": "SIMULATED",
+          "last_sync": "2026-08-27T21:56:31.022715Z",
+          "entity_count": null
+        },
+        {
+          "name": "Opportunity catalog",
+          "status": "AVAILABLE",
+          "source_mode": "SIMULATED",
+          "last_sync": "2026-08-27T21:56:31.022722Z",
+          "entity_count": null
+        }
+      ],
+      "message": "Simulated SAP context \u2014 not a live tenant connection."
+    },
+    "candidate_evidence": [
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "ev-ananya-resume",
+        "candidate_id": "ananya-sharma",
+        "type": "RESUME",
+        "title": "Resume summary",
+        "description": "Business Analyst / MIS professional with SQL, Excel, stakeholder reporting before caregiving break.",
+        "source": "candidate_upload",
+        "source_mode": "USER_PROVIDED",
+        "occurred_on": "2023-03-15",
+        "relevance": 0.85,
+        "content_reference": "resume_text_v1",
+        "verification_status": "UNVERIFIED",
+        "confidence": 0.72
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "ev-ananya-project-mis",
+        "candidate_id": "ananya-sharma",
+        "type": "PROJECT",
+        "title": "Operations MIS reporting pack",
+        "description": "Built recurring SQL extracts and Excel models for shared-services ops leadership.",
+        "source": "portfolio",
+        "source_mode": "USER_PROVIDED",
+        "occurred_on": "2023-02-01",
+        "relevance": 0.9,
+        "content_reference": "project_mis_ops",
+        "verification_status": "VERIFIED",
+        "confidence": 0.88
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "ev-ananya-work-history",
+        "candidate_id": "ananya-sharma",
+        "type": "WORK_HISTORY",
+        "title": "Business Analyst \u2014 Shared Services",
+        "description": "Requirements gathering, SQL reporting, stakeholder communication until March 2023.",
+        "source": "resume",
+        "source_mode": "USER_PROVIDED",
+        "occurred_on": "2023-03-01",
+        "relevance": 0.87,
+        "content_reference": "work_history_ba",
+        "verification_status": "UNVERIFIED",
+        "confidence": 0.8
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "ev-ananya-self-powerbi",
+        "candidate_id": "ananya-sharma",
+        "type": "SELF_REPORTED",
+        "title": "Power BI familiarity",
+        "description": "Candidate states basic Power BI exposure from a short internal workshop.",
+        "source": "self_report",
+        "source_mode": "USER_PROVIDED",
+        "occurred_on": "2026-06-01",
+        "relevance": 0.4,
+        "content_reference": "self_report_powerbi",
+        "verification_status": "SELF_REPORTED",
+        "confidence": 0.35
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.032798",
+        "updated_at": null,
+        "id": "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+        "candidate_id": "ananya-sharma",
+        "type": "ASSESSMENT",
+        "title": "Proof-of-skill: power bi",
+        "description": "Structured proof-of-skill assessment passed (score 0.80). DEMO synthetic proof.",
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "occurred_on": null,
+        "relevance": 0.5,
+        "content_reference": null,
+        "verification_status": "VERIFIED",
+        "confidence": 0.8
+      }
+    ],
+    "candidate_capabilities": [
+      {
+        "created_at": "2026-08-27T21:56:31.025359",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-sql",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "sql",
+        "label": "SQL",
+        "proficiency": 0.62,
+        "confidence": 0.84,
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "EXPLICIT",
+        "verification_status": "VERIFIED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.74,
+        "system_confidence": 0.84,
+        "rationale": "Detected SQL from demo fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025452",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-excel",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "excel",
+        "label": "Excel",
+        "proficiency": 0.7,
+        "confidence": 0.85,
+        "evidence_refs": [
+          "ev-ananya-project-mis"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "EXPLICIT",
+        "verification_status": "VERIFIED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.78,
+        "system_confidence": 0.85,
+        "rationale": "Detected Excel from demo fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025473",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-communication",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "communication",
+        "label": "Stakeholder communication",
+        "proficiency": 0.68,
+        "confidence": 0.78,
+        "evidence_refs": [
+          "ev-ananya-work-history"
+        ],
+        "recency": "2023-03-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "EXPLICIT",
+        "verification_status": "SUPPORTED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.76,
+        "system_confidence": 0.78,
+        "rationale": "Detected Stakeholder communication from demo fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025488",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-power_bi",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "power_bi",
+        "label": "Power BI",
+        "proficiency": 0.6,
+        "confidence": 0.8,
+        "evidence_refs": [
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma"
+        ],
+        "recency": "2026-06-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "VERIFIED",
+        "verification_status": "VERIFIED_BY_ASSESSMENT",
+        "recency_status": "RECENT",
+        "raw_confidence": 0.35,
+        "system_confidence": 0.8,
+        "rationale": "Capability refreshed via successful proof-of-skill assessment."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025501",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-data_analysis",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "data_analysis",
+        "label": "Data Analysis",
+        "proficiency": 0.58,
+        "confidence": 0.77,
+        "evidence_refs": [
+          "ev-ananya-project-mis"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "INFERRED",
+        "verification_status": "SUPPORTED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.65,
+        "system_confidence": 0.77,
+        "rationale": "Inferred data analysis from MIS analytics project evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025513",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-reporting",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "reporting",
+        "label": "Reporting",
+        "proficiency": 0.6,
+        "confidence": 0.79,
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "INFERRED",
+        "verification_status": "SUPPORTED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.7,
+        "system_confidence": 0.79,
+        "rationale": "Inferred reporting from MIS and work history evidence."
+      }
+    ],
+    "job_tasks": [
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "task-da-sql",
+        "job_id": "data-analyst-junior",
+        "text": "Write SQL to extract and join operational datasets",
+        "on_site_likelihood": "low",
+        "importance": "core",
+        "capability_ids": [
+          "sql",
+          "data_analysis"
+        ],
+        "source_requirement_ids": [],
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "task-da-dashboard",
+        "job_id": "data-analyst-junior",
+        "text": "Build recurring dashboards and visual reports",
+        "on_site_likelihood": "low",
+        "importance": "core",
+        "capability_ids": [
+          "power_bi",
+          "reporting"
+        ],
+        "source_requirement_ids": [],
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "task-da-communicate",
+        "job_id": "data-analyst-junior",
+        "text": "Present findings to stakeholders",
+        "on_site_likelihood": "medium",
+        "importance": "core",
+        "capability_ids": [
+          "communication"
+        ],
+        "source_requirement_ids": [],
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "job_capabilities": [
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "jcap-da-sql",
+        "job_id": "data-analyst-junior",
+        "skill_id": "sql",
+        "label": "SQL",
+        "min_proficiency": 0.6,
+        "importance": "core",
+        "evidence_expectation": "work sample or demonstrated project",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "jcap-da-excel",
+        "job_id": "data-analyst-junior",
+        "skill_id": "excel",
+        "label": "Excel",
+        "min_proficiency": 0.55,
+        "importance": "core",
+        "evidence_expectation": "work sample",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "jcap-da-powerbi",
+        "job_id": "data-analyst-junior",
+        "skill_id": "power_bi",
+        "label": "Power BI",
+        "min_proficiency": 0.6,
+        "importance": "core",
+        "evidence_expectation": "dashboard sample",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "jcap-da-communication",
+        "job_id": "data-analyst-junior",
+        "skill_id": "communication",
+        "label": "Communication",
+        "min_proficiency": 0.55,
+        "importance": "core",
+        "evidence_expectation": "stakeholder case writeup",
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "role_outcomes": [
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "out-da-insights",
+        "job_id": "data-analyst-junior",
+        "text": "Deliver weekly operational insights for business leadership",
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "requirement_analyses": [
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "req-da-experience",
+        "job_id": "data-analyst-junior",
+        "text": "3 years continuous recent professional experience",
+        "requirement_class": "EXPERIENCE_REQUIREMENT",
+        "review_tag": "POTENTIAL_PROXY",
+        "strength": "required",
+        "why_relevant": "May proxy for practice volume and reliability.",
+        "why_may_be_proxy": "Continuous tenure is not the same as task capability; career breaks do not erase skills.",
+        "linked_task_ids": [],
+        "confidence": 0.7,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "req-da-location",
+        "job_id": "data-analyst-junior",
+        "text": "Bangalore office 5 days/week",
+        "requirement_class": "WORKPLACE_CONDITION",
+        "review_tag": "POTENTIAL_PROXY",
+        "strength": "required",
+        "why_relevant": "May reflect collaboration or equipment needs.",
+        "why_may_be_proxy": "Core analytics tasks may be performable hybrid if access is provided.",
+        "linked_task_ids": [
+          "task-da-sql",
+          "task-da-dashboard"
+        ],
+        "confidence": 0.65,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026915",
+        "updated_at": null,
+        "id": "req-da-institute",
+        "job_id": "data-analyst-junior",
+        "text": "Premier engineering institute preferred",
+        "requirement_class": "CREDENTIAL_REQUIREMENT",
+        "review_tag": "POTENTIAL_EXCLUSIONARY_FACTOR",
+        "strength": "preferred",
+        "why_relevant": "Screening convenience.",
+        "why_may_be_proxy": "Institution brand is not a task capability.",
+        "linked_task_ids": [],
+        "confidence": 0.8,
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "capability_assessments": [
+      {
+        "created_at": "2026-08-27T21:56:31.033385",
+        "updated_at": null,
+        "id": "cap-assessment-ananya-sharma-data-analyst-junior",
+        "candidate_id": "ananya-sharma",
+        "job_id": "data-analyst-junior",
+        "items": [
+          {
+            "created_at": "2026-08-27T21:56:31.033336",
+            "updated_at": null,
+            "id": "assess-data-analyst-junior-sql",
+            "skill_id": "sql",
+            "label": "SQL",
+            "required_proficiency": 0.6,
+            "candidate_proficiency": 0.62,
+            "evidence_strength": 0.9,
+            "gap": 0.0,
+            "gap_status": "MATCHED",
+            "confidence": 0.87,
+            "evidence_refs": [
+              "ev-ananya-project-mis",
+              "ev-ananya-work-history"
+            ],
+            "candidate_capability_refs": [
+              "cap-ananya-sharma-sql"
+            ],
+            "recency_status": "STALE",
+            "human_review_required": false,
+            "notes": null,
+            "rationale": "SQL meets or exceeds required proficiency (0.62 vs 0.60)."
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.033353",
+            "updated_at": null,
+            "id": "assess-data-analyst-junior-excel",
+            "skill_id": "excel",
+            "label": "Excel",
+            "required_proficiency": 0.55,
+            "candidate_proficiency": 0.7,
+            "evidence_strength": 0.87,
+            "gap": 0.0,
+            "gap_status": "MATCHED",
+            "confidence": 0.86,
+            "evidence_refs": [
+              "ev-ananya-project-mis"
+            ],
+            "candidate_capability_refs": [
+              "cap-ananya-sharma-excel"
+            ],
+            "recency_status": "STALE",
+            "human_review_required": false,
+            "notes": null,
+            "rationale": "Excel meets or exceeds required proficiency (0.70 vs 0.55)."
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.033363",
+            "updated_at": null,
+            "id": "assess-data-analyst-junior-power_bi",
+            "skill_id": "power_bi",
+            "label": "Power BI",
+            "required_proficiency": 0.6,
+            "candidate_proficiency": 0.6,
+            "evidence_strength": 0.84,
+            "gap": 0.0,
+            "gap_status": "MATCHED",
+            "confidence": 0.82,
+            "evidence_refs": [
+              "ev-ananya-self-powerbi",
+              "ev-proof-proof-result-assess-power_bi-ananya-sharma"
+            ],
+            "candidate_capability_refs": [
+              "cap-ananya-sharma-power_bi"
+            ],
+            "recency_status": "RECENT",
+            "human_review_required": false,
+            "notes": null,
+            "rationale": "Power BI meets or exceeds required proficiency (0.60 vs 0.60)."
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.033373",
+            "updated_at": null,
+            "id": "assess-data-analyst-junior-communication",
+            "skill_id": "communication",
+            "label": "Communication",
+            "required_proficiency": 0.55,
+            "candidate_proficiency": 0.68,
+            "evidence_strength": 0.79,
+            "gap": 0.0,
+            "gap_status": "MATCHED",
+            "confidence": 0.79,
+            "evidence_refs": [
+              "ev-ananya-work-history"
+            ],
+            "candidate_capability_refs": [
+              "cap-ananya-sharma-communication"
+            ],
+            "recency_status": "STALE",
+            "human_review_required": false,
+            "notes": null,
+            "rationale": "Communication meets or exceeds required proficiency (0.68 vs 0.55)."
+          }
+        ],
+        "fit_dimensions": null,
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "capability_gaps": [],
+    "requirement_diagnoses": [
+      {
+        "created_at": "2026-08-27T21:56:31.033412",
+        "updated_at": null,
+        "id": "diag-req-da-experience",
+        "run_id": "run-71ec92dfdde6",
+        "requirement_id": "req-da-experience",
+        "requirement": "3 years continuous recent professional experience",
+        "requirement_type": "EXPERIENCE_REQUIREMENT",
+        "diagnosis_type": "ELIGIBILITY_PROXY",
+        "barrier_type": "POTENTIAL_PROXY",
+        "related_task_ids": [],
+        "required_capabilities": [
+          "data_analysis",
+          "reporting",
+          "sql"
+        ],
+        "candidate_capability_refs": [
+          "cap-ananya-sharma-data_analysis",
+          "cap-ananya-sharma-reporting",
+          "cap-ananya-sharma-sql"
+        ],
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "gap": null,
+        "counterfactual_id": "cf-req-da-experience",
+        "confidence": 0.74,
+        "rationale": "Historical or continuous experience requirement may proxy for task capability; relevant capability evidence exists independently of continuity.",
+        "human_review_required": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.033429",
+        "updated_at": null,
+        "id": "diag-req-da-location",
+        "run_id": "run-71ec92dfdde6",
+        "requirement_id": "req-da-location",
+        "requirement": "Bangalore office 5 days/week",
+        "requirement_type": "WORKPLACE_CONDITION",
+        "diagnosis_type": "WORKPLACE_CONSTRAINT",
+        "barrier_type": "WORKPLACE_CONSTRAINT",
+        "related_task_ids": [
+          "task-da-sql",
+          "task-da-dashboard"
+        ],
+        "required_capabilities": [
+          "data_analysis",
+          "power_bi",
+          "reporting",
+          "sql"
+        ],
+        "candidate_capability_refs": [],
+        "evidence_refs": [],
+        "gap": null,
+        "counterfactual_id": "cf-req-da-location",
+        "confidence": 0.65,
+        "rationale": "Workplace condition recorded; evaluate compatibility with candidate preferences and whether core tasks require on-site presence.",
+        "human_review_required": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.033447",
+        "updated_at": null,
+        "id": "diag-req-da-institute",
+        "run_id": "run-71ec92dfdde6",
+        "requirement_id": "req-da-institute",
+        "requirement": "Premier engineering institute preferred",
+        "requirement_type": "CREDENTIAL_REQUIREMENT",
+        "diagnosis_type": "UNKNOWN_REQUIRES_HUMAN_REVIEW",
+        "barrier_type": "POTENTIAL_PROXY",
+        "related_task_ids": [],
+        "required_capabilities": [
+          "sql",
+          "excel",
+          "communication",
+          "power_bi",
+          "data_analysis",
+          "reporting"
+        ],
+        "candidate_capability_refs": [
+          "cap-ananya-sharma-sql",
+          "cap-ananya-sharma-excel",
+          "cap-ananya-sharma-communication",
+          "cap-ananya-sharma-power_bi",
+          "cap-ananya-sharma-data_analysis",
+          "cap-ananya-sharma-reporting"
+        ],
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma"
+        ],
+        "gap": null,
+        "counterfactual_id": "cf-req-da-institute",
+        "confidence": 0.74,
+        "rationale": "Credential requirement requires human review; direct capability evidence may partially substitute but legal necessity is unknown.",
+        "human_review_required": true,
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "counterfactuals": [
+      {
+        "created_at": "2026-08-27T21:56:31.033464",
+        "updated_at": null,
+        "id": "cf-req-da-experience",
+        "run_id": "run-71ec92dfdde6",
+        "requirement_id": "req-da-experience",
+        "requirement_text": "3 years continuous recent professional experience",
+        "related_task_ids": [],
+        "required_capabilities": [
+          "data_analysis",
+          "reporting",
+          "sql"
+        ],
+        "supported_task": null,
+        "required_capability": "data_analysis",
+        "candidate_evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "alternative_validation": "Proof-of-skill assessment plus supervised transition period.",
+        "conclusion": "POTENTIAL_PROXY",
+        "confidence": 0.72,
+        "human_review_required": true,
+        "rationale": "If continuous experience were replaced by direct evidence of analytics capability, candidate has supporting project and work-history evidence.",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.033480",
+        "updated_at": null,
+        "id": "cf-req-da-location",
+        "run_id": "run-71ec92dfdde6",
+        "requirement_id": "req-da-location",
+        "requirement_text": "Bangalore office 5 days/week",
+        "related_task_ids": [
+          "task-da-sql",
+          "task-da-dashboard"
+        ],
+        "required_capabilities": [
+          "data_analysis",
+          "power_bi",
+          "reporting",
+          "sql"
+        ],
+        "supported_task": "Write SQL to extract and join operational datasets",
+        "required_capability": "data_analysis",
+        "candidate_evidence_refs": [],
+        "alternative_validation": "Hybrid or remote-compatible arrangement if policy allows.",
+        "conclusion": "REQUIRES_HUMAN_REVIEW",
+        "confidence": 0.68,
+        "human_review_required": true,
+        "rationale": "Linked core tasks have low on-site likelihood; hybrid or remote arrangement may be viable subject to employer policy.",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.033493",
+        "updated_at": null,
+        "id": "cf-req-da-institute",
+        "run_id": "run-71ec92dfdde6",
+        "requirement_id": "req-da-institute",
+        "requirement_text": "Premier engineering institute preferred",
+        "related_task_ids": [],
+        "required_capabilities": [
+          "sql",
+          "excel",
+          "communication",
+          "power_bi",
+          "data_analysis",
+          "reporting"
+        ],
+        "supported_task": null,
+        "required_capability": "sql",
+        "candidate_evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma"
+        ],
+        "alternative_validation": "Direct capability demonstration plus HR policy review.",
+        "conclusion": "REQUIRES_HUMAN_REVIEW",
+        "confidence": 0.6,
+        "human_review_required": true,
+        "rationale": "Credential may not be the only path; direct capability evidence exists but legal or professional necessity is unknown.",
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "diagnosis_summary": {
+      "matched_count": 4,
+      "capability_gap_count": 0,
+      "insufficient_evidence_count": 0,
+      "eligibility_proxy_count": 1,
+      "workplace_constraint_count": 1,
+      "unknown_count": 1,
+      "overall_diagnosis_state": "POTENTIALLY_VIABLE",
+      "capability_fit": 1.0,
+      "evidence_strength": 0.85,
+      "diagnosis_confidence": 0.87
+    },
+    "learning_path": {
+      "created_at": "2026-08-27T21:56:31.030396",
+      "updated_at": null,
+      "id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+      "target_role_id": "data-analyst-junior",
+      "candidate_id": "ananya-sharma",
+      "created_from_run_id": "run-71ec92dfdde6",
+      "status": "COMPLETED",
+      "current_state": "Power BI proficiency 0.22",
+      "target_state": "Power BI proficiency 0.60",
+      "target_capabilities": [
+        "power_bi"
+      ],
+      "gap_skill_ids": [
+        "power_bi"
+      ],
+      "milestones": [
+        {
+          "created_at": "2026-08-27T21:56:31.030308",
+          "updated_at": null,
+          "id": "milestone-power_bi-1",
+          "sequence": 1,
+          "objective": "Power BI foundations",
+          "capability": "power_bi",
+          "starting_level": 0.22,
+          "target_level": 0.41,
+          "learning_item_ids": [
+            "learn-powerbi-fundamentals"
+          ],
+          "practice_task": null,
+          "proof_requirement": null,
+          "completion_criteria": "Complete guided labs on data import and basic visuals.",
+          "status": "PENDING"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.030339",
+          "updated_at": null,
+          "id": "milestone-power_bi-2",
+          "sequence": 2,
+          "objective": "Power BI dashboard construction",
+          "capability": "power_bi",
+          "starting_level": 0.41,
+          "target_level": 0.6,
+          "learning_item_ids": [
+            "learn-powerbi-modeling"
+          ],
+          "practice_task": "Build a recurring Power BI dashboard for operational leadership KPIs.",
+          "proof_requirement": null,
+          "completion_criteria": "Dashboard includes trends, rankings, and declining segments.",
+          "status": "PENDING"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.030348",
+          "updated_at": null,
+          "id": "milestone-power_bi-3",
+          "sequence": 3,
+          "objective": "Business analytics project",
+          "capability": "power_bi",
+          "starting_level": 0.41,
+          "target_level": 0.6,
+          "learning_item_ids": [
+            "learn-powerbi-dashboard"
+          ],
+          "practice_task": "Complete role-specific analytics exercise using provided sales dataset.",
+          "proof_requirement": null,
+          "completion_criteria": "Project demonstrates analytical reasoning and stakeholder-ready output.",
+          "status": "PENDING"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.030356",
+          "updated_at": null,
+          "id": "milestone-power_bi-4",
+          "sequence": 4,
+          "objective": "Proof-of-skill assessment",
+          "capability": "power_bi",
+          "starting_level": 0.22,
+          "target_level": 0.6,
+          "learning_item_ids": [],
+          "practice_task": null,
+          "proof_requirement": "assess-power_bi",
+          "completion_criteria": "Pass structured proof-of-skill rubric.",
+          "status": "PENDING"
+        }
+      ],
+      "learning_item_ids": [
+        "learn-powerbi-fundamentals",
+        "learn-powerbi-modeling",
+        "learn-powerbi-dashboard"
+      ],
+      "learning_items": [
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "learn-powerbi-fundamentals",
+          "title": "Power BI fundamentals",
+          "description": "Core Power BI concepts: data import, basic transformations, and report building.",
+          "capability": "power_bi",
+          "difficulty": "beginner",
+          "hours": 8.0,
+          "estimated_duration": 8.0,
+          "sap_learning_item_id": "SAP-LRN-PBI-101",
+          "source": "SAP",
+          "source_mode": "SIMULATED",
+          "skill_alignment": [
+            "power_bi",
+            "reporting"
+          ],
+          "completion_criteria": "Complete guided labs on data import and basic visuals."
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "learn-powerbi-modeling",
+          "title": "Power BI data modeling",
+          "description": "Relationships, DAX basics, and model optimization for analytics dashboards.",
+          "capability": "power_bi",
+          "difficulty": "intermediate",
+          "hours": 6.0,
+          "estimated_duration": 6.0,
+          "sap_learning_item_id": "SAP-LRN-PBI-201",
+          "source": "SAP",
+          "source_mode": "SIMULATED",
+          "skill_alignment": [
+            "power_bi",
+            "data_analysis"
+          ],
+          "completion_criteria": "Build a star-schema model with calculated measures."
+        },
+        {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "learn-powerbi-dashboard",
+          "title": "Dashboard design for business analytics",
+          "description": "Role-specific dashboard construction with KPIs and stakeholder views.",
+          "capability": "power_bi",
+          "difficulty": "intermediate",
+          "hours": 5.0,
+          "estimated_duration": 5.0,
+          "sap_learning_item_id": "SAP-LRN-PBI-301",
+          "source": "SAP",
+          "source_mode": "SIMULATED",
+          "skill_alignment": [
+            "power_bi",
+            "reporting",
+            "data_analysis"
+          ],
+          "completion_criteria": "Deliver a multi-page dashboard with drill-down visuals."
+        }
+      ],
+      "practical_tasks": [
+        "Build a recurring Power BI dashboard for operational leadership KPIs.",
+        "Complete role-specific analytics exercise using provided sales dataset."
+      ],
+      "proof_of_skill_id": "assess-power_bi-ananya-sharma",
+      "duration_weeks": 2.4,
+      "estimated_duration_hours": 19.0,
+      "expected_readiness": "ready_with_proof",
+      "confidence": 0.78,
+      "why": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst.",
+      "what": "Build Power BI capability through targeted learning and a role-specific dashboard project.",
+      "how": "Complete milestones, practice task, and defined proof-of-skill assessment.",
+      "success_criteria": "Demonstrate data preparation, dashboard construction, business insight, and communication in the proof task.",
+      "is_demo": false,
+      "source_mode": "SYNTHETIC"
+    },
+    "proof_assessment": {
+      "created_at": "2026-08-27T21:56:31.030471",
+      "updated_at": null,
+      "id": "assess-power_bi-ananya-sharma",
+      "skill_id": "power_bi",
+      "task_key": "power_bi_sales_dashboard",
+      "task_description": "Using the provided sales dataset, create a Power BI dashboard that identifies monthly revenue trends, top-performing regions, and the largest declining segment. Explain your analytical approach and key findings.",
+      "rubric_json": {
+        "criteria": [
+          {
+            "created_at": "2026-08-27T21:56:30.902806",
+            "updated_at": null,
+            "id": "rubric-pbi-prep",
+            "criterion": "Data Preparation",
+            "weight": 0.25,
+            "description": "Import, clean, and model source data appropriately."
+          },
+          {
+            "created_at": "2026-08-27T21:56:30.902986",
+            "updated_at": null,
+            "id": "rubric-pbi-dash",
+            "criterion": "Dashboard Construction",
+            "weight": 0.25,
+            "description": "Build coherent dashboard layout with relevant visuals."
+          },
+          {
+            "created_at": "2026-08-27T21:56:30.902990",
+            "updated_at": null,
+            "id": "rubric-pbi-viz",
+            "criterion": "Visualization Quality",
+            "weight": 0.2,
+            "description": "Charts are accurate, readable, and appropriately formatted."
+          },
+          {
+            "created_at": "2026-08-27T21:56:30.902993",
+            "updated_at": null,
+            "id": "rubric-pbi-insight",
+            "criterion": "Business Insight",
+            "weight": 0.2,
+            "description": "Identifies trends, top performers, and declining segments."
+          },
+          {
+            "created_at": "2026-08-27T21:56:30.902996",
+            "updated_at": null,
+            "id": "rubric-pbi-comm",
+            "criterion": "Communication",
+            "weight": 0.1,
+            "description": "Findings are explained clearly for business stakeholders."
+          }
+        ],
+        "pass_threshold": 0.7
+      },
+      "rubric_criteria": [
+        {
+          "created_at": "2026-08-27T21:56:30.902806",
+          "updated_at": null,
+          "id": "rubric-pbi-prep",
+          "criterion": "Data Preparation",
+          "weight": 0.25,
+          "description": "Import, clean, and model source data appropriately."
+        },
+        {
+          "created_at": "2026-08-27T21:56:30.902986",
+          "updated_at": null,
+          "id": "rubric-pbi-dash",
+          "criterion": "Dashboard Construction",
+          "weight": 0.25,
+          "description": "Build coherent dashboard layout with relevant visuals."
+        },
+        {
+          "created_at": "2026-08-27T21:56:30.902990",
+          "updated_at": null,
+          "id": "rubric-pbi-viz",
+          "criterion": "Visualization Quality",
+          "weight": 0.2,
+          "description": "Charts are accurate, readable, and appropriately formatted."
+        },
+        {
+          "created_at": "2026-08-27T21:56:30.902993",
+          "updated_at": null,
+          "id": "rubric-pbi-insight",
+          "criterion": "Business Insight",
+          "weight": 0.2,
+          "description": "Identifies trends, top performers, and declining segments."
+        },
+        {
+          "created_at": "2026-08-27T21:56:30.902996",
+          "updated_at": null,
+          "id": "rubric-pbi-comm",
+          "criterion": "Communication",
+          "weight": 0.1,
+          "description": "Findings are explained clearly for business stakeholders."
+        }
+      ],
+      "version": "1.0",
+      "source_mode": "SYNTHETIC",
+      "is_demo": false
+    },
+    "proof_submission": {
+      "created_at": "2026-08-27T21:56:31.032000",
+      "updated_at": null,
+      "id": "submission-assess-power_bi-ananya-sharma",
+      "assessment_id": "assess-power_bi-ananya-sharma",
+      "candidate_id": "ananya-sharma",
+      "skill_id": "power_bi",
+      "responses": {
+        "data_preparation": 0.85,
+        "dashboard_construction": 0.8,
+        "visualization_quality": 0.75,
+        "business_insight": 0.82,
+        "communication": 0.78
+      },
+      "artifact_metadata": {
+        "type": "synthetic_dashboard_result",
+        "dataset": "sales_demo_v1",
+        "note": "DEMO synthetic proof \u2014 not a real candidate submission"
+      },
+      "source_mode": "SYNTHETIC",
+      "is_demo": true
+    },
+    "proof_result": {
+      "created_at": "2026-08-27T21:56:31.032095",
+      "updated_at": null,
+      "id": "proof-result-assess-power_bi-ananya-sharma",
+      "assessment_id": "assess-power_bi-ananya-sharma",
+      "candidate_id": "ananya-sharma",
+      "skill_id": "power_bi",
+      "scores_json": {
+        "data_preparation": 0.85,
+        "dashboard_construction": 0.8,
+        "visualization_quality": 0.75,
+        "business_insight": 0.82,
+        "communication": 0.78
+      },
+      "criterion_results": [
+        {
+          "created_at": "2026-08-27T21:56:31.032036",
+          "updated_at": null,
+          "id": "result-rubric-pbi-prep",
+          "criterion": "Data Preparation",
+          "weight": 0.25,
+          "score": 0.85,
+          "evidence": "Rubric response score: 0.85",
+          "feedback": "Strong demonstration of Data Preparation."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032052",
+          "updated_at": null,
+          "id": "result-rubric-pbi-dash",
+          "criterion": "Dashboard Construction",
+          "weight": 0.25,
+          "score": 0.8,
+          "evidence": "Rubric response score: 0.80",
+          "feedback": "Strong demonstration of Dashboard Construction."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032059",
+          "updated_at": null,
+          "id": "result-rubric-pbi-viz",
+          "criterion": "Visualization Quality",
+          "weight": 0.2,
+          "score": 0.75,
+          "evidence": "Rubric response score: 0.75",
+          "feedback": "Adequate Visualization Quality; minor improvements possible."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032072",
+          "updated_at": null,
+          "id": "result-rubric-pbi-insight",
+          "criterion": "Business Insight",
+          "weight": 0.2,
+          "score": 0.82,
+          "evidence": "Rubric response score: 0.82",
+          "feedback": "Strong demonstration of Business Insight."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032077",
+          "updated_at": null,
+          "id": "result-rubric-pbi-comm",
+          "criterion": "Communication",
+          "weight": 0.1,
+          "score": 0.78,
+          "evidence": "Rubric response score: 0.78",
+          "feedback": "Adequate Communication; minor improvements possible."
+        }
+      ],
+      "total": 0.8,
+      "result": "PASSED",
+      "evaluator": "deterministic_rubric",
+      "human_override": false,
+      "source_mode": "SYNTHETIC",
+      "is_demo": true
+    },
+    "proof_evidence": {
+      "created_at": "2026-08-27T21:56:31.032113",
+      "updated_at": null,
+      "id": "proof-evidence-assess-power_bi-ananya-sharma",
+      "assessment_id": "assess-power_bi-ananya-sharma",
+      "candidate_id": "ananya-sharma",
+      "capability": "power_bi",
+      "criterion_results": [
+        {
+          "created_at": "2026-08-27T21:56:31.032036",
+          "updated_at": null,
+          "id": "result-rubric-pbi-prep",
+          "criterion": "Data Preparation",
+          "weight": 0.25,
+          "score": 0.85,
+          "evidence": "Rubric response score: 0.85",
+          "feedback": "Strong demonstration of Data Preparation."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032052",
+          "updated_at": null,
+          "id": "result-rubric-pbi-dash",
+          "criterion": "Dashboard Construction",
+          "weight": 0.25,
+          "score": 0.8,
+          "evidence": "Rubric response score: 0.80",
+          "feedback": "Strong demonstration of Dashboard Construction."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032059",
+          "updated_at": null,
+          "id": "result-rubric-pbi-viz",
+          "criterion": "Visualization Quality",
+          "weight": 0.2,
+          "score": 0.75,
+          "evidence": "Rubric response score: 0.75",
+          "feedback": "Adequate Visualization Quality; minor improvements possible."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032072",
+          "updated_at": null,
+          "id": "result-rubric-pbi-insight",
+          "criterion": "Business Insight",
+          "weight": 0.2,
+          "score": 0.82,
+          "evidence": "Rubric response score: 0.82",
+          "feedback": "Strong demonstration of Business Insight."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.032077",
+          "updated_at": null,
+          "id": "result-rubric-pbi-comm",
+          "criterion": "Communication",
+          "weight": 0.1,
+          "score": 0.78,
+          "evidence": "Rubric response score: 0.78",
+          "feedback": "Adequate Communication; minor improvements possible."
+        }
+      ],
+      "overall_result": "PASSED",
+      "evidence_refs": [
+        "proof-result-assess-power_bi-ananya-sharma"
+      ],
+      "confidence": 0.8,
+      "verification_status": "VERIFIED_BY_ASSESSMENT",
+      "timestamp": "2026-08-27T21:56:31.032107Z",
+      "source_mode": "SYNTHETIC",
+      "is_demo": true
+    },
+    "capability_update_events": [
+      {
+        "created_at": "2026-08-27T21:56:31.032825",
+        "updated_at": null,
+        "id": "cap-update-proof-result-assess-power_bi-ananya-sharma",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "power_bi",
+        "old_level": 0.22,
+        "new_level": 0.6,
+        "evidence_ref": "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+        "reason": "Successful proof-of-skill assessment demonstrated capability.",
+        "confidence": 0.8,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "run_id": "run-71ec92dfdde6"
+      }
+    ],
+    "updated_candidate_capabilities": [
+      {
+        "created_at": "2026-08-27T21:56:31.025359",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-sql",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "sql",
+        "label": "SQL",
+        "proficiency": 0.62,
+        "confidence": 0.84,
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "EXPLICIT",
+        "verification_status": "VERIFIED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.74,
+        "system_confidence": 0.84,
+        "rationale": "Detected SQL from demo fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025452",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-excel",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "excel",
+        "label": "Excel",
+        "proficiency": 0.7,
+        "confidence": 0.85,
+        "evidence_refs": [
+          "ev-ananya-project-mis"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "EXPLICIT",
+        "verification_status": "VERIFIED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.78,
+        "system_confidence": 0.85,
+        "rationale": "Detected Excel from demo fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025473",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-communication",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "communication",
+        "label": "Stakeholder communication",
+        "proficiency": 0.68,
+        "confidence": 0.78,
+        "evidence_refs": [
+          "ev-ananya-work-history"
+        ],
+        "recency": "2023-03-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "EXPLICIT",
+        "verification_status": "SUPPORTED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.76,
+        "system_confidence": 0.78,
+        "rationale": "Detected Stakeholder communication from demo fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025488",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-power_bi",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "power_bi",
+        "label": "Power BI",
+        "proficiency": 0.6,
+        "confidence": 0.8,
+        "evidence_refs": [
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma"
+        ],
+        "recency": "2026-06-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "VERIFIED",
+        "verification_status": "VERIFIED_BY_ASSESSMENT",
+        "recency_status": "RECENT",
+        "raw_confidence": 0.35,
+        "system_confidence": 0.8,
+        "rationale": "Capability refreshed via successful proof-of-skill assessment."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025501",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-data_analysis",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "data_analysis",
+        "label": "Data Analysis",
+        "proficiency": 0.58,
+        "confidence": 0.77,
+        "evidence_refs": [
+          "ev-ananya-project-mis"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "INFERRED",
+        "verification_status": "SUPPORTED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.65,
+        "system_confidence": 0.77,
+        "rationale": "Inferred data analysis from MIS analytics project evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025513",
+        "updated_at": null,
+        "id": "cap-ananya-sharma-reporting",
+        "candidate_id": "ananya-sharma",
+        "skill_id": "reporting",
+        "label": "Reporting",
+        "proficiency": 0.6,
+        "confidence": 0.79,
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "recency": "2023-02-01",
+        "task_relevance": null,
+        "role_relevance": null,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "inference_status": "INFERRED",
+        "verification_status": "SUPPORTED",
+        "recency_status": "STALE",
+        "raw_confidence": 0.7,
+        "system_confidence": 0.79,
+        "rationale": "Inferred reporting from MIS and work history evidence."
+      }
+    ],
+    "reassessment_summary": {
+      "matched_count": 4,
+      "capability_gap_count": 0,
+      "insufficient_evidence_count": 0,
+      "eligibility_proxy_count": 1,
+      "workplace_constraint_count": 1,
+      "unknown_count": 1,
+      "overall_diagnosis_state": "POTENTIALLY_VIABLE",
+      "capability_fit": 1.0,
+      "evidence_strength": 0.85,
+      "diagnosis_confidence": 0.87
+    },
+    "market_signals": [
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "mkt-skill-powerbi-demand",
+        "role_id": null,
+        "skill": "power_bi",
+        "signal_type": "SKILL_DEMAND",
+        "direction": "RISING",
+        "strength": 0.82,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "region": "India",
+        "confidence": 0.75,
+        "timestamp": null,
+        "notes": "Synthetic demo signal \u2014 not live labor market data.",
+        "unlockable_role_ids": [
+          "data-analyst-junior",
+          "bi-analyst",
+          "reporting-analyst"
+        ]
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "mkt-role-data-analyst",
+        "role_id": "data-analyst-junior",
+        "skill": "data_analysis",
+        "signal_type": "ROLE_DEMAND",
+        "direction": "STABLE",
+        "strength": 0.78,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "region": "India",
+        "confidence": 0.72,
+        "timestamp": null,
+        "notes": null,
+        "unlockable_role_ids": [
+          "data-analyst-junior"
+        ]
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "mkt-skill-python-emerging",
+        "role_id": null,
+        "skill": "python",
+        "signal_type": "LEARNING_PRIORITY",
+        "direction": "RISING",
+        "strength": 0.7,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "region": "India",
+        "confidence": 0.65,
+        "timestamp": null,
+        "notes": null,
+        "unlockable_role_ids": [
+          "data-analyst-junior",
+          "bi-analyst"
+        ]
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "mkt-role-ops-analyst",
+        "role_id": "operations-analyst",
+        "skill": "excel",
+        "signal_type": "ROLE_DEMAND",
+        "direction": "STABLE",
+        "strength": 0.74,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "region": "India",
+        "confidence": 0.7,
+        "timestamp": null,
+        "notes": null,
+        "unlockable_role_ids": [
+          "operations-analyst"
+        ]
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "mkt-role-bi-analyst",
+        "role_id": "bi-analyst",
+        "skill": "power_bi",
+        "signal_type": "ROLE_DEMAND",
+        "direction": "RISING",
+        "strength": 0.8,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "region": "India",
+        "confidence": 0.73,
+        "timestamp": null,
+        "notes": null,
+        "unlockable_role_ids": [
+          "bi-analyst",
+          "reporting-analyst"
+        ]
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "mkt-skill-sql-stable",
+        "role_id": null,
+        "skill": "sql",
+        "signal_type": "SKILL_DEMAND",
+        "direction": "STABLE",
+        "strength": 0.85,
+        "source": "REWORK",
+        "source_mode": "SYNTHETIC",
+        "region": "India",
+        "confidence": 0.8,
+        "timestamp": null,
+        "notes": null,
+        "unlockable_role_ids": [
+          "data-analyst-junior",
+          "operations-analyst",
+          "bi-analyst"
+        ]
+      }
+    ],
+    "skill_investments": [
+      {
+        "created_at": "2026-08-27T21:56:31.040254",
+        "updated_at": null,
+        "id": "invest-ananya-sharma-data_modeling",
+        "candidate_id": "ananya-sharma",
+        "investment_skill": "data_modeling",
+        "current_proficiency": 0.2,
+        "target_proficiency": 0.6,
+        "unlockable_roles": [
+          "bi-analyst",
+          "data-analyst-junior",
+          "operations-analyst",
+          "reporting-analyst"
+        ],
+        "additional_opportunities": [],
+        "estimated_effort_weeks": 2.0,
+        "proof_requirement": "assess-data_modeling-ananya-sharma",
+        "market_signal_refs": [],
+        "confidence": 0.5,
+        "rationale": "Data Modeling may expand opportunity set under current catalog assumptions.",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.040168",
+        "updated_at": null,
+        "id": "invest-ananya-sharma-power_bi",
+        "candidate_id": "ananya-sharma",
+        "investment_skill": "power_bi",
+        "current_proficiency": 0.6,
+        "target_proficiency": 0.65,
+        "unlockable_roles": [
+          "bi-analyst",
+          "data-analyst-junior",
+          "reporting-analyst"
+        ],
+        "additional_opportunities": [],
+        "estimated_effort_weeks": 2.0,
+        "proof_requirement": "assess-power_bi-ananya-sharma",
+        "market_signal_refs": [
+          "mkt-skill-powerbi-demand",
+          "mkt-role-bi-analyst"
+        ],
+        "confidence": 0.72,
+        "rationale": "Power Bi investment may unlock roles including bi-analyst, data-analyst-junior, reporting-analyst based on synthetic market signals (demo data).",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.040242",
+        "updated_at": null,
+        "id": "invest-ananya-sharma-python",
+        "candidate_id": "ananya-sharma",
+        "investment_skill": "python",
+        "current_proficiency": 0.2,
+        "target_proficiency": 0.6,
+        "unlockable_roles": [
+          "bi-analyst",
+          "data-analyst-junior"
+        ],
+        "additional_opportunities": [],
+        "estimated_effort_weeks": 2.0,
+        "proof_requirement": "assess-python-ananya-sharma",
+        "market_signal_refs": [
+          "mkt-skill-python-emerging"
+        ],
+        "confidence": 0.72,
+        "rationale": "Python investment may unlock roles including bi-analyst, data-analyst-junior based on synthetic market signals (demo data).",
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "opportunities": [
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "opp-data-analyst",
+        "title": "Junior Data Analyst",
+        "job_id": "data-analyst-junior",
+        "family": "analytics",
+        "location": "Bangalore",
+        "work_modes": [
+          "onsite",
+          "hybrid"
+        ],
+        "capability_skill_ids": [
+          "sql",
+          "excel",
+          "power_bi",
+          "communication",
+          "data_analysis"
+        ],
+        "min_proficiency": {
+          "sql": 0.6,
+          "excel": 0.55,
+          "power_bi": 0.6,
+          "communication": 0.55,
+          "data_analysis": 0.55
+        },
+        "workplace_conditions": [
+          "Bangalore office 5 days/week preferred"
+        ],
+        "experience_requirements": [
+          "3 years continuous recent professional experience"
+        ],
+        "development_options": [
+          "structured onboarding",
+          "mentor pairing",
+          "hybrid flexibility"
+        ],
+        "employer_id": "employer-data-analyst",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "opp-operations-analyst",
+        "title": "Operations Analyst",
+        "job_id": "operations-analyst",
+        "family": "operations",
+        "location": "Lucknow / Hybrid",
+        "work_modes": [
+          "hybrid",
+          "remote"
+        ],
+        "capability_skill_ids": [
+          "sql",
+          "excel",
+          "communication",
+          "reporting"
+        ],
+        "min_proficiency": {
+          "sql": 0.5,
+          "excel": 0.6,
+          "communication": 0.5,
+          "reporting": 0.55
+        },
+        "workplace_conditions": [
+          "Hybrid or remote compatible"
+        ],
+        "experience_requirements": [
+          "2 years relevant experience"
+        ],
+        "development_options": [
+          "phased responsibility",
+          "mentor pairing"
+        ],
+        "employer_id": "employer-operations-analyst",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "opp-bi-analyst",
+        "title": "BI Analyst",
+        "job_id": "bi-analyst",
+        "family": "analytics",
+        "location": "Bangalore",
+        "work_modes": [
+          "onsite",
+          "hybrid"
+        ],
+        "capability_skill_ids": [
+          "sql",
+          "power_bi",
+          "data_analysis",
+          "communication",
+          "data_modeling"
+        ],
+        "min_proficiency": {
+          "sql": 0.65,
+          "power_bi": 0.7,
+          "data_analysis": 0.65,
+          "communication": 0.55,
+          "data_modeling": 0.6
+        },
+        "workplace_conditions": [
+          "Office-based with hybrid option"
+        ],
+        "experience_requirements": [
+          "3+ years analytics or BI experience"
+        ],
+        "development_options": [
+          "learning support",
+          "structured onboarding"
+        ],
+        "employer_id": "employer-bi-analyst",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-28T00:00:00",
+        "updated_at": null,
+        "id": "opp-reporting-analyst",
+        "title": "Reporting Analyst",
+        "job_id": "reporting-analyst",
+        "family": "analytics",
+        "location": "India \u2014 Remote",
+        "work_modes": [
+          "remote",
+          "hybrid"
+        ],
+        "capability_skill_ids": [
+          "excel",
+          "reporting",
+          "communication",
+          "sql"
+        ],
+        "min_proficiency": {
+          "excel": 0.6,
+          "reporting": 0.6,
+          "communication": 0.55,
+          "sql": 0.5
+        },
+        "workplace_conditions": [
+          "Remote-first"
+        ],
+        "experience_requirements": [
+          "2 years reporting experience"
+        ],
+        "development_options": [
+          "flexible work",
+          "learning support"
+        ],
+        "employer_id": "employer-reporting-analyst",
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "opportunity_viability": [
+      {
+        "created_at": "2026-08-27T21:56:31.040807",
+        "updated_at": null,
+        "id": "viability-ananya-sharma-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "target_role_id": "data-analyst-junior",
+        "dimensions": {
+          "capability_fit": 1.0,
+          "evidence_strength": 0.84,
+          "readiness": 0.91,
+          "skill_gap_effort": 0.2,
+          "proof_effort": 0.2,
+          "workplace_compatibility": 0.85,
+          "employer_readiness": 0.9,
+          "market_opportunity": 0.85
+        },
+        "candidate_gaps": [],
+        "candidate_barriers": [
+          "3 years continuous recent professional experience",
+          "Bangalore office 5 days/week"
+        ],
+        "employer_requirements": [
+          "3 years continuous recent professional experience"
+        ],
+        "employer_readiness_id": "employer-readiness-opp-data-analyst",
+        "recommended_interventions": [],
+        "pathway_reference": null,
+        "proof_reference": "proof-result-assess-power_bi-ananya-sharma",
+        "proof_required": false,
+        "viability_state": "IMMEDIATELY_VIABLE",
+        "confidence": 0.91,
+        "rationale": "Junior Data Analyst: viability IMMEDIATELY_VIABLE. Capability fit 1.00, gaps: no critical capability gaps. Employer readiness 0.90, market 0.85.",
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+          "ev-ananya-project-mis",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.041299",
+        "updated_at": null,
+        "id": "viability-ananya-sharma-opp-operations-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-operations-analyst",
+        "target_role_id": "operations-analyst",
+        "dimensions": {
+          "capability_fit": 1.0,
+          "evidence_strength": 0.85,
+          "readiness": 0.92,
+          "skill_gap_effort": 0.17,
+          "proof_effort": 0.3,
+          "workplace_compatibility": 0.85,
+          "employer_readiness": 0.93,
+          "market_opportunity": 0.85
+        },
+        "candidate_gaps": [],
+        "candidate_barriers": [
+          "3 years continuous recent professional experience",
+          "Bangalore office 5 days/week"
+        ],
+        "employer_requirements": [
+          "2 years relevant experience"
+        ],
+        "employer_readiness_id": "employer-readiness-opp-operations-analyst",
+        "recommended_interventions": [],
+        "pathway_reference": null,
+        "proof_reference": null,
+        "proof_required": false,
+        "viability_state": "IMMEDIATELY_VIABLE",
+        "confidence": 0.93,
+        "rationale": "Operations Analyst: viability IMMEDIATELY_VIABLE. Capability fit 1.00, gaps: no critical capability gaps. Employer readiness 0.93, market 0.85.",
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+          "ev-ananya-project-mis",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.041767",
+        "updated_at": null,
+        "id": "viability-ananya-sharma-opp-bi-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-bi-analyst",
+        "target_role_id": "bi-analyst",
+        "dimensions": {
+          "capability_fit": 0.82,
+          "evidence_strength": 0.7,
+          "readiness": 0.62,
+          "skill_gap_effort": 1.0,
+          "proof_effort": 0.7,
+          "workplace_compatibility": 0.85,
+          "employer_readiness": 0.72,
+          "market_opportunity": 0.85
+        },
+        "candidate_gaps": [
+          "sql",
+          "power_bi",
+          "data_analysis"
+        ],
+        "candidate_barriers": [
+          "3 years continuous recent professional experience",
+          "Bangalore office 5 days/week"
+        ],
+        "employer_requirements": [
+          "3+ years analytics or BI experience"
+        ],
+        "employer_readiness_id": "employer-readiness-opp-bi-analyst",
+        "recommended_interventions": [],
+        "pathway_reference": null,
+        "proof_reference": null,
+        "proof_required": true,
+        "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "confidence": 0.67,
+        "rationale": "BI Analyst: viability VIABLE_WITH_TARGETED_PATHWAY. Capability fit 0.82, gaps: sql, power_bi, data_analysis. Employer readiness 0.72, market 0.85.",
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+          "ev-ananya-project-mis",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.042175",
+        "updated_at": null,
+        "id": "viability-ananya-sharma-opp-reporting-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-reporting-analyst",
+        "target_role_id": "reporting-analyst",
+        "dimensions": {
+          "capability_fit": 1.0,
+          "evidence_strength": 0.85,
+          "readiness": 0.89,
+          "skill_gap_effort": 0.33,
+          "proof_effort": 0.3,
+          "workplace_compatibility": 0.85,
+          "employer_readiness": 0.9,
+          "market_opportunity": 0.82
+        },
+        "candidate_gaps": [],
+        "candidate_barriers": [
+          "3 years continuous recent professional experience",
+          "Bangalore office 5 days/week"
+        ],
+        "employer_requirements": [
+          "2 years reporting experience"
+        ],
+        "employer_readiness_id": "employer-readiness-opp-reporting-analyst",
+        "recommended_interventions": [],
+        "pathway_reference": null,
+        "proof_reference": null,
+        "proof_required": false,
+        "viability_state": "IMMEDIATELY_VIABLE",
+        "confidence": 0.9,
+        "rationale": "Reporting Analyst: viability IMMEDIATELY_VIABLE. Capability fit 1.00, gaps: no critical capability gaps. Employer readiness 0.90, market 0.82.",
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+          "ev-ananya-project-mis",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "employer_readiness": [
+      {
+        "created_at": "2026-08-27T21:56:31.040615",
+        "updated_at": null,
+        "id": "employer-readiness-opp-data-analyst",
+        "opportunity_id": "opp-data-analyst",
+        "employer_id": "employer-data-analyst",
+        "overall_state": "READY",
+        "factors": [
+          {
+            "created_at": "2026-08-27T21:56:31.040552",
+            "updated_at": null,
+            "id": "erf-opp-data-analyst-MENTORSHIP_AVAILABLE",
+            "factor": "MENTORSHIP_AVAILABLE",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.85,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-mentor"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.040565",
+            "updated_at": null,
+            "id": "erf-opp-data-analyst-HYBRID_OR_REMOTE",
+            "factor": "HYBRID_OR_REMOTE",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.8,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-hybrid"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.040570",
+            "updated_at": null,
+            "id": "erf-opp-data-analyst-STRUCTURED_ONBOARDING",
+            "factor": "STRUCTURED_ONBOARDING",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.82,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-onboarding"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.040574",
+            "updated_at": null,
+            "id": "erf-opp-data-analyst-PHASED_RESPONSIBILITY",
+            "factor": "PHASED_RESPONSIBILITY",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.78,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-phased"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.040577",
+            "updated_at": null,
+            "id": "erf-opp-data-analyst-LEARNING_SUPPORT",
+            "factor": "LEARNING_SUPPORT",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.8,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-learning"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.040582",
+            "updated_at": null,
+            "id": "erf-opp-data-analyst-ACCESSIBILITY_SUPPORT",
+            "factor": "ACCESSIBILITY_SUPPORT",
+            "status": "UNKNOWN",
+            "source": "REWORK",
+            "confidence": 0.4,
+            "human_review_required": true,
+            "evidence_ref": null
+          }
+        ],
+        "interventions": [
+          {
+            "created_at": "2026-08-27T21:56:31.040601",
+            "updated_at": null,
+            "id": "intervention-erf-opp-data-analyst-ACCESSIBILITY_SUPPORT",
+            "issue": "ACCESSIBILITY_SUPPORT status is unknown.",
+            "recommendation": "Confirm employer policy with HR before assuming support.",
+            "confidence": 0.5,
+            "human_review_required": true
+          }
+        ],
+        "confidence": 0.9,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.041163",
+        "updated_at": null,
+        "id": "employer-readiness-opp-operations-analyst",
+        "opportunity_id": "opp-operations-analyst",
+        "employer_id": "employer-operations-analyst",
+        "overall_state": "READY",
+        "factors": [
+          {
+            "created_at": "2026-08-27T21:56:31.041103",
+            "updated_at": null,
+            "id": "erf-opp-operations-analyst-MENTORSHIP_AVAILABLE",
+            "factor": "MENTORSHIP_AVAILABLE",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.8,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-mentor"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041112",
+            "updated_at": null,
+            "id": "erf-opp-operations-analyst-HYBRID_OR_REMOTE",
+            "factor": "HYBRID_OR_REMOTE",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.9,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-remote"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041117",
+            "updated_at": null,
+            "id": "erf-opp-operations-analyst-STRUCTURED_ONBOARDING",
+            "factor": "STRUCTURED_ONBOARDING",
+            "status": "PARTIALLY_READY",
+            "source": "REWORK",
+            "confidence": 0.65,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-onboarding-lite"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041120",
+            "updated_at": null,
+            "id": "erf-opp-operations-analyst-PHASED_RESPONSIBILITY",
+            "factor": "PHASED_RESPONSIBILITY",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.85,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-phased"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041124",
+            "updated_at": null,
+            "id": "erf-opp-operations-analyst-FLEXIBLE_WORK",
+            "factor": "FLEXIBLE_WORK",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.88,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-flex"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041128",
+            "updated_at": null,
+            "id": "erf-opp-operations-analyst-PROOF_OF_SKILL_ACCEPTANCE",
+            "factor": "PROOF_OF_SKILL_ACCEPTANCE",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.75,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-proof"
+          }
+        ],
+        "interventions": [
+          {
+            "created_at": "2026-08-27T21:56:31.041151",
+            "updated_at": null,
+            "id": "intervention-erf-opp-operations-analyst-STRUCTURED_ONBOARDING",
+            "issue": "STRUCTURED_ONBOARDING is only partially ready.",
+            "recommendation": "Introduce structured onboarding with clear 30/60/90 expectations.",
+            "confidence": 0.65,
+            "human_review_required": true
+          }
+        ],
+        "confidence": 0.93,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.041596",
+        "updated_at": null,
+        "id": "employer-readiness-opp-bi-analyst",
+        "opportunity_id": "opp-bi-analyst",
+        "employer_id": "employer-bi-analyst",
+        "overall_state": "PARTIALLY_READY",
+        "factors": [
+          {
+            "created_at": "2026-08-27T21:56:31.041549",
+            "updated_at": null,
+            "id": "erf-opp-bi-analyst-MENTORSHIP_AVAILABLE",
+            "factor": "MENTORSHIP_AVAILABLE",
+            "status": "PARTIALLY_READY",
+            "source": "REWORK",
+            "confidence": 0.6,
+            "human_review_required": true,
+            "evidence_ref": null
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041558",
+            "updated_at": null,
+            "id": "erf-opp-bi-analyst-HYBRID_OR_REMOTE",
+            "factor": "HYBRID_OR_REMOTE",
+            "status": "PARTIALLY_READY",
+            "source": "REWORK",
+            "confidence": 0.65,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-hybrid-limited"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041562",
+            "updated_at": null,
+            "id": "erf-opp-bi-analyst-STRUCTURED_ONBOARDING",
+            "factor": "STRUCTURED_ONBOARDING",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.75,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-onboarding"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041566",
+            "updated_at": null,
+            "id": "erf-opp-bi-analyst-LEARNING_SUPPORT",
+            "factor": "LEARNING_SUPPORT",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.8,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-learning"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041569",
+            "updated_at": null,
+            "id": "erf-opp-bi-analyst-MANAGER_SUPPORT",
+            "factor": "MANAGER_SUPPORT",
+            "status": "UNKNOWN",
+            "source": "REWORK",
+            "confidence": 0.45,
+            "human_review_required": true,
+            "evidence_ref": null
+          }
+        ],
+        "interventions": [
+          {
+            "created_at": "2026-08-27T21:56:31.041580",
+            "updated_at": null,
+            "id": "intervention-erf-opp-bi-analyst-MENTORSHIP_AVAILABLE",
+            "issue": "MENTORSHIP_AVAILABLE is only partially ready.",
+            "recommendation": "Add a 30-day mentor pairing for returning professionals.",
+            "confidence": 0.65,
+            "human_review_required": true
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041586",
+            "updated_at": null,
+            "id": "intervention-erf-opp-bi-analyst-HYBRID_OR_REMOTE",
+            "issue": "HYBRID_OR_REMOTE is only partially ready.",
+            "recommendation": "Evaluate hybrid or remote arrangement for task-compatible responsibilities.",
+            "confidence": 0.65,
+            "human_review_required": true
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.041589",
+            "updated_at": null,
+            "id": "intervention-erf-opp-bi-analyst-MANAGER_SUPPORT",
+            "issue": "MANAGER_SUPPORT status is unknown.",
+            "recommendation": "Confirm employer policy with HR before assuming support.",
+            "confidence": 0.5,
+            "human_review_required": true
+          }
+        ],
+        "confidence": 0.72,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.042057",
+        "updated_at": null,
+        "id": "employer-readiness-opp-reporting-analyst",
+        "opportunity_id": "opp-reporting-analyst",
+        "employer_id": "employer-reporting-analyst",
+        "overall_state": "READY",
+        "factors": [
+          {
+            "created_at": "2026-08-27T21:56:31.042021",
+            "updated_at": null,
+            "id": "erf-opp-reporting-analyst-HYBRID_OR_REMOTE",
+            "factor": "HYBRID_OR_REMOTE",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.9,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-remote"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.042030",
+            "updated_at": null,
+            "id": "erf-opp-reporting-analyst-FLEXIBLE_WORK",
+            "factor": "FLEXIBLE_WORK",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.85,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-flex"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.042035",
+            "updated_at": null,
+            "id": "erf-opp-reporting-analyst-LEARNING_SUPPORT",
+            "factor": "LEARNING_SUPPORT",
+            "status": "READY",
+            "source": "REWORK",
+            "confidence": 0.7,
+            "human_review_required": false,
+            "evidence_ref": "employer-policy-learning"
+          },
+          {
+            "created_at": "2026-08-27T21:56:31.042039",
+            "updated_at": null,
+            "id": "erf-opp-reporting-analyst-PROOF_OF_SKILL_ACCEPTANCE",
+            "factor": "PROOF_OF_SKILL_ACCEPTANCE",
+            "status": "PARTIALLY_READY",
+            "source": "REWORK",
+            "confidence": 0.6,
+            "human_review_required": true,
+            "evidence_ref": null
+          }
+        ],
+        "interventions": [
+          {
+            "created_at": "2026-08-27T21:56:31.042049",
+            "updated_at": null,
+            "id": "intervention-erf-opp-reporting-analyst-PROOF_OF_SKILL_ACCEPTANCE",
+            "issue": "PROOF_OF_SKILL_ACCEPTANCE is only partially ready.",
+            "recommendation": "Accept proof-of-skill assessments as alternative validation.",
+            "confidence": 0.65,
+            "human_review_required": true
+          }
+        ],
+        "confidence": 0.9,
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "opportunity_comparison": {
+      "created_at": "2026-08-27T21:56:31.042254",
+      "updated_at": null,
+      "id": "opp-comparison-ananya-sharma",
+      "candidate_id": "ananya-sharma",
+      "items": [
+        {
+          "opportunity_id": "opp-bi-analyst",
+          "title": "BI Analyst",
+          "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "capability_fit": 0.82,
+          "pathway_effort_weeks": 12.0,
+          "proof_effort": 0.7,
+          "employer_readiness": 0.72,
+          "market_opportunity": 0.85,
+          "key_barriers": [
+            "sql",
+            "power_bi",
+            "data_analysis",
+            "3 years continuous recent professional experience",
+            "Bangalore office 5 days/week"
+          ],
+          "key_advantages": [
+            "Strong capability fit",
+            "Compatible work mode"
+          ],
+          "next_action": "Complete proof-of-skill before pursuing.",
+          "confidence": 0.67
+        },
+        {
+          "opportunity_id": "opp-reporting-analyst",
+          "title": "Reporting Analyst",
+          "viability_state": "IMMEDIATELY_VIABLE",
+          "capability_fit": 1.0,
+          "pathway_effort_weeks": 4.0,
+          "proof_effort": 0.3,
+          "employer_readiness": 0.9,
+          "market_opportunity": 0.82,
+          "key_barriers": [
+            "3 years continuous recent professional experience",
+            "Bangalore office 5 days/week"
+          ],
+          "key_advantages": [
+            "Strong capability fit",
+            "Employer readiness supportive",
+            "Compatible work mode",
+            "No critical capability gaps"
+          ],
+          "next_action": "Explore application with human review.",
+          "confidence": 0.9
+        },
+        {
+          "opportunity_id": "opp-data-analyst",
+          "title": "Junior Data Analyst",
+          "viability_state": "IMMEDIATELY_VIABLE",
+          "capability_fit": 1.0,
+          "pathway_effort_weeks": 2.4,
+          "proof_effort": 0.2,
+          "employer_readiness": 0.9,
+          "market_opportunity": 0.85,
+          "key_barriers": [
+            "3 years continuous recent professional experience",
+            "Bangalore office 5 days/week"
+          ],
+          "key_advantages": [
+            "Strong capability fit",
+            "Employer readiness supportive",
+            "Compatible work mode",
+            "No critical capability gaps"
+          ],
+          "next_action": "Explore application with human review.",
+          "confidence": 0.91
+        },
+        {
+          "opportunity_id": "opp-operations-analyst",
+          "title": "Operations Analyst",
+          "viability_state": "IMMEDIATELY_VIABLE",
+          "capability_fit": 1.0,
+          "pathway_effort_weeks": 2.0,
+          "proof_effort": 0.3,
+          "employer_readiness": 0.93,
+          "market_opportunity": 0.85,
+          "key_barriers": [
+            "3 years continuous recent professional experience",
+            "Bangalore office 5 days/week"
+          ],
+          "key_advantages": [
+            "Strong capability fit",
+            "Employer readiness supportive",
+            "Compatible work mode",
+            "No critical capability gaps"
+          ],
+          "next_action": "Explore application with human review.",
+          "confidence": 0.93
+        }
+      ],
+      "recommended_next_step_opportunity_id": "opp-operations-analyst",
+      "recommended_next_step_rationale": "Operations Analyst offers the fastest viable transition (fit 1.00, effort ~2.0 weeks).",
+      "medium_term_opportunity_id": "opp-data-analyst",
+      "medium_term_rationale": "Junior Data Analyst aligns strongly with core capabilities with manageable development effort.",
+      "highest_effort_opportunity_id": "opp-bi-analyst",
+      "confidence": 0.85,
+      "source_mode": "SYNTHETIC"
+    },
+    "opportunity_counterfactuals": [
+      {
+        "created_at": "2026-08-27T21:56:31.040830",
+        "updated_at": null,
+        "id": "opp-cf-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "current_viability_state": "IMMEDIATELY_VIABLE",
+        "target_viability_state": "IMMEDIATELY_VIABLE",
+        "required_changes": [],
+        "confidence": 0.91,
+        "human_review_required": true,
+        "rationale": "Counterfactual lists changes that could improve opportunity viability.",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.041320",
+        "updated_at": null,
+        "id": "opp-cf-opp-operations-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-operations-analyst",
+        "current_viability_state": "IMMEDIATELY_VIABLE",
+        "target_viability_state": "IMMEDIATELY_VIABLE",
+        "required_changes": [],
+        "confidence": 0.93,
+        "human_review_required": true,
+        "rationale": "Counterfactual lists changes that could improve opportunity viability.",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.041786",
+        "updated_at": null,
+        "id": "opp-cf-opp-bi-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-bi-analyst",
+        "current_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "target_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "required_changes": [
+          "Close sql capability gap via targeted pathway.",
+          "Close power bi capability gap via targeted pathway.",
+          "Close data analysis capability gap via targeted pathway.",
+          "Complete defined proof-of-skill assessment."
+        ],
+        "confidence": 0.67,
+        "human_review_required": true,
+        "rationale": "Counterfactual lists changes that could improve opportunity viability.",
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.042191",
+        "updated_at": null,
+        "id": "opp-cf-opp-reporting-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-reporting-analyst",
+        "current_viability_state": "IMMEDIATELY_VIABLE",
+        "target_viability_state": "IMMEDIATELY_VIABLE",
+        "required_changes": [],
+        "confidence": 0.9,
+        "human_review_required": true,
+        "rationale": "Counterfactual lists changes that could improve opportunity viability.",
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "interventions": [
+      {
+        "created_at": "2026-08-27T21:56:31.051315",
+        "updated_at": null,
+        "id": "int-learning-power_bi",
+        "type": "LEARNING",
+        "title": "Power Bi learning pathway",
+        "description": "Targeted learning to close power bi capability gap.",
+        "target": "candidate:power_bi",
+        "preconditions": [
+          "Genuine gap identified for power_bi."
+        ],
+        "evidence_refs": [],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 8.0,
+        "expected_effect": "Improve power_bi proficiency toward role threshold.",
+        "confidence": 0.72,
+        "human_review_required": false,
+        "priority": "HIGH_IMPACT_HIGH_EFFORT"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.051350",
+        "updated_at": null,
+        "id": "int-proof-power_bi",
+        "type": "PROOF_OF_SKILL",
+        "title": "Power Bi proof-of-skill",
+        "description": "Structured assessment to verify demonstrated capability.",
+        "target": "candidate:power_bi",
+        "preconditions": [
+          "Learning pathway in progress or completed for power_bi."
+        ],
+        "evidence_refs": [],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 1.0,
+        "expected_effect": "Verify power_bi capability with structured evidence.",
+        "confidence": 0.78,
+        "human_review_required": true,
+        "priority": "HIGH_IMPACT_LOW_EFFORT"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.051364",
+        "updated_at": null,
+        "id": "int-mentorship-opp-data-analyst",
+        "type": "MENTORSHIP",
+        "title": "Assigned mentorship",
+        "description": "Pair candidate with mentor for guided transition support.",
+        "target": "employer:mentorship",
+        "preconditions": [
+          "Employer mentorship capacity available or can be arranged."
+        ],
+        "evidence_refs": [
+          "employer-readiness-opp-data-analyst"
+        ],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 12.0,
+        "expected_effect": "Improve employer readiness and onboarding confidence.",
+        "confidence": 0.65,
+        "human_review_required": true,
+        "priority": "HIGH_IMPACT_HIGH_EFFORT"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.051375",
+        "updated_at": null,
+        "id": "int-hybrid-opp-data-analyst",
+        "type": "HYBRID_WORK",
+        "title": "Hybrid work arrangement",
+        "description": "Enable hybrid work mode for workplace compatibility.",
+        "target": "employer:work_mode",
+        "preconditions": [
+          "Role supports hybrid or remote modes."
+        ],
+        "evidence_refs": [],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 0.5,
+        "expected_effect": "Improve workplace compatibility dimension only.",
+        "confidence": 0.7,
+        "human_review_required": true,
+        "priority": "LOW_IMPACT_LOW_EFFORT"
+      }
+    ],
+    "scenarios": [
+      {
+        "created_at": "2026-08-27T21:56:31.051394",
+        "updated_at": null,
+        "id": "scenario-base-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Current state",
+        "parent_scenario_id": null,
+        "intervention_ids": [],
+        "intervention_types": [],
+        "assumptions": [
+          "Baseline from current assessed state."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": null,
+        "total_effort_weeks": 0.0,
+        "confidence": 0.76,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.055198",
+        "updated_at": null,
+        "id": "scenario-int-learning-power_bi",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Power Bi learning pathway",
+        "parent_scenario_id": "scenario-base-opp-data-analyst",
+        "intervention_ids": [
+          "int-learning-power_bi"
+        ],
+        "intervention_types": [
+          "LEARNING"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.22
+          },
+          "after_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.66,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.47
+          },
+          "affected_dimensions": [
+            "skill_gap_effort"
+          ],
+          "affected_capabilities": [
+            "power_bi"
+          ],
+          "affected_barriers": [],
+          "affected_employer_factors": [],
+          "expected_readiness_change": 0.05,
+          "expected_viability_change": null,
+          "confidence": 0.72,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 8.0,
+        "confidence": 0.72,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.059861",
+        "updated_at": null,
+        "id": "scenario-int-mentorship-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Assigned mentorship",
+        "parent_scenario_id": "scenario-base-opp-data-analyst",
+        "intervention_ids": [
+          "int-mentorship-opp-data-analyst"
+        ],
+        "intervention_types": [
+          "MENTORSHIP"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "after_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "affected_dimensions": [
+            "employer_readiness"
+          ],
+          "affected_capabilities": [],
+          "affected_barriers": [],
+          "affected_employer_factors": [
+            "mentorship"
+          ],
+          "expected_readiness_change": 0.0,
+          "expected_viability_change": null,
+          "confidence": 0.65,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 12.0,
+        "confidence": 0.65,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.062909",
+        "updated_at": null,
+        "id": "scenario-int-hybrid-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Hybrid work arrangement",
+        "parent_scenario_id": "scenario-base-opp-data-analyst",
+        "intervention_ids": [
+          "int-hybrid-opp-data-analyst"
+        ],
+        "intervention_types": [
+          "HYBRID_WORK"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "after_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "affected_dimensions": [
+            "workplace_compatibility"
+          ],
+          "affected_capabilities": [],
+          "affected_barriers": [],
+          "affected_employer_factors": [
+            "work_mode"
+          ],
+          "expected_readiness_change": 0.0,
+          "expected_viability_change": null,
+          "confidence": 0.7,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 0.5,
+        "confidence": 0.7,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.076520",
+        "updated_at": null,
+        "id": "scenario-int-proof-power_bi",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Power Bi proof-of-skill",
+        "parent_scenario_id": "scenario-int-learning-power_bi",
+        "intervention_ids": [
+          "int-proof-power_bi"
+        ],
+        "intervention_types": [
+          "PROOF_OF_SKILL"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "INSUFFICIENT_EVIDENCE",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.55
+          },
+          "after_state": {
+            "viability_state": "INSUFFICIENT_EVIDENCE",
+            "readiness": 0.68,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.6
+          },
+          "affected_dimensions": [
+            "readiness",
+            "proof_effort",
+            "evidence_strength"
+          ],
+          "affected_capabilities": [
+            "power_bi"
+          ],
+          "affected_barriers": [],
+          "affected_employer_factors": [],
+          "expected_readiness_change": 0.07,
+          "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+          "confidence": 0.78,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 1.0,
+        "confidence": 0.78,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "intervention_simulation": {
+      "interventions": [
+        {
+          "created_at": "2026-08-27T21:56:31.051315",
+          "updated_at": null,
+          "id": "int-learning-power_bi",
+          "type": "LEARNING",
+          "title": "Power Bi learning pathway",
+          "description": "Targeted learning to close power bi capability gap.",
+          "target": "candidate:power_bi",
+          "preconditions": [
+            "Genuine gap identified for power_bi."
+          ],
+          "evidence_refs": [],
+          "source_mode": "SYNTHETIC",
+          "estimated_effort_weeks": 8.0,
+          "expected_effect": "Improve power_bi proficiency toward role threshold.",
+          "confidence": 0.72,
+          "human_review_required": false,
+          "priority": "HIGH_IMPACT_HIGH_EFFORT"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.051350",
+          "updated_at": null,
+          "id": "int-proof-power_bi",
+          "type": "PROOF_OF_SKILL",
+          "title": "Power Bi proof-of-skill",
+          "description": "Structured assessment to verify demonstrated capability.",
+          "target": "candidate:power_bi",
+          "preconditions": [
+            "Learning pathway in progress or completed for power_bi."
+          ],
+          "evidence_refs": [],
+          "source_mode": "SYNTHETIC",
+          "estimated_effort_weeks": 1.0,
+          "expected_effect": "Verify power_bi capability with structured evidence.",
+          "confidence": 0.78,
+          "human_review_required": true,
+          "priority": "HIGH_IMPACT_LOW_EFFORT"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.051364",
+          "updated_at": null,
+          "id": "int-mentorship-opp-data-analyst",
+          "type": "MENTORSHIP",
+          "title": "Assigned mentorship",
+          "description": "Pair candidate with mentor for guided transition support.",
+          "target": "employer:mentorship",
+          "preconditions": [
+            "Employer mentorship capacity available or can be arranged."
+          ],
+          "evidence_refs": [
+            "employer-readiness-opp-data-analyst"
+          ],
+          "source_mode": "SYNTHETIC",
+          "estimated_effort_weeks": 12.0,
+          "expected_effect": "Improve employer readiness and onboarding confidence.",
+          "confidence": 0.65,
+          "human_review_required": true,
+          "priority": "HIGH_IMPACT_HIGH_EFFORT"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.051375",
+          "updated_at": null,
+          "id": "int-hybrid-opp-data-analyst",
+          "type": "HYBRID_WORK",
+          "title": "Hybrid work arrangement",
+          "description": "Enable hybrid work mode for workplace compatibility.",
+          "target": "employer:work_mode",
+          "preconditions": [
+            "Role supports hybrid or remote modes."
+          ],
+          "evidence_refs": [],
+          "source_mode": "SYNTHETIC",
+          "estimated_effort_weeks": 0.5,
+          "expected_effect": "Improve workplace compatibility dimension only.",
+          "confidence": 0.7,
+          "human_review_required": true,
+          "priority": "LOW_IMPACT_LOW_EFFORT"
+        }
+      ],
+      "scenarios": [
+        {
+          "created_at": "2026-08-27T21:56:31.051394",
+          "updated_at": null,
+          "id": "scenario-base-opp-data-analyst",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "label": "Current state",
+          "parent_scenario_id": null,
+          "intervention_ids": [],
+          "intervention_types": [],
+          "assumptions": [
+            "Baseline from current assessed state."
+          ],
+          "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "effect": null,
+          "total_effort_weeks": 0.0,
+          "confidence": 0.76,
+          "is_simulated_projection": true,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.055198",
+          "updated_at": null,
+          "id": "scenario-int-learning-power_bi",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "label": "Power Bi learning pathway",
+          "parent_scenario_id": "scenario-base-opp-data-analyst",
+          "intervention_ids": [
+            "int-learning-power_bi"
+          ],
+          "intervention_types": [
+            "LEARNING"
+          ],
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "effect": {
+            "before_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85,
+              "power_bi_proficiency": 0.22
+            },
+            "after_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.66,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85,
+              "power_bi_proficiency": 0.47
+            },
+            "affected_dimensions": [
+              "skill_gap_effort"
+            ],
+            "affected_capabilities": [
+              "power_bi"
+            ],
+            "affected_barriers": [],
+            "affected_employer_factors": [],
+            "expected_readiness_change": 0.05,
+            "expected_viability_change": null,
+            "confidence": 0.72,
+            "assumptions": [
+              "Learning pathway completed as scheduled.",
+              "Proof-of-skill assessment passed at defined threshold.",
+              "Employer maintains stated support posture.",
+              "Role requirements remain unchanged during projection window."
+            ],
+            "is_simulated_projection": true
+          },
+          "total_effort_weeks": 8.0,
+          "confidence": 0.72,
+          "is_simulated_projection": true,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.059861",
+          "updated_at": null,
+          "id": "scenario-int-mentorship-opp-data-analyst",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "label": "Assigned mentorship",
+          "parent_scenario_id": "scenario-base-opp-data-analyst",
+          "intervention_ids": [
+            "int-mentorship-opp-data-analyst"
+          ],
+          "intervention_types": [
+            "MENTORSHIP"
+          ],
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "effect": {
+            "before_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85
+            },
+            "after_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85
+            },
+            "affected_dimensions": [
+              "employer_readiness"
+            ],
+            "affected_capabilities": [],
+            "affected_barriers": [],
+            "affected_employer_factors": [
+              "mentorship"
+            ],
+            "expected_readiness_change": 0.0,
+            "expected_viability_change": null,
+            "confidence": 0.65,
+            "assumptions": [
+              "Learning pathway completed as scheduled.",
+              "Proof-of-skill assessment passed at defined threshold.",
+              "Employer maintains stated support posture.",
+              "Role requirements remain unchanged during projection window."
+            ],
+            "is_simulated_projection": true
+          },
+          "total_effort_weeks": 12.0,
+          "confidence": 0.65,
+          "is_simulated_projection": true,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.062909",
+          "updated_at": null,
+          "id": "scenario-int-hybrid-opp-data-analyst",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "label": "Hybrid work arrangement",
+          "parent_scenario_id": "scenario-base-opp-data-analyst",
+          "intervention_ids": [
+            "int-hybrid-opp-data-analyst"
+          ],
+          "intervention_types": [
+            "HYBRID_WORK"
+          ],
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "effect": {
+            "before_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85
+            },
+            "after_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85
+            },
+            "affected_dimensions": [
+              "workplace_compatibility"
+            ],
+            "affected_capabilities": [],
+            "affected_barriers": [],
+            "affected_employer_factors": [
+              "work_mode"
+            ],
+            "expected_readiness_change": 0.0,
+            "expected_viability_change": null,
+            "confidence": 0.7,
+            "assumptions": [
+              "Learning pathway completed as scheduled.",
+              "Proof-of-skill assessment passed at defined threshold.",
+              "Employer maintains stated support posture.",
+              "Role requirements remain unchanged during projection window."
+            ],
+            "is_simulated_projection": true
+          },
+          "total_effort_weeks": 0.5,
+          "confidence": 0.7,
+          "is_simulated_projection": true,
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.076520",
+          "updated_at": null,
+          "id": "scenario-int-proof-power_bi",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "label": "Power Bi proof-of-skill",
+          "parent_scenario_id": "scenario-int-learning-power_bi",
+          "intervention_ids": [
+            "int-proof-power_bi"
+          ],
+          "intervention_types": [
+            "PROOF_OF_SKILL"
+          ],
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "after_viability_state": "INSUFFICIENT_EVIDENCE",
+          "effect": {
+            "before_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85,
+              "power_bi_proficiency": 0.55
+            },
+            "after_state": {
+              "viability_state": "INSUFFICIENT_EVIDENCE",
+              "readiness": 0.68,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85,
+              "power_bi_proficiency": 0.6
+            },
+            "affected_dimensions": [
+              "readiness",
+              "proof_effort",
+              "evidence_strength"
+            ],
+            "affected_capabilities": [
+              "power_bi"
+            ],
+            "affected_barriers": [],
+            "affected_employer_factors": [],
+            "expected_readiness_change": 0.07,
+            "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+            "confidence": 0.78,
+            "assumptions": [
+              "Learning pathway completed as scheduled.",
+              "Proof-of-skill assessment passed at defined threshold.",
+              "Employer maintains stated support posture.",
+              "Role requirements remain unchanged during projection window."
+            ],
+            "is_simulated_projection": true
+          },
+          "total_effort_weeks": 1.0,
+          "confidence": 0.78,
+          "is_simulated_projection": true,
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "bundles": [
+        {
+          "created_at": "2026-08-27T21:56:31.068470",
+          "updated_at": null,
+          "id": "bundle-a",
+          "label": "Learning only",
+          "scenario_ids": [
+            "scenario-int-learning-power_bi"
+          ],
+          "intervention_ids": [
+            "int-learning-power_bi"
+          ],
+          "total_effort_weeks": 8.0,
+          "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "is_minimum_effective": false,
+          "rationale": "Bundle projection: Learning only."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.076556",
+          "updated_at": null,
+          "id": "bundle-b",
+          "label": "Learning + Proof",
+          "scenario_ids": [
+            "scenario-int-learning-power_bi",
+            "scenario-int-proof-power_bi"
+          ],
+          "intervention_ids": [
+            "int-learning-power_bi",
+            "int-proof-power_bi"
+          ],
+          "total_effort_weeks": 9.0,
+          "after_viability_state": "INSUFFICIENT_EVIDENCE",
+          "is_minimum_effective": false,
+          "rationale": "Bundle projection: Learning + Proof."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.089927",
+          "updated_at": null,
+          "id": "bundle-c",
+          "label": "Learning + Proof + Mentorship",
+          "scenario_ids": [
+            "scenario-int-learning-power_bi",
+            "scenario-int-proof-power_bi",
+            "scenario-int-mentorship-opp-data-analyst"
+          ],
+          "intervention_ids": [
+            "int-learning-power_bi",
+            "int-proof-power_bi",
+            "int-mentorship-opp-data-analyst"
+          ],
+          "total_effort_weeks": 21.0,
+          "after_viability_state": "INSUFFICIENT_EVIDENCE",
+          "is_minimum_effective": false,
+          "rationale": "Bundle projection: Learning + Proof + Mentorship."
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.107277",
+          "updated_at": null,
+          "id": "bundle-d",
+          "label": "Learning + Proof + Hybrid Work",
+          "scenario_ids": [
+            "scenario-int-learning-power_bi",
+            "scenario-int-proof-power_bi",
+            "scenario-int-hybrid-opp-data-analyst"
+          ],
+          "intervention_ids": [
+            "int-learning-power_bi",
+            "int-proof-power_bi",
+            "int-hybrid-opp-data-analyst"
+          ],
+          "total_effort_weeks": 9.5,
+          "after_viability_state": "INSUFFICIENT_EVIDENCE",
+          "is_minimum_effective": false,
+          "rationale": "Bundle projection: Learning + Proof + Hybrid Work."
+        }
+      ],
+      "minimum_effective_intervention": {
+        "created_at": "2026-08-27T21:56:31.076520",
+        "updated_at": null,
+        "id": "scenario-int-proof-power_bi",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Power Bi proof-of-skill",
+        "parent_scenario_id": "scenario-int-learning-power_bi",
+        "intervention_ids": [
+          "int-proof-power_bi"
+        ],
+        "intervention_types": [
+          "PROOF_OF_SKILL"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "INSUFFICIENT_EVIDENCE",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.55
+          },
+          "after_state": {
+            "viability_state": "INSUFFICIENT_EVIDENCE",
+            "readiness": 0.68,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.6
+          },
+          "affected_dimensions": [
+            "readiness",
+            "proof_effort",
+            "evidence_strength"
+          ],
+          "affected_capabilities": [
+            "power_bi"
+          ],
+          "affected_barriers": [],
+          "affected_employer_factors": [],
+          "expected_readiness_change": 0.07,
+          "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+          "confidence": 0.78,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 1.0,
+        "confidence": 0.78,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      "baseline_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+      "is_simulated_projection": true,
+      "label": "SIMULATED PROJECTION"
+    },
+    "minimum_effective_intervention": {
+      "created_at": "2026-08-27T21:56:31.076520",
+      "updated_at": null,
+      "id": "scenario-int-proof-power_bi",
+      "candidate_id": "ananya-sharma",
+      "opportunity_id": "opp-data-analyst",
+      "label": "Power Bi proof-of-skill",
+      "parent_scenario_id": "scenario-int-learning-power_bi",
+      "intervention_ids": [
+        "int-proof-power_bi"
+      ],
+      "intervention_types": [
+        "PROOF_OF_SKILL"
+      ],
+      "assumptions": [
+        "Learning pathway completed as scheduled.",
+        "Proof-of-skill assessment passed at defined threshold.",
+        "Employer maintains stated support posture.",
+        "Role requirements remain unchanged during projection window."
+      ],
+      "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+      "after_viability_state": "INSUFFICIENT_EVIDENCE",
+      "effect": {
+        "before_state": {
+          "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "readiness": 0.61,
+          "employer_readiness": 0.9,
+          "workplace_compatibility": 0.85,
+          "power_bi_proficiency": 0.55
+        },
+        "after_state": {
+          "viability_state": "INSUFFICIENT_EVIDENCE",
+          "readiness": 0.68,
+          "employer_readiness": 0.9,
+          "workplace_compatibility": 0.85,
+          "power_bi_proficiency": 0.6
+        },
+        "affected_dimensions": [
+          "readiness",
+          "proof_effort",
+          "evidence_strength"
+        ],
+        "affected_capabilities": [
+          "power_bi"
+        ],
+        "affected_barriers": [],
+        "affected_employer_factors": [],
+        "expected_readiness_change": 0.07,
+        "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+        "confidence": 0.78,
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "is_simulated_projection": true
+      },
+      "total_effort_weeks": 1.0,
+      "confidence": 0.78,
+      "is_simulated_projection": true,
+      "source_mode": "SYNTHETIC"
+    },
+    "explainability": {
+      "reports": [
+        {
+          "created_at": "2026-08-27T21:56:31.108153",
+          "updated_at": null,
+          "id": "explain-opp-opp-data-analyst",
+          "run_id": "run-71ec92dfdde6",
+          "what": "Why this opportunity: Junior Data Analyst",
+          "why": "Viability state IMMEDIATELY_VIABLE based on capability fit 1.0 and employer readiness 0.9.",
+          "evidence_refs": [
+            "ev-ananya-project-mis",
+            "ev-ananya-work-history",
+            "ev-ananya-project-mis",
+            "ev-ananya-work-history",
+            "ev-ananya-self-powerbi",
+            "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+            "ev-ananya-project-mis",
+            "ev-ananya-project-mis",
+            "ev-ananya-work-history"
+          ],
+          "evidence_chain": [
+            {
+              "node_type": "RECOMMENDATION",
+              "label": "Junior Data Analyst",
+              "ref_id": "opp-data-analyst",
+              "children": [
+                {
+                  "node_type": "DIAGNOSIS",
+                  "label": "POTENTIALLY_VIABLE",
+                  "ref_id": null,
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "confidence": 0.91,
+          "confidence_label": "HIGH_CONFIDENCE",
+          "alternatives": [
+            "Operations Analyst",
+            "BI Analyst",
+            "Reporting Analyst"
+          ],
+          "assumptions": [
+            "High confidence based on available evidence.",
+            "Opportunity viability \u2014 not traditional job matching score."
+          ],
+          "human_decision_required": true,
+          "source_modes": [
+            "SYNTHETIC",
+            "SIMULATED"
+          ],
+          "source_mode": "SYNTHETIC"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.108178",
+          "updated_at": null,
+          "id": "explain-pathway-pathway-ananya-sharma-data-analyst-junior-power_bi",
+          "run_id": "run-71ec92dfdde6",
+          "what": "Why this pathway?",
+          "why": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst.",
+          "evidence_refs": [],
+          "evidence_chain": [
+            {
+              "node_type": "RECOMMENDATION",
+              "label": "Learning pathway",
+              "ref_id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+              "children": [
+                {
+                  "node_type": "GAP",
+                  "label": "Gap: power_bi",
+                  "ref_id": null,
+                  "children": [
+                    {
+                      "node_type": "TASK",
+                      "label": "Job task requires dashboard capability",
+                      "ref_id": null,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "confidence": 0.78,
+          "confidence_label": "HIGH_CONFIDENCE",
+          "alternatives": [
+            "Self-directed learning without structured milestones"
+          ],
+          "assumptions": [
+            "Pathway completion at estimated duration.",
+            "Employer supports learning time."
+          ],
+          "human_decision_required": false,
+          "source_modes": [
+            "SIMULATED"
+          ],
+          "source_mode": "SIMULATED"
+        },
+        {
+          "created_at": "2026-08-27T21:56:31.108187",
+          "updated_at": null,
+          "id": "explain-intervention-minimum",
+          "run_id": "run-71ec92dfdde6",
+          "what": "Why this intervention?",
+          "why": "Minimum effective intervention set closes diagnosed gap with lowest projected effort under SIMULATED PROJECTION assumptions.",
+          "evidence_refs": [],
+          "evidence_chain": [],
+          "confidence": 0.78,
+          "confidence_label": "HIGH_CONFIDENCE",
+          "alternatives": [
+            "Larger learning bundles or employer-only adaptations"
+          ],
+          "assumptions": [
+            "SIMULATED PROJECTION \u2014 not a guaranteed outcome.",
+            "Learning completed and proof passed at threshold."
+          ],
+          "human_decision_required": true,
+          "source_modes": [
+            "SYNTHETIC"
+          ],
+          "source_mode": "SYNTHETIC"
+        }
+      ],
+      "reviewable_recommendation": {
+        "created_at": "2026-08-27T21:56:31.108099",
+        "updated_at": null,
+        "id": "rec-run-71ec92dfdde6",
+        "run_id": "run-71ec92dfdde6",
+        "candidate_id": "ananya-sharma",
+        "recommendation_summary": "AI recommendation generated: pursue Operations Analyst as next viable opportunity with targeted pathway where gaps remain.",
+        "recommendation_type": "OPPORTUNITY_PATHWAY",
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+          "ev-ananya-project-mis",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "confidence": 0.91,
+        "confidence_label": "HIGH_CONFIDENCE",
+        "assumptions": [
+          "Projection assumes employer context remains as assessed.",
+          "Capability evidence reflects current verified portfolio.",
+          "This is a decision support recommendation \u2014 not a hiring decision."
+        ],
+        "alternatives": [
+          "Operations Analyst",
+          "BI Analyst",
+          "Reporting Analyst"
+        ],
+        "intervention_ids": [
+          "int-proof-power_bi"
+        ],
+        "pathway_id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+        "risks": [
+          "Potential eligibility proxies require human review.",
+          "Eligibility proxy flagged \u2014 not bias removal claim."
+        ],
+        "human_review_required": true,
+        "ai_recommendation_preserved": {
+          "opportunity_viability": {
+            "created_at": "2026-08-27T21:56:31.040807",
+            "updated_at": null,
+            "id": "viability-ananya-sharma-opp-data-analyst",
+            "candidate_id": "ananya-sharma",
+            "opportunity_id": "opp-data-analyst",
+            "target_role_id": "data-analyst-junior",
+            "dimensions": {
+              "capability_fit": 1.0,
+              "evidence_strength": 0.84,
+              "readiness": 0.91,
+              "skill_gap_effort": 0.2,
+              "proof_effort": 0.2,
+              "workplace_compatibility": 0.85,
+              "employer_readiness": 0.9,
+              "market_opportunity": 0.85
+            },
+            "candidate_gaps": [],
+            "candidate_barriers": [
+              "3 years continuous recent professional experience",
+              "Bangalore office 5 days/week"
+            ],
+            "employer_requirements": [
+              "3 years continuous recent professional experience"
+            ],
+            "employer_readiness_id": "employer-readiness-opp-data-analyst",
+            "recommended_interventions": [],
+            "pathway_reference": null,
+            "proof_reference": "proof-result-assess-power_bi-ananya-sharma",
+            "proof_required": false,
+            "viability_state": "IMMEDIATELY_VIABLE",
+            "confidence": 0.91,
+            "rationale": "Junior Data Analyst: viability IMMEDIATELY_VIABLE. Capability fit 1.00, gaps: no critical capability gaps. Employer readiness 0.90, market 0.85.",
+            "evidence_refs": [
+              "ev-ananya-project-mis",
+              "ev-ananya-work-history",
+              "ev-ananya-project-mis",
+              "ev-ananya-work-history",
+              "ev-ananya-self-powerbi",
+              "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+              "ev-ananya-project-mis",
+              "ev-ananya-project-mis",
+              "ev-ananya-work-history"
+            ],
+            "source_mode": "SYNTHETIC"
+          },
+          "opportunity_comparison": {
+            "created_at": "2026-08-27T21:56:31.042254",
+            "updated_at": null,
+            "id": "opp-comparison-ananya-sharma",
+            "candidate_id": "ananya-sharma",
+            "items": [
+              {
+                "opportunity_id": "opp-bi-analyst",
+                "title": "BI Analyst",
+                "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+                "capability_fit": 0.82,
+                "pathway_effort_weeks": 12.0,
+                "proof_effort": 0.7,
+                "employer_readiness": 0.72,
+                "market_opportunity": 0.85,
+                "key_barriers": [
+                  "sql",
+                  "power_bi",
+                  "data_analysis",
+                  "3 years continuous recent professional experience",
+                  "Bangalore office 5 days/week"
+                ],
+                "key_advantages": [
+                  "Strong capability fit",
+                  "Compatible work mode"
+                ],
+                "next_action": "Complete proof-of-skill before pursuing.",
+                "confidence": 0.67
+              },
+              {
+                "opportunity_id": "opp-reporting-analyst",
+                "title": "Reporting Analyst",
+                "viability_state": "IMMEDIATELY_VIABLE",
+                "capability_fit": 1.0,
+                "pathway_effort_weeks": 4.0,
+                "proof_effort": 0.3,
+                "employer_readiness": 0.9,
+                "market_opportunity": 0.82,
+                "key_barriers": [
+                  "3 years continuous recent professional experience",
+                  "Bangalore office 5 days/week"
+                ],
+                "key_advantages": [
+                  "Strong capability fit",
+                  "Employer readiness supportive",
+                  "Compatible work mode",
+                  "No critical capability gaps"
+                ],
+                "next_action": "Explore application with human review.",
+                "confidence": 0.9
+              },
+              {
+                "opportunity_id": "opp-data-analyst",
+                "title": "Junior Data Analyst",
+                "viability_state": "IMMEDIATELY_VIABLE",
+                "capability_fit": 1.0,
+                "pathway_effort_weeks": 2.4,
+                "proof_effort": 0.2,
+                "employer_readiness": 0.9,
+                "market_opportunity": 0.85,
+                "key_barriers": [
+                  "3 years continuous recent professional experience",
+                  "Bangalore office 5 days/week"
+                ],
+                "key_advantages": [
+                  "Strong capability fit",
+                  "Employer readiness supportive",
+                  "Compatible work mode",
+                  "No critical capability gaps"
+                ],
+                "next_action": "Explore application with human review.",
+                "confidence": 0.91
+              },
+              {
+                "opportunity_id": "opp-operations-analyst",
+                "title": "Operations Analyst",
+                "viability_state": "IMMEDIATELY_VIABLE",
+                "capability_fit": 1.0,
+                "pathway_effort_weeks": 2.0,
+                "proof_effort": 0.3,
+                "employer_readiness": 0.93,
+                "market_opportunity": 0.85,
+                "key_barriers": [
+                  "3 years continuous recent professional experience",
+                  "Bangalore office 5 days/week"
+                ],
+                "key_advantages": [
+                  "Strong capability fit",
+                  "Employer readiness supportive",
+                  "Compatible work mode",
+                  "No critical capability gaps"
+                ],
+                "next_action": "Explore application with human review.",
+                "confidence": 0.93
+              }
+            ],
+            "recommended_next_step_opportunity_id": "opp-operations-analyst",
+            "recommended_next_step_rationale": "Operations Analyst offers the fastest viable transition (fit 1.00, effort ~2.0 weeks).",
+            "medium_term_opportunity_id": "opp-data-analyst",
+            "medium_term_rationale": "Junior Data Analyst aligns strongly with core capabilities with manageable development effort.",
+            "highest_effort_opportunity_id": "opp-bi-analyst",
+            "confidence": 0.85,
+            "source_mode": "SYNTHETIC"
+          },
+          "diagnosis_summary": {
+            "matched_count": 4,
+            "capability_gap_count": 0,
+            "insufficient_evidence_count": 0,
+            "eligibility_proxy_count": 1,
+            "workplace_constraint_count": 1,
+            "unknown_count": 1,
+            "overall_diagnosis_state": "POTENTIALLY_VIABLE",
+            "capability_fit": 1.0,
+            "evidence_strength": 0.85,
+            "diagnosis_confidence": 0.87
+          },
+          "minimum_effective_intervention": {
+            "created_at": "2026-08-27T21:56:31.076520",
+            "updated_at": null,
+            "id": "scenario-int-proof-power_bi",
+            "candidate_id": "ananya-sharma",
+            "opportunity_id": "opp-data-analyst",
+            "label": "Power Bi proof-of-skill",
+            "parent_scenario_id": "scenario-int-learning-power_bi",
+            "intervention_ids": [
+              "int-proof-power_bi"
+            ],
+            "intervention_types": [
+              "PROOF_OF_SKILL"
+            ],
+            "assumptions": [
+              "Learning pathway completed as scheduled.",
+              "Proof-of-skill assessment passed at defined threshold.",
+              "Employer maintains stated support posture.",
+              "Role requirements remain unchanged during projection window."
+            ],
+            "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "after_viability_state": "INSUFFICIENT_EVIDENCE",
+            "effect": {
+              "before_state": {
+                "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+                "readiness": 0.61,
+                "employer_readiness": 0.9,
+                "workplace_compatibility": 0.85,
+                "power_bi_proficiency": 0.55
+              },
+              "after_state": {
+                "viability_state": "INSUFFICIENT_EVIDENCE",
+                "readiness": 0.68,
+                "employer_readiness": 0.9,
+                "workplace_compatibility": 0.85,
+                "power_bi_proficiency": 0.6
+              },
+              "affected_dimensions": [
+                "readiness",
+                "proof_effort",
+                "evidence_strength"
+              ],
+              "affected_capabilities": [
+                "power_bi"
+              ],
+              "affected_barriers": [],
+              "affected_employer_factors": [],
+              "expected_readiness_change": 0.07,
+              "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+              "confidence": 0.78,
+              "assumptions": [
+                "Learning pathway completed as scheduled.",
+                "Proof-of-skill assessment passed at defined threshold.",
+                "Employer maintains stated support posture.",
+                "Role requirements remain unchanged during projection window."
+              ],
+              "is_simulated_projection": true
+            },
+            "total_effort_weeks": 1.0,
+            "confidence": 0.78,
+            "is_simulated_projection": true,
+            "source_mode": "SYNTHETIC"
+          }
+        },
+        "source_mode": "SYNTHETIC"
+      },
+      "evidence_chains": [
+        {
+          "node_type": "RECOMMENDATION",
+          "label": "Junior Data Analyst",
+          "ref_id": "opp-data-analyst",
+          "children": [
+            {
+              "node_type": "DIAGNOSIS",
+              "label": "POTENTIALLY_VIABLE",
+              "ref_id": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "audit_summary": {
+      "count": 16,
+      "agents": [
+        "load_candidate",
+        "candidate_intelligence",
+        "load_job",
+        "job_decomposition",
+        "diagnosis",
+        "counterfactual_analysis",
+        "pathway_generation",
+        "proof_evaluation",
+        "capability_update",
+        "reassessment",
+        "market_intelligence",
+        "opportunity_viability",
+        "employer_readiness",
+        "opportunity_comparison",
+        "intervention_simulation",
+        "explainability"
+      ],
+      "failures": []
+    },
+    "audit_events": [
+      {
+        "created_at": "2026-08-27T21:56:31.022922",
+        "updated_at": null,
+        "id": "audit-load_candidate-86bf1526",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "load_candidate",
+        "timestamp": "2026-08-27T21:56:31.022879Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "ananya-sharma",
+        "output_reference": "ananya-sharma",
+        "confidence": null,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 1,
+        "error": null,
+        "human_override": false,
+        "rationale": "Loaded demo candidate fixture."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.025557",
+        "updated_at": null,
+        "id": "audit-candidate_intelligence-4950064a",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "candidate_intelligence",
+        "timestamp": "2026-08-27T21:56:31.025553Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "ananya-sharma",
+        "output_reference": "6 capabilities",
+        "confidence": 0.7316666666666666,
+        "source_references": [
+          "cap-ananya-sharma-sql",
+          "cap-ananya-sharma-excel",
+          "cap-ananya-sharma-communication",
+          "cap-ananya-sharma-power_bi",
+          "cap-ananya-sharma-data_analysis",
+          "cap-ananya-sharma-reporting"
+        ],
+        "status": "SUCCESS",
+        "latency_ms": 1,
+        "error": null,
+        "human_override": false,
+        "rationale": "Demo fallback: capabilities from Ananya fixture evidence."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.026377",
+        "updated_at": null,
+        "id": "audit-load_job-a96d25bb",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "load_job",
+        "timestamp": "2026-08-27T21:56:31.026368Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "data-analyst-junior",
+        "output_reference": "data-analyst-junior",
+        "confidence": null,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Loaded demo job fixture."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.027006",
+        "updated_at": null,
+        "id": "audit-job_decomposition-bf42c8d6",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "job_decomposition",
+        "timestamp": "2026-08-27T21:56:31.027000Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "data-analyst-junior",
+        "output_reference": "3 tasks",
+        "confidence": 0.75,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Demo fallback: structured job fixture decomposition."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.027746",
+        "updated_at": null,
+        "id": "audit-diagnosis-2647ddd2",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "diagnosis",
+        "timestamp": "2026-08-27T21:56:31.027743Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "ananya-sharma:data-analyst-junior",
+        "output_reference": "POTENTIALLY_VIABLE",
+        "confidence": 0.77,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Diagnosed 4 capabilities; 1 genuine gaps; 3 requirement diagnoses."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.028080",
+        "updated_at": null,
+        "id": "audit-counterfactual_analysis-5f022295",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "counterfactual_analysis",
+        "timestamp": "2026-08-27T21:56:31.028074Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "3",
+        "output_reference": "POTENTIALLY_VIABLE",
+        "confidence": 0.77,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Counterfactual analysis complete; 1 potential eligibility proxies flagged."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.030595",
+        "updated_at": null,
+        "id": "audit-pathway_generation-79f2e5df",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "pathway_generation",
+        "timestamp": "2026-08-27T21:56:31.030579Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "power_bi",
+        "output_reference": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+        "confidence": 0.78,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 2,
+        "error": null,
+        "human_override": false,
+        "rationale": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.032158",
+        "updated_at": null,
+        "id": "audit-proof_evaluation-5abd6ccb",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "proof_evaluation",
+        "timestamp": "2026-08-27T21:56:31.032152Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "assess-power_bi-ananya-sharma",
+        "output_reference": "proof-result-assess-power_bi-ananya-sharma",
+        "confidence": 0.8,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Proof evaluation: PASSED (score 0.80)."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.032861",
+        "updated_at": null,
+        "id": "audit-capability_update-3c3e8735",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "capability_update",
+        "timestamp": "2026-08-27T21:56:31.032851Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "proof-result-assess-power_bi-ananya-sharma",
+        "output_reference": "cap-update-proof-result-assess-power_bi-ananya-sharma",
+        "confidence": 0.8,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "power_bi: 0.22 \u2192 0.60 via assessment."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.033550",
+        "updated_at": null,
+        "id": "audit-reassessment-fe91f759",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "reassessment",
+        "timestamp": "2026-08-27T21:56:31.033547Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": "ananya-sharma:data-analyst-junior",
+        "output_reference": "POTENTIALLY_VIABLE",
+        "confidence": 0.87,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Reassessment: POTENTIALLY_VIABLE."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.035650",
+        "updated_at": null,
+        "id": "audit-market_intelligence-623e1466",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "market_intelligence",
+        "timestamp": "2026-08-27T21:56:31.035644Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": null,
+        "output_reference": null,
+        "confidence": 0.75,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 1,
+        "error": null,
+        "human_override": false,
+        "rationale": "Loaded 6 synthetic market signals and 3 skill investment scenarios."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.042293",
+        "updated_at": null,
+        "id": "audit-opportunity_viability-433177d2",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "opportunity_viability",
+        "timestamp": "2026-08-27T21:56:31.042288Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": null,
+        "output_reference": null,
+        "confidence": 0.78,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 5,
+        "error": null,
+        "human_override": false,
+        "rationale": "Assessed viability for 4 opportunities."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.043727",
+        "updated_at": null,
+        "id": "audit-employer_readiness-59fe5cb1",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "employer_readiness",
+        "timestamp": "2026-08-27T21:56:31.043669Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": null,
+        "output_reference": null,
+        "confidence": null,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Employer readiness recorded for 4 opportunities."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.044802",
+        "updated_at": null,
+        "id": "audit-opportunity_comparison-539f46e0",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "opportunity_comparison",
+        "timestamp": "2026-08-27T21:56:31.044769Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": null,
+        "output_reference": null,
+        "confidence": 0.85,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Opportunity comparison complete; recommended next step: opp-operations-analyst."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.107574",
+        "updated_at": null,
+        "id": "audit-intervention_simulation-e55c83af",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "intervention_simulation",
+        "timestamp": "2026-08-27T21:56:31.107561Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": null,
+        "output_reference": null,
+        "confidence": 0.72,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 62,
+        "error": null,
+        "human_override": false,
+        "rationale": "Simulated 5 intervention scenarios."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.108296",
+        "updated_at": null,
+        "id": "audit-explainability-db079ac2",
+        "run_id": "run-71ec92dfdde6",
+        "agent": "explainability",
+        "timestamp": "2026-08-27T21:56:31.108292Z",
+        "engine_mode": "DEMO_FALLBACK",
+        "input_reference": null,
+        "output_reference": null,
+        "confidence": 0.8,
+        "source_references": [],
+        "status": "SUCCESS",
+        "latency_ms": 0,
+        "error": null,
+        "human_override": false,
+        "rationale": "Structured explainability reports generated."
+      }
+    ],
+    "errors": [],
+    "case_id": "case-ananya-finale"
+  },
+  "decision_card": {
+    "created_at": "2026-08-27T21:56:31.108734",
+    "updated_at": null,
+    "id": "decision-run-71ec92dfdde6",
+    "run_id": "run-71ec92dfdde6",
+    "candidate_id": "ananya-sharma",
+    "candidate_name": "Candidate",
+    "target_role_id": "data-analyst-junior",
+    "target_role_title": "Junior Data Analyst",
+    "recommendation_state": "PATHWAY_RECOMMENDED",
+    "capability_fit": null,
+    "genuine_gaps": [],
+    "potential_proxies": [
+      "3 years continuous recent professional experience"
+    ],
+    "workplace_constraints": [
+      "Bangalore office 5 days/week"
+    ],
+    "pathway_id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+    "proof_of_skill_id": "proof-result-assess-power_bi-ananya-sharma",
+    "alternative_opportunity_ids": [
+      "opp-operations-analyst",
+      "opp-bi-analyst",
+      "opp-reporting-analyst"
+    ],
+    "market_signal_ids": [
+      "mkt-skill-powerbi-demand",
+      "mkt-role-data-analyst",
+      "mkt-skill-python-emerging"
+    ],
+    "confidence": 0.91,
+    "human_decision_required": true,
+    "what": "Target opportunity: Junior Data Analyst",
+    "why": "Capability fit and evidence support IMMEDIATELY_VIABLE for this opportunity. Genuine gaps: none identified.",
+    "evidence_refs": [
+      "ev-ananya-project-mis",
+      "ev-ananya-work-history",
+      "ev-ananya-project-mis",
+      "ev-ananya-work-history",
+      "ev-ananya-self-powerbi",
+      "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+      "ev-ananya-project-mis",
+      "ev-ananya-project-mis",
+      "ev-ananya-work-history"
+    ],
+    "alternatives": [
+      "Operations Analyst",
+      "BI Analyst",
+      "Reporting Analyst"
+    ],
+    "source_mode": "SYNTHETIC"
+  },
+  "explainability": {
+    "reports": [
+      {
+        "created_at": "2026-08-27T21:56:31.108831",
+        "updated_at": null,
+        "id": "explain-opp-opp-data-analyst",
+        "run_id": "run-71ec92dfdde6",
+        "what": "Why this opportunity: Junior Data Analyst",
+        "why": "Viability state IMMEDIATELY_VIABLE based on capability fit 1.0 and employer readiness 0.9.",
+        "evidence_refs": [
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history",
+          "ev-ananya-self-powerbi",
+          "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+          "ev-ananya-project-mis",
+          "ev-ananya-project-mis",
+          "ev-ananya-work-history"
+        ],
+        "evidence_chain": [
+          {
+            "node_type": "RECOMMENDATION",
+            "label": "Junior Data Analyst",
+            "ref_id": "opp-data-analyst",
+            "children": [
+              {
+                "node_type": "DIAGNOSIS",
+                "label": "POTENTIALLY_VIABLE",
+                "ref_id": null,
+                "children": []
+              }
+            ]
+          }
+        ],
+        "confidence": 0.91,
+        "confidence_label": "HIGH_CONFIDENCE",
+        "alternatives": [
+          "Operations Analyst",
+          "BI Analyst",
+          "Reporting Analyst"
+        ],
+        "assumptions": [
+          "High confidence based on available evidence.",
+          "Opportunity viability \u2014 not traditional job matching score."
+        ],
+        "human_decision_required": true,
+        "source_modes": [
+          "SYNTHETIC",
+          "SIMULATED"
+        ],
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.108850",
+        "updated_at": null,
+        "id": "explain-pathway-pathway-ananya-sharma-data-analyst-junior-power_bi",
+        "run_id": "run-71ec92dfdde6",
+        "what": "Why this pathway?",
+        "why": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst.",
+        "evidence_refs": [],
+        "evidence_chain": [
+          {
+            "node_type": "RECOMMENDATION",
+            "label": "Learning pathway",
+            "ref_id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+            "children": [
+              {
+                "node_type": "GAP",
+                "label": "Gap: power_bi",
+                "ref_id": null,
+                "children": [
+                  {
+                    "node_type": "TASK",
+                    "label": "Job task requires dashboard capability",
+                    "ref_id": null,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "confidence": 0.78,
+        "confidence_label": "HIGH_CONFIDENCE",
+        "alternatives": [
+          "Self-directed learning without structured milestones"
+        ],
+        "assumptions": [
+          "Pathway completion at estimated duration.",
+          "Employer supports learning time."
+        ],
+        "human_decision_required": false,
+        "source_modes": [
+          "SIMULATED"
+        ],
+        "source_mode": "SIMULATED"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.108857",
+        "updated_at": null,
+        "id": "explain-intervention-minimum",
+        "run_id": "run-71ec92dfdde6",
+        "what": "Why this intervention?",
+        "why": "Minimum effective intervention set closes diagnosed gap with lowest projected effort under SIMULATED PROJECTION assumptions.",
+        "evidence_refs": [],
+        "evidence_chain": [],
+        "confidence": 0.78,
+        "confidence_label": "HIGH_CONFIDENCE",
+        "alternatives": [
+          "Larger learning bundles or employer-only adaptations"
+        ],
+        "assumptions": [
+          "SIMULATED PROJECTION \u2014 not a guaranteed outcome.",
+          "Learning completed and proof passed at threshold."
+        ],
+        "human_decision_required": true,
+        "source_modes": [
+          "SYNTHETIC"
+        ],
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "reviewable_recommendation": {
+      "created_at": "2026-08-27T21:56:31.108798",
+      "updated_at": null,
+      "id": "rec-run-71ec92dfdde6",
+      "run_id": "run-71ec92dfdde6",
+      "candidate_id": "ananya-sharma",
+      "recommendation_summary": "AI recommendation generated: pursue Operations Analyst as next viable opportunity with targeted pathway where gaps remain.",
+      "recommendation_type": "OPPORTUNITY_PATHWAY",
+      "evidence_refs": [
+        "ev-ananya-project-mis",
+        "ev-ananya-work-history",
+        "ev-ananya-project-mis",
+        "ev-ananya-work-history",
+        "ev-ananya-self-powerbi",
+        "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+        "ev-ananya-project-mis",
+        "ev-ananya-project-mis",
+        "ev-ananya-work-history"
+      ],
+      "confidence": 0.91,
+      "confidence_label": "HIGH_CONFIDENCE",
+      "assumptions": [
+        "Projection assumes employer context remains as assessed.",
+        "Capability evidence reflects current verified portfolio.",
+        "This is a decision support recommendation \u2014 not a hiring decision."
+      ],
+      "alternatives": [
+        "Operations Analyst",
+        "BI Analyst",
+        "Reporting Analyst"
+      ],
+      "intervention_ids": [
+        "int-proof-power_bi"
+      ],
+      "pathway_id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
+      "risks": [
+        "Potential eligibility proxies require human review.",
+        "Eligibility proxy flagged \u2014 not bias removal claim."
+      ],
+      "human_review_required": true,
+      "ai_recommendation_preserved": {
+        "opportunity_viability": {
+          "created_at": "2026-08-27T21:56:31.040807",
+          "updated_at": null,
+          "id": "viability-ananya-sharma-opp-data-analyst",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "target_role_id": "data-analyst-junior",
+          "dimensions": {
+            "capability_fit": 1.0,
+            "evidence_strength": 0.84,
+            "readiness": 0.91,
+            "skill_gap_effort": 0.2,
+            "proof_effort": 0.2,
+            "workplace_compatibility": 0.85,
+            "employer_readiness": 0.9,
+            "market_opportunity": 0.85
+          },
+          "candidate_gaps": [],
+          "candidate_barriers": [
+            "3 years continuous recent professional experience",
+            "Bangalore office 5 days/week"
+          ],
+          "employer_requirements": [
+            "3 years continuous recent professional experience"
+          ],
+          "employer_readiness_id": "employer-readiness-opp-data-analyst",
+          "recommended_interventions": [],
+          "pathway_reference": null,
+          "proof_reference": "proof-result-assess-power_bi-ananya-sharma",
+          "proof_required": false,
+          "viability_state": "IMMEDIATELY_VIABLE",
+          "confidence": 0.91,
+          "rationale": "Junior Data Analyst: viability IMMEDIATELY_VIABLE. Capability fit 1.00, gaps: no critical capability gaps. Employer readiness 0.90, market 0.85.",
+          "evidence_refs": [
+            "ev-ananya-project-mis",
+            "ev-ananya-work-history",
+            "ev-ananya-project-mis",
+            "ev-ananya-work-history",
+            "ev-ananya-self-powerbi",
+            "ev-proof-proof-result-assess-power_bi-ananya-sharma",
+            "ev-ananya-project-mis",
+            "ev-ananya-project-mis",
+            "ev-ananya-work-history"
+          ],
+          "source_mode": "SYNTHETIC"
+        },
+        "opportunity_comparison": {
+          "created_at": "2026-08-27T21:56:31.042254",
+          "updated_at": null,
+          "id": "opp-comparison-ananya-sharma",
+          "candidate_id": "ananya-sharma",
+          "items": [
+            {
+              "opportunity_id": "opp-bi-analyst",
+              "title": "BI Analyst",
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "capability_fit": 0.82,
+              "pathway_effort_weeks": 12.0,
+              "proof_effort": 0.7,
+              "employer_readiness": 0.72,
+              "market_opportunity": 0.85,
+              "key_barriers": [
+                "sql",
+                "power_bi",
+                "data_analysis",
+                "3 years continuous recent professional experience",
+                "Bangalore office 5 days/week"
+              ],
+              "key_advantages": [
+                "Strong capability fit",
+                "Compatible work mode"
+              ],
+              "next_action": "Complete proof-of-skill before pursuing.",
+              "confidence": 0.67
+            },
+            {
+              "opportunity_id": "opp-reporting-analyst",
+              "title": "Reporting Analyst",
+              "viability_state": "IMMEDIATELY_VIABLE",
+              "capability_fit": 1.0,
+              "pathway_effort_weeks": 4.0,
+              "proof_effort": 0.3,
+              "employer_readiness": 0.9,
+              "market_opportunity": 0.82,
+              "key_barriers": [
+                "3 years continuous recent professional experience",
+                "Bangalore office 5 days/week"
+              ],
+              "key_advantages": [
+                "Strong capability fit",
+                "Employer readiness supportive",
+                "Compatible work mode",
+                "No critical capability gaps"
+              ],
+              "next_action": "Explore application with human review.",
+              "confidence": 0.9
+            },
+            {
+              "opportunity_id": "opp-data-analyst",
+              "title": "Junior Data Analyst",
+              "viability_state": "IMMEDIATELY_VIABLE",
+              "capability_fit": 1.0,
+              "pathway_effort_weeks": 2.4,
+              "proof_effort": 0.2,
+              "employer_readiness": 0.9,
+              "market_opportunity": 0.85,
+              "key_barriers": [
+                "3 years continuous recent professional experience",
+                "Bangalore office 5 days/week"
+              ],
+              "key_advantages": [
+                "Strong capability fit",
+                "Employer readiness supportive",
+                "Compatible work mode",
+                "No critical capability gaps"
+              ],
+              "next_action": "Explore application with human review.",
+              "confidence": 0.91
+            },
+            {
+              "opportunity_id": "opp-operations-analyst",
+              "title": "Operations Analyst",
+              "viability_state": "IMMEDIATELY_VIABLE",
+              "capability_fit": 1.0,
+              "pathway_effort_weeks": 2.0,
+              "proof_effort": 0.3,
+              "employer_readiness": 0.93,
+              "market_opportunity": 0.85,
+              "key_barriers": [
+                "3 years continuous recent professional experience",
+                "Bangalore office 5 days/week"
+              ],
+              "key_advantages": [
+                "Strong capability fit",
+                "Employer readiness supportive",
+                "Compatible work mode",
+                "No critical capability gaps"
+              ],
+              "next_action": "Explore application with human review.",
+              "confidence": 0.93
+            }
+          ],
+          "recommended_next_step_opportunity_id": "opp-operations-analyst",
+          "recommended_next_step_rationale": "Operations Analyst offers the fastest viable transition (fit 1.00, effort ~2.0 weeks).",
+          "medium_term_opportunity_id": "opp-data-analyst",
+          "medium_term_rationale": "Junior Data Analyst aligns strongly with core capabilities with manageable development effort.",
+          "highest_effort_opportunity_id": "opp-bi-analyst",
+          "confidence": 0.85,
+          "source_mode": "SYNTHETIC"
+        },
+        "diagnosis_summary": {
+          "matched_count": 4,
+          "capability_gap_count": 0,
+          "insufficient_evidence_count": 0,
+          "eligibility_proxy_count": 1,
+          "workplace_constraint_count": 1,
+          "unknown_count": 1,
+          "overall_diagnosis_state": "POTENTIALLY_VIABLE",
+          "capability_fit": 1.0,
+          "evidence_strength": 0.85,
+          "diagnosis_confidence": 0.87
+        },
+        "minimum_effective_intervention": {
+          "created_at": "2026-08-27T21:56:31.076520",
+          "updated_at": null,
+          "id": "scenario-int-proof-power_bi",
+          "candidate_id": "ananya-sharma",
+          "opportunity_id": "opp-data-analyst",
+          "label": "Power Bi proof-of-skill",
+          "parent_scenario_id": "scenario-int-learning-power_bi",
+          "intervention_ids": [
+            "int-proof-power_bi"
+          ],
+          "intervention_types": [
+            "PROOF_OF_SKILL"
+          ],
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "after_viability_state": "INSUFFICIENT_EVIDENCE",
+          "effect": {
+            "before_state": {
+              "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+              "readiness": 0.61,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85,
+              "power_bi_proficiency": 0.55
+            },
+            "after_state": {
+              "viability_state": "INSUFFICIENT_EVIDENCE",
+              "readiness": 0.68,
+              "employer_readiness": 0.9,
+              "workplace_compatibility": 0.85,
+              "power_bi_proficiency": 0.6
+            },
+            "affected_dimensions": [
+              "readiness",
+              "proof_effort",
+              "evidence_strength"
+            ],
+            "affected_capabilities": [
+              "power_bi"
+            ],
+            "affected_barriers": [],
+            "affected_employer_factors": [],
+            "expected_readiness_change": 0.07,
+            "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+            "confidence": 0.78,
+            "assumptions": [
+              "Learning pathway completed as scheduled.",
+              "Proof-of-skill assessment passed at defined threshold.",
+              "Employer maintains stated support posture.",
+              "Role requirements remain unchanged during projection window."
+            ],
+            "is_simulated_projection": true
+          },
+          "total_effort_weeks": 1.0,
+          "confidence": 0.78,
+          "is_simulated_projection": true,
+          "source_mode": "SYNTHETIC"
+        }
+      },
+      "source_mode": "SYNTHETIC"
+    },
+    "evidence_chains": [
+      {
+        "node_type": "RECOMMENDATION",
+        "label": "Junior Data Analyst",
+        "ref_id": "opp-data-analyst",
+        "children": [
+          {
+            "node_type": "DIAGNOSIS",
+            "label": "POTENTIALLY_VIABLE",
+            "ref_id": null,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "intervention_scenarios": {
+    "interventions": [
+      {
+        "created_at": "2026-08-27T21:56:31.051315",
+        "updated_at": null,
+        "id": "int-learning-power_bi",
+        "type": "LEARNING",
+        "title": "Power Bi learning pathway",
+        "description": "Targeted learning to close power bi capability gap.",
+        "target": "candidate:power_bi",
+        "preconditions": [
+          "Genuine gap identified for power_bi."
+        ],
+        "evidence_refs": [],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 8.0,
+        "expected_effect": "Improve power_bi proficiency toward role threshold.",
+        "confidence": 0.72,
+        "human_review_required": false,
+        "priority": "HIGH_IMPACT_HIGH_EFFORT"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.051350",
+        "updated_at": null,
+        "id": "int-proof-power_bi",
+        "type": "PROOF_OF_SKILL",
+        "title": "Power Bi proof-of-skill",
+        "description": "Structured assessment to verify demonstrated capability.",
+        "target": "candidate:power_bi",
+        "preconditions": [
+          "Learning pathway in progress or completed for power_bi."
+        ],
+        "evidence_refs": [],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 1.0,
+        "expected_effect": "Verify power_bi capability with structured evidence.",
+        "confidence": 0.78,
+        "human_review_required": true,
+        "priority": "HIGH_IMPACT_LOW_EFFORT"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.051364",
+        "updated_at": null,
+        "id": "int-mentorship-opp-data-analyst",
+        "type": "MENTORSHIP",
+        "title": "Assigned mentorship",
+        "description": "Pair candidate with mentor for guided transition support.",
+        "target": "employer:mentorship",
+        "preconditions": [
+          "Employer mentorship capacity available or can be arranged."
+        ],
+        "evidence_refs": [
+          "employer-readiness-opp-data-analyst"
+        ],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 12.0,
+        "expected_effect": "Improve employer readiness and onboarding confidence.",
+        "confidence": 0.65,
+        "human_review_required": true,
+        "priority": "HIGH_IMPACT_HIGH_EFFORT"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.051375",
+        "updated_at": null,
+        "id": "int-hybrid-opp-data-analyst",
+        "type": "HYBRID_WORK",
+        "title": "Hybrid work arrangement",
+        "description": "Enable hybrid work mode for workplace compatibility.",
+        "target": "employer:work_mode",
+        "preconditions": [
+          "Role supports hybrid or remote modes."
+        ],
+        "evidence_refs": [],
+        "source_mode": "SYNTHETIC",
+        "estimated_effort_weeks": 0.5,
+        "expected_effect": "Improve workplace compatibility dimension only.",
+        "confidence": 0.7,
+        "human_review_required": true,
+        "priority": "LOW_IMPACT_LOW_EFFORT"
+      }
+    ],
+    "scenarios": [
+      {
+        "created_at": "2026-08-27T21:56:31.051394",
+        "updated_at": null,
+        "id": "scenario-base-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Current state",
+        "parent_scenario_id": null,
+        "intervention_ids": [],
+        "intervention_types": [],
+        "assumptions": [
+          "Baseline from current assessed state."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": null,
+        "total_effort_weeks": 0.0,
+        "confidence": 0.76,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.055198",
+        "updated_at": null,
+        "id": "scenario-int-learning-power_bi",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Power Bi learning pathway",
+        "parent_scenario_id": "scenario-base-opp-data-analyst",
+        "intervention_ids": [
+          "int-learning-power_bi"
+        ],
+        "intervention_types": [
+          "LEARNING"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.22
+          },
+          "after_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.66,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.47
+          },
+          "affected_dimensions": [
+            "skill_gap_effort"
+          ],
+          "affected_capabilities": [
+            "power_bi"
+          ],
+          "affected_barriers": [],
+          "affected_employer_factors": [],
+          "expected_readiness_change": 0.05,
+          "expected_viability_change": null,
+          "confidence": 0.72,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 8.0,
+        "confidence": 0.72,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.059861",
+        "updated_at": null,
+        "id": "scenario-int-mentorship-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Assigned mentorship",
+        "parent_scenario_id": "scenario-base-opp-data-analyst",
+        "intervention_ids": [
+          "int-mentorship-opp-data-analyst"
+        ],
+        "intervention_types": [
+          "MENTORSHIP"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "after_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "affected_dimensions": [
+            "employer_readiness"
+          ],
+          "affected_capabilities": [],
+          "affected_barriers": [],
+          "affected_employer_factors": [
+            "mentorship"
+          ],
+          "expected_readiness_change": 0.0,
+          "expected_viability_change": null,
+          "confidence": 0.65,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 12.0,
+        "confidence": 0.65,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.062909",
+        "updated_at": null,
+        "id": "scenario-int-hybrid-opp-data-analyst",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Hybrid work arrangement",
+        "parent_scenario_id": "scenario-base-opp-data-analyst",
+        "intervention_ids": [
+          "int-hybrid-opp-data-analyst"
+        ],
+        "intervention_types": [
+          "HYBRID_WORK"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "after_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85
+          },
+          "affected_dimensions": [
+            "workplace_compatibility"
+          ],
+          "affected_capabilities": [],
+          "affected_barriers": [],
+          "affected_employer_factors": [
+            "work_mode"
+          ],
+          "expected_readiness_change": 0.0,
+          "expected_viability_change": null,
+          "confidence": 0.7,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 0.5,
+        "confidence": 0.7,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.076520",
+        "updated_at": null,
+        "id": "scenario-int-proof-power_bi",
+        "candidate_id": "ananya-sharma",
+        "opportunity_id": "opp-data-analyst",
+        "label": "Power Bi proof-of-skill",
+        "parent_scenario_id": "scenario-int-learning-power_bi",
+        "intervention_ids": [
+          "int-proof-power_bi"
+        ],
+        "intervention_types": [
+          "PROOF_OF_SKILL"
+        ],
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "after_viability_state": "INSUFFICIENT_EVIDENCE",
+        "effect": {
+          "before_state": {
+            "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+            "readiness": 0.61,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.55
+          },
+          "after_state": {
+            "viability_state": "INSUFFICIENT_EVIDENCE",
+            "readiness": 0.68,
+            "employer_readiness": 0.9,
+            "workplace_compatibility": 0.85,
+            "power_bi_proficiency": 0.6
+          },
+          "affected_dimensions": [
+            "readiness",
+            "proof_effort",
+            "evidence_strength"
+          ],
+          "affected_capabilities": [
+            "power_bi"
+          ],
+          "affected_barriers": [],
+          "affected_employer_factors": [],
+          "expected_readiness_change": 0.07,
+          "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+          "confidence": 0.78,
+          "assumptions": [
+            "Learning pathway completed as scheduled.",
+            "Proof-of-skill assessment passed at defined threshold.",
+            "Employer maintains stated support posture.",
+            "Role requirements remain unchanged during projection window."
+          ],
+          "is_simulated_projection": true
+        },
+        "total_effort_weeks": 1.0,
+        "confidence": 0.78,
+        "is_simulated_projection": true,
+        "source_mode": "SYNTHETIC"
+      }
+    ],
+    "bundles": [
+      {
+        "created_at": "2026-08-27T21:56:31.068470",
+        "updated_at": null,
+        "id": "bundle-a",
+        "label": "Learning only",
+        "scenario_ids": [
+          "scenario-int-learning-power_bi"
+        ],
+        "intervention_ids": [
+          "int-learning-power_bi"
+        ],
+        "total_effort_weeks": 8.0,
+        "after_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+        "is_minimum_effective": false,
+        "rationale": "Bundle projection: Learning only."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.076556",
+        "updated_at": null,
+        "id": "bundle-b",
+        "label": "Learning + Proof",
+        "scenario_ids": [
+          "scenario-int-learning-power_bi",
+          "scenario-int-proof-power_bi"
+        ],
+        "intervention_ids": [
+          "int-learning-power_bi",
+          "int-proof-power_bi"
+        ],
+        "total_effort_weeks": 9.0,
+        "after_viability_state": "INSUFFICIENT_EVIDENCE",
+        "is_minimum_effective": false,
+        "rationale": "Bundle projection: Learning + Proof."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.089927",
+        "updated_at": null,
+        "id": "bundle-c",
+        "label": "Learning + Proof + Mentorship",
+        "scenario_ids": [
+          "scenario-int-learning-power_bi",
+          "scenario-int-proof-power_bi",
+          "scenario-int-mentorship-opp-data-analyst"
+        ],
+        "intervention_ids": [
+          "int-learning-power_bi",
+          "int-proof-power_bi",
+          "int-mentorship-opp-data-analyst"
+        ],
+        "total_effort_weeks": 21.0,
+        "after_viability_state": "INSUFFICIENT_EVIDENCE",
+        "is_minimum_effective": false,
+        "rationale": "Bundle projection: Learning + Proof + Mentorship."
+      },
+      {
+        "created_at": "2026-08-27T21:56:31.107277",
+        "updated_at": null,
+        "id": "bundle-d",
+        "label": "Learning + Proof + Hybrid Work",
+        "scenario_ids": [
+          "scenario-int-learning-power_bi",
+          "scenario-int-proof-power_bi",
+          "scenario-int-hybrid-opp-data-analyst"
+        ],
+        "intervention_ids": [
+          "int-learning-power_bi",
+          "int-proof-power_bi",
+          "int-hybrid-opp-data-analyst"
+        ],
+        "total_effort_weeks": 9.5,
+        "after_viability_state": "INSUFFICIENT_EVIDENCE",
+        "is_minimum_effective": false,
+        "rationale": "Bundle projection: Learning + Proof + Hybrid Work."
+      }
+    ],
+    "minimum_effective_intervention": {
+      "created_at": "2026-08-27T21:56:31.076520",
+      "updated_at": null,
+      "id": "scenario-int-proof-power_bi",
+      "candidate_id": "ananya-sharma",
+      "opportunity_id": "opp-data-analyst",
+      "label": "Power Bi proof-of-skill",
+      "parent_scenario_id": "scenario-int-learning-power_bi",
+      "intervention_ids": [
+        "int-proof-power_bi"
+      ],
+      "intervention_types": [
+        "PROOF_OF_SKILL"
+      ],
+      "assumptions": [
+        "Learning pathway completed as scheduled.",
+        "Proof-of-skill assessment passed at defined threshold.",
+        "Employer maintains stated support posture.",
+        "Role requirements remain unchanged during projection window."
+      ],
+      "before_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+      "after_viability_state": "INSUFFICIENT_EVIDENCE",
+      "effect": {
+        "before_state": {
+          "viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+          "readiness": 0.61,
+          "employer_readiness": 0.9,
+          "workplace_compatibility": 0.85,
+          "power_bi_proficiency": 0.55
+        },
+        "after_state": {
+          "viability_state": "INSUFFICIENT_EVIDENCE",
+          "readiness": 0.68,
+          "employer_readiness": 0.9,
+          "workplace_compatibility": 0.85,
+          "power_bi_proficiency": 0.6
+        },
+        "affected_dimensions": [
+          "readiness",
+          "proof_effort",
+          "evidence_strength"
+        ],
+        "affected_capabilities": [
+          "power_bi"
+        ],
+        "affected_barriers": [],
+        "affected_employer_factors": [],
+        "expected_readiness_change": 0.07,
+        "expected_viability_change": "VIABLE_WITH_TARGETED_PATHWAY \u2192 INSUFFICIENT_EVIDENCE",
+        "confidence": 0.78,
+        "assumptions": [
+          "Learning pathway completed as scheduled.",
+          "Proof-of-skill assessment passed at defined threshold.",
+          "Employer maintains stated support posture.",
+          "Role requirements remain unchanged during projection window."
+        ],
+        "is_simulated_projection": true
+      },
+      "total_effort_weeks": 1.0,
+      "confidence": 0.78,
+      "is_simulated_projection": true,
+      "source_mode": "SYNTHETIC"
+    },
+    "baseline_viability_state": "VIABLE_WITH_TARGETED_PATHWAY",
+    "is_simulated_projection": true,
+    "label": "SIMULATED PROJECTION"
+  },
+  "human_decision_status": "PENDING",
+  "sap_context": {
+    "source": "SAP",
+    "source_mode": "SIMULATED",
+    "system_name": "SuccessFactors-compatible demo environment",
+    "integration_status": "AVAILABLE",
+    "last_sync": "2026-08-27T21:56:31.022645Z",
+    "retrieved_entities": [
+      "WorkforceContext",
+      "SkillsContext",
+      "RoleContext",
+      "LearningCatalog",
+      "OpportunityCatalog"
+    ],
+    "capabilities": [
+      {
+        "name": "Workforce context",
+        "status": "AVAILABLE",
+        "source_mode": "SIMULATED",
+        "last_sync": "2026-08-27T21:56:31.022659Z",
+        "entity_count": null
+      },
+      {
+        "name": "Skills context",
+        "status": "AVAILABLE",
+        "source_mode": "SIMULATED",
+        "last_sync": "2026-08-27T21:56:31.022703Z",
+        "entity_count": null
+      },
+      {
+        "name": "Role context",
+        "status": "AVAILABLE",
+        "source_mode": "SIMULATED",
+        "last_sync": "2026-08-27T21:56:31.022710Z",
+        "entity_count": null
+      },
+      {
+        "name": "Learning catalog",
+        "status": "AVAILABLE",
+        "source_mode": "SIMULATED",
+        "last_sync": "2026-08-27T21:56:31.022715Z",
+        "entity_count": null
+      },
+      {
+        "name": "Opportunity catalog",
+        "status": "AVAILABLE",
+        "source_mode": "SIMULATED",
+        "last_sync": "2026-08-27T21:56:31.022722Z",
+        "entity_count": null
+      }
+    ],
+    "message": "Simulated SAP context \u2014 not a live tenant connection."
+  }
+}
