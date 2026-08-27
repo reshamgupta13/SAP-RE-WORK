@@ -66,3 +66,6 @@ class FixtureService:
     def get_sap_opportunities(self) -> list[Opportunity]:
         data = self.get_sap_fixture_data()
         return TypeAdapter(list[Opportunity]).validate_python(data.get("opportunities", []))
+
+    def get_proof_demo_fixture(self, name: str = "ananya_power_bi_demo") -> dict:
+        return self._read_json(f"proof/{name}.json")

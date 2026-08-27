@@ -10,7 +10,7 @@ from app.adapters.sap import get_sap_provider
 from app.agents.candidate_intelligence import CandidateIntelligenceAgent
 from app.agents.job_decomposition import JobDecompositionAgent
 from app.domain.candidate import CandidateEvidence, CandidateProfile
-from app.domain.enums import AuditStatus, EngineMode
+from app.domain.enums import AuditStatus, EngineMode, RunMode
 from app.domain.job import JobProfile
 from app.domain.sap import SAPContext
 from app.services.audit import AuditTimer, new_audit_event
@@ -40,8 +40,39 @@ def run_diagnose(body: DemoRunRequest) -> dict[str, Any]:
     state = _orchestration.execute_demo_run(
         candidate_id=body.candidate_id,
         job_id=body.job_id,
+        run_mode=RunMode.ANALYZE_ONLY,
     )
     return _orchestration.build_diagnosis_response(state)
+
+
+@router.post("/pathway")
+def run_pathway(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+        run_mode=RunMode.GENERATE_PATHWAY,
+    )
+    return _orchestration.build_pathway_response(state)
+
+
+@router.post("/proof")
+def run_proof(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+        run_mode=RunMode.FULL_DEMO_REPLAY,
+    )
+    return _orchestration.build_proof_response(state)
+
+
+@router.post("/reassess")
+def run_reassess(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+        run_mode=RunMode.FULL_DEMO_REPLAY,
+    )
+    return _orchestration.build_proof_response(state)
 
 
 @router.post("")

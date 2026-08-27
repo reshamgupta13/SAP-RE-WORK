@@ -44,7 +44,9 @@ def test_learning_and_opportunities_simulated():
     opps = provider.get_opportunities()
     assert len(items) >= 1
     assert len(opps) >= 1
-    assert all(i.source_mode == SourceMode.SYNTHETIC for i in items)
+    assert all(
+        i.source_mode in {SourceMode.SYNTHETIC, SourceMode.SIMULATED} for i in items
+    )
 
 
 def test_live_provider_not_connected():

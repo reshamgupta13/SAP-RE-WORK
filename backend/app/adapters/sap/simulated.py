@@ -102,3 +102,42 @@ class SimulatedSAPProvider(SAPProvider):
 
     def get_opportunities(self) -> list[Opportunity]:
         return self._fixtures.get_sap_opportunities()
+
+    def update_skill_progress(
+        self,
+        candidate_id: str,
+        skill_id: str,
+        payload: dict[str, Any],
+    ) -> dict[str, Any]:
+        return {
+            "candidate_id": candidate_id,
+            "skill_id": skill_id,
+            "status": "recorded",
+            "source": "SAP",
+            "source_mode": SourceMode.SIMULATED.value,
+            "payload": payload,
+            "message": "Simulated skill progress write-back — not persisted to live SAP.",
+        }
+
+    def record_learning_completion(
+        self,
+        candidate_id: str,
+        learning_item_id: str,
+        payload: dict[str, Any],
+    ) -> dict[str, Any]:
+        return {
+            "candidate_id": candidate_id,
+            "learning_item_id": learning_item_id,
+            "status": "recorded",
+            "source": "SAP",
+            "source_mode": SourceMode.SIMULATED.value,
+            "payload": payload,
+            "message": "Simulated learning completion write-back — not persisted to live SAP.",
+        }
+
+    def record_development_progress(self, candidate_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+        return self.update_skill_progress(
+            candidate_id,
+            payload.get("skill_id", "unknown"),
+            payload,
+        )

@@ -1,0 +1,24 @@
+{
+  "id": "proof-ananya-powerbi-demo",
+  "assessment_id": "assess-powerbi-ananya",
+  "candidate_id": "ananya-sharma",
+  "skill_id": "power_bi",
+  "is_demo": true,
+  "source_mode": "SYNTHETIC",
+  "submission": {
+    "responses": {
+      "data_preparation": 0.85,
+      "dashboard_construction": 0.8,
+      "visualization_quality": 0.75,
+      "business_insight": 0.82,
+      "communication": 0.78
+    },
+    "artifact_metadata": {
+      "type": "synthetic_dashboard_result",
+      "dataset": "sales_demo_v1",
+      "note": "DEMO synthetic proof — not a real candidate submission"
+    }
+  },
+  "expected_result": "PASSED",
+  "expected_proficiency_after": 0.65
+}

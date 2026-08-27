@@ -1,0 +1,16 @@
+{
+  "scenario": "checkpoint_04_ananya",
+  "candidate_id": "ananya-sharma",
+  "job_id": "data-analyst-junior",
+  "run_mode": "FULL_DEMO_REPLAY",
+  "expected_engine_mode": "DEMO_FALLBACK",
+  "expected_gap_skill_id": "power_bi",
+  "expected_pathway_target_capability": "power_bi",
+  "expected_milestone_count_min": 4,
+  "expected_proof_assessment_skill": "power_bi",
+  "expected_demo_proof": true,
+  "expected_capability_update_skill": "power_bi",
+  "expected_pathway_completed": true,
+  "expected_power_bi_no_longer_genuine_gap": true,
+  "no_hiring_recommendation": true
+}

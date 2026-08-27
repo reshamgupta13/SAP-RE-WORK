@@ -36,6 +36,24 @@ class SAPProvider(ABC):
     def get_opportunities(self) -> list[Opportunity]:
         """Opportunity marketplace or requisition-backed opportunities."""
 
+    def update_skill_progress(
+        self,
+        candidate_id: str,
+        skill_id: str,
+        payload: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Write-back placeholder for skill progress."""
+        raise NotImplementedError("update_skill_progress requires configured SAP adapter")
+
+    def record_learning_completion(
+        self,
+        candidate_id: str,
+        learning_item_id: str,
+        payload: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Write-back placeholder for learning completion."""
+        raise NotImplementedError("record_learning_completion requires configured SAP adapter")
+
     def record_development_progress(self, candidate_id: str, payload: dict[str, Any]) -> dict[str, Any]:
         """Write-back placeholder — human-approved only in production."""
         raise NotImplementedError("record_development_progress requires live SAP and human approval")

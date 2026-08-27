@@ -1,4 +1,4 @@
-"""LangGraph workflow — Checkpoint 2 intelligence + Checkpoint 3 diagnosis."""
+"""LangGraph workflow — intelligence, diagnosis, pathway, and proof-of-skill."""
 
 from typing import Any
 
@@ -8,14 +8,19 @@ from app.adapters.llm import get_llm_provider
 from app.adapters.sap import get_sap_provider
 from app.agents.candidate_intelligence import CandidateIntelligenceAgent
 from app.agents.job_decomposition import JobDecompositionAgent
+from app.domain.assessment import CapabilityAssessmentItem, CapabilityGap
 from app.domain.candidate import CandidateCapability, CandidateEvidence, CandidateProfile
-from app.domain.enums import AuditStatus, EngineMode
+from app.domain.enums import AuditStatus, EngineMode, PathwayStatus, RunMode
 from app.domain.job import JobCapability, JobProfile, JobRequirement, JobTask
+from app.domain.pathway import ProofSubmission
 from app.domain.sap import SAPContext
 from app.orchestration.state import ReworkGraphState
 from app.services.audit import AuditTimer, new_audit_event
+from app.services.capability_update_service import CapabilityUpdateService
 from app.services.diagnosis_service import DiagnosisService
 from app.services.fixture_service import FixtureService
+from app.services.pathway_engine import PathwayEngine
+from app.services.proof_of_skill_engine import ProofOfSkillEngine
 
 
 def _audit_dict(event) -> dict[str, Any]:
@@ -26,6 +31,9 @@ def build_graph() -> Any:
     fixture_service = FixtureService()
     sap_provider = get_sap_provider()
     diagnosis_service = DiagnosisService()
+    pathway_engine = PathwayEngine()
+    proof_engine = ProofOfSkillEngine()
+    capability_update_service = CapabilityUpdateService()
 
     def load_candidate(state: ReworkGraphState) -> dict[str, Any]:
         timer = AuditTimer()
@@ -263,10 +271,323 @@ def build_graph() -> Any:
             output_reference=summary.get("overall_diagnosis_state"),
             latency_ms=timer.elapsed_ms(),
         )
-        return {
-            "status": "completed",
-            "audit_events": [_audit_dict(event)],
-        }
+        run_mode = state.get("run_mode", RunMode.ANALYZE_ONLY.value)
+        result: dict[str, Any] = {"audit_events": [_audit_dict(event)]}
+        if run_mode == RunMode.ANALYZE_ONLY.value:
+            result["status"] = "completed"
+        return result
+
+    def pathway_generation(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "ananya-sharma")
+        job_id = state.get("job_id", "data-analyst-junior")
+        try:
+            gaps = [CapabilityGap.model_validate(g) for g in state.get("capability_gaps", [])]
+            assessment = state.get("capability_assessments", [])
+            items = []
+            if assessment:
+                items = [
+                    CapabilityAssessmentItem.model_validate(i)
+                    for i in assessment[0].get("items", [])
+                ]
+            job_caps = [JobCapability.model_validate(c) for c in state.get("job_capabilities", [])]
+            job = state.get("job") or {}
+            role_title = job.get("title")
+
+            pathway = pathway_engine.generate(
+                candidate_id=candidate_id,
+                target_role_id=job_id,
+                run_id=run_id,
+                capability_gaps=gaps,
+                capability_items=items,
+                job_capabilities=job_caps,
+                role_title=role_title,
+            )
+            if pathway is None:
+                rationale = "No genuine capability gap requiring a learning pathway."
+                event = new_audit_event(
+                    agent="pathway_generation",
+                    run_id=run_id,
+                    engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                    status=AuditStatus.SKIPPED,
+                    rationale=rationale,
+                    latency_ms=timer.elapsed_ms(),
+                )
+                return {"audit_events": [_audit_dict(event)]}
+
+            assessment_obj = proof_engine.create_assessment(
+                skill_id=pathway.target_capabilities[0],
+                candidate_id=candidate_id,
+            )
+            event = new_audit_event(
+                agent="pathway_generation",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=pathway.why,
+                confidence=pathway.confidence,
+                input_reference=pathway.gap_skill_ids[0],
+                output_reference=pathway.id,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "learning_path": pathway.model_dump(mode="json"),
+                "proof_assessment": assessment_obj.model_dump(mode="json"),
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            event = new_audit_event(
+                agent="pathway_generation",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def proof_of_skill(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        run_mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
+        if run_mode not in {RunMode.EVALUATE_PROOF.value, RunMode.FULL_DEMO_REPLAY.value}:
+            return {}
+
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "ananya-sharma")
+        learning_path = state.get("learning_path")
+        if not learning_path:
+            return {"errors": ["No learning path available for proof evaluation."]}
+
+        skill_id = learning_path.get("target_capabilities", [None])[0]
+        assessment_data = state.get("proof_assessment")
+        if not assessment_data:
+            assessment_obj = proof_engine.create_assessment(skill_id, candidate_id)
+            assessment_data = assessment_obj.model_dump(mode="json")
+
+        try:
+            from app.domain.pathway import ProofOfSkillAssessment
+
+            assessment = ProofOfSkillAssessment.model_validate(assessment_data)
+            is_demo = run_mode == RunMode.FULL_DEMO_REPLAY.value
+
+            if is_demo and candidate_id == "ananya-sharma" and skill_id == "power_bi":
+                demo = fixture_service.get_proof_demo_fixture()
+                submission = ProofSubmission(
+                    id=f"submission-{assessment.id}",
+                    assessment_id=assessment.id,
+                    candidate_id=candidate_id,
+                    skill_id=skill_id,
+                    responses=demo["submission"]["responses"],
+                    artifact_metadata=demo["submission"]["artifact_metadata"],
+                    source_mode=assessment.source_mode,
+                    is_demo=True,
+                )
+            else:
+                submission_data = state.get("proof_submission")
+                if not submission_data:
+                    return {"errors": ["Proof submission required for evaluation."]}
+                submission = ProofSubmission.model_validate(submission_data)
+
+            result, evidence = proof_engine.evaluate_submission(assessment, submission)
+            pathway_status = (
+                PathwayStatus.PROOF_SUBMITTED.value
+                if result.result.value == "PASSED"
+                else PathwayStatus.PROOF_FAILED.value
+            )
+            updated_path = dict(learning_path)
+            updated_path["status"] = pathway_status
+
+            event = new_audit_event(
+                agent="proof_evaluation",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=f"Proof evaluation: {result.result.value} (score {result.total:.2f}).",
+                confidence=result.total,
+                input_reference=assessment.id,
+                output_reference=result.id,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "learning_path": updated_path,
+                "proof_submission": submission.model_dump(mode="json"),
+                "proof_result": result.model_dump(mode="json"),
+                "proof_evidence": evidence.model_dump(mode="json"),
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            event = new_audit_event(
+                agent="proof_evaluation",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def capability_refresh(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors") or not state.get("proof_result"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        try:
+            from app.domain.pathway import ProofEvidence, ProofOfSkillResult
+
+            proof_result = ProofOfSkillResult.model_validate(state["proof_result"])
+            proof_evidence = ProofEvidence.model_validate(state["proof_evidence"])
+            candidate_caps = [
+                CandidateCapability.model_validate(c)
+                for c in state.get("candidate_capabilities", [])
+            ]
+            evidence_list = [
+                CandidateEvidence.model_validate(e) for e in state.get("candidate_evidence", [])
+            ]
+            job_caps = [JobCapability.model_validate(c) for c in state.get("job_capabilities", [])]
+            required = 0.6
+            job_cap = next((c for c in job_caps if c.skill_id == proof_result.skill_id), None)
+            if job_cap:
+                required = job_cap.min_proficiency
+
+            updated_caps, update_event, new_evidence = capability_update_service.apply_proof_result(
+                candidate_caps,
+                proof_result,
+                proof_evidence,
+                required_proficiency=required,
+                run_id=run_id,
+            )
+
+            if new_evidence:
+                evidence_list.append(new_evidence)
+
+            write_back = sap_provider.update_skill_progress(
+                proof_result.candidate_id,
+                proof_result.skill_id,
+                {"new_level": update_event.new_level if update_event else None},
+            )
+
+            rationale = "Capability updated from proof-of-skill evidence."
+            if update_event:
+                rationale = (
+                    f"{update_event.skill_id}: {update_event.old_level:.2f} → "
+                    f"{update_event.new_level:.2f} via assessment."
+                )
+
+            event = new_audit_event(
+                agent="capability_update",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS if update_event else AuditStatus.SKIPPED,
+                rationale=rationale,
+                confidence=proof_result.total,
+                input_reference=proof_result.id,
+                output_reference=update_event.id if update_event else None,
+                latency_ms=timer.elapsed_ms(),
+            )
+            result: dict[str, Any] = {
+                "updated_candidate_capabilities": [
+                    c.model_dump(mode="json") for c in updated_caps
+                ],
+                "candidate_evidence": [e.model_dump(mode="json") for e in evidence_list],
+                "audit_events": [_audit_dict(event)],
+            }
+            if update_event:
+                result["capability_update_events"] = [update_event.model_dump(mode="json")]
+                result["candidate_capabilities"] = result["updated_candidate_capabilities"]
+                learning_path = dict(state.get("learning_path", {}))
+                learning_path["status"] = PathwayStatus.COMPLETED.value
+                result["learning_path"] = learning_path
+            return result
+        except Exception as exc:
+            event = new_audit_event(
+                agent="capability_update",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def reassessment(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "ananya-sharma")
+        job_id = state.get("job_id", "data-analyst-junior")
+        try:
+            candidate_caps = [
+                CandidateCapability.model_validate(c)
+                for c in state.get("updated_candidate_capabilities", state.get("candidate_capabilities", []))
+            ]
+            evidence = [CandidateEvidence.model_validate(e) for e in state.get("candidate_evidence", [])]
+            job_caps = [JobCapability.model_validate(c) for c in state.get("job_capabilities", [])]
+            requirements = [
+                JobRequirement.model_validate(r) for r in state.get("requirement_analyses", [])
+            ]
+            tasks = [JobTask.model_validate(t) for t in state.get("job_tasks", [])]
+
+            assessment, gaps, req_diagnoses, counterfactuals, summary = diagnosis_service.run(
+                candidate_id=candidate_id,
+                job_id=job_id,
+                job_capabilities=job_caps,
+                candidate_capabilities=candidate_caps,
+                candidate_evidence=evidence,
+                requirements=requirements,
+                tasks=tasks,
+                run_id=run_id,
+            )
+
+            event = new_audit_event(
+                agent="reassessment",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=f"Reassessment: {summary.overall_diagnosis_state.value}.",
+                confidence=summary.diagnosis_confidence,
+                input_reference=f"{candidate_id}:{job_id}",
+                output_reference=summary.overall_diagnosis_state.value,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "status": "completed",
+                "capability_assessments": [assessment.model_dump(mode="json")],
+                "capability_gaps": [g.model_dump(mode="json") for g in gaps],
+                "requirement_diagnoses": [d.model_dump(mode="json") for d in req_diagnoses],
+                "counterfactuals": [c.model_dump(mode="json") for c in counterfactuals],
+                "diagnosis_summary": summary.model_dump(mode="json"),
+                "reassessment_summary": summary.model_dump(mode="json"),
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            event = new_audit_event(
+                agent="reassessment",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def route_after_counterfactual(state: ReworkGraphState) -> str:
+        if state.get("run_mode", RunMode.ANALYZE_ONLY.value) == RunMode.ANALYZE_ONLY.value:
+            return "end"
+        return "pathway_generation"
+
+    def route_after_pathway(state: ReworkGraphState) -> str:
+        mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
+        if mode == RunMode.GENERATE_PATHWAY.value:
+            return "end"
+        if mode in {RunMode.EVALUATE_PROOF.value, RunMode.FULL_DEMO_REPLAY.value}:
+            return "proof_of_skill"
+        return "end"
 
     graph = StateGraph(ReworkGraphState)
     graph.add_node("load_candidate", load_candidate)
@@ -275,6 +596,10 @@ def build_graph() -> Any:
     graph.add_node("job_decomposition", job_decomposition)
     graph.add_node("diagnosis", diagnosis)
     graph.add_node("counterfactual_analysis", counterfactual_analysis)
+    graph.add_node("pathway_generation", pathway_generation)
+    graph.add_node("proof_of_skill", proof_of_skill)
+    graph.add_node("capability_refresh", capability_refresh)
+    graph.add_node("reassessment", reassessment)
 
     graph.set_entry_point("load_candidate")
     graph.add_edge("load_candidate", "candidate_intelligence")
@@ -282,7 +607,19 @@ def build_graph() -> Any:
     graph.add_edge("load_job", "job_decomposition")
     graph.add_edge("job_decomposition", "diagnosis")
     graph.add_edge("diagnosis", "counterfactual_analysis")
-    graph.add_edge("counterfactual_analysis", END)
+    graph.add_conditional_edges(
+        "counterfactual_analysis",
+        route_after_counterfactual,
+        {"end": END, "pathway_generation": "pathway_generation"},
+    )
+    graph.add_conditional_edges(
+        "pathway_generation",
+        route_after_pathway,
+        {"end": END, "proof_of_skill": "proof_of_skill"},
+    )
+    graph.add_edge("proof_of_skill", "capability_refresh")
+    graph.add_edge("capability_refresh", "reassessment")
+    graph.add_edge("reassessment", END)
 
     return graph.compile()
 
