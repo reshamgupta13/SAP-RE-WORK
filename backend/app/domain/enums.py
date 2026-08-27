@@ -109,3 +109,24 @@ class IntegrationStatus(StrEnum):
     AVAILABLE = "AVAILABLE"
     UNAVAILABLE = "UNAVAILABLE"
     DEGRADED = "DEGRADED"
+
+
+class EngineMode(StrEnum):
+    LLM = "LLM"
+    DEMO_FALLBACK = "DEMO_FALLBACK"
+
+
+class RecencyStatus(StrEnum):
+    RECENT = "RECENT"
+    AGING = "AGING"
+    STALE = "STALE"
+    UNKNOWN = "UNKNOWN"
+
+
+class CapabilityVerificationStatus(StrEnum):
+    """Capability-level verification derived from evidence."""
+
+    SELF_REPORTED = "SELF_REPORTED"
+    UNVERIFIED = "UNVERIFIED"
+    SUPPORTED = "SUPPORTED"
+    VERIFIED = "VERIFIED"

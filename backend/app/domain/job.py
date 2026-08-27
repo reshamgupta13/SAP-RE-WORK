@@ -20,6 +20,7 @@ class JobTask(IdentifiedModel):
     on_site_likelihood: str = "unknown"
     importance: str = "core"
     capability_ids: list[str] = Field(default_factory=list)
+    source_requirement_ids: list[str] = Field(default_factory=list)
     source_mode: SourceMode = SourceMode.SYNTHETIC
 
 

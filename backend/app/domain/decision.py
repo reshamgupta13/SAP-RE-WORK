@@ -9,6 +9,7 @@ from app.domain.base import DomainModel, IdentifiedModel
 from app.domain.assessment import FitDimensions
 from app.domain.enums import (
     AuditStatus,
+    EngineMode,
     HumanReviewAction,
     RecommendationState,
     SourceMode,
@@ -63,6 +64,7 @@ class AuditEvent(IdentifiedModel):
     run_id: str | None = None
     agent: str
     timestamp: datetime = Field(default_factory=datetime.utcnow)
+    engine_mode: EngineMode | None = None
     input_reference: str | None = None
     output_reference: str | None = None
     confidence: Annotated[float, Field(ge=0.0, le=1.0)] | None = None

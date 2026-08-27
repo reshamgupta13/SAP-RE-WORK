@@ -6,7 +6,13 @@ from typing import Annotated
 from pydantic import Field, field_validator, model_validator
 
 from app.domain.base import IdentifiedModel, TimestampedModel
-from app.domain.enums import EvidenceType, SourceMode, VerificationStatus
+from app.domain.enums import (
+    CapabilityVerificationStatus,
+    EvidenceType,
+    RecencyStatus,
+    SourceMode,
+    VerificationStatus,
+)
 
 
 class CandidateProfile(IdentifiedModel):
@@ -69,6 +75,11 @@ class CandidateCapability(IdentifiedModel):
     source: str
     source_mode: SourceMode
     inference_status: str
+    verification_status: CapabilityVerificationStatus | None = None
+    recency_status: RecencyStatus | None = None
+    raw_confidence: Annotated[float, Field(ge=0.0, le=1.0)] | None = None
+    system_confidence: Annotated[float, Field(ge=0.0, le=1.0)] | None = None
+    rationale: str | None = None
 
     @field_validator("evidence_refs")
     @classmethod

@@ -17,6 +17,10 @@ class Settings(BaseSettings):
     demo_mode: bool = True
     database_url: str = "postgresql+psycopg://rework:rework@localhost:5432/rework"
     fixtures_dir: str = "../fixtures"
+    llm_provider: str = "gemini"
+    llm_api_key: str | None = None
+    llm_model: str = "gemini-2.0-flash"
+    llm_timeout_seconds: float = 30.0
 
 
 @lru_cache

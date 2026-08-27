@@ -14,7 +14,8 @@ def health() -> dict:
         "status": "ok",
         "service": settings.app_name,
         "demo_mode": settings.demo_mode,
-        "engine_mode": "FOUNDATION",
+        "engine_mode": "CHECKPOINT_02",
+        "intelligence_layer": "candidate_intelligence + job_decomposition",
         "sap_connection": "SIMULATED",
-        "message": "RE:WORK API foundation — Checkpoint 1",
+        "message": "RE:WORK API — Checkpoint 2 intelligence layer",
     }
