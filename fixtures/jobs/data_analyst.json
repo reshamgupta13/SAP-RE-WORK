@@ -1,0 +1,158 @@
+{
+  "id": "data-analyst-junior",
+  "title": "Junior Data Analyst",
+  "raw_text": "Junior Data Analyst — analyze datasets, produce business reports, create dashboards, communicate insights. Requirements: SQL, Excel, data analysis, reporting, Power BI, communication. 3 years continuous recent professional experience. Bangalore office 5 days/week. Premier engineering institute preferred.",
+  "family": "analytics",
+  "level": "junior",
+  "location": "Bangalore",
+  "work_modes": ["onsite"],
+  "sap_requisition_id": null,
+  "sap_job_role_code": null,
+  "source": "REWORK",
+  "source_mode": "SYNTHETIC",
+  "is_demo_fixture": true,
+  "created_at": "2026-08-28T00:00:00",
+  "updated_at": null,
+  "outcomes": [
+    {
+      "id": "out-da-insights",
+      "job_id": "data-analyst-junior",
+      "text": "Deliver weekly operational insights for business leadership",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-da-sql",
+      "job_id": "data-analyst-junior",
+      "text": "Write SQL to extract and join operational datasets",
+      "on_site_likelihood": "low",
+      "importance": "core",
+      "capability_ids": ["sql", "data_analysis"],
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "task-da-dashboard",
+      "job_id": "data-analyst-junior",
+      "text": "Build recurring dashboards and visual reports",
+      "on_site_likelihood": "low",
+      "importance": "core",
+      "capability_ids": ["power_bi", "reporting"],
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "task-da-communicate",
+      "job_id": "data-analyst-junior",
+      "text": "Present findings to stakeholders",
+      "on_site_likelihood": "medium",
+      "importance": "core",
+      "capability_ids": ["communication"],
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req-da-experience",
+      "job_id": "data-analyst-junior",
+      "text": "3 years continuous recent professional experience",
+      "requirement_class": "EXPERIENCE_REQUIREMENT",
+      "review_tag": "POTENTIAL_PROXY",
+      "strength": "required",
+      "why_relevant": "May proxy for practice volume and reliability.",
+      "why_may_be_proxy": "Continuous tenure is not the same as task capability; career breaks do not erase skills.",
+      "linked_task_ids": [],
+      "confidence": 0.7,
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "req-da-location",
+      "job_id": "data-analyst-junior",
+      "text": "Bangalore office 5 days/week",
+      "requirement_class": "WORKPLACE_CONDITION",
+      "review_tag": "POTENTIAL_PROXY",
+      "strength": "required",
+      "why_relevant": "May reflect collaboration or equipment needs.",
+      "why_may_be_proxy": "Core analytics tasks may be performable hybrid if access is provided.",
+      "linked_task_ids": ["task-da-sql", "task-da-dashboard"],
+      "confidence": 0.65,
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "req-da-institute",
+      "job_id": "data-analyst-junior",
+      "text": "Premier engineering institute preferred",
+      "requirement_class": "CREDENTIAL_REQUIREMENT",
+      "review_tag": "POTENTIAL_EXCLUSIONARY_FACTOR",
+      "strength": "preferred",
+      "why_relevant": "Screening convenience.",
+      "why_may_be_proxy": "Institution brand is not a task capability.",
+      "linked_task_ids": [],
+      "confidence": 0.8,
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "jcap-da-sql",
+      "job_id": "data-analyst-junior",
+      "skill_id": "sql",
+      "label": "SQL",
+      "min_proficiency": 0.6,
+      "importance": "core",
+      "evidence_expectation": "work sample or demonstrated project",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "jcap-da-excel",
+      "job_id": "data-analyst-junior",
+      "skill_id": "excel",
+      "label": "Excel",
+      "min_proficiency": 0.55,
+      "importance": "core",
+      "evidence_expectation": "work sample",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "jcap-da-powerbi",
+      "job_id": "data-analyst-junior",
+      "skill_id": "power_bi",
+      "label": "Power BI",
+      "min_proficiency": 0.6,
+      "importance": "core",
+      "evidence_expectation": "dashboard sample",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "jcap-da-communication",
+      "job_id": "data-analyst-junior",
+      "skill_id": "communication",
+      "label": "Communication",
+      "min_proficiency": 0.55,
+      "importance": "core",
+      "evidence_expectation": "stakeholder case writeup",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ]
+}

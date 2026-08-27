@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: rework-postgres
+    environment:
+      POSTGRES_USER: rework
+      POSTGRES_PASSWORD: rework
+      POSTGRES_DB: rework
+    ports:
+      - "5432:5432"
+    volumes:
+      - rework_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rework -d rework"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  rework_pg_data:

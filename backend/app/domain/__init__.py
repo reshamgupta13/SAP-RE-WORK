@@ -1,0 +1,88 @@
+"""Domain model exports."""
+
+from app.domain.assessment import (
+    BarrierAssessment,
+    CapabilityAssessment,
+    CapabilityAssessmentItem,
+    CapabilityGap,
+    CounterfactualAssessment,
+    FitDimensions,
+)
+from app.domain.base import DomainModel, IdentifiedModel, TimestampedModel
+from app.domain.candidate import CandidateCapability, CandidateEvidence, CandidateProfile, Skill
+from app.domain.decision import AuditEvent, DecisionCard, HumanReview, Outcome
+from app.domain.enums import (
+    AuditStatus,
+    CounterfactualConclusion,
+    EvidenceType,
+    GapStatus,
+    HumanReviewAction,
+    InferenceStatus,
+    IntegrationStatus,
+    ReadinessState,
+    RecommendationState,
+    RequirementClass,
+    ReviewTag,
+    SourceMode,
+    VerificationStatus,
+)
+from app.domain.job import JobCapability, JobProfile, JobRequirement, JobTask, RoleOutcome
+from app.domain.pathway import (
+    LearningItem,
+    LearningPath,
+    MarketSignal,
+    MatchRecommendation,
+    Opportunity,
+    ProofOfSkillAssessment,
+    ProofOfSkillResult,
+    RecommendationEvidence,
+)
+from app.domain.sap import SAPCapabilityStatus, SAPContext
+
+__all__ = [
+    "AuditEvent",
+    "AuditStatus",
+    "BarrierAssessment",
+    "CandidateCapability",
+    "CandidateEvidence",
+    "CandidateProfile",
+    "CapabilityAssessment",
+    "CapabilityAssessmentItem",
+    "CapabilityGap",
+    "CounterfactualAssessment",
+    "CounterfactualConclusion",
+    "DecisionCard",
+    "DomainModel",
+    "EvidenceType",
+    "FitDimensions",
+    "GapStatus",
+    "HumanReview",
+    "HumanReviewAction",
+    "IdentifiedModel",
+    "InferenceStatus",
+    "IntegrationStatus",
+    "JobCapability",
+    "JobProfile",
+    "JobRequirement",
+    "JobTask",
+    "LearningItem",
+    "LearningPath",
+    "MarketSignal",
+    "MatchRecommendation",
+    "Opportunity",
+    "Outcome",
+    "ProofOfSkillAssessment",
+    "ProofOfSkillResult",
+    "ReadinessState",
+    "RecommendationEvidence",
+    "RecommendationState",
+    "RequirementClass",
+    "ReviewTag",
+    "RoleOutcome",
+    "SAPCapabilityStatus",
+    "SAPContext",
+    "Skill",
+    "SourceMode",
+    "TimestampedModel",
+    "VerificationStatus",
+]

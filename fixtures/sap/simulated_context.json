@@ -1,0 +1,35 @@
+{
+  "growth_portfolio": {
+    "candidate_id": "ananya-sharma",
+    "attributes": [],
+    "source_mode": "SIMULATED",
+    "note": "External candidate — no employee Growth Portfolio in demo"
+  },
+  "learning_items": [
+    {
+      "id": "learn-powerbi-fundamentals",
+      "title": "Power BI fundamentals (demo catalog)",
+      "hours": 8,
+      "sap_learning_item_id": null,
+      "source": "REWORK",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "opp-hybrid-analyst-lucknow",
+      "job_id": "data-analyst-junior",
+      "title": "Junior Data Analyst (Hybrid — India)",
+      "location": "Lucknow / Hybrid",
+      "work_modes": ["hybrid", "remote"],
+      "language": "en",
+      "source": "REWORK",
+      "sap_opportunity_id": null,
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ]
+}
