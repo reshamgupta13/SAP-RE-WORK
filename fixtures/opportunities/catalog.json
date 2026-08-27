@@ -1,0 +1,145 @@
+{
+  "opportunities": [
+    {
+      "id": "opp-data-analyst",
+      "title": "Junior Data Analyst",
+      "job_id": "data-analyst-junior",
+      "family": "analytics",
+      "location": "Bangalore",
+      "work_modes": ["onsite", "hybrid"],
+      "capability_skill_ids": ["sql", "excel", "power_bi", "communication", "data_analysis"],
+      "min_proficiency": {
+        "sql": 0.6,
+        "excel": 0.55,
+        "power_bi": 0.6,
+        "communication": 0.55,
+        "data_analysis": 0.55
+      },
+      "workplace_conditions": ["Bangalore office 5 days/week preferred"],
+      "experience_requirements": ["3 years continuous recent professional experience"],
+      "development_options": ["structured onboarding", "mentor pairing", "hybrid flexibility"],
+      "employer_id": "employer-data-analyst",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "opp-operations-analyst",
+      "title": "Operations Analyst",
+      "job_id": "operations-analyst",
+      "family": "operations",
+      "location": "Lucknow / Hybrid",
+      "work_modes": ["hybrid", "remote"],
+      "capability_skill_ids": ["sql", "excel", "communication", "reporting"],
+      "min_proficiency": {
+        "sql": 0.5,
+        "excel": 0.6,
+        "communication": 0.5,
+        "reporting": 0.55
+      },
+      "workplace_conditions": ["Hybrid or remote compatible"],
+      "experience_requirements": ["2 years relevant experience"],
+      "development_options": ["phased responsibility", "mentor pairing"],
+      "employer_id": "employer-operations-analyst",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "opp-bi-analyst",
+      "title": "BI Analyst",
+      "job_id": "bi-analyst",
+      "family": "analytics",
+      "location": "Bangalore",
+      "work_modes": ["onsite", "hybrid"],
+      "capability_skill_ids": ["sql", "power_bi", "data_analysis", "communication", "data_modeling"],
+      "min_proficiency": {
+        "sql": 0.65,
+        "power_bi": 0.7,
+        "data_analysis": 0.65,
+        "communication": 0.55,
+        "data_modeling": 0.6
+      },
+      "workplace_conditions": ["Office-based with hybrid option"],
+      "experience_requirements": ["3+ years analytics or BI experience"],
+      "development_options": ["learning support", "structured onboarding"],
+      "employer_id": "employer-bi-analyst",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    },
+    {
+      "id": "opp-reporting-analyst",
+      "title": "Reporting Analyst",
+      "job_id": "reporting-analyst",
+      "family": "analytics",
+      "location": "India — Remote",
+      "work_modes": ["remote", "hybrid"],
+      "capability_skill_ids": ["excel", "reporting", "communication", "sql"],
+      "min_proficiency": {
+        "excel": 0.6,
+        "reporting": 0.6,
+        "communication": 0.55,
+        "sql": 0.5
+      },
+      "workplace_conditions": ["Remote-first"],
+      "experience_requirements": ["2 years reporting experience"],
+      "development_options": ["flexible work", "learning support"],
+      "employer_id": "employer-reporting-analyst",
+      "source_mode": "SYNTHETIC",
+      "created_at": "2026-08-28T00:00:00",
+      "updated_at": null
+    }
+  ],
+  "employers": [
+    {
+      "id": "employer-data-analyst",
+      "opportunity_id": "opp-data-analyst",
+      "factors": [
+        {"factor": "MENTORSHIP_AVAILABLE", "status": "READY", "confidence": 0.85, "evidence_ref": "employer-policy-mentor"},
+        {"factor": "HYBRID_OR_REMOTE", "status": "READY", "confidence": 0.8, "evidence_ref": "employer-policy-hybrid"},
+        {"factor": "STRUCTURED_ONBOARDING", "status": "READY", "confidence": 0.82, "evidence_ref": "employer-policy-onboarding"},
+        {"factor": "PHASED_RESPONSIBILITY", "status": "READY", "confidence": 0.78, "evidence_ref": "employer-policy-phased"},
+        {"factor": "LEARNING_SUPPORT", "status": "READY", "confidence": 0.8, "evidence_ref": "employer-policy-learning"},
+        {"factor": "ACCESSIBILITY_SUPPORT", "status": "UNKNOWN", "confidence": 0.4, "human_review_required": true}
+      ],
+      "source_mode": "SYNTHETIC"
+    },
+    {
+      "id": "employer-operations-analyst",
+      "opportunity_id": "opp-operations-analyst",
+      "factors": [
+        {"factor": "MENTORSHIP_AVAILABLE", "status": "READY", "confidence": 0.8, "evidence_ref": "employer-policy-mentor"},
+        {"factor": "HYBRID_OR_REMOTE", "status": "READY", "confidence": 0.9, "evidence_ref": "employer-policy-remote"},
+        {"factor": "STRUCTURED_ONBOARDING", "status": "PARTIALLY_READY", "confidence": 0.65, "evidence_ref": "employer-policy-onboarding-lite"},
+        {"factor": "PHASED_RESPONSIBILITY", "status": "READY", "confidence": 0.85, "evidence_ref": "employer-policy-phased"},
+        {"factor": "FLEXIBLE_WORK", "status": "READY", "confidence": 0.88, "evidence_ref": "employer-policy-flex"},
+        {"factor": "PROOF_OF_SKILL_ACCEPTANCE", "status": "READY", "confidence": 0.75, "evidence_ref": "employer-policy-proof"}
+      ],
+      "source_mode": "SYNTHETIC"
+    },
+    {
+      "id": "employer-bi-analyst",
+      "opportunity_id": "opp-bi-analyst",
+      "factors": [
+        {"factor": "MENTORSHIP_AVAILABLE", "status": "PARTIALLY_READY", "confidence": 0.6, "human_review_required": true},
+        {"factor": "HYBRID_OR_REMOTE", "status": "PARTIALLY_READY", "confidence": 0.65, "evidence_ref": "employer-policy-hybrid-limited"},
+        {"factor": "STRUCTURED_ONBOARDING", "status": "READY", "confidence": 0.75, "evidence_ref": "employer-policy-onboarding"},
+        {"factor": "LEARNING_SUPPORT", "status": "READY", "confidence": 0.8, "evidence_ref": "employer-policy-learning"},
+        {"factor": "MANAGER_SUPPORT", "status": "UNKNOWN", "confidence": 0.45, "human_review_required": true}
+      ],
+      "source_mode": "SYNTHETIC"
+    },
+    {
+      "id": "employer-reporting-analyst",
+      "opportunity_id": "opp-reporting-analyst",
+      "factors": [
+        {"factor": "HYBRID_OR_REMOTE", "status": "READY", "confidence": 0.9, "evidence_ref": "employer-policy-remote"},
+        {"factor": "FLEXIBLE_WORK", "status": "READY", "confidence": 0.85, "evidence_ref": "employer-policy-flex"},
+        {"factor": "LEARNING_SUPPORT", "status": "READY", "confidence": 0.7, "evidence_ref": "employer-policy-learning"},
+        {"factor": "PROOF_OF_SKILL_ACCEPTANCE", "status": "PARTIALLY_READY", "confidence": 0.6, "human_review_required": true}
+      ],
+      "source_mode": "SYNTHETIC"
+    }
+  ]
+}

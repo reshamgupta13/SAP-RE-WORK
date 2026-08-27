@@ -75,6 +75,36 @@ def run_reassess(body: DemoRunRequest) -> dict[str, Any]:
     return _orchestration.build_proof_response(state)
 
 
+@router.post("/market")
+def run_market(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+        run_mode=RunMode.OPPORTUNITY_ANALYSIS,
+    )
+    return _orchestration.build_viability_response(state)
+
+
+@router.post("/opportunities")
+def run_opportunities(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+        run_mode=RunMode.OPPORTUNITY_ANALYSIS,
+    )
+    return _orchestration.build_viability_response(state)
+
+
+@router.post("/viability")
+def run_viability(body: DemoRunRequest) -> dict[str, Any]:
+    state = _orchestration.execute_demo_run(
+        candidate_id=body.candidate_id,
+        job_id=body.job_id,
+        run_mode=RunMode.OPPORTUNITY_ANALYSIS,
+    )
+    return _orchestration.build_viability_response(state)
+
+
 @router.post("")
 def create_run(body: DemoRunRequest) -> dict[str, Any]:
     state = _orchestration.execute_demo_run(

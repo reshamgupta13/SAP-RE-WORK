@@ -1,0 +1,27 @@
+{
+  "scenario": "checkpoint_05_ananya",
+  "candidate_id": "ananya-sharma",
+  "job_id": "data-analyst-junior",
+  "run_mode": "OPPORTUNITY_ANALYSIS",
+  "expected_engine_mode": "DEMO_FALLBACK",
+  "expected_opportunity_ids": [
+    "opp-data-analyst",
+    "opp-operations-analyst",
+    "opp-bi-analyst"
+  ],
+  "expected_data_analyst_viability_states": [
+    "VIABLE_WITH_TARGETED_PATHWAY",
+    "REQUIRES_HUMAN_REVIEW",
+    "VIABLE_WITH_PATHWAY_AND_ADAPTATION"
+  ],
+  "expected_operations_analyst_viability_states": [
+    "IMMEDIATELY_VIABLE",
+    "VIABLE_WITH_TARGETED_PATHWAY"
+  ],
+  "expected_power_bi_in_data_analyst_gaps": true,
+  "expected_market_signals_synthetic": true,
+  "expected_skill_investment_power_bi": true,
+  "expected_employer_readiness_count_min": 3,
+  "expected_comparison_recommended_step": "opp-operations-analyst",
+  "no_hiring_recommendation": true
+}

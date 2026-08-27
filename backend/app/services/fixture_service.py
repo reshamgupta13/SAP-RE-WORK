@@ -69,3 +69,26 @@ class FixtureService:
 
     def get_proof_demo_fixture(self, name: str = "ananya_power_bi_demo") -> dict:
         return self._read_json(f"proof/{name}.json")
+
+    def get_market_signals(self) -> list:
+        from app.domain.opportunity_viability import MarketIntelligenceSignal
+
+        data = self._read_json("market/signals.json")
+        return TypeAdapter(list[MarketIntelligenceSignal]).validate_python(data.get("signals", []))
+
+    def get_opportunity_catalog(self) -> list:
+        from app.domain.opportunity_viability import OpportunityCatalogEntry
+
+        data = self._read_json("opportunities/catalog.json")
+        return TypeAdapter(list[OpportunityCatalogEntry]).validate_python(data.get("opportunities", []))
+
+    def get_employer_for_opportunity(self, opportunity_id: str) -> dict | None:
+        data = self._read_json("opportunities/catalog.json")
+        for employer in data.get("employers", []):
+            opp = employer.get("opportunity_id")
+            if opp == opportunity_id:
+                return employer
+        return None
+
+    def get_opportunity_catalog_bundle(self) -> dict:
+        return self._read_json("opportunities/catalog.json")

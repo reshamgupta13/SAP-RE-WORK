@@ -50,3 +50,24 @@ def get_demo_job(job_id: str) -> dict:
         "source_mode": job.source_mode.value,
         "job": job.model_dump(mode="json"),
     }
+
+
+@router.get("/opportunities")
+def list_demo_opportunities() -> dict:
+    catalog = _fixture_service.get_opportunity_catalog()
+    return {
+        "source_mode": "SYNTHETIC",
+        "count": len(catalog),
+        "opportunities": [o.model_dump(mode="json") for o in catalog],
+    }
+
+
+@router.get("/market")
+def list_demo_market_signals() -> dict:
+    signals = _fixture_service.get_market_signals()
+    return {
+        "source_mode": "SYNTHETIC",
+        "count": len(signals),
+        "note": "Synthetic demo signals — not live labor market statistics.",
+        "signals": [s.model_dump(mode="json") for s in signals],
+    }

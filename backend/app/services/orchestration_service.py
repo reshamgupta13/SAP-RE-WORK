@@ -74,6 +74,13 @@ class OrchestrationService:
             "capability_update_events": state.get("capability_update_events", []),
             "updated_candidate_capabilities": state.get("updated_candidate_capabilities", []),
             "reassessment_summary": state.get("reassessment_summary"),
+            "market_signals": state.get("market_signals", []),
+            "skill_investments": state.get("skill_investments", []),
+            "opportunities": state.get("opportunities", []),
+            "opportunity_viability": state.get("opportunity_viability", []),
+            "employer_readiness": state.get("employer_readiness", []),
+            "opportunity_comparison": state.get("opportunity_comparison"),
+            "opportunity_counterfactuals": state.get("opportunity_counterfactuals", []),
             "audit_summary": audit_summary,
             "audit_events": audit_events,
             "errors": state.get("errors", []),
@@ -120,6 +127,23 @@ class OrchestrationService:
             "capability_update_events": base.get("capability_update_events", []),
             "updated_candidate_capabilities": base.get("updated_candidate_capabilities", []),
             "reassessment_summary": base.get("reassessment_summary"),
+            "audit_summary": base["audit_summary"],
+            "errors": base.get("errors", []),
+        }
+
+    def build_viability_response(self, state: ReworkGraphState) -> dict[str, Any]:
+        base = self.build_response(state)
+        return {
+            "run_id": base["run_id"],
+            "status": base["status"],
+            "engine_mode": base["engine_mode"],
+            "market_signals": base.get("market_signals", []),
+            "skill_investments": base.get("skill_investments", []),
+            "opportunities": base.get("opportunities", []),
+            "opportunity_viability": base.get("opportunity_viability", []),
+            "employer_readiness": base.get("employer_readiness", []),
+            "opportunity_comparison": base.get("opportunity_comparison"),
+            "opportunity_counterfactuals": base.get("opportunity_counterfactuals", []),
             "audit_summary": base["audit_summary"],
             "errors": base.get("errors", []),
         }

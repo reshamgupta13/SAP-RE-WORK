@@ -33,5 +33,12 @@ class ReworkGraphState(TypedDict, total=False):
     capability_update_events: list[dict[str, Any]]
     updated_candidate_capabilities: list[dict[str, Any]]
     reassessment_summary: dict[str, Any] | None
+    market_signals: list[dict[str, Any]]
+    skill_investments: list[dict[str, Any]]
+    opportunities: list[dict[str, Any]]
+    opportunity_viability: list[dict[str, Any]]
+    employer_readiness: list[dict[str, Any]]
+    opportunity_comparison: dict[str, Any] | None
+    opportunity_counterfactuals: list[dict[str, Any]]
     audit_events: Annotated[list[dict[str, Any]], add]
     errors: Annotated[list[str], add]

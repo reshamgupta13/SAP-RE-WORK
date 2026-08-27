@@ -21,6 +21,7 @@ from app.services.diagnosis_service import DiagnosisService
 from app.services.fixture_service import FixtureService
 from app.services.pathway_engine import PathwayEngine
 from app.services.proof_of_skill_engine import ProofOfSkillEngine
+from app.services.opportunity_analysis_service import OpportunityAnalysisService
 
 
 def _audit_dict(event) -> dict[str, Any]:
@@ -34,6 +35,7 @@ def build_graph() -> Any:
     pathway_engine = PathwayEngine()
     proof_engine = ProofOfSkillEngine()
     capability_update_service = CapabilityUpdateService()
+    opportunity_analysis_service = OpportunityAnalysisService()
 
     def load_candidate(state: ReworkGraphState) -> dict[str, Any]:
         timer = AuditTimer()
@@ -577,9 +579,143 @@ def build_graph() -> Any:
             return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
 
     def route_after_counterfactual(state: ReworkGraphState) -> str:
-        if state.get("run_mode", RunMode.ANALYZE_ONLY.value) == RunMode.ANALYZE_ONLY.value:
+        mode = state.get("run_mode", RunMode.ANALYZE_ONLY.value)
+        if mode == RunMode.ANALYZE_ONLY.value:
             return "end"
+        if mode == RunMode.OPPORTUNITY_ANALYSIS.value:
+            return "market_intelligence"
         return "pathway_generation"
+
+    def route_after_reassessment(state: ReworkGraphState) -> str:
+        mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
+        if mode == RunMode.FULL_DEMO_REPLAY.value:
+            return "market_intelligence"
+        return "end"
+
+    def market_intelligence(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "ananya-sharma")
+        try:
+            caps = [
+                CandidateCapability.model_validate(c)
+                for c in state.get("updated_candidate_capabilities", state.get("candidate_capabilities", []))
+            ]
+            prof_map = {c.skill_id: c.proficiency for c in caps}
+            signals = opportunity_analysis_service._market.load_signals()
+            investments = opportunity_analysis_service._market.analyze_skill_investments(
+                candidate_id,
+                list(prof_map.keys()),
+                prof_map,
+                [o.job_id for o in opportunity_analysis_service._fixtures.get_opportunity_catalog()],
+            )
+            event = new_audit_event(
+                agent="market_intelligence",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=f"Loaded {len(signals)} synthetic market signals and {len(investments)} skill investment scenarios.",
+                confidence=0.75,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "market_signals": [s.model_dump(mode="json") for s in signals],
+                "skill_investments": [i.model_dump(mode="json") for i in investments],
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(new_audit_event(
+                agent="market_intelligence", run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE, error=str(exc), latency_ms=timer.elapsed_ms(),
+            ))]}
+
+    def opportunity_viability_node(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "ananya-sharma")
+        try:
+            caps = [
+                CandidateCapability.model_validate(c)
+                for c in state.get("updated_candidate_capabilities", state.get("candidate_capabilities", []))
+            ]
+            evidence = [CandidateEvidence.model_validate(e) for e in state.get("candidate_evidence", [])]
+            result = opportunity_analysis_service.run(
+                candidate_id=candidate_id,
+                candidate_capabilities=caps,
+                candidate_evidence=evidence,
+                requirement_diagnoses=state.get("requirement_diagnoses", []),
+                learning_path=state.get("learning_path"),
+                proof_result=state.get("proof_result"),
+                run_id=run_id,
+            )
+            event = new_audit_event(
+                agent="opportunity_viability",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=f"Assessed viability for {len(result['opportunity_viability'])} opportunities.",
+                confidence=0.78,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "opportunities": [o.model_dump(mode="json") for o in result["opportunities"]],
+                "opportunity_viability": [v.model_dump(mode="json") for v in result["opportunity_viability"]],
+                "employer_readiness": [e.model_dump(mode="json") for e in result["employer_readiness"]],
+                "opportunity_counterfactuals": [c.model_dump(mode="json") for c in result["opportunity_counterfactuals"]],
+                "opportunity_comparison": result["opportunity_comparison"].model_dump(mode="json"),
+                "market_signals": [s.model_dump(mode="json") for s in result["market_signals"]],
+                "skill_investments": [i.model_dump(mode="json") for i in result["skill_investments"]],
+                "audit_events": [_audit_dict(event)],
+            }
+        except Exception as exc:
+            event = new_audit_event(
+                agent="opportunity_viability",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.FAILURE,
+                error=str(exc),
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def employer_readiness_node(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        assessments = state.get("employer_readiness", [])
+        event = new_audit_event(
+            agent="employer_readiness",
+            run_id=run_id,
+            engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+            status=AuditStatus.SUCCESS,
+            rationale=f"Employer readiness recorded for {len(assessments)} opportunities.",
+            latency_ms=timer.elapsed_ms(),
+        )
+        return {"audit_events": [_audit_dict(event)]}
+
+    def opportunity_comparison_node(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        comparison = state.get("opportunity_comparison") or {}
+        rec = comparison.get("recommended_next_step_opportunity_id")
+        event = new_audit_event(
+            agent="opportunity_comparison",
+            run_id=run_id,
+            engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+            status=AuditStatus.SUCCESS,
+            rationale=f"Opportunity comparison complete; recommended next step: {rec}.",
+            confidence=comparison.get("confidence"),
+            latency_ms=timer.elapsed_ms(),
+        )
+        return {"status": "completed", "audit_events": [_audit_dict(event)]}
 
     def route_after_pathway(state: ReworkGraphState) -> str:
         mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
@@ -600,6 +736,10 @@ def build_graph() -> Any:
     graph.add_node("proof_of_skill", proof_of_skill)
     graph.add_node("capability_refresh", capability_refresh)
     graph.add_node("reassessment", reassessment)
+    graph.add_node("market_intelligence", market_intelligence)
+    graph.add_node("opportunity_viability", opportunity_viability_node)
+    graph.add_node("employer_readiness", employer_readiness_node)
+    graph.add_node("opportunity_comparison", opportunity_comparison_node)
 
     graph.set_entry_point("load_candidate")
     graph.add_edge("load_candidate", "candidate_intelligence")
@@ -610,7 +750,7 @@ def build_graph() -> Any:
     graph.add_conditional_edges(
         "counterfactual_analysis",
         route_after_counterfactual,
-        {"end": END, "pathway_generation": "pathway_generation"},
+        {"end": END, "pathway_generation": "pathway_generation", "market_intelligence": "market_intelligence"},
     )
     graph.add_conditional_edges(
         "pathway_generation",
@@ -619,7 +759,15 @@ def build_graph() -> Any:
     )
     graph.add_edge("proof_of_skill", "capability_refresh")
     graph.add_edge("capability_refresh", "reassessment")
-    graph.add_edge("reassessment", END)
+    graph.add_conditional_edges(
+        "reassessment",
+        route_after_reassessment,
+        {"end": END, "market_intelligence": "market_intelligence"},
+    )
+    graph.add_edge("market_intelligence", "opportunity_viability")
+    graph.add_edge("opportunity_viability", "employer_readiness")
+    graph.add_edge("employer_readiness", "opportunity_comparison")
+    graph.add_edge("opportunity_comparison", END)
 
     return graph.compile()
 
