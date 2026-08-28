@@ -38,6 +38,7 @@ class CandidateIntelligenceAgent:
         profile: CandidateProfile,
         evidence: list[CandidateEvidence],
         sap_context: SAPContext | None = None,
+        sap_skills: list[dict] | None = None,
     ) -> tuple[list[CandidateCapability], str]:
         evidence_by_id = {e.id: e for e in evidence}
         fallback_payload = self._build_fallback_output(profile, evidence)
@@ -50,7 +51,7 @@ class CandidateIntelligenceAgent:
             )
         else:
             try:
-                prompt = self._build_prompt(profile, evidence, sap_context)
+                prompt = self._build_prompt(profile, evidence, sap_context, sap_skills)
                 output = self._llm.generate_structured(
                     prompt=prompt,
                     schema=CandidateIntelligenceOutput,
@@ -65,7 +66,12 @@ class CandidateIntelligenceAgent:
                 )
 
         capabilities = self._to_domain(profile, output, evidence_by_id)
-        rationale = output.summary_rationale or "Capabilities derived from supplied evidence."
+        sap_note = ""
+        if sap_context:
+            sap_note = f" SAP context ({sap_context.source_mode.value}) consulted."
+        if sap_skills:
+            sap_note += f" {len(sap_skills)} SAP skill records present (not merged without evidence)."
+        rationale = (output.summary_rationale or "Capabilities derived from supplied evidence.") + sap_note
         return capabilities, rationale
 
     def _system_instruction(self) -> str:
@@ -81,6 +87,7 @@ class CandidateIntelligenceAgent:
         profile: CandidateProfile,
         evidence: list[CandidateEvidence],
         sap_context: SAPContext | None,
+        sap_skills: list[dict] | None = None,
     ) -> str:
         sap_note = ""
         if sap_context:
@@ -88,6 +95,8 @@ class CandidateIntelligenceAgent:
                 f"Workforce context source_mode={sap_context.source_mode.value}. "
                 "Do not claim SAP facts unless present in context."
             )
+        if sap_skills:
+            sap_note += f" SAP skills on record: {len(sap_skills)} (use only as supplementary context)."
         evidence_lines = [
             f"- id={e.id} type={e.type.value} verification={e.verification_status.value}: {e.description}"
             for e in evidence

@@ -3,6 +3,7 @@
 from typing import Any
 
 from app.domain.enums import EngineMode, RunMode, SourceMode
+from app.services.agent_orchestration_service import AgentOrchestrationService
 from app.services.explainability_service import ExplainabilityService
 from app.services.fixture_service import FixtureService
 from app.services.human_review_service import HumanReviewService
@@ -30,6 +31,7 @@ class ControlRoomService:
         self._intervention = InterventionSimulator()
         self._explainability = ExplainabilityService()
         self._human_review = HumanReviewService()
+        self._agent_orchestration = AgentOrchestrationService()
 
     def build_control_room(self) -> dict[str, Any]:
         from app.services.case_service import CaseService
@@ -62,10 +64,15 @@ class ControlRoomService:
             state.get("employer_readiness", [{}])[0] if state.get("employer_readiness") else {},
         )
 
+        sap_bundle = state.get("sap_case_context") or {}
+        sap_mode = sap_bundle.get("source_mode") or (
+            (state.get("sap_context") or {}).get("source_mode", "SIMULATED")
+        )
+
         return {
             "source_mode": SourceMode.SYNTHETIC.value,
             "system_status": {
-                "sap": "SIMULATED",
+                "sap": sap_mode,
                 "ai_engine": state.get("engine_mode", EngineMode.DEMO_FALLBACK.value),
                 "pipeline_progress": self._pipeline_progress(state),
                 "demo_mode": True,
@@ -119,6 +126,8 @@ class ControlRoomService:
             ),
             "sap_context": self._sap_context_view(state),
             "pipeline": self._pipeline_detail(state),
+            "agent_orchestrator": self._agent_orchestration.build(state),
+            "audit_events": state.get("audit_events", []),
             "label_simulated_projection": "SIMULATED PROJECTION",
         }
 
@@ -142,14 +151,33 @@ class ControlRoomService:
 
     def _sap_context_view(self, state: dict[str, Any]) -> dict[str, Any]:
         sap = state.get("sap_context") or {}
+        bundle = state.get("sap_case_context") or {}
+        mode = bundle.get("source_mode") or sap.get("source_mode", "SIMULATED")
+
+        def slice_status(key: str) -> str:
+            slice_data = bundle.get(key) or {}
+            return slice_data.get("status", "UNKNOWN")
+
         return {
-            "success_factors": "SIMULATED",
-            "talent_intelligence": "SIMULATED",
-            "learning": "SIMULATED",
-            "opportunity_marketplace": "SIMULATED",
+            "source_mode": mode,
+            "integration_status": bundle.get("integration_status") or sap.get("integration_status"),
+            "workforce": slice_status("workforce_context"),
+            "skills": slice_status("skills_context"),
+            "role": slice_status("role_context"),
+            "learning": slice_status("learning_context"),
+            "opportunities": slice_status("opportunity_context"),
+            "success_factors": mode,
+            "talent_intelligence": slice_status("skills_context"),
+            "learning_catalog": slice_status("learning_context"),
+            "opportunity_marketplace": slice_status("opportunity_context"),
             "btp": "NOT_CONNECTED",
             "raw": sap,
-            "note": "No live SAP integration has been claimed or implemented.",
+            "bundle": bundle,
+            "note": (
+                "Live SAP not verified — simulated context used."
+                if mode == "SIMULATED"
+                else "SAP context loaded through adapter."
+            ),
         }
 
     def get_scenarios(self) -> dict[str, Any]:

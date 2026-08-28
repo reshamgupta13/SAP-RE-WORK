@@ -71,6 +71,11 @@ def main() -> int:
             data.get("system_status", {}).get("sap") in {"SIMULATED", "LIVE"},
             str(data.get("system_status", {}).get("sap")),
         )
+        record(
+            "agent_orchestrator",
+            bool(data.get("agent_orchestrator", {}).get("nodes")),
+            str(len(data.get("agent_orchestrator", {}).get("nodes", []))),
+        )
     except Exception as exc:
         record("control_room_api", False, str(exc))
 

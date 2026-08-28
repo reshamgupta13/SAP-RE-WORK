@@ -13,6 +13,7 @@ class ReworkGraphState(TypedDict, total=False):
     candidate: dict[str, Any]
     job: dict[str, Any]
     sap_context: dict[str, Any]
+    sap_case_context: dict[str, Any]
     candidate_evidence: list[dict[str, Any]]
     candidate_capabilities: list[dict[str, Any]]
     job_tasks: list[dict[str, Any]]

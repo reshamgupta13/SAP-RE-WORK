@@ -24,6 +24,7 @@ from app.services.proof_of_skill_engine import ProofOfSkillEngine
 from app.services.explainability_service import ExplainabilityService
 from app.services.intervention_simulator import InterventionSimulator
 from app.services.opportunity_analysis_service import OpportunityAnalysisService
+from app.services.sap_context_service import SAPContextService
 
 
 def _audit_dict(event) -> dict[str, Any]:
@@ -40,31 +41,39 @@ def build_graph() -> Any:
     opportunity_analysis_service = OpportunityAnalysisService()
     intervention_simulator = InterventionSimulator()
     explainability_service = ExplainabilityService()
+    sap_context_service = SAPContextService()
 
     def load_candidate(state: ReworkGraphState) -> dict[str, Any]:
         timer = AuditTimer()
         candidate_id = state.get("candidate_id", "ananya-sharma")
+        job_id = state.get("job_id", "data-analyst-junior")
         try:
             if candidate_id != "ananya-sharma":
                 raise ValueError(f"Unknown demo candidate: {candidate_id}")
             bundle = fixture_service.get_ananya_bundle()
             profile = bundle["profile"]
             evidence = bundle["evidence"]
-            sap_ctx = sap_provider.get_context()
+            sap_bundle = sap_context_service.load_for_case(candidate_id, job_id)
+            sap_ctx = SAPContext.model_validate(sap_bundle["system"])
+            entities = sap_ctx.retrieved_entities or []
             event = new_audit_event(
                 agent="load_candidate",
                 run_id=state.get("run_id"),
                 engine_mode=EngineMode.DEMO_FALLBACK,
                 status=AuditStatus.SUCCESS,
-                rationale="Loaded demo candidate fixture.",
+                rationale=(
+                    f"Loaded SAP context ({sap_ctx.source_mode.value}) and candidate fixture."
+                ),
                 input_reference=candidate_id,
                 output_reference=profile.id,
+                source_references=entities,
                 latency_ms=timer.elapsed_ms(),
             )
             return {
                 "candidate": profile.model_dump(mode="json"),
                 "candidate_evidence": [e.model_dump(mode="json") for e in evidence],
                 "sap_context": sap_ctx.model_dump(mode="json"),
+                "sap_case_context": sap_bundle,
                 "audit_events": [_audit_dict(event)],
             }
         except Exception as exc:
@@ -87,8 +96,10 @@ def build_graph() -> Any:
         profile = CandidateProfile.model_validate(state["candidate"])
         evidence = [CandidateEvidence.model_validate(e) for e in state["candidate_evidence"]]
         sap_ctx = SAPContext.model_validate(state["sap_context"])
+        sap_bundle = state.get("sap_case_context") or {}
+        sap_skills_raw = (sap_bundle.get("skills_context") or {}).get("data") or []
         try:
-            capabilities, rationale = agent.run(profile, evidence, sap_ctx)
+            capabilities, rationale = agent.run(profile, evidence, sap_ctx, sap_skills_raw)
             avg_conf = sum(c.confidence for c in capabilities) / max(len(capabilities), 1)
             event = new_audit_event(
                 agent="candidate_intelligence",
@@ -99,7 +110,8 @@ def build_graph() -> Any:
                 confidence=avg_conf,
                 input_reference=profile.id,
                 output_reference=f"{len(capabilities)} capabilities",
-                source_references=[c.id for c in capabilities],
+                source_references=[c.id for c in capabilities]
+                + [f"sap:{sap_ctx.source_mode.value}"],
                 latency_ms=timer.elapsed_ms(),
             )
             return {
@@ -124,7 +136,13 @@ def build_graph() -> Any:
         timer = AuditTimer()
         job_id = state.get("job_id", "data-analyst-junior")
         try:
-            job = fixture_service.get_data_analyst_job()
+            sap_role = sap_provider.get_role_context(job_id)
+            if sap_role and sap_role.id == job_id:
+                job = sap_role
+                role_source = "SAP"
+            else:
+                job = fixture_service.get_data_analyst_job()
+                role_source = "REWORK"
             if job.id != job_id:
                 raise ValueError(f"Unknown demo job: {job_id}")
             event = new_audit_event(
@@ -132,9 +150,10 @@ def build_graph() -> Any:
                 run_id=state.get("run_id"),
                 engine_mode=EngineMode.DEMO_FALLBACK,
                 status=AuditStatus.SUCCESS,
-                rationale="Loaded demo job fixture.",
+                rationale=f"Loaded job from {role_source} adapter.",
                 input_reference=job_id,
                 output_reference=job.id,
+                source_references=[f"role:{role_source}"],
                 latency_ms=timer.elapsed_ms(),
             )
             return {
@@ -235,6 +254,10 @@ def build_graph() -> Any:
                 confidence=summary.diagnosis_confidence,
                 input_reference=f"{candidate_id}:{job_id}",
                 output_reference=summary.overall_diagnosis_state.value,
+                source_references=[
+                    f"evidence:{len(evidence)}",
+                    f"sap:{(state.get('sap_case_context') or {}).get('source_mode', 'SIMULATED')}",
+                ],
                 latency_ms=timer.elapsed_ms(),
             )
             return {
@@ -337,6 +360,10 @@ def build_graph() -> Any:
                 confidence=pathway.confidence,
                 input_reference=pathway.gap_skill_ids[0],
                 output_reference=pathway.id,
+                source_references=[
+                    f"sap-learning:{len(pathway.learning_items)}",
+                    *(pathway.learning_item_ids or []),
+                ],
                 latency_ms=timer.elapsed_ms(),
             )
             return {

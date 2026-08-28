@@ -27,6 +27,8 @@ from app.services.intervention_simulator import InterventionSimulator
 from app.services.orchestration_service import OrchestrationService
 from app.services.what_changed_service import WhatChangedService
 from app.adapters.sap.health import SAPHealthService
+from app.services.sap_context_service import SAPContextService
+from app.services.agent_orchestration_service import AgentOrchestrationService
 
 
 STAGE_TO_RUN_MODE: dict[CaseStage, RunMode] = {
@@ -73,6 +75,8 @@ class CaseService:
         self._human_review = HumanReviewService()
         self._control_room = ControlRoomService()
         self._sap_health = SAPHealthService()
+        self._sap_context = SAPContextService()
+        self._agent_orchestration = AgentOrchestrationService()
 
     def create_case(
         self,
@@ -289,7 +293,8 @@ class CaseService:
         view["system_status"]["sap"] = sap_health.get("source_mode", "SIMULATED")
         view["system_status"]["sap_health"] = sap_health
         view["human_decision_status"] = case.human_decision_status.value
-        view["sap_judge_panel"] = self._sap_judge_panel(sap_health)
+        view["sap_judge_panel"] = self._sap_judge_panel(sap_health, case.snapshot)
+        view["ai_recommendation"] = case.ai_recommendation
         return view
 
     def export_case(self, case_id: str) -> dict[str, Any]:
@@ -333,7 +338,13 @@ class CaseService:
             "human_decision": case.human_decision,
             "human_decision_status": case.human_decision_status.value,
             "sap_context": case.sap_context,
+            "sap_case_context": (case.snapshot or {}).get("sap_case_context"),
             "sap_health": {k: v for k, v in sap_health.items() if "secret" not in k.lower()},
+            "agent_orchestrator": self._agent_orchestration.build(case.snapshot or {}),
+            "sap_contribution": self._sap_context.contribution_boundary(
+                (case.snapshot or {}).get("sap_case_context")
+            ),
+            "graph_audit_events": (case.snapshot or {}).get("audit_events", []),
             "audit_events": [e.model_dump(mode="json") for e in events],
             "what_changed": self.get_what_changed(case_id),
             "note": "Export redacts credentials and secrets.",
@@ -374,6 +385,11 @@ class CaseService:
         case.ai_recommendation = explainability.get("reviewable_recommendation", {})
         case.intervention_scenarios = state.get("intervention_simulation")
         case.sap_context = state.get("sap_context")
+        if state.get("sap_case_context"):
+            case.sap_context = {
+                **(case.sap_context or {}),
+                "case_bundle": state.get("sap_case_context"),
+            }
 
         self._integrity.assert_valid({**state, "ai_recommendation": case.ai_recommendation})
 
@@ -458,24 +474,33 @@ class CaseService:
         )
         return self._repo.save_event(event)
 
-    def _sap_judge_panel(self, health: dict) -> dict[str, Any]:
+    def _sap_judge_panel(self, health: dict, snapshot: dict | None = None) -> dict[str, Any]:
+        boundary = self._sap_context.contribution_boundary(
+            (snapshot or {}).get("sap_case_context")
+        )
         return {
+            "title": "WHY SAP + RE:WORK?",
             "what_sap_provides": [
-                "workforce context",
-                "skills/attributes",
-                "learning context",
-                "opportunity context",
+                "Workforce context",
+                "Skills / attributes",
+                "Role context",
+                "Learning ecosystem",
+                "Opportunity ecosystem",
+                "Enterprise workflow",
             ],
             "what_rework_adds": [
-                "evidence synthesis",
-                "capability diagnosis",
-                "counterfactuals",
-                "intervention simulation",
-                "proof-of-skill reasoning",
-                "two-sided readiness",
-                "explainability",
-                "human governance",
+                "Evidence synthesis",
+                "Capability diagnosis",
+                "Counterfactuals",
+                "Minimum-effective intervention",
+                "Proof-of-skill reasoning",
+                "Employer readiness",
+                "Explainability",
+                "Human governance",
             ],
+            "connected_by": boundary.get("connected_by", "LangGraph agent orchestration"),
+            "sap_contribution": boundary.get("sap"),
+            "rework_contribution": boundary.get("rework"),
             "source_mode": health.get("source_mode", "SIMULATED"),
             "configured": health.get("configured", False),
             "healthy": health.get("healthy", False),

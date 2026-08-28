@@ -42,6 +42,11 @@
       "detail": "SIMULATED"
     },
     {
+      "check": "agent_orchestrator",
+      "pass": true,
+      "detail": "15"
+    },
+    {
       "check": "case_export",
       "pass": true,
       "detail": ""

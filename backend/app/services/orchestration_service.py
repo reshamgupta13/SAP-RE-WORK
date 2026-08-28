@@ -55,6 +55,7 @@ class OrchestrationService:
             "candidate": state.get("candidate"),
             "job": state.get("job"),
             "sap_context": state.get("sap_context"),
+            "sap_case_context": state.get("sap_case_context"),
             "candidate_evidence": state.get("candidate_evidence", []),
             "candidate_capabilities": state.get("candidate_capabilities", []),
             "job_tasks": state.get("job_tasks", []),
