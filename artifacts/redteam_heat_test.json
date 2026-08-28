@@ -1,0 +1,8 @@
+{
+  "runs": 20,
+  "failures": [],
+  "pass_rate": 1.0,
+  "avg_seconds": 0.2,
+  "max_seconds": 0.27,
+  "status": "PASS"
+}

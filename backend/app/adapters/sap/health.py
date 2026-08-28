@@ -86,9 +86,9 @@ class SAPHealthService:
                 "reachable": False,
                 "authenticated": False,
                 "healthy": False,
-                "source_mode": SourceMode.LIVE.value,
+                "source_mode": SourceMode.SIMULATED.value,
                 "status": "ERROR",
                 "modules_available": [],
                 "message": str(exc),
-                "fallback_reason": None,
+                "fallback_reason": "connection_error",
             }
