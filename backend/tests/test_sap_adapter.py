@@ -52,6 +52,7 @@ def test_learning_and_opportunities_simulated():
 def test_live_provider_not_connected():
     live = LiveSAPProvider()
     ctx = live.get_context()
-    assert ctx.source_mode == SourceMode.LIVE
+    assert ctx.source_mode == SourceMode.NOT_CONNECTED
+    assert ctx.source_mode != SourceMode.LIVE
     assert ctx.integration_status == IntegrationStatus.UNAVAILABLE
     assert ctx.message

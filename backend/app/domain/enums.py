@@ -6,6 +6,8 @@ from enum import StrEnum
 class SourceMode(StrEnum):
     LIVE = "LIVE"
     SIMULATED = "SIMULATED"
+    NOT_CONNECTED = "NOT_CONNECTED"
+    ERROR = "ERROR"
     SYNTHETIC = "SYNTHETIC"
     MOCKED = "MOCKED"
     USER_PROVIDED = "USER_PROVIDED"

@@ -58,21 +58,26 @@ class LiveSAPProvider(SAPProvider):
             pass
         raise ConnectionError("SAP authentication failed — no verified connection.")
 
+    def _failure_source_mode(self, exc: Exception) -> SourceMode:
+        if isinstance(exc, (ConnectionError, NotImplementedError)):
+            return SourceMode.NOT_CONNECTED
+        return SourceMode.ERROR
+
     def get_context(self) -> SAPContext:
         try:
-            token = self._authenticate()
+            self._authenticate()
             modules = ["WorkforceContext", "SkillsContext"]
             return self._mapper.map_context(
                 system_name=self._api_url,
                 source_mode=SourceMode.LIVE,
                 modules=modules,
                 status=IntegrationStatus.AVAILABLE,
-                message=f"Live SAP connected (token acquired).",
+                message="Live SAP connected (token acquired).",
             )
         except Exception as exc:
             return self._mapper.map_context(
                 system_name="SAP (connection failed)",
-                source_mode=SourceMode.LIVE,
+                source_mode=self._failure_source_mode(exc),
                 modules=[],
                 status=IntegrationStatus.UNAVAILABLE,
                 message=str(exc),

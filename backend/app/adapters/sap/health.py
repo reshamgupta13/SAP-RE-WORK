@@ -47,7 +47,7 @@ class SAPHealthService:
                 "reachable": False,
                 "authenticated": False,
                 "healthy": False,
-                "source_mode": SourceMode.SIMULATED.value,
+                "source_mode": SourceMode.NOT_CONNECTED.value,
                 "modules_available": [],
                 "message": "SAP_MODE=LIVE but credentials incomplete.",
                 "fallback_reason": "missing_credentials",
@@ -56,18 +56,18 @@ class SAPHealthService:
         try:
             provider = get_sap_provider()
             ctx = provider.get_context()
-            source_mode = ctx.source_mode
+            is_live = ctx.source_mode == SourceMode.LIVE and ctx.integration_status == IntegrationStatus.AVAILABLE
             return {
                 "configured": True,
-                "reachable": ctx.integration_status != IntegrationStatus.UNAVAILABLE,
-                "authenticated": ctx.integration_status == IntegrationStatus.AVAILABLE,
-                "healthy": ctx.integration_status == IntegrationStatus.AVAILABLE,
-                "source_mode": source_mode.value,
-                "modules_available": ctx.retrieved_entities,
+                "reachable": is_live,
+                "authenticated": is_live,
+                "healthy": is_live,
+                "source_mode": ctx.source_mode.value,
+                "modules_available": ctx.retrieved_entities if is_live else [],
                 "system_name": ctx.system_name,
                 "last_check": datetime.now(timezone.utc).isoformat(),
                 "message": ctx.message,
-                "fallback_reason": None,
+                "fallback_reason": None if is_live else "connection_failed",
             }
         except NotImplementedError as exc:
             return {
@@ -86,7 +86,7 @@ class SAPHealthService:
                 "reachable": False,
                 "authenticated": False,
                 "healthy": False,
-                "source_mode": SourceMode.SIMULATED.value,
+                "source_mode": SourceMode.ERROR.value,
                 "status": "ERROR",
                 "modules_available": [],
                 "message": str(exc),
