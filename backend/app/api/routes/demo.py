@@ -87,3 +87,22 @@ def get_control_room() -> dict[str, Any]:
 @router.get("/scenarios")
 def get_scenarios() -> dict[str, Any]:
     return _control_room.get_scenarios()
+
+
+@router.post("/reset")
+def reset_demo() -> dict[str, Any]:
+    """Reset canonical finale case — restores case-ananya-finale from fixture."""
+    case = _case_service.reset_finale_case()
+    return {
+        "status": "reset",
+        "case_id": case.id,
+        "lifecycle_state": case.lifecycle_state.value,
+        "human_decision_status": case.human_decision_status.value,
+        "message": "Finale case reset and re-executed.",
+    }
+
+
+@router.get("/negative-case")
+def negative_case_demo(scenario_id: str = "B07") -> dict[str, Any]:
+    """Judge mode: show a case RE:WORK refuses to force a positive outcome."""
+    return _case_service.get_negative_case_demo(scenario_id)

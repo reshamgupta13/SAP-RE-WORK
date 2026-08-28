@@ -4,9 +4,13 @@ import { useState } from "react";
 import { AgentOrchestratorPanel } from "../components/AgentOrchestratorPanel";
 import { DecisionCard } from "../components/DecisionCard";
 import { ExplainPanel } from "../components/ExplainPanel";
+import { HumanDecisionPanel } from "../components/HumanDecisionPanel";
 import { InterventionSimulatorPanel } from "../components/InterventionSimulator";
+import { JuryStoryPanel } from "../components/JuryStoryPanel";
+import { NegativeCasePanel } from "../components/NegativeCasePanel";
 import { SAPJuryPanel } from "../components/SAPJuryPanel";
 import { AppHeader } from "../components/AppShell";
+import { resetDemoCase } from "../../lib/api";
 
 type ControlRoomData = {
   case_id?: string;
@@ -21,69 +25,81 @@ type ControlRoomData = {
   };
   active_case: Record<string, unknown>;
   decision_card: Record<string, unknown>;
-  timeline?: Array<Record<string, unknown>>;
   what_changed?: { changes?: Array<Record<string, unknown>> };
   viability: { assessments?: Array<Record<string, unknown>> };
   pathway: Record<string, unknown> | null;
   proof: { result?: Record<string, unknown> | null };
   interventions: Record<string, unknown>;
   explainability: { reports?: Array<Record<string, unknown>> };
-  sap_context: Record<string, unknown>;
   sap_judge_panel?: Record<string, unknown>;
   agent_orchestrator?: Record<string, unknown>;
+  jury_narrative?: Record<string, unknown>;
+  employer_readiness?: Array<Record<string, unknown>>;
 };
 
-export function ControlRoomClient({ data }: { data: ControlRoomData }) {
+export function ControlRoomClient({ data: initialData }: { data: ControlRoomData }) {
+  const [data, setData] = useState(initialData);
   const [explainReport, setExplainReport] = useState<Record<string, unknown> | null>(null);
+  const [resetting, setResetting] = useState(false);
 
   const dataAnalystViability = data.viability?.assessments?.find(
     (v) => v.opportunity_id === "opp-data-analyst",
   );
-
+  const employer = data.employer_readiness?.find((e) => e.opportunity_id === "opp-data-analyst");
   const reports = data.explainability?.reports ?? [];
   const primaryReport = reports[0];
   const caseName = data.active_case?.candidate_name as string;
   const target = data.active_case?.target_opportunity as string;
+  const narrative = data.jury_narrative ?? {};
+  const negativeOptions = (narrative.negative_case_options as Array<{ id: string; title: string; outcome: string }>) ?? [];
+
+  async function handleReset() {
+    setResetting(true);
+    try {
+      await resetDemoCase();
+      window.location.reload();
+    } catch {
+      setResetting(false);
+    }
+  }
 
   return (
     <>
-      <AppHeader badge="Inclusive Workforce Intelligence" />
+      <AppHeader badge="Inclusive Workforce Intelligence — Jury Demo" />
 
       <main className="mx-auto max-w-7xl space-y-6 px-6 py-8">
         <section className="rounded-xl border border-slate-800 bg-slate-900 p-6 text-white shadow-lg">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">RE:WORK</p>
-          <h2 className="mt-1 text-2xl font-semibold">
-            {caseName} → {target}
-          </h2>
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">RE:WORK</p>
+              <h2 className="mt-1 text-2xl font-semibold">{caseName} → {target}</h2>
+            </div>
+            <button
+              type="button"
+              onClick={handleReset}
+              disabled={resetting}
+              className="rounded-md border border-slate-600 px-3 py-1.5 text-xs font-medium text-slate-200 hover:bg-slate-800 disabled:opacity-50"
+            >
+              {resetting ? "Resetting…" : "RESET CASE"}
+            </button>
+          </div>
           <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-4">
-            <div>
-              <dt className="text-slate-400">SAP</dt>
-              <dd className="font-medium">{data.system_status.sap}</dd>
-            </div>
-            <div>
-              <dt className="text-slate-400">AI</dt>
-              <dd>{data.system_status.ai_engine}</dd>
-            </div>
-            <div>
-              <dt className="text-slate-400">Case</dt>
-              <dd className="font-mono text-xs">{data.case_id}</dd>
-            </div>
-            <div>
-              <dt className="text-slate-400">Human decision</dt>
-              <dd>{data.human_decision_status ?? "PENDING"}</dd>
-            </div>
+            <div><dt className="text-slate-400">SAP</dt><dd className="font-medium">{data.system_status.sap}</dd></div>
+            <div><dt className="text-slate-400">AI</dt><dd>{data.system_status.ai_engine}</dd></div>
+            <div><dt className="text-slate-400">Case</dt><dd className="font-mono text-xs">{data.case_id}</dd></div>
+            <div><dt className="text-slate-400">Employer readiness</dt><dd>{String(employer?.overall_state ?? "—")}</dd></div>
           </dl>
         </section>
 
+        <JuryStoryPanel narrative={narrative as Parameters<typeof JuryStoryPanel>[0]["narrative"]} />
+
         <section className="rounded-xl border-2 border-teal-600 bg-white p-6 shadow-md">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-teal-800">
-            Current opportunity viability
-          </h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-teal-800">Current opportunity viability</h2>
           <p className="mt-2 text-2xl font-semibold text-slate-900">
             {(dataAnalystViability?.viability_state as string) ?? "—"}
           </p>
           <p className="mt-2 text-sm text-slate-600">
-            Minimum effective intervention: learning + proof pathway (see WHAT IF below)
+            Projected viability under stated assumptions — not a guarantee of employment.
           </p>
         </section>
 
@@ -116,18 +132,15 @@ export function ControlRoomClient({ data }: { data: ControlRoomData }) {
             />
             <InterventionSimulatorPanel
               interventions={data.interventions}
-              baselineState={
-                (data.interventions as { baseline_viability_state?: string }).baseline_viability_state
-              }
+              baselineState={(data.interventions as { baseline_viability_state?: string }).baseline_viability_state}
             />
+            <NegativeCasePanel options={negativeOptions} />
           </div>
 
           <aside className="lg:col-span-3 space-y-4">
             <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
               <h3 className="text-xs font-semibold uppercase text-slate-500">WHY?</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Structured evidence chain — click WHY? on the decision card.
-              </p>
+              <p className="mt-2 text-sm text-slate-600">Evidence chain — click WHY? on the decision card.</p>
               <ul className="mt-3 space-y-1 text-xs text-slate-600">
                 {reports.slice(0, 5).map((r) => (
                   <li key={String(r.what)}>{String(r.what)}</li>
@@ -140,25 +153,12 @@ export function ControlRoomClient({ data }: { data: ControlRoomData }) {
           </aside>
         </div>
 
-        <footer className="rounded-lg border border-slate-200 bg-white px-4 py-4">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-slate-50 p-3">
-              <p className="text-xs font-semibold uppercase text-slate-500">AI recommendation</p>
-              <p className="mt-1 text-sm text-slate-800">
-                {(data.decision_card?.what as string) ?? "See decision card"}
-              </p>
-            </div>
-            <div className="rounded-lg border-2 border-slate-300 bg-white p-3">
-              <p className="text-xs font-semibold uppercase text-slate-700">Human decision</p>
-              <p className="mt-1 text-sm font-medium text-slate-900">
-                {data.human_decision_status ?? "PENDING"}
-              </p>
-              <p className="mt-1 text-xs text-slate-500">
-                AI recommendation is not a hiring decision.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <HumanDecisionPanel
+          runId={data.run_id}
+          decisionCardId={String(data.decision_card?.id ?? "")}
+          aiRecommendation={String(data.decision_card?.what ?? (data.ai_recommendation as { recommendation_summary?: string })?.recommendation_summary ?? "")}
+          status={data.human_decision_status ?? "PENDING"}
+        />
       </main>
 
       <ExplainPanel

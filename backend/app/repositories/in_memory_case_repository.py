@@ -44,5 +44,16 @@ class InMemoryCaseRepository(CaseRepository):
         event_id = self._idempotency.get(f"{case_id}:{key}")
         return self._events.get(event_id) if event_id else None
 
+    def clear_case(self, case_id: str) -> None:
+        self._cases.pop(case_id, None)
+        event_ids = self._events_by_case.pop(case_id, [])
+        for eid in event_ids:
+            ev = self._events.pop(eid, None)
+            if ev and ev.idempotency_key:
+                self._idempotency.pop(f"{case_id}:{ev.idempotency_key}", None)
+        stale_snapshots = [sid for sid, snap in self._snapshots.items() if snap.case_id == case_id]
+        for sid in stale_snapshots:
+            self._snapshots.pop(sid, None)
+
 
 in_memory_case_repository = InMemoryCaseRepository()

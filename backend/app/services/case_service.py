@@ -29,6 +29,7 @@ from app.services.what_changed_service import WhatChangedService
 from app.adapters.sap.health import SAPHealthService
 from app.services.sap_context_service import SAPContextService
 from app.services.agent_orchestration_service import AgentOrchestrationService
+from app.services.jury_narrative_service import JuryNarrativeService
 
 
 STAGE_TO_RUN_MODE: dict[CaseStage, RunMode] = {
@@ -77,6 +78,7 @@ class CaseService:
         self._sap_health = SAPHealthService()
         self._sap_context = SAPContextService()
         self._agent_orchestration = AgentOrchestrationService()
+        self._jury_narrative = JuryNarrativeService()
 
     def create_case(
         self,
@@ -279,6 +281,22 @@ class CaseService:
         report = self._what_changed.compare(case_id, baseline, current)
         return report.model_dump(mode="json")
 
+    def reset_finale_case(self) -> ReworkCase:
+        """Reset canonical demo case from golden fixture — no server restart required."""
+        case_id = self.FINALE_CASE_ID
+        if hasattr(self._repo, "clear_case"):
+            self._repo.clear_case(case_id)
+        return self.execute(
+            self.create_case(
+                candidate_id="ananya-sharma",
+                job_id="data-analyst-junior",
+                opportunity_id="opp-data-analyst",
+                case_id=case_id,
+            ).id,
+            CaseStage.FINALE,
+            idempotency_key=f"reset-{uuid.uuid4().hex[:8]}",
+        )
+
     def build_control_room_view(self, case_id: str | None = None) -> dict[str, Any]:
         case = self._repo.get_case(case_id or self.FINALE_CASE_ID)
         if not case or not case.snapshot:
@@ -295,7 +313,24 @@ class CaseService:
         view["human_decision_status"] = case.human_decision_status.value
         view["sap_judge_panel"] = self._sap_judge_panel(sap_health, case.snapshot)
         view["ai_recommendation"] = case.ai_recommendation
+        view["jury_narrative"] = self._jury_narrative.build(case.snapshot or {})
+        view["operator_guide"] = self._operator_guide()
         return view
+
+    def get_negative_case_demo(self, scenario_id: str = "B07") -> dict[str, Any]:
+        return self._jury_narrative.build_negative_case(scenario_id)
+
+    def _operator_guide(self) -> list[dict[str, str]]:
+        return [
+            {"step": "1", "action": "Open Control Room", "explain": "Show Ananya → Data Analyst case"},
+            {"step": "2", "action": "Click WHY WAS SHE REJECTED?", "explain": "Traditional filters vs RE:WORK discovery"},
+            {"step": "3", "action": "Show Agent Orchestrator", "explain": "SAP context → agents → engines"},
+            {"step": "4", "action": "Click WHY? on Decision Card", "explain": "Evidence chain"},
+            {"step": "5", "action": "Toggle WHAT IF scenarios", "explain": "Projected interventions"},
+            {"step": "6", "action": "Show SAP vs RE:WORK panel", "explain": "Enterprise context vs reasoning layer"},
+            {"step": "7", "action": "Record Human Decision", "explain": "AI recommends — human decides"},
+            {"step": "8", "action": "Optional: Negative case mode", "explain": "Show case RE:WORK refuses to force"},
+        ]
 
     def export_case(self, case_id: str) -> dict[str, Any]:
         case = self._repo.get_case(case_id)

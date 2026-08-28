@@ -48,13 +48,22 @@ export function DecisionCard({ card, viability, pathway, proof, onWhy }: Decisio
       <div className="grid gap-4 border-t border-slate-100 p-6 md:grid-cols-2">
         <Block title="Genuine gaps" items={gaps} empty="None identified" />
         <Block title="Potential barriers" items={proxies} empty="None flagged" />
+        <Block title="Workplace constraints" items={(card.workplace_constraints as string[]) ?? []} empty="None flagged" />
         <Block title="Pathway" items={pathway ? [pathway.title as string ?? pathway.id as string] : []} empty="Not generated" />
         <Block
           title="Proof status"
           items={proof?.result ? [`${proof.result.result as string} (${proof.result.total as number})`] : []}
           empty="Not evaluated"
         />
+        <Block title="Evidence refs" items={(card.evidence_refs as string[])?.slice(0, 4) ?? []} empty="None cited" />
       </div>
+
+      {(card.what != null || card.why != null) && (
+        <div className="border-t border-slate-100 px-6 py-4 text-sm text-slate-700">
+          {card.what != null && <p><span className="font-medium">What:</span> {String(card.what)}</p>}
+          {card.why != null && <p className="mt-1"><span className="font-medium">Why:</span> {String(card.why)}</p>}
+        </div>
+      )}
 
       <footer className="border-t border-slate-100 bg-slate-50 px-6 py-3 text-sm text-slate-600">
         AI recommendation generated — human decision required. <SourceBadge mode={card.source_mode as string} />

@@ -23,7 +23,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.012459",
+          "created_at": "2026-08-28T10:23:38.880510",
           "updated_at": null,
           "id": "ev-b01-sql",
           "candidate_id": "test-candidate",
@@ -41,7 +41,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.012568",
+          "created_at": "2026-08-28T10:23:38.880550",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -65,7 +65,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.012735",
+          "created_at": "2026-08-28T10:23:38.881073",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -89,7 +89,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.012753",
+          "created_at": "2026-08-28T10:23:38.881108",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -113,7 +113,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.012764",
+          "created_at": "2026-08-28T10:23:38.881125",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -137,7 +137,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.012775",
+          "created_at": "2026-08-28T10:23:38.881154",
           "updated_at": null,
           "id": "cap-test-candidate-data_analysis",
           "candidate_id": "test-candidate",
@@ -173,7 +173,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -185,7 +185,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -197,7 +197,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -209,7 +209,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -221,7 +221,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -235,7 +235,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -250,7 +250,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -267,7 +267,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -282,7 +282,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -321,7 +321,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013044",
+          "created_at": "2026-08-28T10:23:38.882474",
           "updated_at": null,
           "id": "ev-b02-excel",
           "candidate_id": "test-candidate",
@@ -339,7 +339,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013077",
+          "created_at": "2026-08-28T10:23:38.882517",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -363,7 +363,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013100",
+          "created_at": "2026-08-28T10:23:38.882537",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -398,7 +398,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -410,7 +410,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -422,7 +422,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -434,7 +434,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -446,7 +446,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -460,7 +460,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -475,7 +475,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -492,7 +492,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -507,7 +507,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -546,7 +546,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013155",
+          "created_at": "2026-08-28T10:23:38.882579",
           "updated_at": null,
           "id": "ev-b03-mis",
           "candidate_id": "test-candidate",
@@ -562,7 +562,7 @@
           "confidence": 0.85
         },
         {
-          "created_at": "2026-08-27T22:07:17.013167",
+          "created_at": "2026-08-28T10:23:38.882586",
           "updated_at": null,
           "id": "ev-b03-self",
           "candidate_id": "test-candidate",
@@ -580,7 +580,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013179",
+          "created_at": "2026-08-28T10:23:38.882594",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -604,7 +604,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013203",
+          "created_at": "2026-08-28T10:23:38.882601",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -628,7 +628,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013212",
+          "created_at": "2026-08-28T10:23:38.882611",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -652,7 +652,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013219",
+          "created_at": "2026-08-28T10:23:38.882618",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -676,7 +676,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013225",
+          "created_at": "2026-08-28T10:23:38.882623",
           "updated_at": null,
           "id": "cap-test-candidate-data_analysis",
           "candidate_id": "test-candidate",
@@ -710,7 +710,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -722,7 +722,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -734,7 +734,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -746,7 +746,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -758,7 +758,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -772,7 +772,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -787,7 +787,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -804,7 +804,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -819,7 +819,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -858,7 +858,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013269",
+          "created_at": "2026-08-28T10:23:38.882660",
           "updated_at": null,
           "id": "ev-b04-git",
           "candidate_id": "test-candidate",
@@ -876,7 +876,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013282",
+          "created_at": "2026-08-28T10:23:38.882668",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -900,7 +900,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013289",
+          "created_at": "2026-08-28T10:23:38.882674",
           "updated_at": null,
           "id": "cap-test-candidate-data_analysis",
           "candidate_id": "test-candidate",
@@ -924,7 +924,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013294",
+          "created_at": "2026-08-28T10:23:38.882680",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -956,7 +956,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -968,7 +968,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -980,7 +980,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -992,7 +992,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -1004,7 +1004,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -1018,7 +1018,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -1033,7 +1033,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -1050,7 +1050,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -1065,7 +1065,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -1104,7 +1104,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013317",
+          "created_at": "2026-08-28T10:23:38.882708",
           "updated_at": null,
           "id": "ev-b05-sql",
           "candidate_id": "test-candidate",
@@ -1122,7 +1122,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013323",
+          "created_at": "2026-08-28T10:23:38.882719",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -1146,7 +1146,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013329",
+          "created_at": "2026-08-28T10:23:38.882726",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -1170,7 +1170,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013334",
+          "created_at": "2026-08-28T10:23:38.882734",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -1200,7 +1200,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -1212,7 +1212,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -1224,7 +1224,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -1236,7 +1236,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -1248,7 +1248,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -1262,7 +1262,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -1277,7 +1277,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -1294,7 +1294,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -1309,7 +1309,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -1347,7 +1347,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013355",
+          "created_at": "2026-08-28T10:23:38.882777",
           "updated_at": null,
           "id": "ev-b06",
           "candidate_id": "test-candidate",
@@ -1365,7 +1365,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013364",
+          "created_at": "2026-08-28T10:23:38.882790",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -1389,7 +1389,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013370",
+          "created_at": "2026-08-28T10:23:38.882799",
           "updated_at": null,
           "id": "cap-test-candidate-data_analysis",
           "candidate_id": "test-candidate",
@@ -1434,7 +1434,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -1446,7 +1446,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -1458,7 +1458,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -1470,7 +1470,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -1482,7 +1482,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -1496,7 +1496,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -1511,7 +1511,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -1528,7 +1528,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -1543,7 +1543,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -1582,7 +1582,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013390",
+          "created_at": "2026-08-28T10:23:38.882826",
           "updated_at": null,
           "id": "ev-b07",
           "candidate_id": "test-candidate",
@@ -1600,7 +1600,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013397",
+          "created_at": "2026-08-28T10:23:38.882833",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -1635,7 +1635,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -1647,7 +1647,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -1659,7 +1659,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -1671,7 +1671,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -1683,7 +1683,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -1697,7 +1697,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -1712,7 +1712,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -1729,7 +1729,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -1744,7 +1744,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -1783,7 +1783,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013418",
+          "created_at": "2026-08-28T10:23:38.882851",
           "updated_at": null,
           "id": "ev-b08",
           "candidate_id": "test-candidate",
@@ -1801,7 +1801,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013426",
+          "created_at": "2026-08-28T10:23:38.882857",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -1825,7 +1825,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013436",
+          "created_at": "2026-08-28T10:23:38.882863",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -1849,7 +1849,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013444",
+          "created_at": "2026-08-28T10:23:38.882869",
           "updated_at": null,
           "id": "cap-test-candidate-data_analysis",
           "candidate_id": "test-candidate",
@@ -1877,7 +1877,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -1889,7 +1889,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -1901,7 +1901,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -1913,7 +1913,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -1925,7 +1925,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -1939,7 +1939,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -1954,7 +1954,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -1971,7 +1971,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -1986,7 +1986,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -2025,7 +2025,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013476",
+          "created_at": "2026-08-28T10:23:38.882892",
           "updated_at": null,
           "id": "ev-b09",
           "candidate_id": "test-candidate",
@@ -2043,7 +2043,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013485",
+          "created_at": "2026-08-28T10:23:38.882900",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -2067,7 +2067,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013492",
+          "created_at": "2026-08-28T10:23:38.882907",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -2102,7 +2102,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -2114,7 +2114,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -2126,7 +2126,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -2138,7 +2138,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -2150,7 +2150,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -2164,7 +2164,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -2179,7 +2179,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -2196,7 +2196,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -2211,7 +2211,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -2250,7 +2250,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013511",
+          "created_at": "2026-08-28T10:23:38.882935",
           "updated_at": null,
           "id": "ev-b10",
           "candidate_id": "test-candidate",
@@ -2268,7 +2268,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013520",
+          "created_at": "2026-08-28T10:23:38.882945",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -2292,7 +2292,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013526",
+          "created_at": "2026-08-28T10:23:38.882951",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -2322,7 +2322,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -2334,7 +2334,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -2346,7 +2346,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -2358,7 +2358,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -2370,7 +2370,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -2384,7 +2384,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -2399,7 +2399,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -2416,7 +2416,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -2431,7 +2431,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -2470,7 +2470,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013557",
+          "created_at": "2026-08-28T10:23:38.882981",
           "updated_at": null,
           "id": "ev-b11",
           "candidate_id": "test-candidate",
@@ -2488,7 +2488,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013550",
+          "created_at": "2026-08-28T10:23:38.882972",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -2519,7 +2519,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -2531,7 +2531,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -2543,7 +2543,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -2555,7 +2555,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -2567,7 +2567,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -2581,7 +2581,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -2596,7 +2596,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -2613,7 +2613,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -2628,7 +2628,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -2667,7 +2667,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013585",
+          "created_at": "2026-08-28T10:23:38.883012",
           "updated_at": null,
           "id": "ev-b12",
           "candidate_id": "test-candidate",
@@ -2685,7 +2685,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013574",
+          "created_at": "2026-08-28T10:23:38.882998",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -2709,7 +2709,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013580",
+          "created_at": "2026-08-28T10:23:38.883006",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -2742,7 +2742,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -2754,7 +2754,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -2766,7 +2766,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -2778,7 +2778,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -2790,7 +2790,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -2804,7 +2804,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -2819,7 +2819,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -2836,7 +2836,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -2851,7 +2851,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -2890,7 +2890,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013607",
+          "created_at": "2026-08-28T10:23:38.883029",
           "updated_at": null,
           "id": "ev-b13",
           "candidate_id": "test-candidate",
@@ -2908,7 +2908,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013613",
+          "created_at": "2026-08-28T10:23:38.883034",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -2932,7 +2932,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013618",
+          "created_at": "2026-08-28T10:23:38.883039",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -2956,7 +2956,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013623",
+          "created_at": "2026-08-28T10:23:38.883044",
           "updated_at": null,
           "id": "cap-test-candidate-power_bi",
           "candidate_id": "test-candidate",
@@ -2980,7 +2980,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013629",
+          "created_at": "2026-08-28T10:23:38.883050",
           "updated_at": null,
           "id": "cap-test-candidate-data_analysis",
           "candidate_id": "test-candidate",
@@ -3010,7 +3010,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -3022,7 +3022,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -3034,7 +3034,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -3046,7 +3046,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -3058,7 +3058,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -3072,7 +3072,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -3087,7 +3087,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -3104,7 +3104,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -3119,7 +3119,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -3158,7 +3158,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013663",
+          "created_at": "2026-08-28T10:23:38.883086",
           "updated_at": null,
           "id": "ev-b14",
           "candidate_id": "test-candidate",
@@ -3176,7 +3176,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013657",
+          "created_at": "2026-08-28T10:23:38.883075",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -3211,7 +3211,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -3223,7 +3223,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -3235,7 +3235,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -3247,7 +3247,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -3259,7 +3259,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -3273,7 +3273,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -3288,7 +3288,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -3305,7 +3305,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -3320,7 +3320,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -3359,7 +3359,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013678",
+          "created_at": "2026-08-28T10:23:38.883108",
           "updated_at": null,
           "id": "ev-b15a",
           "candidate_id": "test-candidate",
@@ -3375,7 +3375,7 @@
           "confidence": 0.9
         },
         {
-          "created_at": "2026-08-27T22:07:17.013684",
+          "created_at": "2026-08-28T10:23:38.883115",
           "updated_at": null,
           "id": "ev-b15b",
           "candidate_id": "test-candidate",
@@ -3393,7 +3393,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013690",
+          "created_at": "2026-08-28T10:23:38.883123",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -3422,7 +3422,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -3434,7 +3434,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -3446,7 +3446,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -3458,7 +3458,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -3470,7 +3470,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -3484,7 +3484,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -3499,7 +3499,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -3516,7 +3516,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -3531,7 +3531,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -3570,7 +3570,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013717",
+          "created_at": "2026-08-28T10:23:38.883149",
           "updated_at": null,
           "id": "ev-b16",
           "candidate_id": "test-candidate",
@@ -3588,7 +3588,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013708",
+          "created_at": "2026-08-28T10:23:38.883143",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -3618,7 +3618,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -3630,7 +3630,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -3642,7 +3642,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -3654,7 +3654,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -3666,7 +3666,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -3680,7 +3680,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -3695,7 +3695,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -3712,7 +3712,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -3727,7 +3727,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -3766,7 +3766,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013740",
+          "created_at": "2026-08-28T10:23:38.883170",
           "updated_at": null,
           "id": "ev-b17",
           "candidate_id": "test-candidate",
@@ -3784,7 +3784,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013734",
+          "created_at": "2026-08-28T10:23:38.883164",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -3819,7 +3819,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -3831,7 +3831,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -3843,7 +3843,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -3855,7 +3855,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -3867,7 +3867,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -3881,7 +3881,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -3896,7 +3896,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -3913,7 +3913,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -3928,7 +3928,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -3967,7 +3967,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013762",
+          "created_at": "2026-08-28T10:23:38.883193",
           "updated_at": null,
           "id": "ev-b18",
           "candidate_id": "test-candidate",
@@ -3985,7 +3985,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013754",
+          "created_at": "2026-08-28T10:23:38.883186",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -4030,7 +4030,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -4042,7 +4042,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -4054,7 +4054,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -4066,7 +4066,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -4078,7 +4078,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -4092,7 +4092,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -4107,7 +4107,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -4124,7 +4124,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -4139,7 +4139,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -4177,7 +4177,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013783",
+          "created_at": "2026-08-28T10:23:38.883216",
           "updated_at": null,
           "id": "ev-b19",
           "candidate_id": "test-candidate",
@@ -4195,7 +4195,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013776",
+          "created_at": "2026-08-28T10:23:38.883209",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -4240,7 +4240,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -4252,7 +4252,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -4264,7 +4264,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -4276,7 +4276,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -4288,7 +4288,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -4302,7 +4302,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -4317,7 +4317,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -4334,7 +4334,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -4349,7 +4349,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -4388,7 +4388,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013800",
+          "created_at": "2026-08-28T10:23:38.883252",
           "updated_at": null,
           "id": "ev-b20",
           "candidate_id": "test-candidate",
@@ -4406,7 +4406,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013794",
+          "created_at": "2026-08-28T10:23:38.883243",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -4441,7 +4441,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -4453,7 +4453,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -4465,7 +4465,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -4477,7 +4477,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -4489,7 +4489,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -4503,7 +4503,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -4518,7 +4518,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -4535,7 +4535,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -4550,7 +4550,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -4589,7 +4589,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013825",
+          "created_at": "2026-08-28T10:23:38.883290",
           "updated_at": null,
           "id": "ev-b21",
           "candidate_id": "test-candidate",
@@ -4607,7 +4607,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013815",
+          "created_at": "2026-08-28T10:23:38.883273",
           "updated_at": null,
           "id": "cap-test-candidate-sql",
           "candidate_id": "test-candidate",
@@ -4631,7 +4631,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013821",
+          "created_at": "2026-08-28T10:23:38.883281",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -4677,7 +4677,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -4689,7 +4689,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -4701,7 +4701,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -4713,7 +4713,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -4725,7 +4725,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -4739,7 +4739,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -4754,7 +4754,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -4771,7 +4771,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -4786,7 +4786,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",
@@ -4825,7 +4825,7 @@
       },
       "evidence": [
         {
-          "created_at": "2026-08-27T22:07:17.013856",
+          "created_at": "2026-08-28T10:23:38.883342",
           "updated_at": null,
           "id": "ev-b22",
           "candidate_id": "test-candidate",
@@ -4843,7 +4843,7 @@
       ],
       "capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013844",
+          "created_at": "2026-08-28T10:23:38.883325",
           "updated_at": null,
           "id": "cap-test-candidate-excel",
           "candidate_id": "test-candidate",
@@ -4867,7 +4867,7 @@
           "rationale": null
         },
         {
-          "created_at": "2026-08-27T22:07:17.013849",
+          "created_at": "2026-08-28T10:23:38.883335",
           "updated_at": null,
           "id": "cap-test-candidate-communication",
           "candidate_id": "test-candidate",
@@ -4902,7 +4902,7 @@
       "source_mode": "SYNTHETIC",
       "job_capabilities": [
         {
-          "created_at": "2026-08-27T22:07:17.013881",
+          "created_at": "2026-08-28T10:23:38.883383",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-sql",
           "job_id": "data-analyst-junior",
@@ -4914,7 +4914,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013900",
+          "created_at": "2026-08-28T10:23:38.883415",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-excel",
           "job_id": "data-analyst-junior",
@@ -4926,7 +4926,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013908",
+          "created_at": "2026-08-28T10:23:38.883426",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-power_bi",
           "job_id": "data-analyst-junior",
@@ -4938,7 +4938,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013915",
+          "created_at": "2026-08-28T10:23:38.883442",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-communication",
           "job_id": "data-analyst-junior",
@@ -4950,7 +4950,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013921",
+          "created_at": "2026-08-28T10:23:38.883455",
           "updated_at": null,
           "id": "jcap-data-analyst-junior-data_analysis",
           "job_id": "data-analyst-junior",
@@ -4964,7 +4964,7 @@
       ],
       "job_tasks": [
         {
-          "created_at": "2026-08-27T22:07:17.013930",
+          "created_at": "2026-08-28T10:23:38.883470",
           "updated_at": null,
           "id": "task-sql",
           "job_id": "data-analyst-junior",
@@ -4979,7 +4979,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013950",
+          "created_at": "2026-08-28T10:23:38.883499",
           "updated_at": null,
           "id": "task-dash",
           "job_id": "data-analyst-junior",
@@ -4996,7 +4996,7 @@
       ],
       "requirement_analyses": [
         {
-          "created_at": "2026-08-27T22:07:17.013969",
+          "created_at": "2026-08-28T10:23:38.883521",
           "updated_at": null,
           "id": "req-exp",
           "job_id": "data-analyst-junior",
@@ -5011,7 +5011,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T22:07:17.013999",
+          "created_at": "2026-08-28T10:23:38.883560",
           "updated_at": null,
           "id": "req-loc",
           "job_id": "data-analyst-junior",

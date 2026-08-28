@@ -34,4 +34,25 @@ export async function submitReview(payload: {
   return res.json();
 }
 
+export async function resetDemoCase() {
+  const res = await fetch(`${API_BASE}/api/demo/reset`, { method: "POST" });
+  if (!res.ok) throw new Error("Failed to reset demo case");
+  return res.json();
+}
+
+export async function submitCaseReview(caseId: string, payload: {
+  action: string;
+  reviewer_id?: string;
+  reason?: string;
+  reviewed_case_version?: number;
+}) {
+  const res = await fetch(`${API_BASE}/api/cases/${caseId}/review`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error("Case review submission failed");
+  return res.json();
+}
+
 export const API_URL = API_BASE;

@@ -2,10 +2,10 @@
   "case_id": "case-ananya-finale",
   "case_version": 2,
   "lifecycle_state": "EXPLANATION_READY",
-  "run_id": "run-71ec92dfdde6",
+  "run_id": "run-a0d3544c0253",
   "invariant_failures": [],
   "state": {
-    "run_id": "run-71ec92dfdde6",
+    "run_id": "run-a0d3544c0253",
     "status": "completed",
     "engine_mode": "DEMO_FALLBACK",
     "run_mode": "CONTROL_ROOM_DEMO",
@@ -212,7 +212,7 @@
       "source_mode": "SIMULATED",
       "system_name": "SuccessFactors-compatible demo environment",
       "integration_status": "AVAILABLE",
-      "last_sync": "2026-08-27T21:56:31.022645Z",
+      "last_sync": "2026-08-28T10:23:41.321405Z",
       "retrieved_entities": [
         "WorkforceContext",
         "SkillsContext",
@@ -225,39 +225,419 @@
           "name": "Workforce context",
           "status": "AVAILABLE",
           "source_mode": "SIMULATED",
-          "last_sync": "2026-08-27T21:56:31.022659Z",
+          "last_sync": "2026-08-28T10:23:41.321405Z",
           "entity_count": null
         },
         {
           "name": "Skills context",
           "status": "AVAILABLE",
           "source_mode": "SIMULATED",
-          "last_sync": "2026-08-27T21:56:31.022703Z",
+          "last_sync": "2026-08-28T10:23:41.321421Z",
           "entity_count": null
         },
         {
           "name": "Role context",
           "status": "AVAILABLE",
           "source_mode": "SIMULATED",
-          "last_sync": "2026-08-27T21:56:31.022710Z",
+          "last_sync": "2026-08-28T10:23:41.321424Z",
           "entity_count": null
         },
         {
           "name": "Learning catalog",
           "status": "AVAILABLE",
           "source_mode": "SIMULATED",
-          "last_sync": "2026-08-27T21:56:31.022715Z",
+          "last_sync": "2026-08-28T10:23:41.321426Z",
           "entity_count": null
         },
         {
           "name": "Opportunity catalog",
           "status": "AVAILABLE",
           "source_mode": "SIMULATED",
-          "last_sync": "2026-08-27T21:56:31.022722Z",
+          "last_sync": "2026-08-28T10:23:41.321427Z",
           "entity_count": null
         }
       ],
       "message": "Simulated SAP context \u2014 not a live tenant connection."
+    },
+    "sap_case_context": {
+      "system": {
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "system_name": "SuccessFactors-compatible demo environment",
+        "integration_status": "AVAILABLE",
+        "last_sync": "2026-08-28T10:23:41.321405Z",
+        "retrieved_entities": [
+          "WorkforceContext",
+          "SkillsContext",
+          "RoleContext",
+          "LearningCatalog",
+          "OpportunityCatalog"
+        ],
+        "capabilities": [
+          {
+            "name": "Workforce context",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321405Z",
+            "entity_count": null
+          },
+          {
+            "name": "Skills context",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321421Z",
+            "entity_count": null
+          },
+          {
+            "name": "Role context",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321424Z",
+            "entity_count": null
+          },
+          {
+            "name": "Learning catalog",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321426Z",
+            "entity_count": null
+          },
+          {
+            "name": "Opportunity catalog",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321427Z",
+            "entity_count": null
+          }
+        ],
+        "message": "Simulated SAP context \u2014 not a live tenant connection."
+      },
+      "workforce_context": {
+        "domain": "workforce",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 1,
+        "data": {
+          "candidate_id": "ananya-sharma",
+          "growth_portfolio": {
+            "candidate_id": "ananya-sharma",
+            "attributes": [],
+            "source_mode": "SIMULATED",
+            "note": "External candidate \u2014 no employee Growth Portfolio in demo"
+          },
+          "source": "SAP",
+          "source_mode": "SIMULATED"
+        }
+      },
+      "skills_context": {
+        "domain": "skills",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 0,
+        "data": []
+      },
+      "role_context": {
+        "domain": "role",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 1,
+        "data": {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "data-analyst-junior",
+          "title": "Junior Data Analyst",
+          "raw_text": "Junior Data Analyst \u2014 analyze datasets, produce business reports, create dashboards, communicate insights. Requirements: SQL, Excel, data analysis, reporting, Power BI, communication. 3 years continuous recent professional experience. Bangalore office 5 days/week. Premier engineering institute preferred.",
+          "family": "analytics",
+          "level": "junior",
+          "location": "Bangalore",
+          "work_modes": [
+            "onsite"
+          ],
+          "sap_requisition_id": null,
+          "sap_job_role_code": null,
+          "outcomes": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "out-da-insights",
+              "job_id": "data-analyst-junior",
+              "text": "Deliver weekly operational insights for business leadership",
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "tasks": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "task-da-sql",
+              "job_id": "data-analyst-junior",
+              "text": "Write SQL to extract and join operational datasets",
+              "on_site_likelihood": "low",
+              "importance": "core",
+              "capability_ids": [
+                "sql",
+                "data_analysis"
+              ],
+              "source_requirement_ids": [],
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "task-da-dashboard",
+              "job_id": "data-analyst-junior",
+              "text": "Build recurring dashboards and visual reports",
+              "on_site_likelihood": "low",
+              "importance": "core",
+              "capability_ids": [
+                "power_bi",
+                "reporting"
+              ],
+              "source_requirement_ids": [],
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "task-da-communicate",
+              "job_id": "data-analyst-junior",
+              "text": "Present findings to stakeholders",
+              "on_site_likelihood": "medium",
+              "importance": "core",
+              "capability_ids": [
+                "communication"
+              ],
+              "source_requirement_ids": [],
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "requirements": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "req-da-experience",
+              "job_id": "data-analyst-junior",
+              "text": "3 years continuous recent professional experience",
+              "requirement_class": "EXPERIENCE_REQUIREMENT",
+              "review_tag": "POTENTIAL_PROXY",
+              "strength": "required",
+              "why_relevant": "May proxy for practice volume and reliability.",
+              "why_may_be_proxy": "Continuous tenure is not the same as task capability; career breaks do not erase skills.",
+              "linked_task_ids": [],
+              "confidence": 0.7,
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "req-da-location",
+              "job_id": "data-analyst-junior",
+              "text": "Bangalore office 5 days/week",
+              "requirement_class": "WORKPLACE_CONDITION",
+              "review_tag": "POTENTIAL_PROXY",
+              "strength": "required",
+              "why_relevant": "May reflect collaboration or equipment needs.",
+              "why_may_be_proxy": "Core analytics tasks may be performable hybrid if access is provided.",
+              "linked_task_ids": [
+                "task-da-sql",
+                "task-da-dashboard"
+              ],
+              "confidence": 0.65,
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "req-da-institute",
+              "job_id": "data-analyst-junior",
+              "text": "Premier engineering institute preferred",
+              "requirement_class": "CREDENTIAL_REQUIREMENT",
+              "review_tag": "POTENTIAL_EXCLUSIONARY_FACTOR",
+              "strength": "preferred",
+              "why_relevant": "Screening convenience.",
+              "why_may_be_proxy": "Institution brand is not a task capability.",
+              "linked_task_ids": [],
+              "confidence": 0.8,
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "capabilities": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-sql",
+              "job_id": "data-analyst-junior",
+              "skill_id": "sql",
+              "label": "SQL",
+              "min_proficiency": 0.6,
+              "importance": "core",
+              "evidence_expectation": "work sample or demonstrated project",
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-excel",
+              "job_id": "data-analyst-junior",
+              "skill_id": "excel",
+              "label": "Excel",
+              "min_proficiency": 0.55,
+              "importance": "core",
+              "evidence_expectation": "work sample",
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-powerbi",
+              "job_id": "data-analyst-junior",
+              "skill_id": "power_bi",
+              "label": "Power BI",
+              "min_proficiency": 0.6,
+              "importance": "core",
+              "evidence_expectation": "dashboard sample",
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-communication",
+              "job_id": "data-analyst-junior",
+              "skill_id": "communication",
+              "label": "Communication",
+              "min_proficiency": 0.55,
+              "importance": "core",
+              "evidence_expectation": "stakeholder case writeup",
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_fixture": true
+        }
+      },
+      "learning_context": {
+        "domain": "learning",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 4,
+        "data": [
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-powerbi-fundamentals",
+            "title": "Power BI fundamentals",
+            "description": "Core Power BI concepts: data import, basic transformations, and report building.",
+            "capability": "power_bi",
+            "difficulty": "beginner",
+            "hours": 8.0,
+            "estimated_duration": 8.0,
+            "sap_learning_item_id": "SAP-LRN-PBI-101",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "power_bi",
+              "reporting"
+            ],
+            "completion_criteria": "Complete guided labs on data import and basic visuals."
+          },
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-powerbi-modeling",
+            "title": "Power BI data modeling",
+            "description": "Relationships, DAX basics, and model optimization for analytics dashboards.",
+            "capability": "power_bi",
+            "difficulty": "intermediate",
+            "hours": 6.0,
+            "estimated_duration": 6.0,
+            "sap_learning_item_id": "SAP-LRN-PBI-201",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "power_bi",
+              "data_analysis"
+            ],
+            "completion_criteria": "Build a star-schema model with calculated measures."
+          },
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-powerbi-dashboard",
+            "title": "Dashboard design for business analytics",
+            "description": "Role-specific dashboard construction with KPIs and stakeholder views.",
+            "capability": "power_bi",
+            "difficulty": "intermediate",
+            "hours": 5.0,
+            "estimated_duration": 5.0,
+            "sap_learning_item_id": "SAP-LRN-PBI-301",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "power_bi",
+              "reporting",
+              "data_analysis"
+            ],
+            "completion_criteria": "Deliver a multi-page dashboard with drill-down visuals."
+          },
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-sql-analytical",
+            "title": "Analytical SQL for reporting",
+            "description": "Advanced SQL queries for business reporting and analytics extracts.",
+            "capability": "sql",
+            "difficulty": "intermediate",
+            "hours": 6.0,
+            "estimated_duration": 6.0,
+            "sap_learning_item_id": "SAP-LRN-SQL-201",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "sql",
+              "data_analysis"
+            ],
+            "completion_criteria": "Complete analytical SQL exercises with joins and aggregations."
+          }
+        ]
+      },
+      "opportunity_context": {
+        "domain": "opportunity",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 1,
+        "data": [
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "opp-hybrid-analyst-lucknow",
+            "job_id": "data-analyst-junior",
+            "title": "Junior Data Analyst (Hybrid \u2014 India)",
+            "location": "Lucknow / Hybrid",
+            "work_modes": [
+              "hybrid",
+              "remote"
+            ],
+            "language": "en",
+            "source": "REWORK",
+            "sap_opportunity_id": null,
+            "source_mode": "SYNTHETIC"
+          }
+        ]
+      },
+      "source_mode": "SIMULATED",
+      "integration_status": "AVAILABLE",
+      "retrieved_at": "2026-08-28T10:23:41.321392+00:00"
     },
     "candidate_evidence": [
       {
@@ -325,7 +705,7 @@
         "confidence": 0.35
       },
       {
-        "created_at": "2026-08-27T21:56:31.032798",
+        "created_at": "2026-08-28T10:23:41.334066",
         "updated_at": null,
         "id": "ev-proof-proof-result-assess-power_bi-ananya-sharma",
         "candidate_id": "ananya-sharma",
@@ -343,7 +723,7 @@
     ],
     "candidate_capabilities": [
       {
-        "created_at": "2026-08-27T21:56:31.025359",
+        "created_at": "2026-08-28T10:23:41.324418",
         "updated_at": null,
         "id": "cap-ananya-sharma-sql",
         "candidate_id": "ananya-sharma",
@@ -368,7 +748,7 @@
         "rationale": "Detected SQL from demo fixture evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025452",
+        "created_at": "2026-08-28T10:23:41.324494",
         "updated_at": null,
         "id": "cap-ananya-sharma-excel",
         "candidate_id": "ananya-sharma",
@@ -392,7 +772,7 @@
         "rationale": "Detected Excel from demo fixture evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025473",
+        "created_at": "2026-08-28T10:23:41.324514",
         "updated_at": null,
         "id": "cap-ananya-sharma-communication",
         "candidate_id": "ananya-sharma",
@@ -416,7 +796,7 @@
         "rationale": "Detected Stakeholder communication from demo fixture evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025488",
+        "created_at": "2026-08-28T10:23:41.324527",
         "updated_at": null,
         "id": "cap-ananya-sharma-power_bi",
         "candidate_id": "ananya-sharma",
@@ -441,7 +821,7 @@
         "rationale": "Capability refreshed via successful proof-of-skill assessment."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025501",
+        "created_at": "2026-08-28T10:23:41.324539",
         "updated_at": null,
         "id": "cap-ananya-sharma-data_analysis",
         "candidate_id": "ananya-sharma",
@@ -465,7 +845,7 @@
         "rationale": "Inferred data analysis from MIS analytics project evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025513",
+        "created_at": "2026-08-28T10:23:41.324551",
         "updated_at": null,
         "id": "cap-ananya-sharma-reporting",
         "candidate_id": "ananya-sharma",
@@ -492,7 +872,7 @@
     ],
     "job_tasks": [
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "task-da-sql",
         "job_id": "data-analyst-junior",
@@ -507,7 +887,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "task-da-dashboard",
         "job_id": "data-analyst-junior",
@@ -522,7 +902,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "task-da-communicate",
         "job_id": "data-analyst-junior",
@@ -538,7 +918,7 @@
     ],
     "job_capabilities": [
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "jcap-da-sql",
         "job_id": "data-analyst-junior",
@@ -550,7 +930,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "jcap-da-excel",
         "job_id": "data-analyst-junior",
@@ -562,7 +942,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "jcap-da-powerbi",
         "job_id": "data-analyst-junior",
@@ -574,7 +954,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "jcap-da-communication",
         "job_id": "data-analyst-junior",
@@ -588,7 +968,7 @@
     ],
     "role_outcomes": [
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "out-da-insights",
         "job_id": "data-analyst-junior",
@@ -598,7 +978,7 @@
     ],
     "requirement_analyses": [
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "req-da-experience",
         "job_id": "data-analyst-junior",
@@ -613,7 +993,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "req-da-location",
         "job_id": "data-analyst-junior",
@@ -631,7 +1011,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.026915",
+        "created_at": "2026-08-28T10:23:41.327306",
         "updated_at": null,
         "id": "req-da-institute",
         "job_id": "data-analyst-junior",
@@ -648,14 +1028,14 @@
     ],
     "capability_assessments": [
       {
-        "created_at": "2026-08-27T21:56:31.033385",
+        "created_at": "2026-08-28T10:23:41.335133",
         "updated_at": null,
         "id": "cap-assessment-ananya-sharma-data-analyst-junior",
         "candidate_id": "ananya-sharma",
         "job_id": "data-analyst-junior",
         "items": [
           {
-            "created_at": "2026-08-27T21:56:31.033336",
+            "created_at": "2026-08-28T10:23:41.335080",
             "updated_at": null,
             "id": "assess-data-analyst-junior-sql",
             "skill_id": "sql",
@@ -679,7 +1059,7 @@
             "rationale": "SQL meets or exceeds required proficiency (0.62 vs 0.60)."
           },
           {
-            "created_at": "2026-08-27T21:56:31.033353",
+            "created_at": "2026-08-28T10:23:41.335099",
             "updated_at": null,
             "id": "assess-data-analyst-junior-excel",
             "skill_id": "excel",
@@ -702,7 +1082,7 @@
             "rationale": "Excel meets or exceeds required proficiency (0.70 vs 0.55)."
           },
           {
-            "created_at": "2026-08-27T21:56:31.033363",
+            "created_at": "2026-08-28T10:23:41.335109",
             "updated_at": null,
             "id": "assess-data-analyst-junior-power_bi",
             "skill_id": "power_bi",
@@ -726,7 +1106,7 @@
             "rationale": "Power BI meets or exceeds required proficiency (0.60 vs 0.60)."
           },
           {
-            "created_at": "2026-08-27T21:56:31.033373",
+            "created_at": "2026-08-28T10:23:41.335119",
             "updated_at": null,
             "id": "assess-data-analyst-junior-communication",
             "skill_id": "communication",
@@ -756,10 +1136,10 @@
     "capability_gaps": [],
     "requirement_diagnoses": [
       {
-        "created_at": "2026-08-27T21:56:31.033412",
+        "created_at": "2026-08-28T10:23:41.335164",
         "updated_at": null,
         "id": "diag-req-da-experience",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "requirement_id": "req-da-experience",
         "requirement": "3 years continuous recent professional experience",
         "requirement_type": "EXPERIENCE_REQUIREMENT",
@@ -788,10 +1168,10 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.033429",
+        "created_at": "2026-08-28T10:23:41.335181",
         "updated_at": null,
         "id": "diag-req-da-location",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "requirement_id": "req-da-location",
         "requirement": "Bangalore office 5 days/week",
         "requirement_type": "WORKPLACE_CONDITION",
@@ -817,10 +1197,10 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.033447",
+        "created_at": "2026-08-28T10:23:41.335197",
         "updated_at": null,
         "id": "diag-req-da-institute",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "requirement_id": "req-da-institute",
         "requirement": "Premier engineering institute preferred",
         "requirement_type": "CREDENTIAL_REQUIREMENT",
@@ -859,10 +1239,10 @@
     ],
     "counterfactuals": [
       {
-        "created_at": "2026-08-27T21:56:31.033464",
+        "created_at": "2026-08-28T10:23:41.335216",
         "updated_at": null,
         "id": "cf-req-da-experience",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "requirement_id": "req-da-experience",
         "requirement_text": "3 years continuous recent professional experience",
         "related_task_ids": [],
@@ -885,10 +1265,10 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.033480",
+        "created_at": "2026-08-28T10:23:41.335228",
         "updated_at": null,
         "id": "cf-req-da-location",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "requirement_id": "req-da-location",
         "requirement_text": "Bangalore office 5 days/week",
         "related_task_ids": [
@@ -912,10 +1292,10 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.033493",
+        "created_at": "2026-08-28T10:23:41.335240",
         "updated_at": null,
         "id": "cf-req-da-institute",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "requirement_id": "req-da-institute",
         "requirement_text": "Premier engineering institute preferred",
         "related_task_ids": [],
@@ -956,12 +1336,12 @@
       "diagnosis_confidence": 0.87
     },
     "learning_path": {
-      "created_at": "2026-08-27T21:56:31.030396",
+      "created_at": "2026-08-28T10:23:41.331215",
       "updated_at": null,
       "id": "pathway-ananya-sharma-data-analyst-junior-power_bi",
       "target_role_id": "data-analyst-junior",
       "candidate_id": "ananya-sharma",
-      "created_from_run_id": "run-71ec92dfdde6",
+      "created_from_run_id": "run-a0d3544c0253",
       "status": "COMPLETED",
       "current_state": "Power BI proficiency 0.22",
       "target_state": "Power BI proficiency 0.60",
@@ -973,7 +1353,7 @@
       ],
       "milestones": [
         {
-          "created_at": "2026-08-27T21:56:31.030308",
+          "created_at": "2026-08-28T10:23:41.331170",
           "updated_at": null,
           "id": "milestone-power_bi-1",
           "sequence": 1,
@@ -990,7 +1370,7 @@
           "status": "PENDING"
         },
         {
-          "created_at": "2026-08-27T21:56:31.030339",
+          "created_at": "2026-08-28T10:23:41.331183",
           "updated_at": null,
           "id": "milestone-power_bi-2",
           "sequence": 2,
@@ -1007,7 +1387,7 @@
           "status": "PENDING"
         },
         {
-          "created_at": "2026-08-27T21:56:31.030348",
+          "created_at": "2026-08-28T10:23:41.331189",
           "updated_at": null,
           "id": "milestone-power_bi-3",
           "sequence": 3,
@@ -1024,7 +1404,7 @@
           "status": "PENDING"
         },
         {
-          "created_at": "2026-08-27T21:56:31.030356",
+          "created_at": "2026-08-28T10:23:41.331194",
           "updated_at": null,
           "id": "milestone-power_bi-4",
           "sequence": 4,
@@ -1121,7 +1501,7 @@
       "source_mode": "SYNTHETIC"
     },
     "proof_assessment": {
-      "created_at": "2026-08-27T21:56:31.030471",
+      "created_at": "2026-08-28T10:23:41.331253",
       "updated_at": null,
       "id": "assess-power_bi-ananya-sharma",
       "skill_id": "power_bi",
@@ -1130,7 +1510,7 @@
       "rubric_json": {
         "criteria": [
           {
-            "created_at": "2026-08-27T21:56:30.902806",
+            "created_at": "2026-08-28T10:23:41.197844",
             "updated_at": null,
             "id": "rubric-pbi-prep",
             "criterion": "Data Preparation",
@@ -1138,7 +1518,7 @@
             "description": "Import, clean, and model source data appropriately."
           },
           {
-            "created_at": "2026-08-27T21:56:30.902986",
+            "created_at": "2026-08-28T10:23:41.198040",
             "updated_at": null,
             "id": "rubric-pbi-dash",
             "criterion": "Dashboard Construction",
@@ -1146,7 +1526,7 @@
             "description": "Build coherent dashboard layout with relevant visuals."
           },
           {
-            "created_at": "2026-08-27T21:56:30.902990",
+            "created_at": "2026-08-28T10:23:41.198043",
             "updated_at": null,
             "id": "rubric-pbi-viz",
             "criterion": "Visualization Quality",
@@ -1154,7 +1534,7 @@
             "description": "Charts are accurate, readable, and appropriately formatted."
           },
           {
-            "created_at": "2026-08-27T21:56:30.902993",
+            "created_at": "2026-08-28T10:23:41.198046",
             "updated_at": null,
             "id": "rubric-pbi-insight",
             "criterion": "Business Insight",
@@ -1162,7 +1542,7 @@
             "description": "Identifies trends, top performers, and declining segments."
           },
           {
-            "created_at": "2026-08-27T21:56:30.902996",
+            "created_at": "2026-08-28T10:23:41.198050",
             "updated_at": null,
             "id": "rubric-pbi-comm",
             "criterion": "Communication",
@@ -1174,7 +1554,7 @@
       },
       "rubric_criteria": [
         {
-          "created_at": "2026-08-27T21:56:30.902806",
+          "created_at": "2026-08-28T10:23:41.197844",
           "updated_at": null,
           "id": "rubric-pbi-prep",
           "criterion": "Data Preparation",
@@ -1182,7 +1562,7 @@
           "description": "Import, clean, and model source data appropriately."
         },
         {
-          "created_at": "2026-08-27T21:56:30.902986",
+          "created_at": "2026-08-28T10:23:41.198040",
           "updated_at": null,
           "id": "rubric-pbi-dash",
           "criterion": "Dashboard Construction",
@@ -1190,7 +1570,7 @@
           "description": "Build coherent dashboard layout with relevant visuals."
         },
         {
-          "created_at": "2026-08-27T21:56:30.902990",
+          "created_at": "2026-08-28T10:23:41.198043",
           "updated_at": null,
           "id": "rubric-pbi-viz",
           "criterion": "Visualization Quality",
@@ -1198,7 +1578,7 @@
           "description": "Charts are accurate, readable, and appropriately formatted."
         },
         {
-          "created_at": "2026-08-27T21:56:30.902993",
+          "created_at": "2026-08-28T10:23:41.198046",
           "updated_at": null,
           "id": "rubric-pbi-insight",
           "criterion": "Business Insight",
@@ -1206,7 +1586,7 @@
           "description": "Identifies trends, top performers, and declining segments."
         },
         {
-          "created_at": "2026-08-27T21:56:30.902996",
+          "created_at": "2026-08-28T10:23:41.198050",
           "updated_at": null,
           "id": "rubric-pbi-comm",
           "criterion": "Communication",
@@ -1219,7 +1599,7 @@
       "is_demo": false
     },
     "proof_submission": {
-      "created_at": "2026-08-27T21:56:31.032000",
+      "created_at": "2026-08-28T10:23:41.332269",
       "updated_at": null,
       "id": "submission-assess-power_bi-ananya-sharma",
       "assessment_id": "assess-power_bi-ananya-sharma",
@@ -1241,7 +1621,7 @@
       "is_demo": true
     },
     "proof_result": {
-      "created_at": "2026-08-27T21:56:31.032095",
+      "created_at": "2026-08-28T10:23:41.332502",
       "updated_at": null,
       "id": "proof-result-assess-power_bi-ananya-sharma",
       "assessment_id": "assess-power_bi-ananya-sharma",
@@ -1256,7 +1636,7 @@
       },
       "criterion_results": [
         {
-          "created_at": "2026-08-27T21:56:31.032036",
+          "created_at": "2026-08-28T10:23:41.332363",
           "updated_at": null,
           "id": "result-rubric-pbi-prep",
           "criterion": "Data Preparation",
@@ -1266,7 +1646,7 @@
           "feedback": "Strong demonstration of Data Preparation."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032052",
+          "created_at": "2026-08-28T10:23:41.332389",
           "updated_at": null,
           "id": "result-rubric-pbi-dash",
           "criterion": "Dashboard Construction",
@@ -1276,7 +1656,7 @@
           "feedback": "Strong demonstration of Dashboard Construction."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032059",
+          "created_at": "2026-08-28T10:23:41.332443",
           "updated_at": null,
           "id": "result-rubric-pbi-viz",
           "criterion": "Visualization Quality",
@@ -1286,7 +1666,7 @@
           "feedback": "Adequate Visualization Quality; minor improvements possible."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032072",
+          "created_at": "2026-08-28T10:23:41.332466",
           "updated_at": null,
           "id": "result-rubric-pbi-insight",
           "criterion": "Business Insight",
@@ -1296,7 +1676,7 @@
           "feedback": "Strong demonstration of Business Insight."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032077",
+          "created_at": "2026-08-28T10:23:41.332473",
           "updated_at": null,
           "id": "result-rubric-pbi-comm",
           "criterion": "Communication",
@@ -1314,7 +1694,7 @@
       "is_demo": true
     },
     "proof_evidence": {
-      "created_at": "2026-08-27T21:56:31.032113",
+      "created_at": "2026-08-28T10:23:41.332540",
       "updated_at": null,
       "id": "proof-evidence-assess-power_bi-ananya-sharma",
       "assessment_id": "assess-power_bi-ananya-sharma",
@@ -1322,7 +1702,7 @@
       "capability": "power_bi",
       "criterion_results": [
         {
-          "created_at": "2026-08-27T21:56:31.032036",
+          "created_at": "2026-08-28T10:23:41.332363",
           "updated_at": null,
           "id": "result-rubric-pbi-prep",
           "criterion": "Data Preparation",
@@ -1332,7 +1712,7 @@
           "feedback": "Strong demonstration of Data Preparation."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032052",
+          "created_at": "2026-08-28T10:23:41.332389",
           "updated_at": null,
           "id": "result-rubric-pbi-dash",
           "criterion": "Dashboard Construction",
@@ -1342,7 +1722,7 @@
           "feedback": "Strong demonstration of Dashboard Construction."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032059",
+          "created_at": "2026-08-28T10:23:41.332443",
           "updated_at": null,
           "id": "result-rubric-pbi-viz",
           "criterion": "Visualization Quality",
@@ -1352,7 +1732,7 @@
           "feedback": "Adequate Visualization Quality; minor improvements possible."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032072",
+          "created_at": "2026-08-28T10:23:41.332466",
           "updated_at": null,
           "id": "result-rubric-pbi-insight",
           "criterion": "Business Insight",
@@ -1362,7 +1742,7 @@
           "feedback": "Strong demonstration of Business Insight."
         },
         {
-          "created_at": "2026-08-27T21:56:31.032077",
+          "created_at": "2026-08-28T10:23:41.332473",
           "updated_at": null,
           "id": "result-rubric-pbi-comm",
           "criterion": "Communication",
@@ -1378,13 +1758,13 @@
       ],
       "confidence": 0.8,
       "verification_status": "VERIFIED_BY_ASSESSMENT",
-      "timestamp": "2026-08-27T21:56:31.032107Z",
+      "timestamp": "2026-08-28T10:23:41.332531Z",
       "source_mode": "SYNTHETIC",
       "is_demo": true
     },
     "capability_update_events": [
       {
-        "created_at": "2026-08-27T21:56:31.032825",
+        "created_at": "2026-08-28T10:23:41.334126",
         "updated_at": null,
         "id": "cap-update-proof-result-assess-power_bi-ananya-sharma",
         "candidate_id": "ananya-sharma",
@@ -1396,12 +1776,12 @@
         "confidence": 0.8,
         "source": "REWORK",
         "source_mode": "SYNTHETIC",
-        "run_id": "run-71ec92dfdde6"
+        "run_id": "run-a0d3544c0253"
       }
     ],
     "updated_candidate_capabilities": [
       {
-        "created_at": "2026-08-27T21:56:31.025359",
+        "created_at": "2026-08-28T10:23:41.324418",
         "updated_at": null,
         "id": "cap-ananya-sharma-sql",
         "candidate_id": "ananya-sharma",
@@ -1426,7 +1806,7 @@
         "rationale": "Detected SQL from demo fixture evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025452",
+        "created_at": "2026-08-28T10:23:41.324494",
         "updated_at": null,
         "id": "cap-ananya-sharma-excel",
         "candidate_id": "ananya-sharma",
@@ -1450,7 +1830,7 @@
         "rationale": "Detected Excel from demo fixture evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025473",
+        "created_at": "2026-08-28T10:23:41.324514",
         "updated_at": null,
         "id": "cap-ananya-sharma-communication",
         "candidate_id": "ananya-sharma",
@@ -1474,7 +1854,7 @@
         "rationale": "Detected Stakeholder communication from demo fixture evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025488",
+        "created_at": "2026-08-28T10:23:41.324527",
         "updated_at": null,
         "id": "cap-ananya-sharma-power_bi",
         "candidate_id": "ananya-sharma",
@@ -1499,7 +1879,7 @@
         "rationale": "Capability refreshed via successful proof-of-skill assessment."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025501",
+        "created_at": "2026-08-28T10:23:41.324539",
         "updated_at": null,
         "id": "cap-ananya-sharma-data_analysis",
         "candidate_id": "ananya-sharma",
@@ -1523,7 +1903,7 @@
         "rationale": "Inferred data analysis from MIS analytics project evidence."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025513",
+        "created_at": "2026-08-28T10:23:41.324551",
         "updated_at": null,
         "id": "cap-ananya-sharma-reporting",
         "candidate_id": "ananya-sharma",
@@ -1684,7 +2064,7 @@
     ],
     "skill_investments": [
       {
-        "created_at": "2026-08-27T21:56:31.040254",
+        "created_at": "2026-08-28T10:23:41.339106",
         "updated_at": null,
         "id": "invest-ananya-sharma-data_modeling",
         "candidate_id": "ananya-sharma",
@@ -1706,7 +2086,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.040168",
+        "created_at": "2026-08-28T10:23:41.339068",
         "updated_at": null,
         "id": "invest-ananya-sharma-power_bi",
         "candidate_id": "ananya-sharma",
@@ -1730,7 +2110,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.040242",
+        "created_at": "2026-08-28T10:23:41.339090",
         "updated_at": null,
         "id": "invest-ananya-sharma-python",
         "candidate_id": "ananya-sharma",
@@ -1909,7 +2289,7 @@
     ],
     "opportunity_viability": [
       {
-        "created_at": "2026-08-27T21:56:31.040807",
+        "created_at": "2026-08-28T10:23:41.340292",
         "updated_at": null,
         "id": "viability-ananya-sharma-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -1955,7 +2335,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.041299",
+        "created_at": "2026-08-28T10:23:41.341460",
         "updated_at": null,
         "id": "viability-ananya-sharma-opp-operations-analyst",
         "candidate_id": "ananya-sharma",
@@ -2001,7 +2381,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.041767",
+        "created_at": "2026-08-28T10:23:41.342440",
         "updated_at": null,
         "id": "viability-ananya-sharma-opp-bi-analyst",
         "candidate_id": "ananya-sharma",
@@ -2051,7 +2431,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.042175",
+        "created_at": "2026-08-28T10:23:41.342957",
         "updated_at": null,
         "id": "viability-ananya-sharma-opp-reporting-analyst",
         "candidate_id": "ananya-sharma",
@@ -2099,7 +2479,7 @@
     ],
     "employer_readiness": [
       {
-        "created_at": "2026-08-27T21:56:31.040615",
+        "created_at": "2026-08-28T10:23:41.339774",
         "updated_at": null,
         "id": "employer-readiness-opp-data-analyst",
         "opportunity_id": "opp-data-analyst",
@@ -2107,7 +2487,7 @@
         "overall_state": "READY",
         "factors": [
           {
-            "created_at": "2026-08-27T21:56:31.040552",
+            "created_at": "2026-08-28T10:23:41.339641",
             "updated_at": null,
             "id": "erf-opp-data-analyst-MENTORSHIP_AVAILABLE",
             "factor": "MENTORSHIP_AVAILABLE",
@@ -2118,7 +2498,7 @@
             "evidence_ref": "employer-policy-mentor"
           },
           {
-            "created_at": "2026-08-27T21:56:31.040565",
+            "created_at": "2026-08-28T10:23:41.339680",
             "updated_at": null,
             "id": "erf-opp-data-analyst-HYBRID_OR_REMOTE",
             "factor": "HYBRID_OR_REMOTE",
@@ -2129,7 +2509,7 @@
             "evidence_ref": "employer-policy-hybrid"
           },
           {
-            "created_at": "2026-08-27T21:56:31.040570",
+            "created_at": "2026-08-28T10:23:41.339687",
             "updated_at": null,
             "id": "erf-opp-data-analyst-STRUCTURED_ONBOARDING",
             "factor": "STRUCTURED_ONBOARDING",
@@ -2140,7 +2520,7 @@
             "evidence_ref": "employer-policy-onboarding"
           },
           {
-            "created_at": "2026-08-27T21:56:31.040574",
+            "created_at": "2026-08-28T10:23:41.339695",
             "updated_at": null,
             "id": "erf-opp-data-analyst-PHASED_RESPONSIBILITY",
             "factor": "PHASED_RESPONSIBILITY",
@@ -2151,7 +2531,7 @@
             "evidence_ref": "employer-policy-phased"
           },
           {
-            "created_at": "2026-08-27T21:56:31.040577",
+            "created_at": "2026-08-28T10:23:41.339700",
             "updated_at": null,
             "id": "erf-opp-data-analyst-LEARNING_SUPPORT",
             "factor": "LEARNING_SUPPORT",
@@ -2162,7 +2542,7 @@
             "evidence_ref": "employer-policy-learning"
           },
           {
-            "created_at": "2026-08-27T21:56:31.040582",
+            "created_at": "2026-08-28T10:23:41.339705",
             "updated_at": null,
             "id": "erf-opp-data-analyst-ACCESSIBILITY_SUPPORT",
             "factor": "ACCESSIBILITY_SUPPORT",
@@ -2175,7 +2555,7 @@
         ],
         "interventions": [
           {
-            "created_at": "2026-08-27T21:56:31.040601",
+            "created_at": "2026-08-28T10:23:41.339743",
             "updated_at": null,
             "id": "intervention-erf-opp-data-analyst-ACCESSIBILITY_SUPPORT",
             "issue": "ACCESSIBILITY_SUPPORT status is unknown.",
@@ -2188,7 +2568,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.041163",
+        "created_at": "2026-08-28T10:23:41.341118",
         "updated_at": null,
         "id": "employer-readiness-opp-operations-analyst",
         "opportunity_id": "opp-operations-analyst",
@@ -2196,7 +2576,7 @@
         "overall_state": "READY",
         "factors": [
           {
-            "created_at": "2026-08-27T21:56:31.041103",
+            "created_at": "2026-08-28T10:23:41.341008",
             "updated_at": null,
             "id": "erf-opp-operations-analyst-MENTORSHIP_AVAILABLE",
             "factor": "MENTORSHIP_AVAILABLE",
@@ -2207,7 +2587,7 @@
             "evidence_ref": "employer-policy-mentor"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041112",
+            "created_at": "2026-08-28T10:23:41.341038",
             "updated_at": null,
             "id": "erf-opp-operations-analyst-HYBRID_OR_REMOTE",
             "factor": "HYBRID_OR_REMOTE",
@@ -2218,7 +2598,7 @@
             "evidence_ref": "employer-policy-remote"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041117",
+            "created_at": "2026-08-28T10:23:41.341045",
             "updated_at": null,
             "id": "erf-opp-operations-analyst-STRUCTURED_ONBOARDING",
             "factor": "STRUCTURED_ONBOARDING",
@@ -2229,7 +2609,7 @@
             "evidence_ref": "employer-policy-onboarding-lite"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041120",
+            "created_at": "2026-08-28T10:23:41.341052",
             "updated_at": null,
             "id": "erf-opp-operations-analyst-PHASED_RESPONSIBILITY",
             "factor": "PHASED_RESPONSIBILITY",
@@ -2240,7 +2620,7 @@
             "evidence_ref": "employer-policy-phased"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041124",
+            "created_at": "2026-08-28T10:23:41.341058",
             "updated_at": null,
             "id": "erf-opp-operations-analyst-FLEXIBLE_WORK",
             "factor": "FLEXIBLE_WORK",
@@ -2251,7 +2631,7 @@
             "evidence_ref": "employer-policy-flex"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041128",
+            "created_at": "2026-08-28T10:23:41.341064",
             "updated_at": null,
             "id": "erf-opp-operations-analyst-PROOF_OF_SKILL_ACCEPTANCE",
             "factor": "PROOF_OF_SKILL_ACCEPTANCE",
@@ -2264,7 +2644,7 @@
         ],
         "interventions": [
           {
-            "created_at": "2026-08-27T21:56:31.041151",
+            "created_at": "2026-08-28T10:23:41.341093",
             "updated_at": null,
             "id": "intervention-erf-opp-operations-analyst-STRUCTURED_ONBOARDING",
             "issue": "STRUCTURED_ONBOARDING is only partially ready.",
@@ -2277,7 +2657,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.041596",
+        "created_at": "2026-08-28T10:23:41.342135",
         "updated_at": null,
         "id": "employer-readiness-opp-bi-analyst",
         "opportunity_id": "opp-bi-analyst",
@@ -2285,7 +2665,7 @@
         "overall_state": "PARTIALLY_READY",
         "factors": [
           {
-            "created_at": "2026-08-27T21:56:31.041549",
+            "created_at": "2026-08-28T10:23:41.342039",
             "updated_at": null,
             "id": "erf-opp-bi-analyst-MENTORSHIP_AVAILABLE",
             "factor": "MENTORSHIP_AVAILABLE",
@@ -2296,7 +2676,7 @@
             "evidence_ref": null
           },
           {
-            "created_at": "2026-08-27T21:56:31.041558",
+            "created_at": "2026-08-28T10:23:41.342064",
             "updated_at": null,
             "id": "erf-opp-bi-analyst-HYBRID_OR_REMOTE",
             "factor": "HYBRID_OR_REMOTE",
@@ -2307,7 +2687,7 @@
             "evidence_ref": "employer-policy-hybrid-limited"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041562",
+            "created_at": "2026-08-28T10:23:41.342070",
             "updated_at": null,
             "id": "erf-opp-bi-analyst-STRUCTURED_ONBOARDING",
             "factor": "STRUCTURED_ONBOARDING",
@@ -2318,7 +2698,7 @@
             "evidence_ref": "employer-policy-onboarding"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041566",
+            "created_at": "2026-08-28T10:23:41.342077",
             "updated_at": null,
             "id": "erf-opp-bi-analyst-LEARNING_SUPPORT",
             "factor": "LEARNING_SUPPORT",
@@ -2329,7 +2709,7 @@
             "evidence_ref": "employer-policy-learning"
           },
           {
-            "created_at": "2026-08-27T21:56:31.041569",
+            "created_at": "2026-08-28T10:23:41.342083",
             "updated_at": null,
             "id": "erf-opp-bi-analyst-MANAGER_SUPPORT",
             "factor": "MANAGER_SUPPORT",
@@ -2342,7 +2722,7 @@
         ],
         "interventions": [
           {
-            "created_at": "2026-08-27T21:56:31.041580",
+            "created_at": "2026-08-28T10:23:41.342106",
             "updated_at": null,
             "id": "intervention-erf-opp-bi-analyst-MENTORSHIP_AVAILABLE",
             "issue": "MENTORSHIP_AVAILABLE is only partially ready.",
@@ -2351,7 +2731,7 @@
             "human_review_required": true
           },
           {
-            "created_at": "2026-08-27T21:56:31.041586",
+            "created_at": "2026-08-28T10:23:41.342114",
             "updated_at": null,
             "id": "intervention-erf-opp-bi-analyst-HYBRID_OR_REMOTE",
             "issue": "HYBRID_OR_REMOTE is only partially ready.",
@@ -2360,7 +2740,7 @@
             "human_review_required": true
           },
           {
-            "created_at": "2026-08-27T21:56:31.041589",
+            "created_at": "2026-08-28T10:23:41.342119",
             "updated_at": null,
             "id": "intervention-erf-opp-bi-analyst-MANAGER_SUPPORT",
             "issue": "MANAGER_SUPPORT status is unknown.",
@@ -2373,7 +2753,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.042057",
+        "created_at": "2026-08-28T10:23:41.342828",
         "updated_at": null,
         "id": "employer-readiness-opp-reporting-analyst",
         "opportunity_id": "opp-reporting-analyst",
@@ -2381,7 +2761,7 @@
         "overall_state": "READY",
         "factors": [
           {
-            "created_at": "2026-08-27T21:56:31.042021",
+            "created_at": "2026-08-28T10:23:41.342787",
             "updated_at": null,
             "id": "erf-opp-reporting-analyst-HYBRID_OR_REMOTE",
             "factor": "HYBRID_OR_REMOTE",
@@ -2392,7 +2772,7 @@
             "evidence_ref": "employer-policy-remote"
           },
           {
-            "created_at": "2026-08-27T21:56:31.042030",
+            "created_at": "2026-08-28T10:23:41.342799",
             "updated_at": null,
             "id": "erf-opp-reporting-analyst-FLEXIBLE_WORK",
             "factor": "FLEXIBLE_WORK",
@@ -2403,7 +2783,7 @@
             "evidence_ref": "employer-policy-flex"
           },
           {
-            "created_at": "2026-08-27T21:56:31.042035",
+            "created_at": "2026-08-28T10:23:41.342803",
             "updated_at": null,
             "id": "erf-opp-reporting-analyst-LEARNING_SUPPORT",
             "factor": "LEARNING_SUPPORT",
@@ -2414,7 +2794,7 @@
             "evidence_ref": "employer-policy-learning"
           },
           {
-            "created_at": "2026-08-27T21:56:31.042039",
+            "created_at": "2026-08-28T10:23:41.342808",
             "updated_at": null,
             "id": "erf-opp-reporting-analyst-PROOF_OF_SKILL_ACCEPTANCE",
             "factor": "PROOF_OF_SKILL_ACCEPTANCE",
@@ -2427,7 +2807,7 @@
         ],
         "interventions": [
           {
-            "created_at": "2026-08-27T21:56:31.042049",
+            "created_at": "2026-08-28T10:23:41.342819",
             "updated_at": null,
             "id": "intervention-erf-opp-reporting-analyst-PROOF_OF_SKILL_ACCEPTANCE",
             "issue": "PROOF_OF_SKILL_ACCEPTANCE is only partially ready.",
@@ -2441,7 +2821,7 @@
       }
     ],
     "opportunity_comparison": {
-      "created_at": "2026-08-27T21:56:31.042254",
+      "created_at": "2026-08-28T10:23:41.343041",
       "updated_at": null,
       "id": "opp-comparison-ananya-sharma",
       "candidate_id": "ananya-sharma",
@@ -2546,7 +2926,7 @@
     },
     "opportunity_counterfactuals": [
       {
-        "created_at": "2026-08-27T21:56:31.040830",
+        "created_at": "2026-08-28T10:23:41.340357",
         "updated_at": null,
         "id": "opp-cf-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -2560,7 +2940,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.041320",
+        "created_at": "2026-08-28T10:23:41.341524",
         "updated_at": null,
         "id": "opp-cf-opp-operations-analyst",
         "candidate_id": "ananya-sharma",
@@ -2574,7 +2954,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.041786",
+        "created_at": "2026-08-28T10:23:41.342470",
         "updated_at": null,
         "id": "opp-cf-opp-bi-analyst",
         "candidate_id": "ananya-sharma",
@@ -2593,7 +2973,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.042191",
+        "created_at": "2026-08-28T10:23:41.342973",
         "updated_at": null,
         "id": "opp-cf-opp-reporting-analyst",
         "candidate_id": "ananya-sharma",
@@ -2609,7 +2989,7 @@
     ],
     "interventions": [
       {
-        "created_at": "2026-08-27T21:56:31.051315",
+        "created_at": "2026-08-28T10:23:41.350757",
         "updated_at": null,
         "id": "int-learning-power_bi",
         "type": "LEARNING",
@@ -2628,7 +3008,7 @@
         "priority": "HIGH_IMPACT_HIGH_EFFORT"
       },
       {
-        "created_at": "2026-08-27T21:56:31.051350",
+        "created_at": "2026-08-28T10:23:41.350770",
         "updated_at": null,
         "id": "int-proof-power_bi",
         "type": "PROOF_OF_SKILL",
@@ -2647,7 +3027,7 @@
         "priority": "HIGH_IMPACT_LOW_EFFORT"
       },
       {
-        "created_at": "2026-08-27T21:56:31.051364",
+        "created_at": "2026-08-28T10:23:41.350779",
         "updated_at": null,
         "id": "int-mentorship-opp-data-analyst",
         "type": "MENTORSHIP",
@@ -2668,7 +3048,7 @@
         "priority": "HIGH_IMPACT_HIGH_EFFORT"
       },
       {
-        "created_at": "2026-08-27T21:56:31.051375",
+        "created_at": "2026-08-28T10:23:41.350787",
         "updated_at": null,
         "id": "int-hybrid-opp-data-analyst",
         "type": "HYBRID_WORK",
@@ -2689,7 +3069,7 @@
     ],
     "scenarios": [
       {
-        "created_at": "2026-08-27T21:56:31.051394",
+        "created_at": "2026-08-28T10:23:41.350797",
         "updated_at": null,
         "id": "scenario-base-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -2710,7 +3090,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.055198",
+        "created_at": "2026-08-28T10:23:41.354980",
         "updated_at": null,
         "id": "scenario-int-learning-power_bi",
         "candidate_id": "ananya-sharma",
@@ -2771,7 +3151,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.059861",
+        "created_at": "2026-08-28T10:23:41.358592",
         "updated_at": null,
         "id": "scenario-int-mentorship-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -2830,7 +3210,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.062909",
+        "created_at": "2026-08-28T10:23:41.363437",
         "updated_at": null,
         "id": "scenario-int-hybrid-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -2889,7 +3269,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.076520",
+        "created_at": "2026-08-28T10:23:41.379339",
         "updated_at": null,
         "id": "scenario-int-proof-power_bi",
         "candidate_id": "ananya-sharma",
@@ -2955,7 +3335,7 @@
     "intervention_simulation": {
       "interventions": [
         {
-          "created_at": "2026-08-27T21:56:31.051315",
+          "created_at": "2026-08-28T10:23:41.350757",
           "updated_at": null,
           "id": "int-learning-power_bi",
           "type": "LEARNING",
@@ -2974,7 +3354,7 @@
           "priority": "HIGH_IMPACT_HIGH_EFFORT"
         },
         {
-          "created_at": "2026-08-27T21:56:31.051350",
+          "created_at": "2026-08-28T10:23:41.350770",
           "updated_at": null,
           "id": "int-proof-power_bi",
           "type": "PROOF_OF_SKILL",
@@ -2993,7 +3373,7 @@
           "priority": "HIGH_IMPACT_LOW_EFFORT"
         },
         {
-          "created_at": "2026-08-27T21:56:31.051364",
+          "created_at": "2026-08-28T10:23:41.350779",
           "updated_at": null,
           "id": "int-mentorship-opp-data-analyst",
           "type": "MENTORSHIP",
@@ -3014,7 +3394,7 @@
           "priority": "HIGH_IMPACT_HIGH_EFFORT"
         },
         {
-          "created_at": "2026-08-27T21:56:31.051375",
+          "created_at": "2026-08-28T10:23:41.350787",
           "updated_at": null,
           "id": "int-hybrid-opp-data-analyst",
           "type": "HYBRID_WORK",
@@ -3035,7 +3415,7 @@
       ],
       "scenarios": [
         {
-          "created_at": "2026-08-27T21:56:31.051394",
+          "created_at": "2026-08-28T10:23:41.350797",
           "updated_at": null,
           "id": "scenario-base-opp-data-analyst",
           "candidate_id": "ananya-sharma",
@@ -3056,7 +3436,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T21:56:31.055198",
+          "created_at": "2026-08-28T10:23:41.354980",
           "updated_at": null,
           "id": "scenario-int-learning-power_bi",
           "candidate_id": "ananya-sharma",
@@ -3117,7 +3497,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T21:56:31.059861",
+          "created_at": "2026-08-28T10:23:41.358592",
           "updated_at": null,
           "id": "scenario-int-mentorship-opp-data-analyst",
           "candidate_id": "ananya-sharma",
@@ -3176,7 +3556,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T21:56:31.062909",
+          "created_at": "2026-08-28T10:23:41.363437",
           "updated_at": null,
           "id": "scenario-int-hybrid-opp-data-analyst",
           "candidate_id": "ananya-sharma",
@@ -3235,7 +3615,7 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T21:56:31.076520",
+          "created_at": "2026-08-28T10:23:41.379339",
           "updated_at": null,
           "id": "scenario-int-proof-power_bi",
           "candidate_id": "ananya-sharma",
@@ -3300,7 +3680,7 @@
       ],
       "bundles": [
         {
-          "created_at": "2026-08-27T21:56:31.068470",
+          "created_at": "2026-08-28T10:23:41.366791",
           "updated_at": null,
           "id": "bundle-a",
           "label": "Learning only",
@@ -3316,7 +3696,7 @@
           "rationale": "Bundle projection: Learning only."
         },
         {
-          "created_at": "2026-08-27T21:56:31.076556",
+          "created_at": "2026-08-28T10:23:41.379381",
           "updated_at": null,
           "id": "bundle-b",
           "label": "Learning + Proof",
@@ -3334,7 +3714,7 @@
           "rationale": "Bundle projection: Learning + Proof."
         },
         {
-          "created_at": "2026-08-27T21:56:31.089927",
+          "created_at": "2026-08-28T10:23:41.392819",
           "updated_at": null,
           "id": "bundle-c",
           "label": "Learning + Proof + Mentorship",
@@ -3354,7 +3734,7 @@
           "rationale": "Bundle projection: Learning + Proof + Mentorship."
         },
         {
-          "created_at": "2026-08-27T21:56:31.107277",
+          "created_at": "2026-08-28T10:23:41.405591",
           "updated_at": null,
           "id": "bundle-d",
           "label": "Learning + Proof + Hybrid Work",
@@ -3375,7 +3755,7 @@
         }
       ],
       "minimum_effective_intervention": {
-        "created_at": "2026-08-27T21:56:31.076520",
+        "created_at": "2026-08-28T10:23:41.379339",
         "updated_at": null,
         "id": "scenario-int-proof-power_bi",
         "candidate_id": "ananya-sharma",
@@ -3442,7 +3822,7 @@
       "label": "SIMULATED PROJECTION"
     },
     "minimum_effective_intervention": {
-      "created_at": "2026-08-27T21:56:31.076520",
+      "created_at": "2026-08-28T10:23:41.379339",
       "updated_at": null,
       "id": "scenario-int-proof-power_bi",
       "candidate_id": "ananya-sharma",
@@ -3507,10 +3887,10 @@
     "explainability": {
       "reports": [
         {
-          "created_at": "2026-08-27T21:56:31.108153",
+          "created_at": "2026-08-28T10:23:41.406294",
           "updated_at": null,
           "id": "explain-opp-opp-data-analyst",
-          "run_id": "run-71ec92dfdde6",
+          "run_id": "run-a0d3544c0253",
           "what": "Why this opportunity: Junior Data Analyst",
           "why": "Viability state IMMEDIATELY_VIABLE based on capability fit 1.0 and employer readiness 0.9.",
           "evidence_refs": [
@@ -3558,10 +3938,10 @@
           "source_mode": "SYNTHETIC"
         },
         {
-          "created_at": "2026-08-27T21:56:31.108178",
+          "created_at": "2026-08-28T10:23:41.406318",
           "updated_at": null,
           "id": "explain-pathway-pathway-ananya-sharma-data-analyst-junior-power_bi",
-          "run_id": "run-71ec92dfdde6",
+          "run_id": "run-a0d3544c0253",
           "what": "Why this pathway?",
           "why": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst.",
           "evidence_refs": [],
@@ -3603,10 +3983,10 @@
           "source_mode": "SIMULATED"
         },
         {
-          "created_at": "2026-08-27T21:56:31.108187",
+          "created_at": "2026-08-28T10:23:41.406327",
           "updated_at": null,
           "id": "explain-intervention-minimum",
-          "run_id": "run-71ec92dfdde6",
+          "run_id": "run-a0d3544c0253",
           "what": "Why this intervention?",
           "why": "Minimum effective intervention set closes diagnosed gap with lowest projected effort under SIMULATED PROJECTION assumptions.",
           "evidence_refs": [],
@@ -3628,10 +4008,10 @@
         }
       ],
       "reviewable_recommendation": {
-        "created_at": "2026-08-27T21:56:31.108099",
+        "created_at": "2026-08-28T10:23:41.406243",
         "updated_at": null,
-        "id": "rec-run-71ec92dfdde6",
-        "run_id": "run-71ec92dfdde6",
+        "id": "rec-run-a0d3544c0253",
+        "run_id": "run-a0d3544c0253",
         "candidate_id": "ananya-sharma",
         "recommendation_summary": "AI recommendation generated: pursue Operations Analyst as next viable opportunity with targeted pathway where gaps remain.",
         "recommendation_type": "OPPORTUNITY_PATHWAY",
@@ -3669,7 +4049,7 @@
         "human_review_required": true,
         "ai_recommendation_preserved": {
           "opportunity_viability": {
-            "created_at": "2026-08-27T21:56:31.040807",
+            "created_at": "2026-08-28T10:23:41.340292",
             "updated_at": null,
             "id": "viability-ananya-sharma-opp-data-analyst",
             "candidate_id": "ananya-sharma",
@@ -3715,7 +4095,7 @@
             "source_mode": "SYNTHETIC"
           },
           "opportunity_comparison": {
-            "created_at": "2026-08-27T21:56:31.042254",
+            "created_at": "2026-08-28T10:23:41.343041",
             "updated_at": null,
             "id": "opp-comparison-ananya-sharma",
             "candidate_id": "ananya-sharma",
@@ -3831,7 +4211,7 @@
             "diagnosis_confidence": 0.87
           },
           "minimum_effective_intervention": {
-            "created_at": "2026-08-27T21:56:31.076520",
+            "created_at": "2026-08-28T10:23:41.379339",
             "updated_at": null,
             "id": "scenario-int-proof-power_bi",
             "candidate_id": "ananya-sharma",
@@ -3936,30 +4316,36 @@
     },
     "audit_events": [
       {
-        "created_at": "2026-08-27T21:56:31.022922",
+        "created_at": "2026-08-28T10:23:41.322996",
         "updated_at": null,
-        "id": "audit-load_candidate-86bf1526",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-load_candidate-fdce4d1a",
+        "run_id": "run-a0d3544c0253",
         "agent": "load_candidate",
-        "timestamp": "2026-08-27T21:56:31.022879Z",
+        "timestamp": "2026-08-28T10:23:41.322984Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "ananya-sharma",
         "output_reference": "ananya-sharma",
         "confidence": null,
-        "source_references": [],
+        "source_references": [
+          "WorkforceContext",
+          "SkillsContext",
+          "RoleContext",
+          "LearningCatalog",
+          "OpportunityCatalog"
+        ],
         "status": "SUCCESS",
-        "latency_ms": 1,
+        "latency_ms": 3,
         "error": null,
         "human_override": false,
-        "rationale": "Loaded demo candidate fixture."
+        "rationale": "Loaded SAP context (SIMULATED) and candidate fixture."
       },
       {
-        "created_at": "2026-08-27T21:56:31.025557",
+        "created_at": "2026-08-28T10:23:41.324592",
         "updated_at": null,
-        "id": "audit-candidate_intelligence-4950064a",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-candidate_intelligence-720aee31",
+        "run_id": "run-a0d3544c0253",
         "agent": "candidate_intelligence",
-        "timestamp": "2026-08-27T21:56:31.025553Z",
+        "timestamp": "2026-08-28T10:23:41.324587Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "ananya-sharma",
         "output_reference": "6 capabilities",
@@ -3970,39 +4356,42 @@
           "cap-ananya-sharma-communication",
           "cap-ananya-sharma-power_bi",
           "cap-ananya-sharma-data_analysis",
-          "cap-ananya-sharma-reporting"
+          "cap-ananya-sharma-reporting",
+          "sap:SIMULATED"
         ],
         "status": "SUCCESS",
         "latency_ms": 1,
         "error": null,
         "human_override": false,
-        "rationale": "Demo fallback: capabilities from Ananya fixture evidence."
+        "rationale": "Demo fallback: capabilities from Ananya fixture evidence. SAP context (SIMULATED) consulted."
       },
       {
-        "created_at": "2026-08-27T21:56:31.026377",
+        "created_at": "2026-08-28T10:23:41.325829",
         "updated_at": null,
-        "id": "audit-load_job-a96d25bb",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-load_job-52972bb8",
+        "run_id": "run-a0d3544c0253",
         "agent": "load_job",
-        "timestamp": "2026-08-27T21:56:31.026368Z",
+        "timestamp": "2026-08-28T10:23:41.325809Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "data-analyst-junior",
         "output_reference": "data-analyst-junior",
         "confidence": null,
-        "source_references": [],
+        "source_references": [
+          "role:SAP"
+        ],
         "status": "SUCCESS",
         "latency_ms": 0,
         "error": null,
         "human_override": false,
-        "rationale": "Loaded demo job fixture."
+        "rationale": "Loaded job from SAP adapter."
       },
       {
-        "created_at": "2026-08-27T21:56:31.027006",
+        "created_at": "2026-08-28T10:23:41.327609",
         "updated_at": null,
-        "id": "audit-job_decomposition-bf42c8d6",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-job_decomposition-a15e264d",
+        "run_id": "run-a0d3544c0253",
         "agent": "job_decomposition",
-        "timestamp": "2026-08-27T21:56:31.027000Z",
+        "timestamp": "2026-08-28T10:23:41.327584Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "data-analyst-junior",
         "output_reference": "3 tasks",
@@ -4015,17 +4404,20 @@
         "rationale": "Demo fallback: structured job fixture decomposition."
       },
       {
-        "created_at": "2026-08-27T21:56:31.027746",
+        "created_at": "2026-08-28T10:23:41.329294",
         "updated_at": null,
-        "id": "audit-diagnosis-2647ddd2",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-diagnosis-03d169ad",
+        "run_id": "run-a0d3544c0253",
         "agent": "diagnosis",
-        "timestamp": "2026-08-27T21:56:31.027743Z",
+        "timestamp": "2026-08-28T10:23:41.329288Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "ananya-sharma:data-analyst-junior",
         "output_reference": "POTENTIALLY_VIABLE",
         "confidence": 0.77,
-        "source_references": [],
+        "source_references": [
+          "evidence:4",
+          "sap:SIMULATED"
+        ],
         "status": "SUCCESS",
         "latency_ms": 0,
         "error": null,
@@ -4033,12 +4425,12 @@
         "rationale": "Diagnosed 4 capabilities; 1 genuine gaps; 3 requirement diagnoses."
       },
       {
-        "created_at": "2026-08-27T21:56:31.028080",
+        "created_at": "2026-08-28T10:23:41.329755",
         "updated_at": null,
-        "id": "audit-counterfactual_analysis-5f022295",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-counterfactual_analysis-be9402e1",
+        "run_id": "run-a0d3544c0253",
         "agent": "counterfactual_analysis",
-        "timestamp": "2026-08-27T21:56:31.028074Z",
+        "timestamp": "2026-08-28T10:23:41.329749Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "3",
         "output_reference": "POTENTIALLY_VIABLE",
@@ -4051,30 +4443,35 @@
         "rationale": "Counterfactual analysis complete; 1 potential eligibility proxies flagged."
       },
       {
-        "created_at": "2026-08-27T21:56:31.030595",
+        "created_at": "2026-08-28T10:23:41.331292",
         "updated_at": null,
-        "id": "audit-pathway_generation-79f2e5df",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-pathway_generation-d010979d",
+        "run_id": "run-a0d3544c0253",
         "agent": "pathway_generation",
-        "timestamp": "2026-08-27T21:56:31.030579Z",
+        "timestamp": "2026-08-28T10:23:41.331287Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "power_bi",
         "output_reference": "pathway-ananya-sharma-data-analyst-junior-power_bi",
         "confidence": 0.78,
-        "source_references": [],
+        "source_references": [
+          "sap-learning:3",
+          "learn-powerbi-fundamentals",
+          "learn-powerbi-modeling",
+          "learn-powerbi-dashboard"
+        ],
         "status": "SUCCESS",
-        "latency_ms": 2,
+        "latency_ms": 1,
         "error": null,
         "human_override": false,
         "rationale": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst."
       },
       {
-        "created_at": "2026-08-27T21:56:31.032158",
+        "created_at": "2026-08-28T10:23:41.332610",
         "updated_at": null,
-        "id": "audit-proof_evaluation-5abd6ccb",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-proof_evaluation-f0f4e31c",
+        "run_id": "run-a0d3544c0253",
         "agent": "proof_evaluation",
-        "timestamp": "2026-08-27T21:56:31.032152Z",
+        "timestamp": "2026-08-28T10:23:41.332603Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "assess-power_bi-ananya-sharma",
         "output_reference": "proof-result-assess-power_bi-ananya-sharma",
@@ -4087,12 +4484,12 @@
         "rationale": "Proof evaluation: PASSED (score 0.80)."
       },
       {
-        "created_at": "2026-08-27T21:56:31.032861",
+        "created_at": "2026-08-28T10:23:41.334210",
         "updated_at": null,
-        "id": "audit-capability_update-3c3e8735",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-capability_update-f2a4a020",
+        "run_id": "run-a0d3544c0253",
         "agent": "capability_update",
-        "timestamp": "2026-08-27T21:56:31.032851Z",
+        "timestamp": "2026-08-28T10:23:41.334198Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "proof-result-assess-power_bi-ananya-sharma",
         "output_reference": "cap-update-proof-result-assess-power_bi-ananya-sharma",
@@ -4105,12 +4502,12 @@
         "rationale": "power_bi: 0.22 \u2192 0.60 via assessment."
       },
       {
-        "created_at": "2026-08-27T21:56:31.033550",
+        "created_at": "2026-08-28T10:23:41.335313",
         "updated_at": null,
-        "id": "audit-reassessment-fe91f759",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-reassessment-0a08a576",
+        "run_id": "run-a0d3544c0253",
         "agent": "reassessment",
-        "timestamp": "2026-08-27T21:56:31.033547Z",
+        "timestamp": "2026-08-28T10:23:41.335307Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": "ananya-sharma:data-analyst-junior",
         "output_reference": "POTENTIALLY_VIABLE",
@@ -4123,12 +4520,12 @@
         "rationale": "Reassessment: POTENTIALLY_VIABLE."
       },
       {
-        "created_at": "2026-08-27T21:56:31.035650",
+        "created_at": "2026-08-28T10:23:41.337444",
         "updated_at": null,
-        "id": "audit-market_intelligence-623e1466",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-market_intelligence-36d4bfa8",
+        "run_id": "run-a0d3544c0253",
         "agent": "market_intelligence",
-        "timestamp": "2026-08-27T21:56:31.035644Z",
+        "timestamp": "2026-08-28T10:23:41.337439Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": null,
         "output_reference": null,
@@ -4141,12 +4538,12 @@
         "rationale": "Loaded 6 synthetic market signals and 3 skill investment scenarios."
       },
       {
-        "created_at": "2026-08-27T21:56:31.042293",
+        "created_at": "2026-08-28T10:23:41.343086",
         "updated_at": null,
-        "id": "audit-opportunity_viability-433177d2",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-opportunity_viability-d5ad2334",
+        "run_id": "run-a0d3544c0253",
         "agent": "opportunity_viability",
-        "timestamp": "2026-08-27T21:56:31.042288Z",
+        "timestamp": "2026-08-28T10:23:41.343080Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": null,
         "output_reference": null,
@@ -4159,12 +4556,12 @@
         "rationale": "Assessed viability for 4 opportunities."
       },
       {
-        "created_at": "2026-08-27T21:56:31.043727",
+        "created_at": "2026-08-28T10:23:41.343911",
         "updated_at": null,
-        "id": "audit-employer_readiness-59fe5cb1",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-employer_readiness-e3fa0b76",
+        "run_id": "run-a0d3544c0253",
         "agent": "employer_readiness",
-        "timestamp": "2026-08-27T21:56:31.043669Z",
+        "timestamp": "2026-08-28T10:23:41.343901Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": null,
         "output_reference": null,
@@ -4177,12 +4574,12 @@
         "rationale": "Employer readiness recorded for 4 opportunities."
       },
       {
-        "created_at": "2026-08-27T21:56:31.044802",
+        "created_at": "2026-08-28T10:23:41.344202",
         "updated_at": null,
-        "id": "audit-opportunity_comparison-539f46e0",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-opportunity_comparison-35436887",
+        "run_id": "run-a0d3544c0253",
         "agent": "opportunity_comparison",
-        "timestamp": "2026-08-27T21:56:31.044769Z",
+        "timestamp": "2026-08-28T10:23:41.344196Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": null,
         "output_reference": null,
@@ -4195,30 +4592,30 @@
         "rationale": "Opportunity comparison complete; recommended next step: opp-operations-analyst."
       },
       {
-        "created_at": "2026-08-27T21:56:31.107574",
+        "created_at": "2026-08-28T10:23:41.405794",
         "updated_at": null,
-        "id": "audit-intervention_simulation-e55c83af",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-intervention_simulation-df8dd921",
+        "run_id": "run-a0d3544c0253",
         "agent": "intervention_simulation",
-        "timestamp": "2026-08-27T21:56:31.107561Z",
+        "timestamp": "2026-08-28T10:23:41.405785Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": null,
         "output_reference": null,
         "confidence": 0.72,
         "source_references": [],
         "status": "SUCCESS",
-        "latency_ms": 62,
+        "latency_ms": 61,
         "error": null,
         "human_override": false,
         "rationale": "Simulated 5 intervention scenarios."
       },
       {
-        "created_at": "2026-08-27T21:56:31.108296",
+        "created_at": "2026-08-28T10:23:41.406433",
         "updated_at": null,
-        "id": "audit-explainability-db079ac2",
-        "run_id": "run-71ec92dfdde6",
+        "id": "audit-explainability-e0e11313",
+        "run_id": "run-a0d3544c0253",
         "agent": "explainability",
-        "timestamp": "2026-08-27T21:56:31.108292Z",
+        "timestamp": "2026-08-28T10:23:41.406428Z",
         "engine_mode": "DEMO_FALLBACK",
         "input_reference": null,
         "output_reference": null,
@@ -4235,10 +4632,10 @@
     "case_id": "case-ananya-finale"
   },
   "decision_card": {
-    "created_at": "2026-08-27T21:56:31.108734",
+    "created_at": "2026-08-28T10:23:41.406833",
     "updated_at": null,
-    "id": "decision-run-71ec92dfdde6",
-    "run_id": "run-71ec92dfdde6",
+    "id": "decision-run-a0d3544c0253",
+    "run_id": "run-a0d3544c0253",
     "candidate_id": "ananya-sharma",
     "candidate_name": "Candidate",
     "target_role_id": "data-analyst-junior",
@@ -4289,10 +4686,10 @@
   "explainability": {
     "reports": [
       {
-        "created_at": "2026-08-27T21:56:31.108831",
+        "created_at": "2026-08-28T10:23:41.406924",
         "updated_at": null,
         "id": "explain-opp-opp-data-analyst",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "what": "Why this opportunity: Junior Data Analyst",
         "why": "Viability state IMMEDIATELY_VIABLE based on capability fit 1.0 and employer readiness 0.9.",
         "evidence_refs": [
@@ -4340,10 +4737,10 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.108850",
+        "created_at": "2026-08-28T10:23:41.406941",
         "updated_at": null,
         "id": "explain-pathway-pathway-ananya-sharma-data-analyst-junior-power_bi",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "what": "Why this pathway?",
         "why": "Power BI is the primary diagnosed capability gap for the target Junior Data Analyst.",
         "evidence_refs": [],
@@ -4385,10 +4782,10 @@
         "source_mode": "SIMULATED"
       },
       {
-        "created_at": "2026-08-27T21:56:31.108857",
+        "created_at": "2026-08-28T10:23:41.406949",
         "updated_at": null,
         "id": "explain-intervention-minimum",
-        "run_id": "run-71ec92dfdde6",
+        "run_id": "run-a0d3544c0253",
         "what": "Why this intervention?",
         "why": "Minimum effective intervention set closes diagnosed gap with lowest projected effort under SIMULATED PROJECTION assumptions.",
         "evidence_refs": [],
@@ -4410,10 +4807,10 @@
       }
     ],
     "reviewable_recommendation": {
-      "created_at": "2026-08-27T21:56:31.108798",
+      "created_at": "2026-08-28T10:23:41.406893",
       "updated_at": null,
-      "id": "rec-run-71ec92dfdde6",
-      "run_id": "run-71ec92dfdde6",
+      "id": "rec-run-a0d3544c0253",
+      "run_id": "run-a0d3544c0253",
       "candidate_id": "ananya-sharma",
       "recommendation_summary": "AI recommendation generated: pursue Operations Analyst as next viable opportunity with targeted pathway where gaps remain.",
       "recommendation_type": "OPPORTUNITY_PATHWAY",
@@ -4451,7 +4848,7 @@
       "human_review_required": true,
       "ai_recommendation_preserved": {
         "opportunity_viability": {
-          "created_at": "2026-08-27T21:56:31.040807",
+          "created_at": "2026-08-28T10:23:41.340292",
           "updated_at": null,
           "id": "viability-ananya-sharma-opp-data-analyst",
           "candidate_id": "ananya-sharma",
@@ -4497,7 +4894,7 @@
           "source_mode": "SYNTHETIC"
         },
         "opportunity_comparison": {
-          "created_at": "2026-08-27T21:56:31.042254",
+          "created_at": "2026-08-28T10:23:41.343041",
           "updated_at": null,
           "id": "opp-comparison-ananya-sharma",
           "candidate_id": "ananya-sharma",
@@ -4613,7 +5010,7 @@
           "diagnosis_confidence": 0.87
         },
         "minimum_effective_intervention": {
-          "created_at": "2026-08-27T21:56:31.076520",
+          "created_at": "2026-08-28T10:23:41.379339",
           "updated_at": null,
           "id": "scenario-int-proof-power_bi",
           "candidate_id": "ananya-sharma",
@@ -4697,7 +5094,7 @@
   "intervention_scenarios": {
     "interventions": [
       {
-        "created_at": "2026-08-27T21:56:31.051315",
+        "created_at": "2026-08-28T10:23:41.350757",
         "updated_at": null,
         "id": "int-learning-power_bi",
         "type": "LEARNING",
@@ -4716,7 +5113,7 @@
         "priority": "HIGH_IMPACT_HIGH_EFFORT"
       },
       {
-        "created_at": "2026-08-27T21:56:31.051350",
+        "created_at": "2026-08-28T10:23:41.350770",
         "updated_at": null,
         "id": "int-proof-power_bi",
         "type": "PROOF_OF_SKILL",
@@ -4735,7 +5132,7 @@
         "priority": "HIGH_IMPACT_LOW_EFFORT"
       },
       {
-        "created_at": "2026-08-27T21:56:31.051364",
+        "created_at": "2026-08-28T10:23:41.350779",
         "updated_at": null,
         "id": "int-mentorship-opp-data-analyst",
         "type": "MENTORSHIP",
@@ -4756,7 +5153,7 @@
         "priority": "HIGH_IMPACT_HIGH_EFFORT"
       },
       {
-        "created_at": "2026-08-27T21:56:31.051375",
+        "created_at": "2026-08-28T10:23:41.350787",
         "updated_at": null,
         "id": "int-hybrid-opp-data-analyst",
         "type": "HYBRID_WORK",
@@ -4777,7 +5174,7 @@
     ],
     "scenarios": [
       {
-        "created_at": "2026-08-27T21:56:31.051394",
+        "created_at": "2026-08-28T10:23:41.350797",
         "updated_at": null,
         "id": "scenario-base-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -4798,7 +5195,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.055198",
+        "created_at": "2026-08-28T10:23:41.354980",
         "updated_at": null,
         "id": "scenario-int-learning-power_bi",
         "candidate_id": "ananya-sharma",
@@ -4859,7 +5256,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.059861",
+        "created_at": "2026-08-28T10:23:41.358592",
         "updated_at": null,
         "id": "scenario-int-mentorship-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -4918,7 +5315,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.062909",
+        "created_at": "2026-08-28T10:23:41.363437",
         "updated_at": null,
         "id": "scenario-int-hybrid-opp-data-analyst",
         "candidate_id": "ananya-sharma",
@@ -4977,7 +5374,7 @@
         "source_mode": "SYNTHETIC"
       },
       {
-        "created_at": "2026-08-27T21:56:31.076520",
+        "created_at": "2026-08-28T10:23:41.379339",
         "updated_at": null,
         "id": "scenario-int-proof-power_bi",
         "candidate_id": "ananya-sharma",
@@ -5042,7 +5439,7 @@
     ],
     "bundles": [
       {
-        "created_at": "2026-08-27T21:56:31.068470",
+        "created_at": "2026-08-28T10:23:41.366791",
         "updated_at": null,
         "id": "bundle-a",
         "label": "Learning only",
@@ -5058,7 +5455,7 @@
         "rationale": "Bundle projection: Learning only."
       },
       {
-        "created_at": "2026-08-27T21:56:31.076556",
+        "created_at": "2026-08-28T10:23:41.379381",
         "updated_at": null,
         "id": "bundle-b",
         "label": "Learning + Proof",
@@ -5076,7 +5473,7 @@
         "rationale": "Bundle projection: Learning + Proof."
       },
       {
-        "created_at": "2026-08-27T21:56:31.089927",
+        "created_at": "2026-08-28T10:23:41.392819",
         "updated_at": null,
         "id": "bundle-c",
         "label": "Learning + Proof + Mentorship",
@@ -5096,7 +5493,7 @@
         "rationale": "Bundle projection: Learning + Proof + Mentorship."
       },
       {
-        "created_at": "2026-08-27T21:56:31.107277",
+        "created_at": "2026-08-28T10:23:41.405591",
         "updated_at": null,
         "id": "bundle-d",
         "label": "Learning + Proof + Hybrid Work",
@@ -5117,7 +5514,7 @@
       }
     ],
     "minimum_effective_intervention": {
-      "created_at": "2026-08-27T21:56:31.076520",
+      "created_at": "2026-08-28T10:23:41.379339",
       "updated_at": null,
       "id": "scenario-int-proof-power_bi",
       "candidate_id": "ananya-sharma",
@@ -5189,7 +5586,7 @@
     "source_mode": "SIMULATED",
     "system_name": "SuccessFactors-compatible demo environment",
     "integration_status": "AVAILABLE",
-    "last_sync": "2026-08-27T21:56:31.022645Z",
+    "last_sync": "2026-08-28T10:23:41.321405Z",
     "retrieved_entities": [
       "WorkforceContext",
       "SkillsContext",
@@ -5202,38 +5599,418 @@
         "name": "Workforce context",
         "status": "AVAILABLE",
         "source_mode": "SIMULATED",
-        "last_sync": "2026-08-27T21:56:31.022659Z",
+        "last_sync": "2026-08-28T10:23:41.321405Z",
         "entity_count": null
       },
       {
         "name": "Skills context",
         "status": "AVAILABLE",
         "source_mode": "SIMULATED",
-        "last_sync": "2026-08-27T21:56:31.022703Z",
+        "last_sync": "2026-08-28T10:23:41.321421Z",
         "entity_count": null
       },
       {
         "name": "Role context",
         "status": "AVAILABLE",
         "source_mode": "SIMULATED",
-        "last_sync": "2026-08-27T21:56:31.022710Z",
+        "last_sync": "2026-08-28T10:23:41.321424Z",
         "entity_count": null
       },
       {
         "name": "Learning catalog",
         "status": "AVAILABLE",
         "source_mode": "SIMULATED",
-        "last_sync": "2026-08-27T21:56:31.022715Z",
+        "last_sync": "2026-08-28T10:23:41.321426Z",
         "entity_count": null
       },
       {
         "name": "Opportunity catalog",
         "status": "AVAILABLE",
         "source_mode": "SIMULATED",
-        "last_sync": "2026-08-27T21:56:31.022722Z",
+        "last_sync": "2026-08-28T10:23:41.321427Z",
         "entity_count": null
       }
     ],
-    "message": "Simulated SAP context \u2014 not a live tenant connection."
+    "message": "Simulated SAP context \u2014 not a live tenant connection.",
+    "case_bundle": {
+      "system": {
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "system_name": "SuccessFactors-compatible demo environment",
+        "integration_status": "AVAILABLE",
+        "last_sync": "2026-08-28T10:23:41.321405Z",
+        "retrieved_entities": [
+          "WorkforceContext",
+          "SkillsContext",
+          "RoleContext",
+          "LearningCatalog",
+          "OpportunityCatalog"
+        ],
+        "capabilities": [
+          {
+            "name": "Workforce context",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321405Z",
+            "entity_count": null
+          },
+          {
+            "name": "Skills context",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321421Z",
+            "entity_count": null
+          },
+          {
+            "name": "Role context",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321424Z",
+            "entity_count": null
+          },
+          {
+            "name": "Learning catalog",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321426Z",
+            "entity_count": null
+          },
+          {
+            "name": "Opportunity catalog",
+            "status": "AVAILABLE",
+            "source_mode": "SIMULATED",
+            "last_sync": "2026-08-28T10:23:41.321427Z",
+            "entity_count": null
+          }
+        ],
+        "message": "Simulated SAP context \u2014 not a live tenant connection."
+      },
+      "workforce_context": {
+        "domain": "workforce",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 1,
+        "data": {
+          "candidate_id": "ananya-sharma",
+          "growth_portfolio": {
+            "candidate_id": "ananya-sharma",
+            "attributes": [],
+            "source_mode": "SIMULATED",
+            "note": "External candidate \u2014 no employee Growth Portfolio in demo"
+          },
+          "source": "SAP",
+          "source_mode": "SIMULATED"
+        }
+      },
+      "skills_context": {
+        "domain": "skills",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 0,
+        "data": []
+      },
+      "role_context": {
+        "domain": "role",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 1,
+        "data": {
+          "created_at": "2026-08-28T00:00:00",
+          "updated_at": null,
+          "id": "data-analyst-junior",
+          "title": "Junior Data Analyst",
+          "raw_text": "Junior Data Analyst \u2014 analyze datasets, produce business reports, create dashboards, communicate insights. Requirements: SQL, Excel, data analysis, reporting, Power BI, communication. 3 years continuous recent professional experience. Bangalore office 5 days/week. Premier engineering institute preferred.",
+          "family": "analytics",
+          "level": "junior",
+          "location": "Bangalore",
+          "work_modes": [
+            "onsite"
+          ],
+          "sap_requisition_id": null,
+          "sap_job_role_code": null,
+          "outcomes": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "out-da-insights",
+              "job_id": "data-analyst-junior",
+              "text": "Deliver weekly operational insights for business leadership",
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "tasks": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "task-da-sql",
+              "job_id": "data-analyst-junior",
+              "text": "Write SQL to extract and join operational datasets",
+              "on_site_likelihood": "low",
+              "importance": "core",
+              "capability_ids": [
+                "sql",
+                "data_analysis"
+              ],
+              "source_requirement_ids": [],
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "task-da-dashboard",
+              "job_id": "data-analyst-junior",
+              "text": "Build recurring dashboards and visual reports",
+              "on_site_likelihood": "low",
+              "importance": "core",
+              "capability_ids": [
+                "power_bi",
+                "reporting"
+              ],
+              "source_requirement_ids": [],
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "task-da-communicate",
+              "job_id": "data-analyst-junior",
+              "text": "Present findings to stakeholders",
+              "on_site_likelihood": "medium",
+              "importance": "core",
+              "capability_ids": [
+                "communication"
+              ],
+              "source_requirement_ids": [],
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "requirements": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "req-da-experience",
+              "job_id": "data-analyst-junior",
+              "text": "3 years continuous recent professional experience",
+              "requirement_class": "EXPERIENCE_REQUIREMENT",
+              "review_tag": "POTENTIAL_PROXY",
+              "strength": "required",
+              "why_relevant": "May proxy for practice volume and reliability.",
+              "why_may_be_proxy": "Continuous tenure is not the same as task capability; career breaks do not erase skills.",
+              "linked_task_ids": [],
+              "confidence": 0.7,
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "req-da-location",
+              "job_id": "data-analyst-junior",
+              "text": "Bangalore office 5 days/week",
+              "requirement_class": "WORKPLACE_CONDITION",
+              "review_tag": "POTENTIAL_PROXY",
+              "strength": "required",
+              "why_relevant": "May reflect collaboration or equipment needs.",
+              "why_may_be_proxy": "Core analytics tasks may be performable hybrid if access is provided.",
+              "linked_task_ids": [
+                "task-da-sql",
+                "task-da-dashboard"
+              ],
+              "confidence": 0.65,
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "req-da-institute",
+              "job_id": "data-analyst-junior",
+              "text": "Premier engineering institute preferred",
+              "requirement_class": "CREDENTIAL_REQUIREMENT",
+              "review_tag": "POTENTIAL_EXCLUSIONARY_FACTOR",
+              "strength": "preferred",
+              "why_relevant": "Screening convenience.",
+              "why_may_be_proxy": "Institution brand is not a task capability.",
+              "linked_task_ids": [],
+              "confidence": 0.8,
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "capabilities": [
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-sql",
+              "job_id": "data-analyst-junior",
+              "skill_id": "sql",
+              "label": "SQL",
+              "min_proficiency": 0.6,
+              "importance": "core",
+              "evidence_expectation": "work sample or demonstrated project",
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-excel",
+              "job_id": "data-analyst-junior",
+              "skill_id": "excel",
+              "label": "Excel",
+              "min_proficiency": 0.55,
+              "importance": "core",
+              "evidence_expectation": "work sample",
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-powerbi",
+              "job_id": "data-analyst-junior",
+              "skill_id": "power_bi",
+              "label": "Power BI",
+              "min_proficiency": 0.6,
+              "importance": "core",
+              "evidence_expectation": "dashboard sample",
+              "source_mode": "SYNTHETIC"
+            },
+            {
+              "created_at": "2026-08-28T00:00:00",
+              "updated_at": null,
+              "id": "jcap-da-communication",
+              "job_id": "data-analyst-junior",
+              "skill_id": "communication",
+              "label": "Communication",
+              "min_proficiency": 0.55,
+              "importance": "core",
+              "evidence_expectation": "stakeholder case writeup",
+              "source_mode": "SYNTHETIC"
+            }
+          ],
+          "source": "REWORK",
+          "source_mode": "SYNTHETIC",
+          "is_demo_fixture": true
+        }
+      },
+      "learning_context": {
+        "domain": "learning",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 4,
+        "data": [
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-powerbi-fundamentals",
+            "title": "Power BI fundamentals",
+            "description": "Core Power BI concepts: data import, basic transformations, and report building.",
+            "capability": "power_bi",
+            "difficulty": "beginner",
+            "hours": 8.0,
+            "estimated_duration": 8.0,
+            "sap_learning_item_id": "SAP-LRN-PBI-101",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "power_bi",
+              "reporting"
+            ],
+            "completion_criteria": "Complete guided labs on data import and basic visuals."
+          },
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-powerbi-modeling",
+            "title": "Power BI data modeling",
+            "description": "Relationships, DAX basics, and model optimization for analytics dashboards.",
+            "capability": "power_bi",
+            "difficulty": "intermediate",
+            "hours": 6.0,
+            "estimated_duration": 6.0,
+            "sap_learning_item_id": "SAP-LRN-PBI-201",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "power_bi",
+              "data_analysis"
+            ],
+            "completion_criteria": "Build a star-schema model with calculated measures."
+          },
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-powerbi-dashboard",
+            "title": "Dashboard design for business analytics",
+            "description": "Role-specific dashboard construction with KPIs and stakeholder views.",
+            "capability": "power_bi",
+            "difficulty": "intermediate",
+            "hours": 5.0,
+            "estimated_duration": 5.0,
+            "sap_learning_item_id": "SAP-LRN-PBI-301",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "power_bi",
+              "reporting",
+              "data_analysis"
+            ],
+            "completion_criteria": "Deliver a multi-page dashboard with drill-down visuals."
+          },
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "learn-sql-analytical",
+            "title": "Analytical SQL for reporting",
+            "description": "Advanced SQL queries for business reporting and analytics extracts.",
+            "capability": "sql",
+            "difficulty": "intermediate",
+            "hours": 6.0,
+            "estimated_duration": 6.0,
+            "sap_learning_item_id": "SAP-LRN-SQL-201",
+            "source": "SAP",
+            "source_mode": "SIMULATED",
+            "skill_alignment": [
+              "sql",
+              "data_analysis"
+            ],
+            "completion_criteria": "Complete analytical SQL exercises with joins and aggregations."
+          }
+        ]
+      },
+      "opportunity_context": {
+        "domain": "opportunity",
+        "source": "SAP",
+        "source_mode": "SIMULATED",
+        "retrieved_at": "2026-08-28T10:23:41.321392+00:00",
+        "status": "AVAILABLE",
+        "item_count": 1,
+        "data": [
+          {
+            "created_at": "2026-08-28T00:00:00",
+            "updated_at": null,
+            "id": "opp-hybrid-analyst-lucknow",
+            "job_id": "data-analyst-junior",
+            "title": "Junior Data Analyst (Hybrid \u2014 India)",
+            "location": "Lucknow / Hybrid",
+            "work_modes": [
+              "hybrid",
+              "remote"
+            ],
+            "language": "en",
+            "source": "REWORK",
+            "sap_opportunity_id": null,
+            "source_mode": "SYNTHETIC"
+          }
+        ]
+      },
+      "source_mode": "SIMULATED",
+      "integration_status": "AVAILABLE",
+      "retrieved_at": "2026-08-28T10:23:41.321392+00:00"
+    }
   }
 }
