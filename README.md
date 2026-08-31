@@ -41,7 +41,19 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000/control-room](http://localhost:3000/control-room)
+Open [http://localhost:3000](http://localhost:3000) → **Open Control Room — Start Demo**
+
+### One-click demo sequence
+
+1. Open **Control Room** (`/control-room`)
+2. Click **Reset & replay finale** (restores `case-ananya-finale`)
+3. Inspect **Traditional vs RE:WORK** differentiator and **What changed?**
+4. Open **WHY?** on any explainability report
+5. Review pathway, proof-of-skill, opportunity viability, intervention simulator
+6. Load **negative case** (B07) from the panel
+7. Submit **Human HR decision** (AI recommendation preserved separately)
+
+SAP source mode is always labeled **SIMULATED** in demo mode.
 
 ### Environment
 
@@ -116,6 +128,15 @@ python scripts/demo_health_check.py
 # → artifacts/demo_health_check.json (PASS/FAIL)
 ```
 
+## Prototype acceptance gate
+
+Runs pytest, golden replay, benchmark, demo health, red-team heat test, and frontend build:
+
+```bash
+python scripts/prototype_gate.py
+# → artifacts/prototype_gate.json
+```
+
 ## Key APIs
 
 | Endpoint | Purpose |
@@ -137,3 +158,16 @@ python scripts/demo_health_check.py
 - [Final demo script](docs/FINAL_FINALE_DEMO_SCRIPT.md)
 - [Judge Q&A](docs/JUDGE_QA.md)
 - [Engineering readiness](docs/FINAL_ENGINEERING_READINESS.md)
+
+## Prototype status
+
+**FINAL DEMO PROTOTYPE READY — SAP LIVE CONNECTION REMAINS THE ONLY EXTERNAL INTEGRATION DEPENDENCY**
+
+- 185 backend tests passing
+- 22/22 benchmark scenarios
+- Golden replay: `EXPLANATION_READY`
+- Demo health: PASS
+- Red-team heat test: PASS
+- Frontend production build: PASS
+
+No SAP capability is presented as LIVE unless verified through a successful real connection.

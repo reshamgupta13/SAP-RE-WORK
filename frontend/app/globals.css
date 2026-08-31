@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
+
 body {
-  @apply bg-slate-100 text-slate-900 antialiased;
+  @apply bg-[#f4f6f8] text-slate-900 antialiased;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: 'Instrument Serif', Georgia, serif;
 }
 
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-teal-600;
+}
+
+.rework-grid-bg {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgb(148 163 184 / 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
 }

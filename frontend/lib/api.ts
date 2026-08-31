@@ -1,12 +1,14 @@
+import type { ControlRoomData } from "./types";
+
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
-export async function fetchControlRoom(caseId?: string) {
+export async function fetchControlRoom(caseId?: string): Promise<ControlRoomData> {
   const path = caseId
     ? `${API_BASE}/api/cases/${caseId}/control-room`
     : `${API_BASE}/api/demo/control-room`;
   const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load control room");
-  return res.json();
+  return res.json() as Promise<ControlRoomData>;
 }
 
 export async function fetchScenarios() {

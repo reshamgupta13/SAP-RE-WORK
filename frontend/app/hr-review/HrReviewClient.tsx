@@ -2,24 +2,14 @@
 
 import { useState } from "react";
 import { submitReview } from "../../lib/api";
+import type { ControlRoomData } from "../../lib/types";
 import { AppHeader } from "../components/AppShell";
 import { SourceBadge } from "../components/SourceBadge";
 
-type HrReviewProps = {
-  data: {
-    run_id: string;
-    decision_card: Record<string, unknown>;
-    human_review: {
-      ai_recommendation?: Record<string, unknown>;
-      decision_card_id?: string;
-    };
-  };
-};
-
-export function HrReviewClient({ data }: HrReviewProps) {
+export function HrReviewClient({ data }: { data: ControlRoomData }) {
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const rec = data.human_review.ai_recommendation ?? {};
+  const rec = data.human_review?.ai_recommendation ?? data.ai_recommendation ?? {};
 
   async function act(action: string, extra?: Record<string, unknown>) {
     setLoading(true);
