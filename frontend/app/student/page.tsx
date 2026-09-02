@@ -1,5 +1,5 @@
-import { StudentSkillClient } from "./StudentSkillClient";
+import { redirect } from "next/navigation";
 
 export default function StudentPage() {
-  return <StudentSkillClient />;
+  redirect("/skills");
 }

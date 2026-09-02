@@ -19,10 +19,10 @@ const JOURNEY_CARDS = [
     meta: "Start here",
   },
   {
-    href: "/student",
-    label: "Student workspace",
-    desc: "SAP skill CRUD lab — create, read, update, and delete ZREWORK_SKILL records.",
-    meta: "Student lab",
+    href: "/skills",
+    label: "Skills workspace",
+    desc: "SAP skill CRUD — create, read, update, and delete ZREWORK_SKILL records.",
+    meta: "SAP OData lab",
   },
   {
     href: "/candidate",

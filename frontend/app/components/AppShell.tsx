@@ -7,7 +7,7 @@ import { SourceBadge } from "./SourceBadge";
 const NAV_LINKS = [
   { href: "/workspace", label: "Workspace" },
   { href: "/targeted-learning", label: "Targeted Learning" },
-  { href: "/student", label: "Student" },
+  { href: "/skills", label: "Skills" },
   { href: "/candidate", label: "Candidate" },
   { href: "/opportunities", label: "Opportunities" },
   { href: "/employer", label: "Employer" },

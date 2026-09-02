@@ -88,14 +88,14 @@ export function StudentSkillClient() {
 
   return (
     <div className="rework-atmosphere min-h-screen">
-      <AppHeader badge="Student" activePath="/student" sapMode={sapMode} liveVerified={liveVerified} />
+      <AppHeader badge="Skills" activePath="/skills" sapMode={sapMode} liveVerified={liveVerified} />
 
       <main className="rework-content mx-auto max-w-6xl px-6 py-8">
         <div className="mb-6">
           <p className="kicker">SAP Gateway OData</p>
           <h1 className="font-display text-2xl font-semibold text-ink">Skill CRUD — ZREWORK_SKILL_SRV</h1>
           <p className="mt-2 text-sm text-muted">
-            Student workspace for reading, creating, updating, and deleting skills. SAP credentials stay on the backend.
+            Skills workspace for reading, creating, updating, and deleting SAP skill records. Credentials stay on the backend.
           </p>
         </div>
 
