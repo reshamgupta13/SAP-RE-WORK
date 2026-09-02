@@ -230,6 +230,18 @@
     transform: translateY(0);
   }
 
+  .rework-select {
+    appearance: auto;
+    -webkit-appearance: menulist;
+    min-height: 2.5rem;
+    color: var(--color-ink);
+    background-color: var(--color-surface);
+  }
+
+  .rework-select:disabled {
+    @apply cursor-wait opacity-70;
+  }
+
   .btn-ghost {
     @apply inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors duration-interaction;
     color: var(--color-muted);

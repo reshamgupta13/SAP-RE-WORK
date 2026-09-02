@@ -31,11 +31,28 @@ export function TargetedLearningClient() {
   const [whyOpen, setWhyOpen] = useState(true);
 
   useEffect(() => {
-    void Promise.all([fetchCandidates(), fetchJobs(), fetchCatalogHealth()]).then(([c, j, h]) => {
-      setCandidates(c.items ?? []);
-      setJobs(j.items ?? []);
-      setHealth(h);
-    });
+    void Promise.all([fetchCandidates(), fetchJobs(), fetchCatalogHealth()])
+      .then(([c, j, h]) => {
+        setCandidates(c.items ?? []);
+        setJobs(j.items ?? []);
+        setHealth(h);
+        setError(null);
+        const items = c.items ?? [];
+        if (items.length > 0 && !items.some((row) => String(row.user_id) === candidateId)) {
+          setCandidateId(String(items[0].user_id));
+        }
+        const jobItems = j.items ?? [];
+        if (jobItems.length > 0 && !jobItems.some((row) => String(row.job_id) === roleId)) {
+          setRoleId(String(jobItems[0].job_id));
+        }
+      })
+      .catch((err) => {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Could not load candidates and roles from the API. Check backend connection.",
+        );
+      });
   }, []);
 
   const candidate = useMemo(
@@ -147,29 +164,39 @@ export function TargetedLearningClient() {
             <label className="flex flex-col gap-1 text-sm">
               <span className="font-medium text-ink">Candidate</span>
               <select
-                className="rounded-md border border-border bg-surface px-3 py-2"
-                value={candidateId}
+                className="rework-select rounded-md border border-border bg-surface px-3 py-2 text-ink"
+                value={candidates.length ? candidateId : ""}
+                disabled={candidates.length === 0}
                 onChange={(e) => setCandidateId(e.target.value)}
               >
-                {candidates.map((c) => (
-                  <option key={String(c.user_id)} value={String(c.user_id)}>
-                    {String(c.display_name ?? c.user_id)}
-                  </option>
-                ))}
+                {candidates.length === 0 ? (
+                  <option value="">Loading candidates…</option>
+                ) : (
+                  candidates.map((c) => (
+                    <option key={String(c.user_id)} value={String(c.user_id)}>
+                      {String(c.display_name ?? c.user_id)}
+                    </option>
+                  ))
+                )}
               </select>
             </label>
             <label className="flex flex-col gap-1 text-sm">
               <span className="font-medium text-ink">Target role</span>
               <select
-                className="rounded-md border border-border bg-surface px-3 py-2"
-                value={roleId}
+                className="rework-select rounded-md border border-border bg-surface px-3 py-2 text-ink"
+                value={jobs.length ? roleId : ""}
+                disabled={jobs.length === 0}
                 onChange={(e) => setRoleId(e.target.value)}
               >
-                {jobs.map((j) => (
-                  <option key={String(j.job_id)} value={String(j.job_id)}>
-                    {String(j.job_name ?? j.job_id)}
-                  </option>
-                ))}
+                {jobs.length === 0 ? (
+                  <option value="">Loading roles…</option>
+                ) : (
+                  jobs.map((j) => (
+                    <option key={String(j.job_id)} value={String(j.job_id)}>
+                      {String(j.job_name ?? j.job_id)}
+                    </option>
+                  ))
+                )}
               </select>
             </label>
           </div>

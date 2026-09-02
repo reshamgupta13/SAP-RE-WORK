@@ -61,7 +61,12 @@ export function WorkspaceClient() {
         setMessage(c.message || j.message || h.message || null);
       }
     } catch (err) {
-      setMessage(err instanceof Error ? err.message : "Unable to reach RE:WORK API.");
+      const raw = err instanceof Error ? err.message : "Unable to reach RE:WORK API.";
+      setMessage(
+        raw.toLowerCase().includes("fetch") || raw.toLowerCase().includes("failed")
+          ? "Cannot reach the RE:WORK API. Ensure NEXT_PUBLIC_API_BASE_URL is set on Vercel and the Render backend is running."
+          : raw,
+      );
     }
     setBusy(false);
   }

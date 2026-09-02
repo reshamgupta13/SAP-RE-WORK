@@ -31,6 +31,15 @@ def _cors_origins() -> list[str]:
     return []
 
 
+def _cors_origin_regex() -> str | None:
+    """Allow Vercel preview/production URLs when explicit origins are not set."""
+    if settings.cors_origins:
+        return None
+    if settings.environment.lower() == "production":
+        return r"https://.*\.vercel\.app"
+    return None
+
+
 def _configure_logging() -> None:
     level = logging.DEBUG if settings.debug else logging.INFO
     logging.basicConfig(
@@ -48,10 +57,12 @@ app = FastAPI(
 )
 
 _cors = _cors_origins()
-if _cors:
+_cors_regex = _cors_origin_regex()
+if _cors or _cors_regex:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=_cors,
+        allow_origin_regex=_cors_regex,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -86,7 +97,7 @@ def on_startup() -> None:
         settings.sap_mode,
         settings.persistence_mode,
         fixtures,
-        _cors or "none",
+        _cors or f"regex:{_cors_regex}" or "none",
     )
     if not fixtures.exists():
         logger.warning("Fixtures directory not found at %s", fixtures)

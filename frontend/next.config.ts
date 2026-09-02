@@ -1,16 +1,20 @@
 import type { NextConfig } from "next";
 
+function resolveBackendUrl(): string {
+  return (
+    process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/+$/, "") ||
+    process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") ||
+    process.env.API_BASE_URL?.replace(/\/+$/, "") ||
+    (process.env.NODE_ENV === "development" ? "http://localhost:8000" : "")
+  );
+}
+
 const nextConfig: NextConfig = {
   async rewrites() {
-    // Dev-only proxy so relative /api/* calls can reach the local backend.
-    // Production uses NEXT_PUBLIC_API_BASE_URL via frontend/lib/api-base.ts.
-    if (process.env.NODE_ENV !== "development") {
+    const backend = resolveBackendUrl();
+    if (!backend) {
       return [];
     }
-    const backend =
-      process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/+$/, "") ||
-      process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") ||
-      "http://localhost:8000";
     return [
       {
         source: "/api/:path*",
