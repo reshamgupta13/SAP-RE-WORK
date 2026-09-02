@@ -136,6 +136,12 @@ class CaseService:
                 return self._repo.get_case(case_id) or case
 
         run_mode = STAGE_TO_RUN_MODE.get(execute_until, RunMode.CONTROL_ROOM_DEMO)
+        from app.core.config import get_settings
+
+        settings = get_settings()
+        demo_case = settings.demo_mode and case.candidate_id == "ananya-sharma"
+        if not demo_case:
+            run_mode = RunMode.LIVE_CASE
 
         # Idempotency: skip proof if already completed
         if execute_until == CaseStage.PROOF_EVALUATION and case.lifecycle_state in {
@@ -298,9 +304,12 @@ class CaseService:
         )
 
     def build_control_room_view(self, case_id: str | None = None) -> dict[str, Any]:
-        case = self._repo.get_case(case_id or self.FINALE_CASE_ID)
-        if not case or not case.snapshot:
-            case = self.execute(self.get_or_create_finale_case().id, CaseStage.FINALE)
+        cid = case_id or self.FINALE_CASE_ID
+        case = self._repo.get_case(cid)
+        if not case:
+            raise ValueError(f"Case not found: {cid}")
+        if not case.snapshot:
+            case = self.execute(case.id, CaseStage.FINALE)
 
         sap_health = self._sap_health.check()
         view = self._control_room.assemble_from_state(case.snapshot)
@@ -315,6 +324,13 @@ class CaseService:
         view["ai_recommendation"] = case.ai_recommendation
         view["jury_narrative"] = self._jury_narrative.build(case.snapshot or {})
         view["operator_guide"] = self._operator_guide()
+        from app.services.enterprise_domain_service import EnterpriseDomainService
+
+        view["enterprise_context"] = EnterpriseDomainService().build(
+            case.snapshot or {},
+            sap_health,
+            allow_demo_fallback=case.id == self.FINALE_CASE_ID or case.candidate_id == "ananya-sharma",
+        )
         return view
 
     def get_negative_case_demo(self, scenario_id: str = "B07") -> dict[str, Any]:

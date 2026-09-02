@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HYPOTHETICAL TEST FIXTURE — NOT the official SAP contract.
+     Replace with real $metadata when faculty provides the OData URL. -->
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="Rework.Test" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="Container">
+        <EntitySet Name="PersonSet" EntityType="Rework.Test.Person"/>
+        <EntitySet Name="JobSet" EntityType="Rework.Test.Job"/>
+        <EntitySet Name="QualificationSet" EntityType="Rework.Test.Qualification"/>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

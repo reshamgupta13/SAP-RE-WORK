@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZREWORK_SKILL_SRV — Skill CRUD</title>
+<style>
+  :root {
+    --navy: #16213a;
+    --navy-light: #1e2e52;
+    --panel: #f4f6fa;
+    --white: #ffffff;
+    --red: #c00000;
+    --gold: #e8b93e;
+    --text-dark: #16213a;
+    --text-gray: #5a6472;
+    --term-bg: #0b0f14;
+    --term-green: #4ade80;
+    --term-red: #f87171;
+    --term-amber: #fbbf24;
+    --mono: "SF Mono", "Consolas", "Cascadia Code", monospace;
+    --sans: -apple-system, "Segoe UI", "Inter", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  header .eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  header p {
+    margin: 0;
+    color: #c7d3e8;
+    font-size: 13.5px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 24px;
+    padding: 24px 32px 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--panel);
+    border-radius: 10px;
+    padding: 22px;
+    color: var(--text-dark);
+  }
+
+  .card h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    margin: 0 0 16px;
+  }
+
+  .field {
+    margin-bottom: 14px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-bottom: 4px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #d6dce8;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-family: var(--mono);
+    background: var(--white);
+    color: var(--text-dark);
+  }
+
+  .field input:focus {
+    outline: 2px solid var(--red);
+    outline-offset: 1px;
+    border-color: var(--red);
+  }
+
+  .row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #d6dce8;
+    margin: 18px 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--sans);
+  }
+
+  button:disabled { background: #b0b6c2 !important; color: white !important; border-color: #b0b6c2 !important; cursor: not-allowed; }
+
+  .btn-secondary {
+    background: var(--navy);
+    color: white;
+  }
+  .btn-secondary:hover { background: var(--navy-light); }
+
+  .btn-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  #createBtn {
+    background: var(--red);
+    color: white;
+  }
+  #createBtn:hover { background: #a30000; }
+
+  #updateBtn {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  #updateBtn:hover { background: #d1a52f; }
+
+  #deleteBtn {
+    background: transparent;
+    color: var(--red);
+    border: 1.5px solid var(--red);
+    margin-top: 10px;
+  }
+  #deleteBtn:hover { background: var(--red); color: white; }
+
+  #prefillBtn {
+    background: transparent;
+    color: var(--text-gray);
+    border: 1px solid #d6dce8;
+    margin-top: 8px;
+  }
+  #prefillBtn:hover { border-color: var(--red); color: var(--red); }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .panel-header h2 {
+    color: var(--gold);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  #clearLogBtn {
+    width: auto;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #9aa5b8;
+    font-size: 11px;
+    padding: 5px 10px;
+    font-weight: 600;
+  }
+  #clearLogBtn:hover { border-color: var(--gold); color: var(--gold); }
+
+  .terminal {
+    background: var(--term-bg);
+    border-radius: 10px;
+    min-height: 480px;
+    max-height: 640px;
+    overflow-y: auto;
+    padding: 16px 18px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .terminal .dots { margin-bottom: 10px; }
+  .terminal .dots span {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  .dot-r { background: #ff5f56; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #27c93f; }
+
+  .log-line { margin-bottom: 4px; white-space: pre-wrap; word-break: break-word; }
+  .log-info    { color: #d7e3f5; }
+  .log-step    { color: var(--term-amber); font-weight: 700; }
+  .log-success { color: var(--term-green); font-weight: 700; }
+  .log-error   { color: var(--term-red); font-weight: 700; }
+  .log-json    { color: #93c5fd; }
+  .log-empty   { color: #5a6472; font-style: italic; }
+
+  .notice {
+    background: rgba(232, 185, 62, 0.12);
+    border: 1px solid rgba(232, 185, 62, 0.4);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #e8b93e;
+    margin: 0 32px 20px;
+    line-height: 1.5;
+  }
+  .notice strong { color: #fff; }
+
+  .results-section {
+    margin: 0 32px 40px;
+    background: var(--panel);
+    border-radius: 10px;
+    padding: 20px 22px;
+    color: var(--text-dark);
+  }
+  .results-section .panel-header h2 { color: var(--red); }
+  #resultsCount { color: var(--text-gray); font-size: 11.5px; font-weight: 600; }
+
+  .table-wrap { overflow-x: auto; }
+
+  table#resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+  table#resultsTable thead th {
+    text-align: left;
+    padding: 9px 10px;
+    background: var(--navy);
+    color: white;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  table#resultsTable thead th:first-child { border-radius: 6px 0 0 0; }
+  table#resultsTable thead th:last-child { border-radius: 0 6px 0 0; }
+  table#resultsTable tbody td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e4e9f4;
+  }
+  table#resultsTable tbody tr { cursor: pointer; }
+  table#resultsTable tbody tr:hover td { background: #e8ecf5; }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">SAP Gateway OData Client</p>
+  <h1>Skill CRUD — ZREWORK_SKILL_SRV</h1>
+  <p>Reads, Creates, Updates, and Deletes records against your ZREWORK_SKILL entity set.</p>
+</header>
+
+<div class="notice">
+  <strong>Before clicking anything:</strong> run <code>create_skill_server.py</code>
+  (<code>python create_skill_server.py</code>), then open this page at
+  <code>http://localhost:8766/</code> — not the file directly. Also double-check the
+  <strong>Entity set URL</strong> below: confirm the exact, case-sensitive entity set name from
+  <code>.../ZREWORK_SKILL_SRV/?$format=xml</code> (look at the <code>href</code> in
+  <code>&lt;collection href="..."&gt;</code>) before testing, the same way we found <code>zcds2</code>
+  was lowercase earlier. <strong>SkillId is a text key</strong> — this tool wraps it in quotes
+  automatically for Update/Delete/Get-by-ID, so you don't need to type quotes yourself.
+</div>
+
+<div class="layout">
+
+  <div class="card">
+    <h2>Connection</h2>
+    <div class="field">
+      <label for="serviceUrl">Entity set URL</label>
+      <input id="serviceUrl" type="text"
+        value=" https://merida.cob.csuchico.edu:8038/sap/opu/odata/sap/ZREWORK_SKILL_SRV/ZREWORK_skillSet">
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" type="text" autocomplete="username" placeholder="SAP user">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="SAP password">
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Skill Record</h2>
+    <div class="field">
+      <label for="skillId">Skill ID (SkillId)</label>
+      <input id="skillId" type="text" value="SKILL0001">
+    </div>
+    <div class="field">
+      <label for="skillName">Skill Name (SkillName)</label>
+      <input id="skillName" type="text" value="">
+    </div>
+    <div class="field">
+      <label for="description">Description</label>
+      <input id="description" type="text" value="JAVA">
+    </div>
+
+    <button id="prefillBtn" type="button">Reset to sample data</button>
+
+    <div class="divider"></div>
+
+    <div class="btn-row">
+      <button id="getBtn" type="button" class="btn-secondary">Get by ID</button>
+      <button id="getAllBtn" type="button" class="btn-secondary">Get all</button>
+    </div>
+    <div class="btn-row">
+      <button id="createBtn" type="button">Create</button>
+      <button id="updateBtn" type="button">Update</button>
+    </div>
+    <button id="deleteBtn" type="button">Delete skill by ID above</button>
+  </div>
+
+  <div>
+    <div class="panel-header">
+      <h2>Request log</h2>
+      <button id="clearLogBtn" type="button">Clear</button>
+    </div>
+    <div class="terminal" id="terminal">
+      <div class="dots">
+        <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+      </div>
+      <div class="log-line log-empty" id="emptyState">No requests sent yet. Fill in the form, then Get, Create, Update, or Delete.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="results-section" id="resultsSection" style="display:none;">
+  <div class="panel-header">
+    <h2>Skill Records</h2>
+    <span id="resultsCount"></span>
+  </div>
+  <div class="table-wrap">
+    <table id="resultsTable">
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Description</th></tr>
+      </thead>
+      <tbody id="resultsBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  const els = {
+    serviceUrl: document.getElementById('serviceUrl'),
+    username: document.getElementById('username'),
+    password: document.getElementById('password'),
+    skillId: document.getElementById('skillId'),
+    skillName: document.getElementById('skillName'),
+    description: document.getElementById('description'),
+    createBtn: document.getElementById('createBtn'),
+    updateBtn: document.getElementById('updateBtn'),
+    deleteBtn: document.getElementById('deleteBtn'),
+    getBtn: document.getElementById('getBtn'),
+    getAllBtn: document.getElementById('getAllBtn'),
+    prefillBtn: document.getElementById('prefillBtn'),
+    clearLogBtn: document.getElementById('clearLogBtn'),
+    terminal: document.getElementById('terminal'),
+    emptyState: document.getElementById('emptyState'),
+    resultsSection: document.getElementById('resultsSection'),
+    resultsBody: document.getElementById('resultsBody'),
+    resultsCount: document.getElementById('resultsCount'),
+  };
+
+  function log(message, cls) {
+    if (els.emptyState) { els.emptyState.remove(); els.emptyState = null; }
+    const line = document.createElement('div');
+    line.className = 'log-line ' + (cls || 'log-info');
+    line.textContent = message;
+    els.terminal.appendChild(line);
+    els.terminal.scrollTop = els.terminal.scrollHeight;
+  }
+
+  function logJson(obj) {
+    log(JSON.stringify(obj, null, 2), 'log-json');
+  }
+
+  els.clearLogBtn.addEventListener('click', () => {
+    els.terminal.querySelectorAll('.log-line').forEach(el => el.remove());
+    const line = document.createElement('div');
+    line.className = 'log-line log-empty';
+    line.id = 'emptyState';
+    line.textContent = 'Log cleared.';
+    els.terminal.appendChild(line);
+    els.emptyState = line;
+  });
+
+  els.prefillBtn.addEventListener('click', () => {
+    els.skillId.value = 'SKILL0001';
+    els.skillName.value = '';
+    els.description.value = 'JAVA';
+  });
+
+  function buildPayload() {
+    return {
+      SkillId: els.skillId.value,
+      SkillName: els.skillName.value,
+      Description: els.description.value,
+    };
+  }
+
+  function populateForm(rec) {
+    if (rec.SkillId !== undefined) els.skillId.value = rec.SkillId;
+    if (rec.SkillName !== undefined) els.skillName.value = rec.SkillName;
+    if (rec.Description !== undefined) els.description.value = rec.Description;
+  }
+
+  function renderResultsTable(records) {
+    els.resultsBody.innerHTML = '';
+    records.forEach(rec => {
+      const tr = document.createElement('tr');
+      [rec.SkillId, rec.SkillName, rec.Description].forEach(val => {
+        const td = document.createElement('td');
+        td.textContent = (val === undefined || val === null) ? '' : val;
+        tr.appendChild(td);
+      });
+      tr.addEventListener('click', () => {
+        populateForm(rec);
+        log('Loaded skill ' + rec.SkillId + ' into the form.', 'log-info');
+      });
+      els.resultsBody.appendChild(tr);
+    });
+    els.resultsCount.textContent = records.length + ' record(s) — click a row to load it into the form';
+    els.resultsSection.style.display = records.length ? 'block' : 'none';
+  }
+
+  const allButtons = () => [els.createBtn, els.updateBtn, els.deleteBtn, els.getBtn, els.getAllBtn];
+
+  async function callProxy(endpoint, actionLabel, extraPayload, onSuccess) {
+    const url = els.serviceUrl.value.trim();
+    if (!url) { log('Please enter the entity set URL first.', 'log-error'); return; }
+    if (!els.username.value) { log('Please enter a username.', 'log-error'); return; }
+
+    allButtons().forEach(b => b.disabled = true);
+
+    try {
+      const resp = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          url: url,
+          username: els.username.value,
+          password: els.password.value,
+          payload: extraPayload || buildPayload(),
+        }),
+      });
+
+      const result = await resp.json();
+
+      (result.log || []).forEach(line => log(line, 'log-step'));
+
+      if (result.ok) {
+        log(actionLabel + ' succeeded.', 'log-success');
+        let parsed = null;
+        if (result.detail) {
+          try { parsed = JSON.parse(result.detail); } catch (e) { log(result.detail); }
+        }
+        if (parsed && onSuccess) {
+          onSuccess(parsed);
+        } else if (parsed) {
+          logJson(parsed);
+        }
+      } else {
+        log(actionLabel + ' failed.', 'log-error');
+        if (result.detail) {
+          try {
+            const parsed = JSON.parse(result.detail);
+            if (parsed.error && parsed.error.message && parsed.error.message.value) {
+              log('Server message: ' + parsed.error.message.value, 'log-error');
+            }
+            logJson(parsed);
+          } catch (e) {
+            log(result.detail, 'log-error');
+          }
+        }
+      }
+    } catch (err) {
+      log('Could not reach the local proxy at ' + endpoint + '.', 'log-error');
+      log('Make sure create_skill_server.py is running, and that you opened', 'log-error');
+      log('http://localhost:8766/ rather than opening the HTML file directly.', 'log-error');
+    } finally {
+      allButtons().forEach(b => b.disabled = false);
+    }
+  }
+
+  els.createBtn.addEventListener('click', () => callProxy('/api/create-skill', 'Create'));
+  els.updateBtn.addEventListener('click', () => callProxy('/api/update-skill', 'Update'));
+  els.deleteBtn.addEventListener('click', () => {
+    const id = els.skillId.value;
+    if (!confirm('Delete skill ' + id + '? This cannot be undone.')) return;
+    callProxy('/api/delete-skill', 'Delete');
+  });
+
+  els.getBtn.addEventListener('click', () => {
+    callProxy('/api/get-skill', 'Get by ID', { SkillId: els.skillId.value }, (parsed) => {
+      const rec = parsed.d || parsed;
+      logJson(rec);
+      populateForm(rec);
+    });
+  });
+
+  els.getAllBtn.addEventListener('click', () => {
+    callProxy('/api/get-skills', 'Get all', {}, (parsed) => {
+      const records = (parsed.d && parsed.d.results) ? parsed.d.results : (Array.isArray(parsed) ? parsed : []);
+      log('Received ' + records.length + ' record(s).', 'log-success');
+      renderResultsTable(records);
+    });
+  });
+</script>
+
+</body>
+</html>

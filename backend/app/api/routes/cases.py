@@ -16,6 +16,7 @@ class CreateCaseRequest(BaseModel):
     candidate_id: str = "ananya-sharma"
     job_id: str = "data-analyst-junior"
     opportunity_id: str = "opp-data-analyst"
+    execute_until: CaseStage | None = None
 
 
 class ExecuteCaseRequest(BaseModel):
@@ -40,6 +41,11 @@ def create_case(body: CreateCaseRequest) -> dict[str, Any]:
         job_id=body.job_id,
         opportunity_id=body.opportunity_id,
     )
+    if body.execute_until is not None:
+        try:
+            case = _case_service.execute(case.id, execute_until=body.execute_until)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
     return case.model_dump(mode="json")
 
 

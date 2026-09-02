@@ -1,5 +1,6 @@
 """SAP adapter factory with explicit LIVE/SIMULATED switching."""
 
+from app.adapters.sap.live import build_live_provider
 from app.adapters.sap.provider import SAPProvider
 from app.adapters.sap.simulated import SimulatedSAPProvider
 from app.core.config import get_settings
@@ -12,13 +13,14 @@ def get_sap_provider() -> SAPProvider:
         return SimulatedSAPProvider()
 
     if settings.sap_mode.upper() == "LIVE":
-        from app.adapters.sap.live import LiveSAPProvider
+        return build_live_provider()
 
-        return LiveSAPProvider(
-            api_url=settings.sap_api_url,
-            client_id=settings.sap_client_id,
-            client_secret=settings.sap_client_secret,
-            company_id=settings.sap_company_id,
-        )
+    return SimulatedSAPProvider()
 
+
+def get_product_sap_provider() -> SAPProvider:
+    """Provider for the product catalog — ignores DEMO_MODE fixture switching."""
+    settings = get_settings()
+    if settings.sap_mode.upper() == "LIVE":
+        return build_live_provider()
     return SimulatedSAPProvider()

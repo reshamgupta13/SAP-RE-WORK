@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: rework-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: ENVIRONMENT
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: SAP_MODE
+        value: SIMULATED
+      - key: PERSISTENCE_MODE
+        value: memory
+      - key: SAP_PROTOTYPE_FALLBACK
+        value: "true"
+      - key: FIXTURES_DIR
+        value: ../fixtures
+      # Set in Render dashboard (secrets — do not commit values):
+      # - CORS_ORIGINS
+      # - LLM_API_KEY
+      # - LLM_PROVIDER
+      # - LLM_MODEL
+      # - SAP_ODATA_BASE_URL / SAP_USERNAME / SAP_PASSWORD (only if SAP_MODE=LIVE)

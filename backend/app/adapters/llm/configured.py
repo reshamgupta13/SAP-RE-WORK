@@ -56,11 +56,37 @@ class ConfiguredLLMProvider(LLMProvider):
 
         if self._provider_name == "gemini":
             raw_text = self._call_gemini(full_prompt)
+        elif self._provider_name == "groq":
+            raw_text = self._call_groq(full_prompt, system)
         else:
             raise ValueError(f"Unsupported LLM provider: {self._provider_name}")
 
         parsed = self._extract_json(raw_text)
         return schema.model_validate(parsed)
+
+    def _call_groq(self, prompt: str, system: str) -> str:
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {self._api_key}",
+            "Content-Type": "application/json",
+        }
+        body = {
+            "model": self._model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0,
+            "response_format": {"type": "json_object"},
+        }
+        with httpx.Client(timeout=self._timeout) as client:
+            response = client.post(url, headers=headers, json=body)
+            response.raise_for_status()
+            data = response.json()
+        try:
+            return data["choices"][0]["message"]["content"]
+        except (KeyError, IndexError, TypeError) as exc:
+            raise ValueError(f"Unexpected Groq response shape: {data}") from exc
 
     def _call_gemini(self, prompt: str) -> str:
         url = (

@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "prototype": "FINAL_DEMO_READY",
+  "checks": [
+    {
+      "check": "pytest",
+      "pass": true,
+      "detail": "199 passed, 77530 warnings in 46.43s"
+    },
+    {
+      "check": "golden_replay.py",
+      "pass": true,
+      "detail": " to C:\\Users\\shria\\Desktop\\rework\\artifacts\\golden\\finale_ananya_replay.json\nLifecycle: EXPLANATION_READY, failures: []\n"
+    },
+    {
+      "check": "benchmark_eval.py",
+      "pass": true,
+      "detail": "Benchmark: 22/22 passed\nReport: C:\\Users\\shria\\Desktop\\rework\\artifacts\\evaluation\\final_benchmark_report.json\n"
+    },
+    {
+      "check": "demo_health_check.py",
+      "pass": true,
+      "detail": "rue,\n      \"detail\": \"15\"\n    },\n    {\n      \"check\": \"case_export\",\n      \"pass\": true,\n      \"detail\": \"\"\n    }\n  ]\n}\n"
+    },
+    {
+      "check": "redteam_heat_test.py",
+      "pass": true,
+      "detail": "\n  \"runs\": 20,\n  \"failures\": [],\n  \"pass_rate\": 1.0,\n  \"avg_seconds\": 0.52,\n  \"max_seconds\": 0.58,\n  \"status\": \"PASS\"\n}\n"
+    },
+    {
+      "check": "frontend_build",
+      "pass": true,
+      "detail": "ok"
+    }
+  ]
+}

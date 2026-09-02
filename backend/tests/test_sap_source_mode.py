@@ -1,8 +1,7 @@
 """SAP source-mode provenance regression tests."""
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
-import httpx
 from fastapi.testclient import TestClient
 
 from app.adapters.sap.live import LiveSAPProvider
@@ -21,11 +20,13 @@ def test_simulated_provider_source_mode():
 
 def test_live_provider_auth_failure_not_connected():
     live = LiveSAPProvider(
+        odata_base_url="https://sap.example.com/odata/v4",
         api_url="https://sap.example.com",
         client_id="client",
         client_secret="secret",
+        auth_mode="OAUTH2",
     )
-    with patch.object(live, "_authenticate", side_effect=ConnectionError("SAP authentication failed")):
+    with patch.object(live, "verify_connection", side_effect=ConnectionError("SAP authentication failed")):
         ctx = live.get_context()
     assert ctx.source_mode == SourceMode.NOT_CONNECTED
     assert ctx.source_mode != SourceMode.LIVE
@@ -42,37 +43,43 @@ def test_live_provider_missing_credentials_not_connected():
 
 def test_live_provider_connection_failure_not_connected():
     live = LiveSAPProvider(
+        odata_base_url="https://sap.example.com/odata/v4",
         api_url="https://sap.example.com",
-        client_id="client",
-        client_secret="secret",
     )
-    with patch("httpx.Client") as mock_client:
-        mock_client.return_value.__enter__.return_value.post.side_effect = httpx.ConnectError("timeout")
+    with patch.object(live, "verify_connection", side_effect=ConnectionError("timeout")):
         ctx = live.get_context()
     assert ctx.source_mode == SourceMode.NOT_CONNECTED
     assert ctx.source_mode != SourceMode.LIVE
 
 
-def test_live_provider_successful_auth_returns_live():
+def test_live_provider_successful_verification_returns_live():
+    from datetime import datetime, timezone
+
     live = LiveSAPProvider(
+        odata_base_url="https://sap.example.com/odata/v4",
         api_url="https://sap.example.com",
-        client_id="client",
-        client_secret="secret",
     )
-    with patch.object(live, "_authenticate", return_value="token-abc"):
+
+    def _fake_verify() -> bool:
+        live._verified = True
+        live._data_verified = True
+        live._entity_status = {"user": "AVAILABLE", "job": "PENDING_OFFICIAL_ODATA_METADATA"}
+        live._last_sync = datetime.now(timezone.utc)
+        return True
+
+    with patch.object(live, "verify_connection", side_effect=_fake_verify):
         ctx = live.get_context()
     assert ctx.source_mode == SourceMode.LIVE
     assert ctx.integration_status == IntegrationStatus.AVAILABLE
-    assert "WorkforceContext" in ctx.retrieved_entities
+    assert "user" in ctx.retrieved_entities
 
 
 def test_live_provider_unexpected_error_returns_error():
     live = LiveSAPProvider(
+        odata_base_url="https://sap.example.com/odata/v4",
         api_url="https://sap.example.com",
-        client_id="client",
-        client_secret="secret",
     )
-    with patch.object(live, "_authenticate", side_effect=RuntimeError("unexpected")):
+    with patch.object(live, "verify_connection", side_effect=RuntimeError("unexpected")):
         ctx = live.get_context()
     assert ctx.source_mode == SourceMode.ERROR
     assert ctx.source_mode != SourceMode.LIVE
@@ -86,12 +93,11 @@ def test_health_demo_mode_never_live():
 
 def test_api_context_never_claims_live_on_auth_failure():
     live = LiveSAPProvider(
+        odata_base_url="https://sap.example.com/odata/v4",
         api_url="https://sap.example.com",
-        client_id="client",
-        client_secret="secret",
     )
     with patch("app.api.routes.sap.get_sap_provider", return_value=live):
-        with patch.object(live, "_authenticate", side_effect=ConnectionError("failed")):
+        with patch.object(live, "verify_connection", side_effect=ConnectionError("failed")):
             with patch("app.api.routes.sap.SAPHealthService") as mock_health:
                 mock_health.return_value.check.return_value = {
                     "configured": True,

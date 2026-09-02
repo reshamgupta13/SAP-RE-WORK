@@ -1,3 +1,5 @@
+import { formatLabel } from "../../lib/format";
+
 type Stage = { stage: string; status: string };
 
 export function PipelineStrip({ stages }: { stages: Stage[] }) {
@@ -8,14 +10,19 @@ export function PipelineStrip({ stages }: { stages: Stage[] }) {
           key={s.stage}
           className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${
             s.status === "completed"
-              ? "bg-teal-100 text-teal-900"
+              ? "bg-sage/15 text-sage"
               : s.status === "active"
-                ? "bg-teal-600 text-white ring-2 ring-teal-300"
-                : "bg-slate-100 text-slate-500"
+                ? "text-white"
+                : "bg-parchment text-muted"
           }`}
+          style={
+            s.status === "active"
+              ? { backgroundColor: "var(--color-brand)", color: "var(--color-brand-text)" }
+              : undefined
+          }
         >
           <span aria-hidden>{s.status === "completed" ? "✓" : s.status === "active" ? "●" : "○"}</span>
-          {s.stage}
+          {formatLabel(s.stage)}
         </div>
       ))}
     </nav>

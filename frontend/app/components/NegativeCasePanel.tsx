@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+import { apiUrl } from "../../lib/api-base";
+import { formatLabel } from "../../lib/format";
 
 type NegativeOption = { id: string; title: string; outcome: string };
 
@@ -13,7 +13,7 @@ export function NegativeCasePanel({ options }: { options: NegativeOption[] }) {
   async function load(scenarioId: string) {
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/demo/negative-case?scenario_id=${scenarioId}`, {
+      const res = await fetch(apiUrl(`/api/demo/negative-case?scenario_id=${scenarioId}`), {
         cache: "no-store",
       });
       setResult(await res.json());
@@ -24,11 +24,12 @@ export function NegativeCasePanel({ options }: { options: NegativeOption[] }) {
   }
 
   return (
-    <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-      <h3 className="text-xs font-semibold uppercase text-slate-500">
+    <section className="surface-card overflow-hidden p-4">
+      <h3 className="kicker">Trust signal</h3>
+      <p className="mt-1 font-display text-lg font-semibold text-ink">
         Show me a case RE:WORK refuses to force
-      </h3>
-      <p className="mt-1 text-xs text-slate-500">
+      </p>
+      <p className="mt-1 text-xs text-muted">
         Intelligence system — not a positivity generator.
       </p>
       <div className="mt-3 flex flex-wrap gap-2">
@@ -38,17 +39,23 @@ export function NegativeCasePanel({ options }: { options: NegativeOption[] }) {
             type="button"
             disabled={loading}
             onClick={() => load(opt.id)}
-            className="rounded-md border border-slate-200 bg-slate-50 px-2 py-1 text-xs hover:bg-slate-100"
+            className="rounded-md border border-border bg-surface px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-accent hover:bg-accent/5 disabled:opacity-50"
           >
             {opt.id}: {opt.title}
           </button>
         ))}
       </div>
       {result && (
-        <div className="mt-3 rounded-lg bg-red-50 p-3 text-sm text-red-900">
+        <div className="mt-3 rounded-lg border border-amber/30 bg-amber/10 p-3 text-sm text-ink">
           <p className="font-semibold">{String(result.title ?? result.scenario_id)}</p>
-          <p className="mt-1">Outcome: {String(result.outcome ?? result.actual ? (result.actual as { diagnosis_state?: string }).diagnosis_state : "—")}</p>
-          <p className="mt-2 text-xs">{String(result.message ?? "")}</p>
+          <p className="mt-1">
+            Outcome:{" "}
+            {formatLabel(
+              result.outcome ??
+                (result.actual as { diagnosis_state?: string } | undefined)?.diagnosis_state,
+            )}
+          </p>
+          <p className="mt-2 text-xs text-muted">{String(result.message ?? "")}</p>
         </div>
       )}
     </section>

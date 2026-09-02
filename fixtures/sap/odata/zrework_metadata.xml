@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Test fixture for seven-table SEGW-style metadata. Not an official SAP contract. -->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="ZREWORK" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="ZREWORK_USER">
+        <Key><PropertyRef Name="USER_ID"/></Key>
+        <Property Name="USER_ID" Type="Edm.String"/>
+        <Property Name="FIRST_NAME" Type="Edm.String"/>
+        <Property Name="LAST_NAME" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="ZREWORK_SKILL">
+        <Key><PropertyRef Name="SKILL_ID"/></Key>
+        <Property Name="SKILL_ID" Type="Edm.String"/>
+        <Property Name="SKILL_NAME" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="ZREWORK_PERSKILL">
+        <Key><PropertyRef Name="USER_ID"/><PropertyRef Name="SKILL_ID"/></Key>
+        <Property Name="USER_ID" Type="Edm.String"/>
+        <Property Name="SKILL_ID" Type="Edm.String"/>
+        <Property Name="PROFICIENCY" Type="Edm.Decimal"/>
+      </EntityType>
+      <EntityType Name="ZREWORK_JOB">
+        <Key><PropertyRef Name="JOB_ID"/></Key>
+        <Property Name="JOB_ID" Type="Edm.String"/>
+        <Property Name="JOB_NAME" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="ZREWORK_JOB_SKIL">
+        <Key><PropertyRef Name="JOB_ID"/><PropertyRef Name="SKILL_ID"/></Key>
+        <Property Name="JOB_ID" Type="Edm.String"/>
+        <Property Name="SKILL_ID" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="ZREWORK_ORGANIZA">
+        <Key><PropertyRef Name="ORG_UNIT_ID"/></Key>
+        <Property Name="ORG_UNIT_ID" Type="Edm.String"/>
+        <Property Name="ORG_UNIT_NAME" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="ZREWORK_HR">
+        <Key><PropertyRef Name="HR_ID"/></Key>
+        <Property Name="HR_ID" Type="Edm.String"/>
+        <Property Name="HR_NAME" Type="Edm.String"/>
+      </EntityType>
+      <EntityContainer Name="ZREWORK_SRV">
+        <EntitySet Name="ZREWORK_USERSet" EntityType="ZREWORK.ZREWORK_USER"/>
+        <EntitySet Name="ZREWORK_SKILLSet" EntityType="ZREWORK.ZREWORK_SKILL"/>
+        <EntitySet Name="ZREWORK_PERSKILLSet" EntityType="ZREWORK.ZREWORK_PERSKILL"/>
+        <EntitySet Name="ZREWORK_JOBSet" EntityType="ZREWORK.ZREWORK_JOB"/>
+        <EntitySet Name="ZREWORK_JOB_SKILSet" EntityType="ZREWORK.ZREWORK_JOB_SKIL"/>
+        <EntitySet Name="ZREWORK_ORGANIZASet" EntityType="ZREWORK.ZREWORK_ORGANIZA"/>
+        <EntitySet Name="ZREWORK_HRSet" EntityType="ZREWORK.ZREWORK_HR"/>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

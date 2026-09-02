@@ -1,27 +1,42 @@
 "use client";
 
 import { useState } from "react";
-import { submitReview } from "../../lib/api";
+import { submitCaseReview, submitReview } from "../../lib/api";
+import { formatLabel } from "../../lib/format";
 import type { ControlRoomData } from "../../lib/types";
 import { AppHeader } from "../components/AppShell";
+import { HrIdentityCard } from "../components/ProductMeta";
 import { SourceBadge } from "../components/SourceBadge";
 
 export function HrReviewClient({ data }: { data: ControlRoomData }) {
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const rec = data.human_review?.ai_recommendation ?? data.ai_recommendation ?? {};
+  const sapMode = String(data.system_status?.sap ?? "SIMULATED");
+  const reviewer = data.enterprise_context?.domains.hr_reviewer;
+  const card = data.decision_card ?? {};
 
   async function act(action: string, extra?: Record<string, unknown>) {
     setLoading(true);
     try {
-      const res = await submitReview({
-        run_id: data.run_id,
-        decision_card_id: data.decision_card.id as string,
-        action,
-        reviewer_id: "hr-demo",
-        ...extra,
-      });
-      setResult(res.message as string);
+      const reviewerId = reviewer?.hr_id ? String(reviewer.hr_id) : undefined;
+      if (data.case_id) {
+        const res = await submitCaseReview(data.case_id, {
+          action,
+          reviewer_id: reviewerId,
+          reason: action === "MODIFY" ? "HR modified the recommendation" : undefined,
+        });
+        setResult(String((res as { message?: string }).message ?? "Decision recorded."));
+      } else {
+        const res = await submitReview({
+          run_id: data.run_id,
+          decision_card_id: data.decision_card.id as string,
+          action,
+          reviewer_id: reviewerId,
+          ...extra,
+        });
+        setResult(res.message as string);
+      }
     } catch {
       setResult("Submission failed");
     }
@@ -29,52 +44,59 @@ export function HrReviewClient({ data }: { data: ControlRoomData }) {
   }
 
   return (
-    <>
-      <AppHeader badge="Human Review" />
-      <main className="mx-auto max-w-3xl space-y-6 px-6 py-8">
-        <p className="text-sm text-slate-600">
-          AI recommendation generated — not a hiring decision. <SourceBadge mode="USER_PROVIDED" />
+    <div className="rework-atmosphere min-h-screen">
+      <AppHeader badge="Human Review" activePath="/hr-review" showCta={false} sapMode={sapMode} />
+      <main className="rework-content mx-auto max-w-3xl space-y-6 px-6 py-8">
+        <p className="text-sm text-muted">
+          What should a human review before deciding. <SourceBadge mode={sapMode} />
         </p>
 
-        <section className="rounded-xl border border-slate-200 bg-white p-6">
-          <h2 className="text-sm font-semibold uppercase text-slate-500">AI recommendation</h2>
-          <p className="mt-2 text-slate-900">{rec.recommendation_summary as string}</p>
+        <HrIdentityCard reviewer={reviewer} />
 
-          <dl className="mt-4 space-y-2 text-sm">
-            <div><dt className="text-slate-500">Confidence</dt><dd>{rec.confidence_label as string}</dd></div>
+        <section className="surface-card p-6">
+          <p className="kicker">RE:WORK recommendation</p>
+          <p className="font-body mt-3 text-lg text-ink">
+            {String(card.what ?? rec.recommendation_summary ?? "See decision card")}
+          </p>
+          <p className="font-body mt-2 text-sm text-muted">{String(card.why ?? rec.rationale ?? "")}</p>
+          <dl className="mt-6 grid gap-4 text-sm sm:grid-cols-2">
             <div>
-              <dt className="text-slate-500">Risks</dt>
-              <dd>{((rec.risks as string[]) ?? []).join("; ") || "—"}</dd>
+              <dt className="font-mono text-[10px] uppercase tracking-wider text-muted">Confidence</dt>
+              <dd className="mt-1 text-ink">{formatLabel(card.confidence ?? rec.confidence_label)}</dd>
             </div>
             <div>
-              <dt className="text-slate-500">Alternatives</dt>
-              <dd>{((rec.alternatives as string[]) ?? []).join("; ") || "—"}</dd>
+              <dt className="font-mono text-[10px] uppercase tracking-wider text-muted">Human required</dt>
+              <dd className="mt-1 text-ink">{card.human_decision_required ? "Yes" : "Yes"}</dd>
             </div>
           </dl>
         </section>
 
-        <section className="flex flex-wrap gap-3">
-          {["APPROVE", "MODIFY", "REQUEST_MORE_EVIDENCE", "REJECT"].map((action) => (
-            <button
-              key={action}
-              type="button"
-              disabled={loading}
-              onClick={() =>
-                act(action, action === "MODIFY" ? { modified_pathway: "pathway-hr-adjusted" } : undefined)
-              }
-              className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 disabled:opacity-50"
-            >
-              {action.replace(/_/g, " ")}
-            </button>
-          ))}
+        <section className="surface-card border-2 border-accent/30 p-6">
+          <p className="kicker">Human HR decision</p>
+          <p className="mt-2 text-sm text-muted">AI recommendation is preserved separately and is not overwritten.</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {["APPROVE", "MODIFY", "REQUEST_MORE_EVIDENCE", "REJECT"].map((action) => (
+              <button
+                key={action}
+                type="button"
+                disabled={loading}
+                onClick={() =>
+                  act(action, action === "MODIFY" ? { modified_pathway: "pathway-hr-adjusted" } : undefined)
+                }
+                className={action === "APPROVE" ? "btn-primary" : "btn-secondary"}
+              >
+                {formatLabel(action)}
+              </button>
+            ))}
+          </div>
         </section>
 
         {result && (
-          <p className="rounded-lg bg-teal-50 px-4 py-3 text-sm font-medium text-teal-900" role="status">
+          <p className="surface-panel border-sage/30 bg-sage/5 px-4 py-3 text-sm font-medium text-ink" role="status">
             {result}
           </p>
         )}
       </main>
-    </>
+    </div>
   );
 }

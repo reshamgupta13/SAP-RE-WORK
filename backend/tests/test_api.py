@@ -13,7 +13,13 @@ def test_health_endpoint():
     data = response.json()
     assert data["status"] == "ok"
     assert data["demo_mode"] is True
-    assert data["sap_connection"] == "SIMULATED"
+    assert data["sap_mode"] == "SIMULATED"
+
+
+def test_root_health_endpoint():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
 
 
 def test_demo_candidates_returns_ananya():

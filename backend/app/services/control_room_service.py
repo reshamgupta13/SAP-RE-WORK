@@ -4,6 +4,7 @@ from typing import Any
 
 from app.domain.enums import EngineMode, RunMode, SourceMode
 from app.services.agent_orchestration_service import AgentOrchestrationService
+from app.services.enterprise_domain_service import EnterpriseDomainService
 from app.services.explainability_service import ExplainabilityService
 from app.services.fixture_service import FixtureService
 from app.services.human_review_service import HumanReviewService
@@ -32,6 +33,7 @@ class ControlRoomService:
         self._explainability = ExplainabilityService()
         self._human_review = HumanReviewService()
         self._agent_orchestration = AgentOrchestrationService()
+        self._enterprise = EnterpriseDomainService()
 
     def build_control_room(self) -> dict[str, Any]:
         from app.services.case_service import CaseService
@@ -78,8 +80,10 @@ class ControlRoomService:
                 "demo_mode": True,
             },
             "active_case": {
-                "candidate_name": (state.get("candidate") or {}).get("name", "Ananya Sharma"),
-                "target_opportunity": "Data Analyst",
+                "candidate_name": (state.get("candidate") or {}).get("display_name")
+                or (state.get("candidate") or {}).get("name")
+                or "Selected candidate",
+                "target_opportunity": (state.get("job") or {}).get("title") or "Selected role",
                 "capability_fit": primary_viability.get("dimensions", {}).get("capability_fit"),
                 "current_diagnosis": (
                     (state.get("reassessment_summary") or state.get("diagnosis_summary") or {})
@@ -125,6 +129,7 @@ class ControlRoomService:
                 state.get("candidate_capabilities", []),
             ),
             "sap_context": self._sap_context_view(state),
+            "enterprise_context": self._enterprise.build(state),
             "pipeline": self._pipeline_detail(state),
             "agent_orchestrator": self._agent_orchestration.build(state),
             "audit_events": state.get("audit_events", []),
@@ -166,6 +171,17 @@ class ControlRoomService:
             "role": slice_status("role_context"),
             "learning": slice_status("learning_context"),
             "opportunities": slice_status("opportunity_context"),
+            "entity_counts": {
+                k: (bundle.get(k) or {}).get("item_count", 0)
+                for k in [
+                    "workforce_context",
+                    "skills_context",
+                    "role_context",
+                    "learning_context",
+                    "opportunity_context",
+                ]
+            },
+            "retrieved_at": bundle.get("retrieved_at"),
             "success_factors": mode,
             "talent_intelligence": slice_status("skills_context"),
             "learning_catalog": slice_status("learning_context"),

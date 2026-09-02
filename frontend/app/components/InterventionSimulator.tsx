@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { formatLabel } from "../../lib/format";
 
 type Scenario = {
   id: string;
@@ -47,15 +48,16 @@ export function InterventionSimulatorPanel({
   const compare = scenarios.filter((s) => selected.includes(s.id));
 
   return (
-    <section className="rounded-xl border border-slate-200 bg-white shadow-sm" aria-labelledby="sim-title">
-      <header className="border-b border-slate-100 px-6 py-4">
-        <h2 id="sim-title" className="text-lg font-semibold text-slate-900">What if we change something?</h2>
-        <p className="mt-1 text-sm text-slate-600">
-          Current: <strong>{baselineState ?? "—"}</strong>
+    <section className="surface-card overflow-hidden" aria-labelledby="sim-title">
+      <header className="border-b border-border px-6 py-4">
+        <p className="kicker">What-if analysis</p>
+        <h2 id="sim-title" className="section-heading mt-1">What if we change something?</h2>
+        <p className="mt-1 text-sm text-muted">
+          Current: <strong className="text-ink">{formatLabel(baselineState)}</strong>
         </p>
-        <p className="mt-2 inline-block rounded bg-amber-100 px-2 py-0.5 text-xs font-semibold uppercase text-amber-900">
-          {interventions.label ?? "SIMULATED PROJECTION"}
-        </p>
+        <span className="mt-2 inline-block rounded bg-amber/15 px-2 py-0.5 text-xs font-semibold text-amber">
+          {formatLabel(interventions.label ?? "SIMULATED PROJECTION")}
+        </span>
       </header>
 
       <div className="flex flex-wrap gap-2 p-4">
@@ -67,10 +69,10 @@ export function InterventionSimulatorPanel({
               key={s.id}
               type="button"
               onClick={() => toggle(s.id)}
-              className={`rounded-lg border px-3 py-2 text-sm transition ${
+              className={`rounded-lg border px-3 py-2 text-sm transition-all duration-interaction ${
                 selected.includes(s.id)
-                  ? "border-teal-600 bg-teal-50 text-teal-900"
-                  : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                  ? "border-accent bg-accent/10 text-accent"
+                  : "border-border bg-surface-raised text-ink hover:border-accent/50"
               }`}
             >
               + {s.label}
@@ -85,21 +87,23 @@ export function InterventionSimulatorPanel({
       </div>
 
       {bundles.length > 0 && (
-        <div className="border-t border-slate-100 p-4">
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500">Bundle comparison</h3>
-          <div className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="border-t border-border p-4">
+          <h3 className="font-mono text-[10px] font-semibold uppercase tracking-wider text-muted">Bundle comparison</h3>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {bundles.map((b) => (
               <div
                 key={b.id}
-                className={`rounded-lg border p-3 text-sm ${
-                  b.is_minimum_effective ? "border-teal-500 bg-teal-50" : "border-slate-200"
+                className={`min-w-0 rounded-lg border p-3 text-sm ${
+                  b.is_minimum_effective ? "border-sage bg-sage/10" : "border-border bg-surface"
                 }`}
               >
-                <p className="font-medium text-slate-900">{b.label}</p>
-                <p className="text-slate-600">Effort: {b.total_effort_weeks ?? "—"} wk</p>
-                <p className="text-slate-600">→ {b.after_viability_state}</p>
+                <p className="font-medium text-ink">{b.label}</p>
+                <p className="mt-1 text-muted">Effort: {b.total_effort_weeks ?? "—"} wk</p>
+                <p className="mt-1 break-words font-medium text-accent">
+                  → {formatLabel(b.after_viability_state)}
+                </p>
                 {b.is_minimum_effective && (
-                  <p className="mt-1 text-xs font-semibold text-teal-700">Minimum effective</p>
+                  <p className="mt-2 text-xs font-semibold text-sage">Minimum effective</p>
                 )}
               </div>
             ))}
@@ -113,24 +117,24 @@ export function InterventionSimulatorPanel({
 function ScenarioCard({ scenario }: { scenario: Scenario }) {
   const effect = scenario.effect;
   return (
-    <div className="rounded-lg border border-slate-200 p-4">
-      <h4 className="font-medium text-slate-900">{scenario.label}</h4>
+    <div className="min-w-0 rounded-lg border border-border bg-surface p-4">
+      <h4 className="font-medium text-ink">{scenario.label}</h4>
       <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div>
-          <p className="text-xs text-slate-500">Before</p>
-          <p>{scenario.before_viability_state}</p>
+          <p className="font-mono text-[10px] uppercase text-muted">Before</p>
+          <p className="break-words text-ink">{formatLabel(scenario.before_viability_state)}</p>
         </div>
         <div>
-          <p className="text-xs text-slate-500">Simulated after</p>
-          <p className="font-semibold text-teal-700">{scenario.after_viability_state}</p>
+          <p className="font-mono text-[10px] uppercase text-muted">Simulated after</p>
+          <p className="break-words font-semibold text-accent">{formatLabel(scenario.after_viability_state)}</p>
         </div>
       </div>
       {effect?.before_state && effect?.after_state && (
-        <dl className="mt-3 space-y-1 text-xs text-slate-600">
+        <dl className="mt-3 space-y-1 text-xs text-muted">
           {Object.keys(effect.after_state).map((k) => (
             <div key={k} className="flex justify-between gap-2">
-              <dt>{k}</dt>
-              <dd>
+              <dt className="shrink-0">{formatLabel(k)}</dt>
+              <dd className="break-words text-right text-ink">
                 {String(effect.before_state?.[k])} → {String(effect.after_state?.[k])}
               </dd>
             </div>
@@ -138,7 +142,7 @@ function ScenarioCard({ scenario }: { scenario: Scenario }) {
         </dl>
       )}
       {effect?.assumptions && (
-        <ul className="mt-3 list-disc pl-4 text-xs text-slate-500">
+        <ul className="mt-3 list-disc pl-4 text-xs text-muted">
           {effect.assumptions.slice(0, 3).map((a) => (
             <li key={a}>{a}</li>
           ))}

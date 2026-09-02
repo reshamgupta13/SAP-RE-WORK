@@ -45,6 +45,7 @@ class ReworkGraphState(TypedDict, total=False):
     scenarios: list[dict[str, Any]]
     intervention_simulation: dict[str, Any] | None
     minimum_effective_intervention: dict[str, Any] | None
+    learning_plan: dict[str, Any] | None
     explainability: dict[str, Any] | None
     audit_events: Annotated[list[dict[str, Any]], add]
     errors: Annotated[list[str], add]

@@ -6,11 +6,12 @@ from langgraph.graph import END, StateGraph
 
 from app.adapters.llm import get_llm_provider
 from app.adapters.sap import get_sap_provider
+from app.core.config import get_settings
 from app.agents.candidate_intelligence import CandidateIntelligenceAgent
 from app.agents.job_decomposition import JobDecompositionAgent
 from app.domain.assessment import CapabilityAssessmentItem, CapabilityGap
 from app.domain.candidate import CandidateCapability, CandidateEvidence, CandidateProfile
-from app.domain.enums import AuditStatus, EngineMode, PathwayStatus, RunMode
+from app.domain.enums import AuditStatus, EngineMode, IntegrationStatus, PathwayStatus, RunMode, SourceMode
 from app.domain.job import JobCapability, JobProfile, JobRequirement, JobTask
 from app.domain.pathway import ProofSubmission
 from app.domain.sap import SAPContext
@@ -45,25 +46,85 @@ def build_graph() -> Any:
 
     def load_candidate(state: ReworkGraphState) -> dict[str, Any]:
         timer = AuditTimer()
-        candidate_id = state.get("candidate_id", "ananya-sharma")
-        job_id = state.get("job_id", "data-analyst-junior")
+        settings = get_settings()
+        candidate_id = state.get("candidate_id") or ("ananya-sharma" if settings.demo_mode else None)
+        job_id = state.get("job_id") or ("data-analyst-junior" if settings.demo_mode else None)
         try:
-            if candidate_id != "ananya-sharma":
-                raise ValueError(f"Unknown demo candidate: {candidate_id}")
-            bundle = fixture_service.get_ananya_bundle()
-            profile = bundle["profile"]
-            evidence = bundle["evidence"]
-            sap_bundle = sap_context_service.load_for_case(candidate_id, job_id)
-            sap_ctx = SAPContext.model_validate(sap_bundle["system"])
+            use_demo_fixture = bool(settings.demo_mode and candidate_id == "ananya-sharma")
+            if use_demo_fixture:
+                bundle = fixture_service.get_ananya_bundle()
+                profile = bundle["profile"]
+                evidence = bundle["evidence"]
+                sap_bundle = sap_context_service.load_for_case(candidate_id, job_id or "data-analyst-junior")
+                sap_ctx = SAPContext.model_validate(sap_bundle["system"])
+                rationale = f"Loaded SAP context ({sap_ctx.source_mode.value}) and candidate fixture."
+            else:
+                if not candidate_id:
+                    raise ValueError("A candidate identifier is required.")
+                from app.services.sap_catalog_service import SAPCatalogService
+
+                catalog = SAPCatalogService()
+                payload = catalog.get_candidate(candidate_id)
+                if not payload.get("candidate"):
+                    raise ValueError(payload.get("message") or "Candidate not found in SAP.")
+                from app.adapters.sap.mapper import SAPMapper
+
+                mapper = SAPMapper()
+                cand = payload["candidate"]
+                profile = mapper.map_candidate_profile(
+                    {
+                        "USER_ID": cand.get("user_id"),
+                        "FIRST_NAME": cand.get("first_name"),
+                        "LAST_NAME": cand.get("last_name"),
+                        "CURRENT_ROLE": cand.get("current_role"),
+                        "EDUCATION": cand.get("education"),
+                        "TARGET_CAREER": cand.get("target_career"),
+                        "EXPERIENCE_YEARS": cand.get("experience_years"),
+                        "LOCATION": cand.get("location"),
+                    },
+                    SourceMode.LIVE,
+                )
+                evidence = [CandidateEvidence.model_validate(e) for e in payload.get("evidence") or []]
+                sap_caps = []
+                for row in payload.get("skills") or []:
+                    mapped = mapper.map_skill(
+                        {
+                            "USER_ID": row.get("user_id"),
+                            "SKILL_ID": row.get("skill_id"),
+                            "SKILL_NAME": row.get("skill_name"),
+                            "PROFICIENCY": row.get("proficiency"),
+                            "EVIDENCE": row.get("evidence_text"),
+                            "VALID_FROM": row.get("valid_from"),
+                        },
+                        profile.id,
+                        SourceMode.LIVE,
+                        skill_name=row.get("skill_name"),
+                    )
+                    if mapped:
+                        sap_caps.append(mapped.model_dump(mode="json"))
+                health = catalog.connection_state()
+                sap_ctx = SAPContext(
+                    source="SAP",
+                    source_mode=SourceMode.LIVE,
+                    system_name=str(health.get("system_name") or "SAP OData"),
+                    integration_status=IntegrationStatus.AVAILABLE,
+                    retrieved_entities=["user", "skill", "person_skill"],
+                    message=health.get("message"),
+                )
+                sap_bundle = {
+                    "system": sap_ctx.model_dump(mode="json"),
+                    "skills_context": {"data": sap_caps},
+                    "workforce_context": {"data": cand},
+                    "source_mode": SourceMode.LIVE.value,
+                }
+                rationale = f"Loaded candidate {profile.display_name} from SAP OData."
             entities = sap_ctx.retrieved_entities or []
             event = new_audit_event(
                 agent="load_candidate",
                 run_id=state.get("run_id"),
                 engine_mode=EngineMode.DEMO_FALLBACK,
                 status=AuditStatus.SUCCESS,
-                rationale=(
-                    f"Loaded SAP context ({sap_ctx.source_mode.value}) and candidate fixture."
-                ),
+                rationale=rationale,
                 input_reference=candidate_id,
                 output_reference=profile.id,
                 source_references=entities,
@@ -134,17 +195,76 @@ def build_graph() -> Any:
         if state.get("errors"):
             return {}
         timer = AuditTimer()
-        job_id = state.get("job_id", "data-analyst-junior")
+        settings = get_settings()
+        job_id = state.get("job_id") or ("data-analyst-junior" if settings.demo_mode else None)
         try:
-            sap_role = sap_provider.get_role_context(job_id)
-            if sap_role and sap_role.id == job_id:
-                job = sap_role
-                role_source = "SAP"
+            if not job_id:
+                raise ValueError("A job identifier is required.")
+            use_demo_fixture = bool(settings.demo_mode and job_id == "data-analyst-junior")
+            if use_demo_fixture:
+                sap_role = sap_provider.get_role_context(job_id)
+                if sap_role and sap_role.id == job_id:
+                    job = sap_role
+                    role_source = "SAP"
+                else:
+                    job = fixture_service.get_data_analyst_job()
+                    role_source = "REWORK"
+                if job.id != job_id:
+                    raise ValueError(f"Unknown demo job: {job_id}")
             else:
-                job = fixture_service.get_data_analyst_job()
-                role_source = "REWORK"
-            if job.id != job_id:
-                raise ValueError(f"Unknown demo job: {job_id}")
+                from app.adapters.sap.mapper import SAPMapper
+                from app.domain.job import JobCapability, JobRequirement, JobProfile
+                from app.domain.enums import RequirementClass, ReviewTag
+                from app.services.sap_catalog_service import SAPCatalogService
+
+                catalog = SAPCatalogService()
+                payload = catalog.get_job(job_id)
+                if not payload.get("job"):
+                    raise ValueError(payload.get("message") or "Job not found in SAP.")
+                mapper = SAPMapper()
+                job_row = payload["job"]
+                job = JobProfile(
+                    id=job_row["job_id"],
+                    title=job_row.get("job_name") or job_row["job_id"],
+                    raw_text=job_row.get("job_description") or "",
+                    family=job_row.get("org_unit_id"),
+                    location=job_row.get("location"),
+                    sap_job_role_code=job_row["job_id"],
+                    source="SAP",
+                    source_mode=SourceMode.LIVE,
+                    is_demo_fixture=False,
+                )
+                job_caps = []
+                requirements = []
+                for req in payload.get("requirements") or []:
+                    cap = mapper.map_job_capability(
+                        {
+                            "JOB_ID": req.get("job_id"),
+                            "SKILL_ID": req.get("skill_id"),
+                            "REQUIRED_PROFICIENCY": req.get("required_proficiency"),
+                            "IS_MANDATORY": req.get("is_mandatory"),
+                        },
+                        SourceMode.LIVE,
+                        skill_name=req.get("skill_name"),
+                    )
+                    if cap:
+                        job_caps.append(cap)
+                        requirements.append(
+                            JobRequirement(
+                                id=f"sap-req-{job.id}-{cap.skill_id}",
+                                job_id=job.id,
+                                text=f"{cap.label} proficiency {cap.min_proficiency:.2f}"
+                                + (" (mandatory)" if cap.importance == "core" else " (optional)"),
+                                requirement_class=RequirementClass.DIRECT_CAPABILITY,
+                                review_tag=ReviewTag.NONE,
+                                strength="required" if cap.importance == "core" else "optional",
+                                confidence=0.8,
+                                source_mode=SourceMode.LIVE,
+                            )
+                        )
+                job.capabilities = job_caps
+                job.requirements = requirements
+                role_source = "SAP"
             event = new_audit_event(
                 agent="load_job",
                 run_id=state.get("run_id"),
@@ -175,15 +295,27 @@ def build_graph() -> Any:
         if state.get("errors"):
             return {}
         timer = AuditTimer()
-        llm = get_llm_provider()
-        agent = JobDecompositionAgent(llm)
         job = JobProfile.model_validate(state["job"])
         try:
-            outcomes, tasks, capabilities, requirements, rationale = agent.run(job)
+            if job.source_mode == SourceMode.LIVE:
+                capabilities = list(job.capabilities or [])
+                requirements = list(job.requirements or [])
+                tasks = list(job.tasks or [])
+                outcomes = list(job.outcomes or [])
+                if not capabilities:
+                    rationale = "This role has no recorded skill requirements in SAP."
+                else:
+                    rationale = "Job capabilities loaded from SAP job-skill records."
+                engine_mode = EngineMode.DEMO_FALLBACK
+            else:
+                llm = get_llm_provider()
+                agent = JobDecompositionAgent(llm)
+                outcomes, tasks, capabilities, requirements, rationale = agent.run(job)
+                engine_mode = agent.engine_mode
             event = new_audit_event(
                 agent="job_decomposition",
                 run_id=state.get("run_id"),
-                engine_mode=agent.engine_mode,
+                engine_mode=engine_mode,
                 status=AuditStatus.SUCCESS,
                 rationale=rationale,
                 confidence=0.75,
@@ -192,7 +324,7 @@ def build_graph() -> Any:
                 latency_ms=timer.elapsed_ms(),
             )
             return {
-                "engine_mode": agent.engine_mode.value,
+                "engine_mode": engine_mode.value,
                 "role_outcomes": [o.model_dump(mode="json") for o in outcomes],
                 "job_tasks": [t.model_dump(mode="json") for t in tasks],
                 "job_capabilities": [c.model_dump(mode="json") for c in capabilities],
@@ -203,7 +335,7 @@ def build_graph() -> Any:
             event = new_audit_event(
                 agent="job_decomposition",
                 run_id=state.get("run_id"),
-                engine_mode=llm.engine_mode,
+                engine_mode=EngineMode.DEMO_FALLBACK,
                 status=AuditStatus.FAILURE,
                 error=str(exc),
                 latency_ms=timer.elapsed_ms(),
@@ -381,6 +513,55 @@ def build_graph() -> Any:
                 latency_ms=timer.elapsed_ms(),
             )
             return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
+
+    def targeted_learning_generation(state: ReworkGraphState) -> dict[str, Any]:
+        if state.get("errors"):
+            return {}
+        timer = AuditTimer()
+        run_id = state.get("run_id")
+        candidate_id = state.get("candidate_id", "")
+        job_id = state.get("job_id", "")
+        if not candidate_id or not job_id:
+            return {}
+        try:
+            from app.services.targeted_learning_service import TargetedLearningService
+
+            service = TargetedLearningService()
+            plan = service.generate(candidate_id, job_id)
+            event = new_audit_event(
+                agent="targeted_learning_orchestrator",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SUCCESS,
+                rationale=plan.why_this_path or "Targeted learning plan generated.",
+                confidence=0.8,
+                output_reference=plan.id,
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {
+                "learning_plan": plan.model_dump(mode="json"),
+                "audit_events": [_audit_dict(event)],
+            }
+        except ValueError:
+            event = new_audit_event(
+                agent="targeted_learning_orchestrator",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SKIPPED,
+                rationale="Targeted learning skipped — candidate/role not in product catalog.",
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"audit_events": [_audit_dict(event)]}
+        except Exception as exc:
+            event = new_audit_event(
+                agent="targeted_learning_orchestrator",
+                run_id=run_id,
+                engine_mode=EngineMode(state.get("engine_mode", EngineMode.DEMO_FALLBACK.value)),
+                status=AuditStatus.SKIPPED,
+                rationale=f"Targeted learning unavailable: {exc}",
+                latency_ms=timer.elapsed_ms(),
+            )
+            return {"audit_events": [_audit_dict(event)]}
 
     def proof_of_skill(state: ReworkGraphState) -> dict[str, Any]:
         if state.get("errors"):
@@ -851,6 +1032,8 @@ def build_graph() -> Any:
         mode = state.get("run_mode", RunMode.GENERATE_PATHWAY.value)
         if mode == RunMode.GENERATE_PATHWAY.value:
             return "end"
+        if mode == RunMode.LIVE_CASE.value:
+            return "explainability"
         if mode in {RunMode.EVALUATE_PROOF.value, RunMode.FULL_DEMO_REPLAY.value, RunMode.CONTROL_ROOM_DEMO.value}:
             return "proof_of_skill"
         return "end"
@@ -863,6 +1046,7 @@ def build_graph() -> Any:
     graph.add_node("diagnosis", diagnosis)
     graph.add_node("counterfactual_analysis", counterfactual_analysis)
     graph.add_node("pathway_generation", pathway_generation)
+    graph.add_node("targeted_learning_generation", targeted_learning_generation)
     graph.add_node("proof_of_skill", proof_of_skill)
     graph.add_node("capability_refresh", capability_refresh)
     graph.add_node("reassessment", reassessment)
@@ -884,10 +1068,11 @@ def build_graph() -> Any:
         route_after_counterfactual,
         {"end": END, "pathway_generation": "pathway_generation", "market_intelligence": "market_intelligence"},
     )
+    graph.add_edge("pathway_generation", "targeted_learning_generation")
     graph.add_conditional_edges(
-        "pathway_generation",
+        "targeted_learning_generation",
         route_after_pathway,
-        {"end": END, "proof_of_skill": "proof_of_skill"},
+        {"end": END, "proof_of_skill": "proof_of_skill", "explainability": "explainability"},
     )
     graph.add_edge("proof_of_skill", "capability_refresh")
     graph.add_edge("capability_refresh", "reassessment")
