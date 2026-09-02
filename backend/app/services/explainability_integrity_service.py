@@ -7,7 +7,8 @@ class ExplainabilityIntegrityService:
     def validate(self, state: dict[str, Any]) -> list[str]:
         errors: list[str] = []
         evidence_ids = {e.get("id") for e in state.get("candidate_evidence", [])}
-        cap_ids = {c.get("skill_id") for c in state.get("candidate_capabilities", [])}
+        capability_rows = state.get("updated_candidate_capabilities") or state.get("candidate_capabilities") or []
+        cap_ids = {c.get("skill_id") for c in capability_rows}
         gap_ids = {
             g.get("skill_id")
             for g in state.get("capability_gaps", [])

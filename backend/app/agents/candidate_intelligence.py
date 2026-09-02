@@ -41,7 +41,7 @@ class CandidateIntelligenceAgent:
         sap_skills: list[dict] | None = None,
     ) -> tuple[list[CandidateCapability], str]:
         evidence_by_id = {e.id: e for e in evidence}
-        fallback_payload = self._build_fallback_output(profile, evidence)
+        fallback_payload = self._build_fallback_output(profile, evidence, sap_skills)
 
         if isinstance(self._llm, DeterministicFallbackProvider):
             output = self._llm.generate_structured(
@@ -66,11 +66,13 @@ class CandidateIntelligenceAgent:
                 )
 
         capabilities = self._to_domain(profile, output, evidence_by_id)
+        if not capabilities and sap_skills:
+            capabilities = self._capabilities_from_sap_records(profile, sap_skills, evidence_by_id)
         sap_note = ""
         if sap_context:
             sap_note = f" SAP context ({sap_context.source_mode.value}) consulted."
         if sap_skills:
-            sap_note += f" {len(sap_skills)} SAP skill records present (not merged without evidence)."
+            sap_note += f" {len(sap_skills)} SAP skill records on file."
         rationale = (output.summary_rationale or "Capabilities derived from supplied evidence.") + sap_note
         return capabilities, rationale
 
@@ -113,6 +115,7 @@ class CandidateIntelligenceAgent:
         self,
         profile: CandidateProfile,
         evidence: list[CandidateEvidence],
+        sap_skills: list[dict] | None = None,
     ) -> CandidateIntelligenceOutput:
         if profile.id == "ananya-sharma":
             bundle = self._fixtures.get_ananya_bundle()
@@ -181,8 +184,79 @@ class CandidateIntelligenceAgent:
                 summary_rationale="Demo fallback: capabilities from Ananya fixture evidence.",
             )
 
+        if sap_skills:
+            sap_output = self._sap_skills_fallback(profile, evidence, sap_skills)
+            if sap_output.capabilities:
+                return sap_output
+
         # Generic minimal fallback from evidence keywords
         return self._generic_evidence_fallback(profile, evidence)
+
+    def _sap_skills_fallback(
+        self,
+        profile: CandidateProfile,
+        evidence: list[CandidateEvidence],
+        sap_skills: list[dict],
+    ) -> CandidateIntelligenceOutput:
+        from app.agents.schemas import CandidateCapabilityExtract
+
+        evidence_by_id = {e.id: e for e in evidence}
+        extracts: list[CandidateCapabilityExtract] = []
+        for row in sap_skills:
+            raw_skill_id = str(row.get("skill_id") or row.get("SKILL_ID") or "")
+            skill_id = raw_skill_id.lower()
+            if not skill_id:
+                continue
+            label = str(row.get("label") or row.get("skill_name") or row.get("SKILL_NAME") or skill_id)
+            proficiency = row.get("proficiency")
+            if proficiency is None:
+                continue
+            try:
+                proficiency_f = float(proficiency)
+            except (TypeError, ValueError):
+                continue
+            evidence_refs = list(row.get("evidence_refs") or [])
+            if not evidence_refs and raw_skill_id:
+                evidence_refs = [f"sap-evidence-{profile.id}-{raw_skill_id}"]
+            ev = evidence_by_id.get(evidence_refs[0]) if evidence_refs else None
+            verification = CapabilityVerificationStatus.UNVERIFIED
+            if ev and ev.type.value == "SELF_REPORTED":
+                verification = CapabilityVerificationStatus.SELF_REPORTED
+            elif ev and ev.verification_status.value == "VERIFIED":
+                verification = CapabilityVerificationStatus.VERIFIED
+            elif ev:
+                verification = CapabilityVerificationStatus.SUPPORTED
+            recency = (
+                compute_recency_status(ev.occurred_on)
+                if ev and ev.occurred_on
+                else RecencyStatus.UNKNOWN
+            )
+            extracts.append(
+                CandidateCapabilityExtract(
+                    skill_id=skill_id,
+                    label=label,
+                    proficiency=proficiency_f,
+                    raw_confidence=float(row.get("confidence") or row.get("raw_confidence") or 0.65),
+                    evidence_refs=evidence_refs,
+                    inference_status=InferenceStatus.EXPLICIT.value,
+                    verification_status=verification.value,
+                    recency_status=recency.value if hasattr(recency, "value") else str(recency),
+                    rationale=f"SAP person-skill record for {label}.",
+                )
+            )
+        return CandidateIntelligenceOutput(
+            capabilities=extracts,
+            summary_rationale="Capabilities derived from SAP person-skill records.",
+        )
+
+    def _capabilities_from_sap_records(
+        self,
+        profile: CandidateProfile,
+        sap_skills: list[dict],
+        evidence_by_id: dict[str, CandidateEvidence],
+    ) -> list[CandidateCapability]:
+        output = self._sap_skills_fallback(profile, list(evidence_by_id.values()), sap_skills)
+        return self._to_domain(profile, output, evidence_by_id)
 
     def _generic_evidence_fallback(
         self,
@@ -192,7 +266,11 @@ class CandidateIntelligenceAgent:
         from app.agents.schemas import CandidateCapabilityExtract
 
         keyword_map = {
-            "sql": ("sql", "SQL"),
+            "java": ("skill0001", "Java"),
+            "odata": ("skill0002", "OData"),
+            "sap": ("skill0003", "SAP"),
+            "hana": ("skill0004", "HANA"),
+            "sql": ("skill0005", "SQL"),
             "excel": ("excel", "Excel"),
             "power bi": ("power_bi", "Power BI"),
             "stakeholder": ("communication", "Stakeholder communication"),
@@ -223,6 +301,24 @@ class CandidateIntelligenceAgent:
             summary_rationale="Generic evidence keyword fallback.",
         )
 
+    def _safe_recency_status(self, value: str | None) -> RecencyStatus:
+        if not value:
+            return RecencyStatus.UNKNOWN
+        normalized = str(value).strip().upper().replace(" ", "_")
+        try:
+            return RecencyStatus(normalized)
+        except ValueError:
+            return RecencyStatus.UNKNOWN
+
+    def _safe_verification_status(self, value: str | None) -> CapabilityVerificationStatus:
+        if not value:
+            return CapabilityVerificationStatus.UNVERIFIED
+        normalized = str(value).strip().upper().replace(" ", "_")
+        try:
+            return CapabilityVerificationStatus(normalized)
+        except ValueError:
+            return CapabilityVerificationStatus.UNVERIFIED
+
     def _to_domain(
         self,
         profile: CandidateProfile,
@@ -250,8 +346,8 @@ class CandidateIntelligenceAgent:
                 source="REWORK",
                 source_mode=SourceMode.SYNTHETIC,
                 inference_status=item.inference_status,
-                verification_status=CapabilityVerificationStatus(item.verification_status),
-                recency_status=RecencyStatus(item.recency_status),
+                verification_status=self._safe_verification_status(item.verification_status),
+                recency_status=self._safe_recency_status(item.recency_status),
                 raw_confidence=item.raw_confidence,
                 rationale=item.rationale,
             )

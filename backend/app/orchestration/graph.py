@@ -5,6 +5,7 @@ from typing import Any
 from langgraph.graph import END, StateGraph
 
 from app.adapters.llm import get_llm_provider
+from app.adapters.llm.fallback import DeterministicFallbackProvider
 from app.adapters.sap import get_sap_provider
 from app.core.config import get_settings
 from app.agents.candidate_intelligence import CandidateIntelligenceAgent
@@ -189,6 +190,29 @@ def build_graph() -> Any:
                 error=str(exc),
                 latency_ms=timer.elapsed_ms(),
             )
+            sap_bundle = state.get("sap_case_context") or {}
+            sap_skills_raw = (sap_bundle.get("skills_context") or {}).get("data") or []
+            if sap_skills_raw:
+                agent_fb = CandidateIntelligenceAgent(DeterministicFallbackProvider(), fixture_service)
+                profile = CandidateProfile.model_validate(state["candidate"])
+                evidence = [CandidateEvidence.model_validate(e) for e in state["candidate_evidence"]]
+                sap_ctx = SAPContext.model_validate(state["sap_context"])
+                capabilities, rationale = agent_fb.run(profile, evidence, sap_ctx, sap_skills_raw)
+                event = new_audit_event(
+                    agent="candidate_intelligence",
+                    run_id=state.get("run_id"),
+                    engine_mode=EngineMode.DEMO_FALLBACK,
+                    status=AuditStatus.SUCCESS,
+                    rationale=f"Recovered via SAP skill records after LLM error: {exc}",
+                    input_reference=profile.id,
+                    output_reference=f"{len(capabilities)} capabilities",
+                    latency_ms=timer.elapsed_ms(),
+                )
+                return {
+                    "engine_mode": EngineMode.DEMO_FALLBACK.value,
+                    "candidate_capabilities": [c.model_dump(mode="json") for c in capabilities],
+                    "audit_events": [_audit_dict(event)],
+                }
             return {"errors": [str(exc)], "audit_events": [_audit_dict(event)]}
 
     def load_job(state: ReworkGraphState) -> dict[str, Any]:
