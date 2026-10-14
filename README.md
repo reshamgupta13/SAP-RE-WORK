@@ -3,6 +3,9 @@ AI-Powered Inclusive Workforce Recomposition Engine
 
 SAP Hackfest 2026 — Inclusive Workforce theme.
 
+# LIVE DEMO
+https://rework-three-livid.vercel.app/
+
 RE:WORK is an intervention intelligence layer that reasons across workforce capability, evidence, job requirements, barriers, learning, proof, opportunity, and employer readiness to determine the smallest evidence-backed pathway that can make an opportunity viable.
 
 It is not a job recommender, ATS, or chatbot.
